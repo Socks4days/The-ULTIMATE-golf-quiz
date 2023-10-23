@@ -119,7 +119,7 @@
     <Compile Include="User Info.Designer.cs">
       <DependentUpon>User Info.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Information.cs" />
+    <Compile Include="User.cs" />
     <EmbeddedResource Include="Logout Splash.resx">
       <DependentUpon>Logout Splash.cs</DependentUpon>
     </EmbeddedResource>

@@ -48,7 +48,7 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(116, 220);
+            this.lblUser.Location = new System.Drawing.Point(61, 225);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(152, 32);
             this.lblUser.TabIndex = 0;
@@ -120,7 +120,7 @@
             this.lblUserText.AutoSize = true;
             this.lblUserText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserText.ForeColor = System.Drawing.Color.Blue;
-            this.lblUserText.Location = new System.Drawing.Point(285, 220);
+            this.lblUserText.Location = new System.Drawing.Point(230, 225);
             this.lblUserText.Name = "lblUserText";
             this.lblUserText.Size = new System.Drawing.Size(30, 32);
             this.lblUserText.TabIndex = 8;
@@ -174,7 +174,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(116, 262);
+            this.lblPassword.Location = new System.Drawing.Point(61, 267);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(146, 32);
             this.lblPassword.TabIndex = 13;
@@ -185,7 +185,7 @@
             this.lblPasswordText.AutoSize = true;
             this.lblPasswordText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPasswordText.ForeColor = System.Drawing.Color.Blue;
-            this.lblPasswordText.Location = new System.Drawing.Point(287, 262);
+            this.lblPasswordText.Location = new System.Drawing.Point(232, 267);
             this.lblPasswordText.Name = "lblPasswordText";
             this.lblPasswordText.Size = new System.Drawing.Size(54, 32);
             this.lblPasswordText.TabIndex = 14;

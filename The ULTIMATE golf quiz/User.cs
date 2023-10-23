@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace The_ULTIMATE_golf_quiz
 {
-    internal class User : Register
+    public class User
     {
-        string username;        
-        string name;
-        int age;
-        string gender;
-        string nationality;
-        string password;
+        public string username { get; set; }
+        public string name { get; set; }
+        public int age { get; set; }
+        public string gender { get; set; }
+        public string nationality { get; set; }
+        public string password { get; set; }
+
         
         public User() 
         {

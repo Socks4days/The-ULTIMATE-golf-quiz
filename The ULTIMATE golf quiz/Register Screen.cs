@@ -6,6 +6,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ namespace The_ULTIMATE_golf_quiz
 {
     public partial class frmReg : Form
     {
+        public static User user;
         public frmReg()
         {
             InitializeComponent();
@@ -57,9 +59,10 @@ namespace The_ULTIMATE_golf_quiz
                 }
             }
 
-        }   
+        }
 
-        public void Register()
+
+        public User Register()
         {
             string username = txtBoxUser.Text;
             string password = txtBoxPassword.Text;
@@ -68,15 +71,17 @@ namespace The_ULTIMATE_golf_quiz
             int age = 0;
             int.TryParse(txtBoxAge.Text, out age);
             string nationality = txtBoxNation.Text;
-
-            frmUserInfo info = new frmUserInfo(username, password, name, gender, Convert.ToString(age), nationality);
+            user = new User(username, password, name, age, gender, nationality);
+            frmUserInfo info = new frmUserInfo();
 
             if (validPassword = true)
             {
                 mainMenu mainMenu = new mainMenu();
                 this.Hide();
                 mainMenu.Show();
-            }           
+            }
+
+            return new User(username, password, name, age, gender, nationality);
 
         }
 
@@ -90,6 +95,7 @@ namespace The_ULTIMATE_golf_quiz
             {
                 PasswordValidation();
             }
+            
             
         }
 
@@ -114,9 +120,6 @@ namespace The_ULTIMATE_golf_quiz
             lblErrorG.ForeColor = Color.Red;
             lblErrorNat.Text = "*";
             lblErrorNat.ForeColor = Color.Red;            
-        }
-        
-
-
+        }     
     }
 }

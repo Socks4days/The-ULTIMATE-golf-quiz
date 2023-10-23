@@ -13,6 +13,7 @@ namespace The_ULTIMATE_golf_quiz
 {
     public partial class frmSettings : Form
     {
+        static User userDetails = new User();
         public frmSettings()
         {
             InitializeComponent();

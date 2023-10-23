@@ -15,25 +15,22 @@ namespace The_ULTIMATE_golf_quiz
 {
     public partial class frmUserInfo : Form
     {
-        public frmUserInfo(string username, string password, string name, string gender, string age, string nationality)
+        public frmUserInfo()
         {
             InitializeComponent();
+            user = frmReg.user;
         }
-        public string username { get; set; }
-        public string password { get; set; }
-        public string name { get; set; }
-        public string age { get; set; }
-        public string gender { get; set; }
-        public string nationality { get; set; }
+
+        public User user;        
 
         private void frmUserInfo_Load(object sender, EventArgs e)
         {
-            lblUserText.Text = username;
-            lblPasswordText.Text = password;
-            lblNameText.Text = name;
-            lblAgeText.Text = age;
-            lblGenderText.Text = gender;
-            lblNationText.Text = nationality;
+            lblUserText.Text = user.username;
+            lblPasswordText.Text = user.password;
+            lblNameText.Text = user.name;
+            lblAgeText.Text = Convert.ToString(user.age);
+            lblGenderText.Text = user.gender;
+            lblNationText.Text = user.nationality;
         }    
     
 
