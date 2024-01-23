@@ -451,7 +451,6 @@
             // 
             this.pctBoxLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pctBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            //this.pctBoxLogo.Image = global::The_ULTIMATE_golf_quiz.Properties.Resources.Golf_logo3;
             this.pctBoxLogo.Location = new System.Drawing.Point(215, 113);
             this.pctBoxLogo.Name = "pctBoxLogo";
             this.pctBoxLogo.Size = new System.Drawing.Size(360, 299);
