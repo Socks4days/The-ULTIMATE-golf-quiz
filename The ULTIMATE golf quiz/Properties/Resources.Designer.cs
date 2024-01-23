@@ -65,7 +65,73 @@ namespace The_ULTIMATE_golf_quiz.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap amalie_steiness {
             get {
-                object obj = ResourceManager.GetObject("amalie-steiness", resourceCulture);
+                object obj = ResourceManager.GetObject("amalie_steiness", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Default1 {
+            get {
+                object obj = ResourceManager.GetObject("Default1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Default1_png {
+            get {
+                object obj = ResourceManager.GetObject("Default1_png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Default2 {
+            get {
+                object obj = ResourceManager.GetObject("Default2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [LocalizedFileNames]
+        ///Screenshot 2023-12-18 100025.png=@Screenshot 2023-12-18 100025.png,0
+        ///Screenshot 2023-12-18 100406.png=@Screenshot 2023-12-18 100406.png,0
+        ///Screenshot 2023-12-18 100357.png=@Screenshot 2023-12-18 100357.png,0
+        ///Screenshot 2023-12-18 100316.png=@Screenshot 2023-12-18 100316.png,0
+        ///Screenshot 2023-12-18 100250.png=@Screenshot 2023-12-18 100250.png,0
+        ///Screenshot 2023-12-18 100058.png=@Screenshot 2023-12-18 100058.png,0
+        ///.
+        /// </summary>
+        internal static string desktop {
+            get {
+                return ResourceManager.GetString("desktop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Female1 {
+            get {
+                object obj = ResourceManager.GetObject("Female1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Female2 {
+            get {
+                object obj = ResourceManager.GetObject("Female2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -75,7 +141,7 @@ namespace The_ULTIMATE_golf_quiz.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap golf_ball_running_back {
             get {
-                object obj = ResourceManager.GetObject("golf ball running back", resourceCulture);
+                object obj = ResourceManager.GetObject("golf_ball_running_back", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +149,79 @@ namespace The_ULTIMATE_golf_quiz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Golf_Club {
+        internal static System.Drawing.Bitmap Golf_flag {
             get {
-                object obj = ResourceManager.GetObject("Golf Club", resourceCulture);
+                object obj = ResourceManager.GetObject("Golf_flag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Golf_flag1 {
+            get {
+                object obj = ResourceManager.GetObject("Golf_flag1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Golf_logo {
+            get {
+                object obj = ResourceManager.GetObject("Golf_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Golf_logo1 {
+            get {
+                object obj = ResourceManager.GetObject("Golf_logo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Golf_logo2 {
+            get {
+                object obj = ResourceManager.GetObject("Golf_logo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Golf_logo3 {
+            get {
+                object obj = ResourceManager.GetObject("Golf_logo3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Male1 {
+            get {
+                object obj = ResourceManager.GetObject("Male1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Male2 {
+            get {
+                object obj = ResourceManager.GetObject("Male2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,7 +231,7 @@ namespace The_ULTIMATE_golf_quiz.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap running_golf_ball {
             get {
-                object obj = ResourceManager.GetObject("running golf ball", resourceCulture);
+                object obj = ResourceManager.GetObject("running_golf_ball", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

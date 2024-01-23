@@ -118,16 +118,61 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="amalie-steiness" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\amalie-steiness.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="running golf ball" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\running golf ball.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="golf ball running back" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\golf ball running back.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Golf Club" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Golf Club.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="amalie_steiness" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\amalie-steiness.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Default1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Default1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Default1_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Default1.png.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Default2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Default2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="desktop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\desktop.ini;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Female1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Female1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Female2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Female2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="golf_ball_running_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\golf ball running back.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Golf_Club" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Golf Club.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Golf_flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Golf flag.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Golf_flag1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Golf flag1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Golf_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Golf logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Golf_logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Golf logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Golf_logo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Golf logo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Golf_logo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Golf logo3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Male1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Male1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Male2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Male2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="running_golf_ball" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\running golf ball.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -86,7 +86,7 @@
             this.lblCorrectAnswer.Location = new System.Drawing.Point(405, 18);
             this.lblCorrectAnswer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCorrectAnswer.Name = "lblCorrectAnswer";
-            this.lblCorrectAnswer.Size = new System.Drawing.Size(147, 25);
+            this.lblCorrectAnswer.Size = new System.Drawing.Size(118, 20);
             this.lblCorrectAnswer.TabIndex = 8;
             this.lblCorrectAnswer.Text = "Correct Answer";
             this.lblCorrectAnswer.Visible = false;
@@ -99,7 +99,7 @@
             this.lblCorrect.Location = new System.Drawing.Point(25, 38);
             this.lblCorrect.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCorrect.Name = "lblCorrect";
-            this.lblCorrect.Size = new System.Drawing.Size(52, 25);
+            this.lblCorrect.Size = new System.Drawing.Size(41, 20);
             this.lblCorrect.TabIndex = 9;
             this.lblCorrect.Text = "Yes!";
             this.lblCorrect.Visible = false;
@@ -112,7 +112,7 @@
             this.lblWrongAnswer.Location = new System.Drawing.Point(27, 18);
             this.lblWrongAnswer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWrongAnswer.Name = "lblWrongAnswer";
-            this.lblWrongAnswer.Size = new System.Drawing.Size(216, 25);
+            this.lblWrongAnswer.Size = new System.Drawing.Size(174, 20);
             this.lblWrongAnswer.TabIndex = 10;
             this.lblWrongAnswer.Text = "No - the right answer is:";
             this.lblWrongAnswer.Visible = false;
@@ -161,7 +161,7 @@
             this.lblFinish.Location = new System.Drawing.Point(71, 22);
             this.lblFinish.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFinish.Name = "lblFinish";
-            this.lblFinish.Size = new System.Drawing.Size(574, 25);
+            this.lblFinish.Size = new System.Drawing.Size(466, 20);
             this.lblFinish.TabIndex = 13;
             this.lblFinish.Text = "You have completed all questions in this round - congratulations!!";
             // 
@@ -176,7 +176,7 @@
             this.pnlFinish.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlFinish.Location = new System.Drawing.Point(0, 697);
             this.pnlFinish.Name = "pnlFinish";
-            this.pnlFinish.Size = new System.Drawing.Size(756, 241);
+            this.pnlFinish.Size = new System.Drawing.Size(760, 241);
             this.pnlFinish.TabIndex = 17;
             // 
             // lblTotalScore
@@ -186,7 +186,7 @@
             this.lblTotalScore.ForeColor = System.Drawing.Color.White;
             this.lblTotalScore.Location = new System.Drawing.Point(234, 119);
             this.lblTotalScore.Name = "lblTotalScore";
-            this.lblTotalScore.Size = new System.Drawing.Size(113, 25);
+            this.lblTotalScore.Size = new System.Drawing.Size(90, 20);
             this.lblTotalScore.TabIndex = 16;
             this.lblTotalScore.Text = "Total Score";
             // 
@@ -197,7 +197,7 @@
             this.lblQuestionsAnsweredCorrectly.ForeColor = System.Drawing.Color.White;
             this.lblQuestionsAnsweredCorrectly.Location = new System.Drawing.Point(206, 78);
             this.lblQuestionsAnsweredCorrectly.Name = "lblQuestionsAnsweredCorrectly";
-            this.lblQuestionsAnsweredCorrectly.Size = new System.Drawing.Size(170, 25);
+            this.lblQuestionsAnsweredCorrectly.Size = new System.Drawing.Size(137, 20);
             this.lblQuestionsAnsweredCorrectly.TabIndex = 15;
             this.lblQuestionsAnsweredCorrectly.Text = "Questions Correct";
             // 
@@ -231,7 +231,7 @@
             this.pnlAnswer.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlAnswer.Location = new System.Drawing.Point(0, 576);
             this.pnlAnswer.Name = "pnlAnswer";
-            this.pnlAnswer.Size = new System.Drawing.Size(756, 121);
+            this.pnlAnswer.Size = new System.Drawing.Size(760, 121);
             this.pnlAnswer.TabIndex = 11;
             // 
             // textBox1
@@ -240,7 +240,7 @@
             this.textBox1.Location = new System.Drawing.Point(46, -434);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(561, 75);
+            this.textBox1.Size = new System.Drawing.Size(561, 62);
             this.textBox1.TabIndex = 1;
             // 
             // button1
@@ -265,7 +265,7 @@
             this.pnlTypeIt.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTypeIt.Location = new System.Drawing.Point(0, 127);
             this.pnlTypeIt.Name = "pnlTypeIt";
-            this.pnlTypeIt.Size = new System.Drawing.Size(756, 221);
+            this.pnlTypeIt.Size = new System.Drawing.Size(760, 221);
             this.pnlTypeIt.TabIndex = 20;
             // 
             // lblEnterYourAnswer
@@ -276,7 +276,7 @@
             this.lblEnterYourAnswer.Location = new System.Drawing.Point(111, 41);
             this.lblEnterYourAnswer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEnterYourAnswer.Name = "lblEnterYourAnswer";
-            this.lblEnterYourAnswer.Size = new System.Drawing.Size(219, 25);
+            this.lblEnterYourAnswer.Size = new System.Drawing.Size(177, 20);
             this.lblEnterYourAnswer.TabIndex = 2;
             this.lblEnterYourAnswer.Text = "Enter your answer here:";
             // 
@@ -286,7 +286,7 @@
             this.txtBoxAnswer.Location = new System.Drawing.Point(113, 79);
             this.txtBoxAnswer.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxAnswer.Name = "txtBoxAnswer";
-            this.txtBoxAnswer.Size = new System.Drawing.Size(514, 30);
+            this.txtBoxAnswer.Size = new System.Drawing.Size(514, 26);
             this.txtBoxAnswer.TabIndex = 1;
             // 
             // btnSubmit
@@ -318,7 +318,7 @@
             this.pnlQuestion.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlQuestion.Location = new System.Drawing.Point(0, 0);
             this.pnlQuestion.Name = "pnlQuestion";
-            this.pnlQuestion.Size = new System.Drawing.Size(756, 127);
+            this.pnlQuestion.Size = new System.Drawing.Size(760, 127);
             this.pnlQuestion.TabIndex = 21;
             // 
             // lblQuestionNumber
@@ -328,7 +328,7 @@
             this.lblQuestionNumber.ForeColor = System.Drawing.Color.White;
             this.lblQuestionNumber.Location = new System.Drawing.Point(118, 9);
             this.lblQuestionNumber.Name = "lblQuestionNumber";
-            this.lblQuestionNumber.Size = new System.Drawing.Size(126, 25);
+            this.lblQuestionNumber.Size = new System.Drawing.Size(101, 20);
             this.lblQuestionNumber.TabIndex = 15;
             this.lblQuestionNumber.Text = "Question No.";
             // 
@@ -359,7 +359,7 @@
             this.lblDifficulty.ForeColor = System.Drawing.Color.White;
             this.lblDifficulty.Location = new System.Drawing.Point(483, 9);
             this.lblDifficulty.Name = "lblDifficulty";
-            this.lblDifficulty.Size = new System.Drawing.Size(84, 25);
+            this.lblDifficulty.Size = new System.Drawing.Size(69, 20);
             this.lblDifficulty.TabIndex = 14;
             this.lblDifficulty.Text = "Difficulty";
             this.lblDifficulty.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -387,7 +387,7 @@
             this.pnlMultipleChoiceOptions.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlMultipleChoiceOptions.Location = new System.Drawing.Point(0, 348);
             this.pnlMultipleChoiceOptions.Name = "pnlMultipleChoiceOptions";
-            this.pnlMultipleChoiceOptions.Size = new System.Drawing.Size(756, 139);
+            this.pnlMultipleChoiceOptions.Size = new System.Drawing.Size(760, 139);
             this.pnlMultipleChoiceOptions.TabIndex = 22;
             // 
             // btnOption2
@@ -413,7 +413,7 @@
             this.textBox2.Location = new System.Drawing.Point(32, -155);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(561, 75);
+            this.textBox2.Size = new System.Drawing.Size(561, 62);
             this.textBox2.TabIndex = 1;
             // 
             // btnOption4
@@ -488,7 +488,7 @@
             this.pnlTrueOrFalseOptions.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTrueOrFalseOptions.Location = new System.Drawing.Point(0, 487);
             this.pnlTrueOrFalseOptions.Name = "pnlTrueOrFalseOptions";
-            this.pnlTrueOrFalseOptions.Size = new System.Drawing.Size(756, 89);
+            this.pnlTrueOrFalseOptions.Size = new System.Drawing.Size(760, 89);
             this.pnlTrueOrFalseOptions.TabIndex = 23;
             // 
             // btnFalse
@@ -539,7 +539,7 @@
             this.pnlTypeOfRound.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlTypeOfRound.Location = new System.Drawing.Point(0, 938);
             this.pnlTypeOfRound.Name = "pnlTypeOfRound";
-            this.pnlTypeOfRound.Size = new System.Drawing.Size(756, 301);
+            this.pnlTypeOfRound.Size = new System.Drawing.Size(760, 301);
             this.pnlTypeOfRound.TabIndex = 24;
             // 
             // btnBack
@@ -657,7 +657,7 @@
             this.lblTypeOfRound.ForeColor = System.Drawing.Color.White;
             this.lblTypeOfRound.Location = new System.Drawing.Point(206, 31);
             this.lblTypeOfRound.Name = "lblTypeOfRound";
-            this.lblTypeOfRound.Size = new System.Drawing.Size(363, 25);
+            this.lblTypeOfRound.Size = new System.Drawing.Size(294, 20);
             this.lblTypeOfRound.TabIndex = 0;
             this.lblTypeOfRound.Text = "What type of round would you like to do?";
             // 

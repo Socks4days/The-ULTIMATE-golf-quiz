@@ -16,7 +16,7 @@ namespace The_ULTIMATE_golf_quiz
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Splash_Screen());
+            Application.Run(new SplashScreen());
         }
     }
 }

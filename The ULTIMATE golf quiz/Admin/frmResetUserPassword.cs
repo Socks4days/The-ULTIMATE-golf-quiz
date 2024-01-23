@@ -115,7 +115,7 @@ namespace The_ULTIMATE_golf_quiz
                     }
 
                 }
-                catch(Exception ex) { }
+                catch(Exception) { }
                     
             }
         }

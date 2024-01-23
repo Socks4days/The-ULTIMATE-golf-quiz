@@ -333,7 +333,7 @@
             // pctBoxLogo
             // 
             this.pctBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pctBoxLogo.Image = global::The_ULTIMATE_golf_quiz.Properties.Resources.Golf_logo3;
+            //this.pctBoxLogo.Image = global::The_ULTIMATE_golf_quiz.Properties.Resources.Golf_logo3;
             this.pctBoxLogo.Location = new System.Drawing.Point(1110, 10);
             this.pctBoxLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pctBoxLogo.Name = "pctBoxLogo";
