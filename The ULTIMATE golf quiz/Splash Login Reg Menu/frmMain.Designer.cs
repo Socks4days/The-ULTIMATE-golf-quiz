@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlSideMenu = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.pnlAdminSubMenu = new System.Windows.Forms.Panel();
@@ -90,7 +91,7 @@
             this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(0, 600);
+            this.btnLogout.Location = new System.Drawing.Point(0, 650);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -108,7 +109,7 @@
             this.pnlAdminSubMenu.Controls.Add(this.btnResetPassword);
             this.pnlAdminSubMenu.Controls.Add(this.btnViewUsers);
             this.pnlAdminSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlAdminSubMenu.Location = new System.Drawing.Point(0, 450);
+            this.pnlAdminSubMenu.Location = new System.Drawing.Point(0, 500);
             this.pnlAdminSubMenu.Name = "pnlAdminSubMenu";
             this.pnlAdminSubMenu.Size = new System.Drawing.Size(233, 150);
             this.pnlAdminSubMenu.TabIndex = 6;
@@ -178,7 +179,7 @@
             this.btnAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnAdmin.Location = new System.Drawing.Point(0, 400);
+            this.btnAdmin.Location = new System.Drawing.Point(0, 450);
             this.btnAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -197,7 +198,7 @@
             this.pnlSettingsSubMenu.Controls.Add(this.btnChangeAvatar);
             this.pnlSettingsSubMenu.Controls.Add(this.btnUserInfo);
             this.pnlSettingsSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSettingsSubMenu.Location = new System.Drawing.Point(0, 200);
+            this.pnlSettingsSubMenu.Location = new System.Drawing.Point(0, 250);
             this.pnlSettingsSubMenu.Name = "pnlSettingsSubMenu";
             this.pnlSettingsSubMenu.Size = new System.Drawing.Size(233, 200);
             this.pnlSettingsSubMenu.TabIndex = 4;
@@ -286,7 +287,7 @@
             this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.ForeColor = System.Drawing.Color.White;
-            this.btnSettings.Location = new System.Drawing.Point(0, 150);
+            this.btnSettings.Location = new System.Drawing.Point(0, 200);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(2);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -305,7 +306,7 @@
             this.btnLeaderboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnLeaderboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLeaderboard.ForeColor = System.Drawing.Color.White;
-            this.btnLeaderboard.Location = new System.Drawing.Point(0, 100);
+            this.btnLeaderboard.Location = new System.Drawing.Point(0, 150);
             this.btnLeaderboard.Margin = new System.Windows.Forms.Padding(2);
             this.btnLeaderboard.Name = "btnLeaderboard";
             this.btnLeaderboard.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -324,7 +325,7 @@
             this.btnGoToQuiz.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnGoToQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoToQuiz.ForeColor = System.Drawing.Color.White;
-            this.btnGoToQuiz.Location = new System.Drawing.Point(0, 50);
+            this.btnGoToQuiz.Location = new System.Drawing.Point(0, 100);
             this.btnGoToQuiz.Margin = new System.Windows.Forms.Padding(2);
             this.btnGoToQuiz.Name = "btnGoToQuiz";
             this.btnGoToQuiz.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -342,7 +343,7 @@
             this.pnlAvatar.Location = new System.Drawing.Point(0, 0);
             this.pnlAvatar.Margin = new System.Windows.Forms.Padding(2);
             this.pnlAvatar.Name = "pnlAvatar";
-            this.pnlAvatar.Size = new System.Drawing.Size(233, 50);
+            this.pnlAvatar.Size = new System.Drawing.Size(233, 100);
             this.pnlAvatar.TabIndex = 0;
             // 
             // pctBoxAvatar
@@ -350,10 +351,10 @@
             this.pctBoxAvatar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pctBoxAvatar.Location = new System.Drawing.Point(0, 0);
+            this.pctBoxAvatar.Location = new System.Drawing.Point(59, 0);
             this.pctBoxAvatar.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxAvatar.Name = "pctBoxAvatar";
-            this.pctBoxAvatar.Size = new System.Drawing.Size(233, 50);
+            this.pctBoxAvatar.Size = new System.Drawing.Size(113, 96);
             this.pctBoxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxAvatar.TabIndex = 0;
             this.pctBoxAvatar.TabStop = false;
@@ -393,24 +394,28 @@
             this.lblGamesPlayed.AutoSize = true;
             this.lblGamesPlayed.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblGamesPlayed.ForeColor = System.Drawing.Color.White;
-            this.lblGamesPlayed.Location = new System.Drawing.Point(193, 0);
+            this.lblGamesPlayed.Location = new System.Drawing.Point(203, 0);
             this.lblGamesPlayed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGamesPlayed.Name = "lblGamesPlayed";
-            this.lblGamesPlayed.Size = new System.Drawing.Size(116, 20);
+            this.lblGamesPlayed.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.lblGamesPlayed.Size = new System.Drawing.Size(116, 35);
             this.lblGamesPlayed.TabIndex = 2;
             this.lblGamesPlayed.Text = "Games Played:";
+            this.lblGamesPlayed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblHighscore
             // 
             this.lblHighscore.AutoSize = true;
             this.lblHighscore.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblHighscore.ForeColor = System.Drawing.Color.White;
-            this.lblHighscore.Location = new System.Drawing.Point(108, 0);
+            this.lblHighscore.Location = new System.Drawing.Point(118, 0);
             this.lblHighscore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHighscore.Name = "lblHighscore";
-            this.lblHighscore.Size = new System.Drawing.Size(85, 20);
+            this.lblHighscore.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.lblHighscore.Size = new System.Drawing.Size(85, 35);
             this.lblHighscore.TabIndex = 1;
             this.lblHighscore.Text = "Highscore:";
+            this.lblHighscore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblCurrentUser
             // 
@@ -420,9 +425,11 @@
             this.lblCurrentUser.Location = new System.Drawing.Point(0, 0);
             this.lblCurrentUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCurrentUser.Name = "lblCurrentUser";
-            this.lblCurrentUser.Size = new System.Drawing.Size(108, 20);
+            this.lblCurrentUser.Padding = new System.Windows.Forms.Padding(10, 15, 0, 0);
+            this.lblCurrentUser.Size = new System.Drawing.Size(118, 35);
             this.lblCurrentUser.TabIndex = 0;
             this.lblCurrentUser.Text = "Current User: ";
+            this.lblCurrentUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlFormContainer
             // 
@@ -441,7 +448,7 @@
             this.lblUltimateGolfQuiz.AutoSize = true;
             this.lblUltimateGolfQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUltimateGolfQuiz.ForeColor = System.Drawing.Color.White;
-            this.lblUltimateGolfQuiz.Location = new System.Drawing.Point(190, 113);
+            this.lblUltimateGolfQuiz.Location = new System.Drawing.Point(191, 113);
             this.lblUltimateGolfQuiz.Name = "lblUltimateGolfQuiz";
             this.lblUltimateGolfQuiz.Size = new System.Drawing.Size(404, 37);
             this.lblUltimateGolfQuiz.TabIndex = 1;
@@ -451,10 +458,11 @@
             // 
             this.pctBoxLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pctBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pctBoxLogo.Location = new System.Drawing.Point(215, 113);
+            this.pctBoxLogo.Image = global::The_ULTIMATE_golf_quiz.Properties.Resources.Golf_logo3;
+            this.pctBoxLogo.Location = new System.Drawing.Point(237, 119);
             this.pctBoxLogo.Name = "pctBoxLogo";
-            this.pctBoxLogo.Size = new System.Drawing.Size(360, 299);
-            this.pctBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pctBoxLogo.Size = new System.Drawing.Size(288, 239);
+            this.pctBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxLogo.TabIndex = 0;
             this.pctBoxLogo.TabStop = false;
             // 
@@ -466,11 +474,15 @@
             this.Controls.Add(this.pnlFormContainer);
             this.Controls.Add(this.pnlTitleBar);
             this.Controls.Add(this.pnlSideMenu);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5);
-            this.MinimumSize = new System.Drawing.Size(1006, 594);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.MinimumSize = new System.Drawing.Size(1006, 593);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.pnlSideMenu.ResumeLayout(false);
             this.pnlAdminSubMenu.ResumeLayout(false);
             this.pnlSettingsSubMenu.ResumeLayout(false);

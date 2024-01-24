@@ -77,7 +77,7 @@ namespace The_ULTIMATE_golf_quiz
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock= DockStyle.Fill;
+            childForm.Dock = DockStyle.Fill;
             pnlFormContainer.Controls.Add(childForm);
             pnlFormContainer.Tag = childForm;
             childForm.BringToFront();
@@ -159,8 +159,13 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            DialogResult result = MessageBox.Show("Are you sure you want to quit?", "Quit", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                System.Windows.Forms.Application.Exit();
+            }
         }
+
         public void resetButtonColours()
         {
             btnGoToQuiz.BackColor = Color.FromArgb(33,33,33);
@@ -182,6 +187,11 @@ namespace The_ULTIMATE_golf_quiz
         {
            
             openChildForm(new frmResetUserPassword());
+        }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            btnQuit_Click(sender, e);
         }
     }
 }

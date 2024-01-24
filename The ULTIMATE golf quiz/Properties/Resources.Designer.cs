@@ -209,19 +209,9 @@ namespace The_ULTIMATE_golf_quiz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Male1 {
+        internal static System.Drawing.Bitmap Rory_McIllroy {
             get {
-                object obj = ResourceManager.GetObject("Male1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Male2 {
-            get {
-                object obj = ResourceManager.GetObject("Male2", resourceCulture);
+                object obj = ResourceManager.GetObject("Rory McIllroy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -232,6 +222,16 @@ namespace The_ULTIMATE_golf_quiz.Properties {
         internal static System.Drawing.Bitmap running_golf_ball {
             get {
                 object obj = ResourceManager.GetObject("running_golf_ball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tiger_Woods {
+            get {
+                object obj = ResourceManager.GetObject("Tiger Woods", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

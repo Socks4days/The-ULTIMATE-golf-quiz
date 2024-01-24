@@ -46,9 +46,9 @@
             this.submitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submitbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitbtn.ForeColor = System.Drawing.Color.White;
-            this.submitbtn.Location = new System.Drawing.Point(382, 325);
+            this.submitbtn.Location = new System.Drawing.Point(387, 325);
             this.submitbtn.Name = "submitbtn";
-            this.submitbtn.Size = new System.Drawing.Size(245, 74);
+            this.submitbtn.Size = new System.Drawing.Size(250, 50);
             this.submitbtn.TabIndex = 2;
             this.submitbtn.Text = "Submit";
             this.submitbtn.UseVisualStyleBackColor = false;
@@ -61,7 +61,7 @@
             this.usernamelbl.BackColor = System.Drawing.Color.Transparent;
             this.usernamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernamelbl.ForeColor = System.Drawing.Color.White;
-            this.usernamelbl.Location = new System.Drawing.Point(191, 101);
+            this.usernamelbl.Location = new System.Drawing.Point(191, 110);
             this.usernamelbl.Name = "usernamelbl";
             this.usernamelbl.Size = new System.Drawing.Size(87, 20);
             this.usernamelbl.TabIndex = 6;
@@ -88,10 +88,9 @@
             this.passwordtxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordtxtbox.ForeColor = System.Drawing.Color.White;
             this.passwordtxtbox.Location = new System.Drawing.Point(195, 216);
-            this.passwordtxtbox.Multiline = true;
             this.passwordtxtbox.Name = "passwordtxtbox";
             this.passwordtxtbox.PasswordChar = '*';
-            this.passwordtxtbox.Size = new System.Drawing.Size(355, 48);
+            this.passwordtxtbox.Size = new System.Drawing.Size(355, 31);
             this.passwordtxtbox.TabIndex = 1;
             // 
             // usernametxtbox
@@ -102,9 +101,8 @@
             this.usernametxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernametxtbox.ForeColor = System.Drawing.Color.White;
             this.usernametxtbox.Location = new System.Drawing.Point(195, 133);
-            this.usernametxtbox.Multiline = true;
             this.usernametxtbox.Name = "usernametxtbox";
-            this.usernametxtbox.Size = new System.Drawing.Size(355, 46);
+            this.usernametxtbox.Size = new System.Drawing.Size(355, 31);
             this.usernametxtbox.TabIndex = 0;
             this.usernametxtbox.WordWrap = false;
             // 
@@ -116,9 +114,9 @@
             this.registerbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerbtn.ForeColor = System.Drawing.Color.White;
-            this.registerbtn.Location = new System.Drawing.Point(131, 325);
+            this.registerbtn.Location = new System.Drawing.Point(121, 325);
             this.registerbtn.Name = "registerbtn";
-            this.registerbtn.Size = new System.Drawing.Size(245, 74);
+            this.registerbtn.Size = new System.Drawing.Size(250, 50);
             this.registerbtn.TabIndex = 4;
             this.registerbtn.Text = "Register\r\n";
             this.registerbtn.UseVisualStyleBackColor = false;
