@@ -147,9 +147,7 @@ namespace The_ULTIMATE_golf_quiz
             // returns the new player values
             return new Player(username, password, name, age, gender, nationality, highscore, isAdmin, avatar, roundsPlayed);//changed to player from user
         }
-
-        
-
+               
         private void btnReset_Click(object sender, EventArgs e)
         {
             // when button is clicked, run the reset method

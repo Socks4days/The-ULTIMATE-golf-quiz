@@ -13,12 +13,85 @@ namespace The_ULTIMATE_golf_quiz
 {
     public partial class frmQuizQuestions : Form
     {
+        #region Properties
         public int TotalScoreForCurrentRound { get; set; }
         public int NumberOfQuestionsAnsweredCorrectly { get; set; }
         private int NumberOfQuestionsAskedThisRound { get; set; }
         private int TotalPointsAvailable { get; set; }
+        #endregion Properties
 
+        #region Lists
         List<string> questionTypes = new List<string>();
+        List<TypeItQuestion> typeItQuestionList = QuestionFileHandler.TypeItQuestions;
+        List<TrueOrFalseQuestion> trueOrFalseQuestionList = QuestionFileHandler.TrueOrFalseQuestions;
+        List<MultiChoiceQuestion> multipleChoiceQuestionList = QuestionFileHandler.MultiChoiceQuestions;
+        List<PictureQuestion> pictureQuestionList = QuestionFileHandler.PictureQuestions;
+        #endregion Lists
+
+        #region BaseQuestionsReferredToThroughoutForm
+        // Separate questions for each type to be used outside of the GetQuestion method
+        private TypeItQuestion currentTypeItQuestion1;
+        private TrueOrFalseQuestion currentTrueOrFalseQuestion1;
+        private MultiChoiceQuestion currentMultipleChoiceQuestion1;
+        private PictureQuestion currentPictureQuestion1;
+        #endregion BaseQuestionsReferredToThroughoutForm
+
+        #region EnterKeyLogic
+        bool enterKeyPressed = false;
+        private void KeyPressedDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+
+                    if (enterKeyPressed == false)
+                    {
+                        if (txtBoxAnswer.Enabled == true)
+                        {
+                            btnSubmit_Click(sender, e);
+                            enterKeyPressed = true;
+                        }
+                        else if (btnNext.Visible = true && pnlAnswer.Visible == true)
+                        {
+                            btnNext_Click(sender, e);
+                            enterKeyPressed = true;
+                        }
+                    }
+                    break;
+
+                default:
+
+                    break;
+            }
+        }
+        #endregion EnterKeyLogic
+
+        #region AnswerButtonsEnabling
+        //-------------------------------------------------------
+
+        private void AnswerButtonsDisable()
+        {
+            btnOption1.Enabled = false;
+            btnOption2.Enabled = false;
+            btnOption3.Enabled = false;
+            btnOption4.Enabled = false;
+            txtBoxAnswer.Enabled = false;
+            btnSubmit.Enabled = false;
+            btnTrue.Enabled = false;
+            btnFalse.Enabled = false;
+        }
+        private void AnswerButtonsEnabled()
+        {
+            btnOption1.Enabled = true;
+            btnOption2.Enabled = true;
+            btnOption3.Enabled = true;
+            btnOption4.Enabled = true;
+            txtBoxAnswer.Enabled = true;
+            btnSubmit.Enabled = true;
+            btnTrue.Enabled = true;
+            btnFalse.Enabled = true;
+        }
+        #endregion AnswerButtonsEnabling
 
         public frmQuizQuestions()
         {
@@ -28,6 +101,8 @@ namespace The_ULTIMATE_golf_quiz
             NumberOfQuestionsAskedThisRound = 0;
             
         }
+
+        #region Initialisation
         private void frmQuizQuestions_Load(object sender, EventArgs e)
         {
             frmQuizQuestionsInitialisation();
@@ -53,6 +128,9 @@ namespace The_ULTIMATE_golf_quiz
             pnlTypeOfRound.Dock = DockStyle.Fill;
             pnlTypeOfRound.Visible = true;
         }
+        #endregion Initialisation
+
+        #region RoundTypeButtonClicks
         private void btnTypeItRound_Click(object sender, EventArgs e)
         {
             QuestionFileHandler.RoundType = "Type It";
@@ -89,6 +167,9 @@ namespace The_ULTIMATE_golf_quiz
             QuestionFileHandler.RoundType = questionTypes[random.Next(0, questionTypes.Count)];
             setup();
         }
+        #endregion RoundTypeButtonClicks
+
+        #region SetupForRound
         private void setup()
         {
             pnlQuestion.Visible = true;
@@ -98,61 +179,13 @@ namespace The_ULTIMATE_golf_quiz
             pnlQuestion.Dock = DockStyle.Top;
             pnlAnswer.Dock = DockStyle.Bottom;
             btnNext.Visible = false;
-
- /*           switch (QuestionFileHandler.RoundType)
-            {
-                case "Type It":
-
-                    pnlTypeIt.Visible = true;
-                    pnlTrueOrFalseOptions.Visible = false;
-                    pnlMultipleChoiceOptions.Visible = false;
-                    pnlTypeIt.Dock = DockStyle.Fill;
-                    break;
-
-                case "True or False":
-
-                    pnlTrueOrFalseOptions.Visible = true;
-                    pnlMultipleChoiceOptions.Visible = false;
-                    pnlTypeIt.Visible = false;
-                    pnlTrueOrFalseOptions.Dock = DockStyle.Fill;
-                    break;
-
-                case "Multiple Choice":
-
-                    pnlMultipleChoiceOptions.Visible = true;
-                    pnlTrueOrFalseOptions.Visible = false;
-                    pnlTypeIt.Visible = false;
-                    pnlMultipleChoiceOptions.Dock = DockStyle.Fill;
-                    break;
-
-                case "Picture":
-
-                    pnlMultipleChoiceOptions.Visible = true;
-                    pnlTrueOrFalseOptions.Visible = false;
-                    pnlTypeIt.Visible = false;
-                    pctBoxPicture.Visible = true;
-                    pnlMultipleChoiceOptions.Dock = DockStyle.Fill;
-                    break;
-            }*/
+            
             // Then gets the initial question
             GetQuestion();
         }
-        // Prepares initial display for whatever round type is selected
-       
-       // list of all the questions which are read in from each question types csv
-        List<TypeItQuestion> typeItQuestionList = QuestionFileHandler.TypeItQuestions;
-        List<TrueOrFalseQuestion> trueOrFalseQuestionList = QuestionFileHandler.TrueOrFalseQuestions;
-        List<MultiChoiceQuestion> multipleChoiceQuestionList = QuestionFileHandler.MultiChoiceQuestions;
-        List<PictureQuestion> pictureQuestionList = QuestionFileHandler.PictureQuestions;
-        
+        #endregion SetupForRound
 
-        // Separate questions for each type to be used outside of the GetQuestion method
-        private TypeItQuestion currentTypeItQuestion1;
-        private TrueOrFalseQuestion currentTrueOrFalseQuestion1;
-        private MultiChoiceQuestion currentMultipleChoiceQuestion1;
-        private PictureQuestion currentPictureQuestion1;
-        bool enterKeyPressed = false;
-
+        #region SetQuestion
         // Question method
         public void GetQuestion()
         {
@@ -314,7 +347,9 @@ namespace The_ULTIMATE_golf_quiz
                 RoundFinishedScreen();
             }                                          
         }
+        #endregion SetQuestion
 
+        #region QuizAnswerButtonClicks
         //-------------------------------------------------------------------------------------------------------
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -549,8 +584,9 @@ namespace The_ULTIMATE_golf_quiz
         }
 
         //-------------------------------------------------------------------------------------------------------------------
+        #endregion QuizAnswerButtonClicks
 
-
+        #region NextQuestionButtonClicked
         private void btnNext_Click(object sender, EventArgs e)
         {
             // When it is clicked, the question will reset back to default
@@ -603,10 +639,9 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
-        //--------------------------------------------------------------------------------------------------------------------------------------
+        #endregion NextQuestionButtonClicked
 
-
-        // Method called when the user has either finished their 10 questions or exhausted all the available questions of a certain type
+        #region EndOfRound
         private void RoundFinishedScreen()
         {
             pnlFinish.Visible = true;
@@ -626,66 +661,9 @@ namespace The_ULTIMATE_golf_quiz
                 UserFileHandler.SaveAllPlayers();
             }
         }
+        #endregion EndOfRound
 
-        //--------------------------------------------------------------------------------------------------------------------------------------
-
-
-        
-
-        private void KeyPressedDown(object sender, KeyEventArgs e)
-        {
-            switch (e.KeyCode)
-            {
-                case Keys.Enter:
-
-                     if (enterKeyPressed == false)
-                     {
-                        if (txtBoxAnswer.Enabled == true)
-                        {
-                            btnSubmit_Click(sender, e);
-                            enterKeyPressed = true;
-                        }
-                        else if (btnNext.Visible = true && pnlAnswer.Visible == true)
-                        {
-                            btnNext_Click(sender, e);
-                            enterKeyPressed = true;
-                        }                     
-                     }
-                break;
-
-                default:
-
-                    break;
-            }         
-        }
-
-        //-------------------------------------------------------
-       
-        private void AnswerButtonsDisable()
-        {
-            btnOption1.Enabled= false;
-            btnOption2.Enabled= false;
-            btnOption3.Enabled= false;
-            btnOption4.Enabled= false;
-            txtBoxAnswer.Enabled= false;
-            btnSubmit.Enabled= false;
-            btnTrue.Enabled= false;
-            btnFalse.Enabled= false;
-        }
-        private void AnswerButtonsEnabled()
-        {
-            btnOption1.Enabled = true;
-            btnOption2.Enabled = true;
-            btnOption3.Enabled = true;
-            btnOption4.Enabled = true;
-            txtBoxAnswer.Enabled = true;
-            btnSubmit.Enabled = true;
-            btnTrue.Enabled = true;
-            btnFalse.Enabled = true;
-        }
-
-        //-------------------------------------------------------
-
+        #region FinishMenuButtonClicks
         private void btnNextRound_Click(object sender, EventArgs e)
         {
             NumberOfQuestionsAskedThisRound = 0;
@@ -700,9 +678,9 @@ namespace The_ULTIMATE_golf_quiz
             UserFileHandler.SaveAllPlayers();
             this.Close();
         }
+        #endregion FinishMenuButtonClicks
 
-        //---------------------------------------------------------------------------------------------------------------------
-
+        #region Exiting
         private void btnReturn_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Leaving will result in losing all your rounds' progress.\nDo you wish to leave? ", "Confirmation", MessageBoxButtons.YesNo);
@@ -721,5 +699,89 @@ namespace The_ULTIMATE_golf_quiz
         {
             this.Close();
         }
+
+
+
+        #endregion Exiting
+
+        private void btnChooseAClubGo_Click(object sender, EventArgs e)
+        {
+            // Animate ball moving to hole
+
+
+
+            // s = (u*t) + (a*t*t)
+            // assume no air fiction and no wind
+            // sx = (u * cos(loft) * t) + ((0) * t * t)
+            // assume gravity is -10
+            // sy = (u * sin(loft) * t) + ((-10) * t * t)
+
+
+            // starting location of ball on panel
+            int ballStartX = 55;
+            int ballStartY = 259;
+
+            // postition of flag on panel
+            int flagX = 585;
+            int flagY = 227;
+
+            double sx = 0;
+            double sy = 0;
+
+            // Get loft and wind speed
+            double loft = 60;
+            double wind = 0;
+            const double gravity = -10;
+
+            // Get swing speed
+            const double milesPerHourToYardPerSec = 0.44704;
+            double swingSpeedMPH = 120;
+            double swingSpeedYPS = swingSpeedMPH * milesPerHourToYardPerSec;
+
+            // Calculate starting horizontal (ux) and vertical (uy) speed based on loft
+            double ux = swingSpeedYPS * Math.Cos(loft);
+            double uy = swingSpeedYPS * Math.Sin(loft);
+
+            // initialise starting time and interval for loop
+            double timeInSecs = 0;
+            double intervalInSecs = 0.5;
+
+            // set start position for ball
+            int ballX = ballStartX;
+            int ballY = ballStartY;
+
+            while (sy >= 0)
+            {
+                // increment time
+                timeInSecs += intervalInSecs;
+
+                // caclulate horizontal (sx) and vertical (sy) position in metres
+                // s = (u*t) + (a*t*t)
+                sx = (ux * timeInSecs);
+                sy = (uy * timeInSecs) + (gravity * timeInSecs * timeInSecs);
+
+                // move ball to position on canvas
+                ballX = ballStartX + (int)sx;
+                ballY = ballStartY - (int)sy;
+
+                pctBoxGolfBall.Location = new Point(ballX, ballY);
+
+                // wait interval seconds
+
+            }
+
+        }
     }
 }
+/*PC13, Where is this course?, USA
+PC14, Where is this course?, USA
+PC15, Where is this course?, UAE
+PC16, Where is this course?, Spain
+PC17, Where is this course?, France
+PC18, Where is this course?, Scotland
+PC19, Where is this course?, Northern Ireland
+PC20, Where is this course?, Australia
+PC21, Where is this course?, South Africa
+PC22, Where is this course?, Chile
+PC23, Where is this course?, USA
+PC24, Where is this course?, USA*/

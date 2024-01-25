@@ -24,7 +24,7 @@ namespace The_ULTIMATE_golf_quiz
                 btnAdmin.Visible = false;
             }
         }
-
+        #region submenuToggles 
         private void hideSubMenus()
         {
             pnlSettingsSubMenu.Visible = false;
@@ -43,6 +43,9 @@ namespace The_ULTIMATE_golf_quiz
                 selectedSubMenu.Visible = true;
             }
         }
+        #endregion
+
+        #region topMenuSetup
         private void setTitleLabels()
         {
             lblCurrentUser.Text = "Current User: " + SplashScreen.player.username + "   ";
@@ -56,18 +59,8 @@ namespace The_ULTIMATE_golf_quiz
             int avatarIndex = SplashScreen.player.avatar;
             pctBoxAvatar.Image = (Image)Properties.Resources.ResourceManager.GetObject(avatarPaths[avatarIndex]);
         }
+        #endregion
 
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            toggleSubMenu(pnlSettingsSubMenu);
-            resetButtonColours();
-        }
-
-        private void btnAdmin_Click(object sender, EventArgs e)
-        {
-            toggleSubMenu(pnlAdminSubMenu);
-            resetButtonColours();
-        }
 
         private Form activeForm = null;
         private void openChildForm(Form childForm)
@@ -84,11 +77,29 @@ namespace The_ULTIMATE_golf_quiz
             childForm.Show();
         }
 
+
+        #region NavigationButtonClicks
+
         private void btnGoToQuiz_Click(object sender, EventArgs e)
         {
+            hideSubMenus();
             openChildForm(new frmQuizQuestions());
             resetButtonColours();
             btnGoToQuiz.BackColor = Color.FromArgb(0, 75, 0);
+        }
+
+        private void btnLeaderboard_Click(object sender, EventArgs e)
+        {
+            hideSubMenus();
+            openChildForm(new frmLeaderboard());
+            resetButtonColours();
+            btnLeaderboard.BackColor = Color.FromArgb(0, 75, 0);
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            toggleSubMenu(pnlSettingsSubMenu);
+            resetButtonColours();
         }
 
         private void btnUserInfo_Click(object sender, EventArgs e)
@@ -139,16 +150,26 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            toggleSubMenu(pnlAdminSubMenu);
+            resetButtonColours();
+        }
+
         private void btnViewUsers_Click(object sender, EventArgs e)
         {
             openChildForm(new frmViewUsers());
         }
 
-        private void btnLeaderboard_Click(object sender, EventArgs e)
+        private void btnResetPassword_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmLeaderboard());
-            resetButtonColours();
-            btnLeaderboard.BackColor = Color.FromArgb(0,75,0);
+            openChildForm(new frmResetUserPassword());
+        }
+
+        private void btnDeleteUserAccount_Click(object sender, EventArgs e)
+        {
+
+            openChildForm(new frmResetUserPassword());
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -165,7 +186,9 @@ namespace The_ULTIMATE_golf_quiz
                 System.Windows.Forms.Application.Exit();
             }
         }
+        #endregion NavigationButtonsClicked
 
+        #region ButtonColouring
         public void resetButtonColours()
         {
             btnGoToQuiz.BackColor = Color.FromArgb(33,33,33);
@@ -178,20 +201,8 @@ namespace The_ULTIMATE_golf_quiz
             btnLogout.BackColor = Color.FromArgb(33, 33, 33);
         }
 
-        private void btnResetPassword_Click(object sender, EventArgs e)
-        {                        
-            openChildForm(new frmResetUserPassword());
-        }
+        #endregion ButtonColouring
 
-        private void btnDeleteUserAccount_Click(object sender, EventArgs e)
-        {
-           
-            openChildForm(new frmResetUserPassword());
-        }
 
-        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            btnQuit_Click(sender, e);
-        }
     }
 }

@@ -41,7 +41,6 @@ namespace The_ULTIMATE_golf_quiz
             }
         }       
 
-
         public void verification()
         {            
            // setting variables that user has input to be processed
@@ -72,8 +71,7 @@ namespace The_ULTIMATE_golf_quiz
                 passwordtxtbox.Text = "";
                 
             }            
-        }
-       
+        }       
 
         private void Submitbtn_Click(object sender, EventArgs e)
         {

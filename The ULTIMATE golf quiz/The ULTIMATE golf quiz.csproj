@@ -92,12 +92,6 @@
       <DependentUpon>AddTypeIt.cs</DependentUpon>
     </Compile>
     <Compile Include="Quiz Forms &amp; Classes\BaseQuestion.cs" />
-    <Compile Include="Quiz Forms &amp; Classes\DragAndDrop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Quiz Forms &amp; Classes\DragAndDrop.Designer.cs">
-      <DependentUpon>DragAndDrop.cs</DependentUpon>
-    </Compile>
     <Compile Include="Quiz Forms &amp; Classes\frmQuizQuestions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,18 +106,6 @@
     </Compile>
     <Compile Include="Quiz Forms &amp; Classes\MultiChoiceQuestion.cs" />
     <Compile Include="Quiz Forms &amp; Classes\PictureQuestion.cs" />
-    <Compile Include="Quiz Forms &amp; Classes\Pictures.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Quiz Forms &amp; Classes\Pictures.Designer.cs">
-      <DependentUpon>Pictures.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Quiz Forms &amp; Classes\TrueOrFalse.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Quiz Forms &amp; Classes\TrueOrFalse.Designer.cs">
-      <DependentUpon>TrueOrFalse.cs</DependentUpon>
-    </Compile>
     <Compile Include="Quiz Forms &amp; Classes\TrueOrFalseQuestion.cs" />
     <Compile Include="Quiz Forms &amp; Classes\TypeIt.cs" />
     <Compile Include="Quiz Forms &amp; Classes\TypeItQuestion.cs" />
@@ -192,7 +174,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.AddQuestions.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.AddTypeIt.resources" />
-    <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.DragAndDrop.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmAvatarChange.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmChangePass.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmLeaderboard.resources" />
@@ -213,11 +194,9 @@
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.Logout_Splash.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.mainMenu.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.NewMainMenu.resources" />
-    <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.Pictures.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.Properties.Resources.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.Quiz_Forms___Classes.TrueOrFalseForm%281%29.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.SplashScreen.resources" />
-    <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.TrueOrFalse.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.TrueOrFalseForm.resources" />
     <EmbeddedResource Include="Quiz Forms &amp; Classes\AddQuestions.resx">
       <DependentUpon>AddQuestions.cs</DependentUpon>
@@ -225,20 +204,11 @@
     <EmbeddedResource Include="Quiz Forms &amp; Classes\AddTypeIt.resx">
       <DependentUpon>AddTypeIt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quiz Forms &amp; Classes\DragAndDrop.resx">
-      <DependentUpon>DragAndDrop.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Quiz Forms &amp; Classes\frmQuizQuestions.resx">
       <DependentUpon>frmQuizQuestions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quiz Forms &amp; Classes\Leaderboard.resx">
       <DependentUpon>Leaderboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Quiz Forms &amp; Classes\Pictures.resx">
-      <DependentUpon>Pictures.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Quiz Forms &amp; Classes\TrueOrFalse.resx">
-      <DependentUpon>TrueOrFalse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -342,6 +312,30 @@
     <Content Include="Resources\Golf logo1.png" />
     <Content Include="Resources\Golf logo2.png" />
     <Content Include="Resources\Golf logo3.png" />
+    <None Include="Resources\Screenshot 2024-01-25 151958.png" />
+    <None Include="Resources\Screenshot 2024-01-25 152024.png" />
+    <None Include="Resources\Screenshot 2024-01-25 152048.png" />
+    <None Include="Resources\Screenshot 2024-01-25 152154.png" />
+    <None Include="Resources\Screenshot 2024-01-25 151105.png" />
+    <None Include="Resources\Screenshot 2024-01-25 151138.png" />
+    <None Include="Resources\Screenshot 2024-01-25 151221.png" />
+    <None Include="Resources\Screenshot 2024-01-25 151318.png" />
+    <None Include="Resources\Screenshot 2024-01-25 151359.png" />
+    <None Include="Resources\Screenshot 2024-01-25 151456.png" />
+    <None Include="Resources\Screenshot 2024-01-25 151537.png" />
+    <None Include="Resources\Screenshot 2024-01-25 151620.png" />
+    <None Include="Resources\Screenshot 2024-01-25 150954.png" />
+    <None Include="Resources\Screenshot 2024-01-25 145926.png" />
+    <None Include="Resources\Screenshot 2024-01-25 145632.png" />
+    <None Include="Resources\Screenshot 2024-01-25 145314.png" />
+    <None Include="Resources\Screenshot 2024-01-25 145204.png" />
+    <None Include="Resources\Screenshot 2024-01-25 145117.png" />
+    <None Include="Resources\Screenshot 2024-01-25 145011.png" />
+    <None Include="Resources\Screenshot 2024-01-25 144904.png" />
+    <None Include="Resources\Screenshot 2024-01-25 144806.png" />
+    <None Include="Resources\Screenshot 2024-01-25 144636.png" />
+    <None Include="Resources\Screenshot 2024-01-25 144603.png" />
+    <None Include="Resources\Jon Rahm.bmp" />
     <Content Include="Resources\Male1.png" />
     <Content Include="Resources\Male2.png" />
   </ItemGroup>

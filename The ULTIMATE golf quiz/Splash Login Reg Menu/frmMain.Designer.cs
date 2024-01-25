@@ -80,7 +80,7 @@
             this.pnlSideMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlSideMenu.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSideMenu.Name = "pnlSideMenu";
-            this.pnlSideMenu.Size = new System.Drawing.Size(250, 555);
+            this.pnlSideMenu.Size = new System.Drawing.Size(312, 694);
             this.pnlSideMenu.TabIndex = 0;
             // 
             // btnLogout
@@ -91,11 +91,11 @@
             this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(0, 650);
+            this.btnLogout.Location = new System.Drawing.Point(0, 811);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnLogout.Size = new System.Drawing.Size(233, 50);
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnLogout.Size = new System.Drawing.Size(291, 62);
             this.btnLogout.TabIndex = 7;
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -109,9 +109,10 @@
             this.pnlAdminSubMenu.Controls.Add(this.btnResetPassword);
             this.pnlAdminSubMenu.Controls.Add(this.btnViewUsers);
             this.pnlAdminSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlAdminSubMenu.Location = new System.Drawing.Point(0, 500);
+            this.pnlAdminSubMenu.Location = new System.Drawing.Point(0, 623);
+            this.pnlAdminSubMenu.Margin = new System.Windows.Forms.Padding(4);
             this.pnlAdminSubMenu.Name = "pnlAdminSubMenu";
-            this.pnlAdminSubMenu.Size = new System.Drawing.Size(233, 150);
+            this.pnlAdminSubMenu.Size = new System.Drawing.Size(291, 188);
             this.pnlAdminSubMenu.TabIndex = 6;
             // 
             // btnDeleteUserAccount
@@ -122,11 +123,11 @@
             this.btnDeleteUserAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnDeleteUserAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteUserAccount.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteUserAccount.Location = new System.Drawing.Point(0, 100);
+            this.btnDeleteUserAccount.Location = new System.Drawing.Point(0, 124);
             this.btnDeleteUserAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteUserAccount.Name = "btnDeleteUserAccount";
-            this.btnDeleteUserAccount.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnDeleteUserAccount.Size = new System.Drawing.Size(233, 50);
+            this.btnDeleteUserAccount.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
+            this.btnDeleteUserAccount.Size = new System.Drawing.Size(291, 62);
             this.btnDeleteUserAccount.TabIndex = 6;
             this.btnDeleteUserAccount.Text = "Delete user account";
             this.btnDeleteUserAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -141,11 +142,11 @@
             this.btnResetPassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnResetPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResetPassword.ForeColor = System.Drawing.Color.White;
-            this.btnResetPassword.Location = new System.Drawing.Point(0, 50);
+            this.btnResetPassword.Location = new System.Drawing.Point(0, 62);
             this.btnResetPassword.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetPassword.Name = "btnResetPassword";
-            this.btnResetPassword.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnResetPassword.Size = new System.Drawing.Size(233, 50);
+            this.btnResetPassword.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
+            this.btnResetPassword.Size = new System.Drawing.Size(291, 62);
             this.btnResetPassword.TabIndex = 5;
             this.btnResetPassword.Text = "Reset password";
             this.btnResetPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -163,8 +164,8 @@
             this.btnViewUsers.Location = new System.Drawing.Point(0, 0);
             this.btnViewUsers.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewUsers.Name = "btnViewUsers";
-            this.btnViewUsers.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnViewUsers.Size = new System.Drawing.Size(233, 50);
+            this.btnViewUsers.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
+            this.btnViewUsers.Size = new System.Drawing.Size(291, 62);
             this.btnViewUsers.TabIndex = 4;
             this.btnViewUsers.Text = "View users";
             this.btnViewUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -179,11 +180,11 @@
             this.btnAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnAdmin.Location = new System.Drawing.Point(0, 450);
+            this.btnAdmin.Location = new System.Drawing.Point(0, 561);
             this.btnAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAdmin.Size = new System.Drawing.Size(233, 50);
+            this.btnAdmin.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnAdmin.Size = new System.Drawing.Size(291, 62);
             this.btnAdmin.TabIndex = 5;
             this.btnAdmin.Text = "Admin";
             this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -198,9 +199,10 @@
             this.pnlSettingsSubMenu.Controls.Add(this.btnChangeAvatar);
             this.pnlSettingsSubMenu.Controls.Add(this.btnUserInfo);
             this.pnlSettingsSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSettingsSubMenu.Location = new System.Drawing.Point(0, 250);
+            this.pnlSettingsSubMenu.Location = new System.Drawing.Point(0, 311);
+            this.pnlSettingsSubMenu.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSettingsSubMenu.Name = "pnlSettingsSubMenu";
-            this.pnlSettingsSubMenu.Size = new System.Drawing.Size(233, 200);
+            this.pnlSettingsSubMenu.Size = new System.Drawing.Size(291, 250);
             this.pnlSettingsSubMenu.TabIndex = 4;
             // 
             // btnDeleteAccount
@@ -211,11 +213,11 @@
             this.btnDeleteAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnDeleteAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteAccount.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteAccount.Location = new System.Drawing.Point(0, 150);
+            this.btnDeleteAccount.Location = new System.Drawing.Point(0, 186);
             this.btnDeleteAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
-            this.btnDeleteAccount.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnDeleteAccount.Size = new System.Drawing.Size(233, 50);
+            this.btnDeleteAccount.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
+            this.btnDeleteAccount.Size = new System.Drawing.Size(291, 62);
             this.btnDeleteAccount.TabIndex = 7;
             this.btnDeleteAccount.Text = "Delete account";
             this.btnDeleteAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -230,11 +232,11 @@
             this.btnChangePassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePassword.ForeColor = System.Drawing.Color.White;
-            this.btnChangePassword.Location = new System.Drawing.Point(0, 100);
+            this.btnChangePassword.Location = new System.Drawing.Point(0, 124);
             this.btnChangePassword.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnChangePassword.Size = new System.Drawing.Size(233, 50);
+            this.btnChangePassword.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
+            this.btnChangePassword.Size = new System.Drawing.Size(291, 62);
             this.btnChangePassword.TabIndex = 6;
             this.btnChangePassword.Text = "Change password";
             this.btnChangePassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -249,11 +251,11 @@
             this.btnChangeAvatar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnChangeAvatar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeAvatar.ForeColor = System.Drawing.Color.White;
-            this.btnChangeAvatar.Location = new System.Drawing.Point(0, 50);
+            this.btnChangeAvatar.Location = new System.Drawing.Point(0, 62);
             this.btnChangeAvatar.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeAvatar.Name = "btnChangeAvatar";
-            this.btnChangeAvatar.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnChangeAvatar.Size = new System.Drawing.Size(233, 50);
+            this.btnChangeAvatar.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
+            this.btnChangeAvatar.Size = new System.Drawing.Size(291, 62);
             this.btnChangeAvatar.TabIndex = 5;
             this.btnChangeAvatar.Text = "Change avatar";
             this.btnChangeAvatar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -271,8 +273,8 @@
             this.btnUserInfo.Location = new System.Drawing.Point(0, 0);
             this.btnUserInfo.Margin = new System.Windows.Forms.Padding(2);
             this.btnUserInfo.Name = "btnUserInfo";
-            this.btnUserInfo.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnUserInfo.Size = new System.Drawing.Size(233, 50);
+            this.btnUserInfo.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
+            this.btnUserInfo.Size = new System.Drawing.Size(291, 62);
             this.btnUserInfo.TabIndex = 4;
             this.btnUserInfo.Text = "User info";
             this.btnUserInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -287,11 +289,11 @@
             this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.ForeColor = System.Drawing.Color.White;
-            this.btnSettings.Location = new System.Drawing.Point(0, 200);
+            this.btnSettings.Location = new System.Drawing.Point(0, 249);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(2);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnSettings.Size = new System.Drawing.Size(233, 50);
+            this.btnSettings.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnSettings.Size = new System.Drawing.Size(291, 62);
             this.btnSettings.TabIndex = 3;
             this.btnSettings.Text = "Settings";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -306,11 +308,11 @@
             this.btnLeaderboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnLeaderboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLeaderboard.ForeColor = System.Drawing.Color.White;
-            this.btnLeaderboard.Location = new System.Drawing.Point(0, 150);
+            this.btnLeaderboard.Location = new System.Drawing.Point(0, 187);
             this.btnLeaderboard.Margin = new System.Windows.Forms.Padding(2);
             this.btnLeaderboard.Name = "btnLeaderboard";
-            this.btnLeaderboard.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnLeaderboard.Size = new System.Drawing.Size(233, 50);
+            this.btnLeaderboard.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnLeaderboard.Size = new System.Drawing.Size(291, 62);
             this.btnLeaderboard.TabIndex = 2;
             this.btnLeaderboard.Text = "Leaderboard";
             this.btnLeaderboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -325,11 +327,11 @@
             this.btnGoToQuiz.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnGoToQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoToQuiz.ForeColor = System.Drawing.Color.White;
-            this.btnGoToQuiz.Location = new System.Drawing.Point(0, 100);
+            this.btnGoToQuiz.Location = new System.Drawing.Point(0, 125);
             this.btnGoToQuiz.Margin = new System.Windows.Forms.Padding(2);
             this.btnGoToQuiz.Name = "btnGoToQuiz";
-            this.btnGoToQuiz.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnGoToQuiz.Size = new System.Drawing.Size(233, 50);
+            this.btnGoToQuiz.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnGoToQuiz.Size = new System.Drawing.Size(291, 62);
             this.btnGoToQuiz.TabIndex = 1;
             this.btnGoToQuiz.Text = "To the Quiz!";
             this.btnGoToQuiz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -343,7 +345,7 @@
             this.pnlAvatar.Location = new System.Drawing.Point(0, 0);
             this.pnlAvatar.Margin = new System.Windows.Forms.Padding(2);
             this.pnlAvatar.Name = "pnlAvatar";
-            this.pnlAvatar.Size = new System.Drawing.Size(233, 100);
+            this.pnlAvatar.Size = new System.Drawing.Size(291, 125);
             this.pnlAvatar.TabIndex = 0;
             // 
             // pctBoxAvatar
@@ -351,10 +353,10 @@
             this.pctBoxAvatar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pctBoxAvatar.Location = new System.Drawing.Point(59, 0);
+            this.pctBoxAvatar.Location = new System.Drawing.Point(74, 0);
             this.pctBoxAvatar.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxAvatar.Name = "pctBoxAvatar";
-            this.pctBoxAvatar.Size = new System.Drawing.Size(113, 96);
+            this.pctBoxAvatar.Size = new System.Drawing.Size(141, 120);
             this.pctBoxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxAvatar.TabIndex = 0;
             this.pctBoxAvatar.TabStop = false;
@@ -367,9 +369,10 @@
             this.pnlTitleBar.Controls.Add(this.lblHighscore);
             this.pnlTitleBar.Controls.Add(this.lblCurrentUser);
             this.pnlTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTitleBar.Location = new System.Drawing.Point(250, 0);
+            this.pnlTitleBar.Location = new System.Drawing.Point(312, 0);
+            this.pnlTitleBar.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTitleBar.Name = "pnlTitleBar";
-            this.pnlTitleBar.Size = new System.Drawing.Size(740, 50);
+            this.pnlTitleBar.Size = new System.Drawing.Size(926, 62);
             this.pnlTitleBar.TabIndex = 1;
             // 
             // btnQuit
@@ -380,10 +383,10 @@
             this.btnQuit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuit.ForeColor = System.Drawing.Color.White;
-            this.btnQuit.Location = new System.Drawing.Point(490, 0);
+            this.btnQuit.Location = new System.Drawing.Point(614, 0);
             this.btnQuit.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(250, 50);
+            this.btnQuit.Size = new System.Drawing.Size(312, 62);
             this.btnQuit.TabIndex = 3;
             this.btnQuit.Text = "Quit";
             this.btnQuit.UseVisualStyleBackColor = true;
@@ -394,11 +397,11 @@
             this.lblGamesPlayed.AutoSize = true;
             this.lblGamesPlayed.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblGamesPlayed.ForeColor = System.Drawing.Color.White;
-            this.lblGamesPlayed.Location = new System.Drawing.Point(203, 0);
+            this.lblGamesPlayed.Location = new System.Drawing.Point(252, 0);
             this.lblGamesPlayed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGamesPlayed.Name = "lblGamesPlayed";
-            this.lblGamesPlayed.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.lblGamesPlayed.Size = new System.Drawing.Size(116, 35);
+            this.lblGamesPlayed.Padding = new System.Windows.Forms.Padding(0, 19, 0, 0);
+            this.lblGamesPlayed.Size = new System.Drawing.Size(146, 44);
             this.lblGamesPlayed.TabIndex = 2;
             this.lblGamesPlayed.Text = "Games Played:";
             this.lblGamesPlayed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -408,11 +411,11 @@
             this.lblHighscore.AutoSize = true;
             this.lblHighscore.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblHighscore.ForeColor = System.Drawing.Color.White;
-            this.lblHighscore.Location = new System.Drawing.Point(118, 0);
+            this.lblHighscore.Location = new System.Drawing.Point(146, 0);
             this.lblHighscore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHighscore.Name = "lblHighscore";
-            this.lblHighscore.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.lblHighscore.Size = new System.Drawing.Size(85, 35);
+            this.lblHighscore.Padding = new System.Windows.Forms.Padding(0, 19, 0, 0);
+            this.lblHighscore.Size = new System.Drawing.Size(106, 44);
             this.lblHighscore.TabIndex = 1;
             this.lblHighscore.Text = "Highscore:";
             this.lblHighscore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -425,8 +428,8 @@
             this.lblCurrentUser.Location = new System.Drawing.Point(0, 0);
             this.lblCurrentUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCurrentUser.Name = "lblCurrentUser";
-            this.lblCurrentUser.Padding = new System.Windows.Forms.Padding(10, 15, 0, 0);
-            this.lblCurrentUser.Size = new System.Drawing.Size(118, 35);
+            this.lblCurrentUser.Padding = new System.Windows.Forms.Padding(12, 19, 0, 0);
+            this.lblCurrentUser.Size = new System.Drawing.Size(146, 44);
             this.lblCurrentUser.TabIndex = 0;
             this.lblCurrentUser.Text = "Current User: ";
             this.lblCurrentUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -437,9 +440,10 @@
             this.pnlFormContainer.Controls.Add(this.lblUltimateGolfQuiz);
             this.pnlFormContainer.Controls.Add(this.pctBoxLogo);
             this.pnlFormContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlFormContainer.Location = new System.Drawing.Point(250, 50);
+            this.pnlFormContainer.Location = new System.Drawing.Point(312, 62);
+            this.pnlFormContainer.Margin = new System.Windows.Forms.Padding(4);
             this.pnlFormContainer.Name = "pnlFormContainer";
-            this.pnlFormContainer.Size = new System.Drawing.Size(740, 505);
+            this.pnlFormContainer.Size = new System.Drawing.Size(926, 632);
             this.pnlFormContainer.TabIndex = 2;
             // 
             // lblUltimateGolfQuiz
@@ -448,9 +452,10 @@
             this.lblUltimateGolfQuiz.AutoSize = true;
             this.lblUltimateGolfQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUltimateGolfQuiz.ForeColor = System.Drawing.Color.White;
-            this.lblUltimateGolfQuiz.Location = new System.Drawing.Point(191, 113);
+            this.lblUltimateGolfQuiz.Location = new System.Drawing.Point(240, 142);
+            this.lblUltimateGolfQuiz.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUltimateGolfQuiz.Name = "lblUltimateGolfQuiz";
-            this.lblUltimateGolfQuiz.Size = new System.Drawing.Size(404, 37);
+            this.lblUltimateGolfQuiz.Size = new System.Drawing.Size(495, 46);
             this.lblUltimateGolfQuiz.TabIndex = 1;
             this.lblUltimateGolfQuiz.Text = "The ULTIMATE Golf Quiz";
             // 
@@ -459,30 +464,30 @@
             this.pctBoxLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pctBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pctBoxLogo.Image = global::The_ULTIMATE_golf_quiz.Properties.Resources.Golf_logo3;
-            this.pctBoxLogo.Location = new System.Drawing.Point(237, 119);
+            this.pctBoxLogo.Location = new System.Drawing.Point(297, 150);
+            this.pctBoxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pctBoxLogo.Name = "pctBoxLogo";
-            this.pctBoxLogo.Size = new System.Drawing.Size(288, 239);
+            this.pctBoxLogo.Size = new System.Drawing.Size(360, 299);
             this.pctBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxLogo.TabIndex = 0;
             this.pctBoxLogo.TabStop = false;
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(990, 555);
+            this.ClientSize = new System.Drawing.Size(1238, 694);
             this.Controls.Add(this.pnlFormContainer);
             this.Controls.Add(this.pnlTitleBar);
             this.Controls.Add(this.pnlSideMenu);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.MinimumSize = new System.Drawing.Size(1006, 593);
+            this.Margin = new System.Windows.Forms.Padding(6);
+            this.MinimumSize = new System.Drawing.Size(1253, 729);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.pnlSideMenu.ResumeLayout(false);
             this.pnlAdminSubMenu.ResumeLayout(false);
             this.pnlSettingsSubMenu.ResumeLayout(false);
