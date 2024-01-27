@@ -168,7 +168,7 @@ namespace The_ULTIMATE_golf_quiz
 
         public static void ReadInPictureQuestions()
         {
-            string[] pictureQuestionData = new string[10];
+            string[] pictureQuestionData = new string[6];
             string line;
             try
             {
@@ -185,11 +185,11 @@ namespace The_ULTIMATE_golf_quiz
                         pictureQuestion.CorrectAnswer = pictureQuestionData[2];
                         pictureQuestion.Points = Convert.ToInt32(pictureQuestionData[3]);
                         pictureQuestion.Difficulty = Convert.ToInt32(pictureQuestionData[4]);
-                        pictureQuestion.Option1 = pictureQuestionData[5];
-                        pictureQuestion.Option2 = pictureQuestionData[6];
-                        pictureQuestion.Option3 = pictureQuestionData[7];
-                        pictureQuestion.Option4 = pictureQuestionData[8];
-                        pictureQuestion.PictureId = pictureQuestionData[9];
+                        //pictureQuestion.Option1 = pictureQuestionData[5];
+                       // pictureQuestion.Option2 = pictureQuestionData[6];
+                       // pictureQuestion.Option3 = pictureQuestionData[7];
+                       // pictureQuestion.Option4 = pictureQuestionData[8];
+                        pictureQuestion.PictureId = pictureQuestionData[5];
                         // adds the question from the csv into the list of questions
                         PictureQuestions.Add(pictureQuestion);
                     }
@@ -212,10 +212,9 @@ namespace The_ULTIMATE_golf_quiz
                 // Write details of each user into the file
                 foreach (PictureQuestion pictureQuestion in PictureQuestions)
                 {
-                    sw.WriteLine("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                    sw.WriteLine("{0},{1},{2},{3},{4},{5}",
                     pictureQuestion.Id, pictureQuestion.Question, pictureQuestion.CorrectAnswer, pictureQuestion.Points,
-                    pictureQuestion.Difficulty, pictureQuestion.Option1, pictureQuestion.Option2, pictureQuestion.Option3, 
-                    pictureQuestion.Option4,pictureQuestion.PictureId);
+                    pictureQuestion.Difficulty, pictureQuestion.PictureId);
                 }
                 sw.Close();
             }

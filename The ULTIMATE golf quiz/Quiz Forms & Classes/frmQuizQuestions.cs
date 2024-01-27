@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace The_ULTIMATE_golf_quiz
 {
@@ -18,6 +20,11 @@ namespace The_ULTIMATE_golf_quiz
         public int NumberOfQuestionsAnsweredCorrectly { get; set; }
         private int NumberOfQuestionsAskedThisRound { get; set; }
         private int TotalPointsAvailable { get; set; }
+
+        // starting location of ball on panel
+        private int ballStartX { get; set; }
+        private int ballStartY { get; set; }
+
         #endregion Properties
 
         #region Lists
@@ -115,6 +122,9 @@ namespace The_ULTIMATE_golf_quiz
             pnlTrueOrFalseOptions.Visible = false;
             pnlMultipleChoiceOptions.Visible = false;
             pnlFinish.Visible = false;
+           // pnlChooseTheRightClub.Visible = false;
+            pnlPicture.Visible = false;
+            pnlTypeOfRound.Visible = false;
 
             if (QuestionFileHandler.TypeItQuestions.Count > 0)
                 questionTypes.Add("Type It");
@@ -127,7 +137,11 @@ namespace The_ULTIMATE_golf_quiz
 
             pnlTypeOfRound.Dock = DockStyle.Fill;
             pnlTypeOfRound.Visible = true;
-        }
+
+            ballStartX = pctBoxGolfBall.Location.X;
+            ballStartY = pctBoxGolfBall.Location.Y;
+
+    }
         #endregion Initialisation
 
         #region RoundTypeButtonClicks
@@ -313,10 +327,10 @@ namespace The_ULTIMATE_golf_quiz
 
                             // Question preparation
                             lblQuestion.Text = currentPictureQuestion.Question;
-                            btnOption1.Text = currentPictureQuestion.Option1;
-                            btnOption2.Text = currentPictureQuestion.Option2;
-                            btnOption3.Text = currentPictureQuestion.Option3;
-                            btnOption4.Text = currentPictureQuestion.Option4;
+                           // btnOption1.Text = currentPictureQuestion.Option1;
+                           // btnOption2.Text = currentPictureQuestion.Option2;
+                           // btnOption3.Text = currentPictureQuestion.Option3;
+                           // btnOption4.Text = currentPictureQuestion.Option4;
                             pctBoxPicture.Image = (Image)Properties.Resources.ResourceManager.GetObject(currentPictureQuestion.PictureId);
                             this.ActiveControl = btnOption1;
                             lblDifficulty.Text = "Difficulty: " + BaseQuestion.DifficultyLevels[currentPictureQuestion.Difficulty];
@@ -324,9 +338,10 @@ namespace The_ULTIMATE_golf_quiz
                             NumberOfQuestionsAskedThisRound++;
 
                             // Show MultipleChoce and Picture panels
-                            pnlMultipleChoiceOptions.Visible = true;
+                            //pnlMultipleChoiceOptions.Visible = true;
                             pctBoxPicture.Visible = true;
-                            pnlMultipleChoiceOptions.Dock = DockStyle.Fill;
+                            pnlPicture.Visible = true;
+                            pnlPicture.Dock = DockStyle.Fill;
                         }
                         else
                         {
@@ -704,10 +719,44 @@ namespace The_ULTIMATE_golf_quiz
 
         #endregion Exiting
 
+
+           /* { "Putter", Tuple.Create<int,int>(0,20) },          // 106 yds
+            { "Lob wedge", Tuple.Create<int,int>(60,67) },      // 115 yds
+            { "Sand wedge", Tuple.Create<int,int>(56,73) },     // 129 yds
+            { "Gap wedge", Tuple.Create<int,int>(52,83) },      // 148 yds
+            { "Pitching wedge", Tuple.Create<int,int>(48,93) }, // 163 yds 
+            { "9 iron", Tuple.Create<int,int>(42,98) },
+            { "8 iron", Tuple.Create<int,int>(38,102) },
+            { "7 iron", Tuple.Create<int,int>(34,105) },
+            { "6 iron", Tuple.Create<int,int>(29,109) },
+            { "5 iron", Tuple.Create<int,int>(25,113) },
+            { "4 iron", Tuple.Create<int,int>(22,117) },
+            { "5 wood", Tuple.Create<int,int>(18,130) },
+            { "3 wood", Tuple.Create<int,int>(14,136) },
+            { "Driver", Tuple.Create<int,int>(10,150) }*/
+
+        private readonly Dictionary<string, Tuple<int,int>> clubLoftAndMaxDistanceYds = new Dictionary<string, Tuple<int,int>>
+        {
+            { "Putter", Tuple.Create<int,int>(0,50) },
+            { "Lob wedge", Tuple.Create<int,int>(60,106) },
+            { "Sand wedge", Tuple.Create<int,int>(56,115) },
+            { "Gap wedge", Tuple.Create<int,int>(52,129) },
+            { "Pitching wedge", Tuple.Create<int,int>(48,148) },
+            { "9 iron", Tuple.Create<int,int>(42,163) },
+            { "8 iron", Tuple.Create<int,int>(38,175) },
+            { "7 iron", Tuple.Create<int,int>(34,192) },
+            { "6 iron", Tuple.Create<int,int>(29,207) },
+            { "5 iron", Tuple.Create<int,int>(25,219) },
+            { "4 iron", Tuple.Create<int,int>(22,240) },
+            { "5 wood", Tuple.Create<int,int>(18,273) },
+            { "3 wood", Tuple.Create<int,int>(14,293) },
+            { "Driver", Tuple.Create<int,int>(10,326) }
+        };
+
+
         private void btnChooseAClubGo_Click(object sender, EventArgs e)
         {
             // Animate ball moving to hole
-
 
 
             // s = (u*t) + (a*t*t)
@@ -717,34 +766,59 @@ namespace The_ULTIMATE_golf_quiz
             // sy = (u * sin(loft) * t) + ((-10) * t * t)
 
 
-            // starting location of ball on panel
-            int ballStartX = 55;
-            int ballStartY = 259;
+
+
+            const double gravity = 10;
+            const double metresToYards = 1.094;
+
+
 
             // postition of flag on panel
-            int flagX = 585;
-            int flagY = 227;
+            int flagX = pctBoxFlag.Location.X;
+            int flagY = pctBoxFlag.Location.Y;
 
             double sx = 0;
             double sy = 0;
 
-            // Get loft and wind speed
-            double loft = 60;
+            // Get loft and swing speed for selected club
+            string selectedClub = comboBoxChooseAClub.Text;
+            if (selectedClub == "")
+            {
+                MessageBox.Show("You need to select a club first!");
+                return;
+            }
+
+            // Move ball back to start
+            pctBoxGolfBall.Location = new Point(ballStartX, ballStartY);
+
+            double loftInDegrees = clubLoftAndMaxDistanceYds[selectedClub].Item1;
+            double loftInRadians = loftInDegrees * Math.PI / 180;
+            double maxDistanceYds = clubLoftAndMaxDistanceYds[selectedClub].Item2;
+            double maxDistanceMetres = maxDistanceYds / metresToYards;
+
+            // Formula for horizontal distance the ball will go using loft and initial speed
+            // horizontal distance = ( initial horizontal speed^2 * sin(2 * loft) ) / g
+            // initial horizontal speed = square root of ( (horizontal distance * g) / sin (2 * loft) )
+            double swingSpeedMPS = Math.Sqrt( (maxDistanceMetres * gravity) / Math.Sin (2 * loftInRadians) );
+
+
+            // Convert swing speed from metres per second to mph
+            const double milesPerHourToMetresPerSec = 0.44704;
+            double swingSpeedMPH = swingSpeedMPS / milesPerHourToMetresPerSec;
+
+            // Set wind speed
             double wind = 0;
-            const double gravity = -10;
 
-            // Get swing speed
-            const double milesPerHourToYardPerSec = 0.44704;
-            double swingSpeedMPH = 120;
-            double swingSpeedYPS = swingSpeedMPH * milesPerHourToYardPerSec;
+            // Calculate starting horizontal (ux) and vertical (uy) speed based on loft (converted from degrees to radians)
+            double ux = swingSpeedMPS * Math.Cos(loftInRadians);
+            double uy = swingSpeedMPS * Math.Sin(loftInRadians);
 
-            // Calculate starting horizontal (ux) and vertical (uy) speed based on loft
-            double ux = swingSpeedYPS * Math.Cos(loft);
-            double uy = swingSpeedYPS * Math.Sin(loft);
+            double timeInAir = maxDistanceMetres / ux;
+
 
             // initialise starting time and interval for loop
             double timeInSecs = 0;
-            double intervalInSecs = 0.5;
+            double intervalInSecs = 0.1;
 
             // set start position for ball
             int ballX = ballStartX;
@@ -758,7 +832,7 @@ namespace The_ULTIMATE_golf_quiz
                 // caclulate horizontal (sx) and vertical (sy) position in metres
                 // s = (u*t) + (a*t*t)
                 sx = (ux * timeInSecs);
-                sy = (uy * timeInSecs) + (gravity * timeInSecs * timeInSecs);
+                sy = (uy * timeInSecs) - (0.5 * gravity * timeInSecs * timeInSecs);
 
                 // move ball to position on canvas
                 ballX = ballStartX + (int)sx;
@@ -766,14 +840,26 @@ namespace The_ULTIMATE_golf_quiz
 
                 pctBoxGolfBall.Location = new Point(ballX, ballY);
 
-                // wait interval seconds
 
+                // wait interval seconds
+                Thread.Sleep((int)(intervalInSecs*100));
             }
 
+            int distanceTravelledinMetres = ballX - ballStartX;
+            int distanceTravelledinYards = (int)(distanceTravelledinMetres * metresToYards);
+            lblDistanceToHole.Text = "Distance travelled: " + distanceTravelledinYards + " yards";
+
+        }
+
+        private int x;
+        private int y;
+        private void pctBoxMap_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(string.Format("X: {0} Y: {1}", x, y));
         }
     }
 }
-/*PC13, Where is this course?, USA
+/*PC13, Where is this course?, USA,1,1,
 PC14, Where is this course?, USA
 PC15, Where is this course?, UAE
 PC16, Where is this course?, Spain

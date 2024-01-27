@@ -312,6 +312,7 @@
     <Content Include="Resources\Golf logo1.png" />
     <Content Include="Resources\Golf logo2.png" />
     <Content Include="Resources\Golf logo3.png" />
+    <None Include="Resources\Screenshot 2024-01-26 085609.png" />
     <None Include="Resources\Screenshot 2024-01-25 151958.png" />
     <None Include="Resources\Screenshot 2024-01-25 152024.png" />
     <None Include="Resources\Screenshot 2024-01-25 152048.png" />
@@ -336,6 +337,7 @@
     <None Include="Resources\Screenshot 2024-01-25 144636.png" />
     <None Include="Resources\Screenshot 2024-01-25 144603.png" />
     <None Include="Resources\Jon Rahm.bmp" />
+    <None Include="Resources\Location.png" />
     <Content Include="Resources\Male1.png" />
     <Content Include="Resources\Male2.png" />
   </ItemGroup>

@@ -279,6 +279,16 @@ namespace The_ULTIMATE_golf_quiz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Location {
+            get {
+                object obj = ResourceManager.GetObject("Location", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap N__Ireland {
             get {
                 object obj = ResourceManager.GetObject("N. Ireland", resourceCulture);
@@ -342,6 +352,16 @@ namespace The_ULTIMATE_golf_quiz.Properties {
         internal static System.Drawing.Bitmap Scottie_Scheffler {
             get {
                 object obj = ResourceManager.GetObject("Scottie Scheffler", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2024_01_26_085609 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2024-01-26 085609", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
