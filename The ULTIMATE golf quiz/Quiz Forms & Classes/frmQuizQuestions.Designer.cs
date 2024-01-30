@@ -64,7 +64,7 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnSurpriseMeRound = new System.Windows.Forms.Button();
             this.btnMultipleChoiceRound = new System.Windows.Forms.Button();
-            this.btnDragAndDrop = new System.Windows.Forms.Button();
+            this.btnChooseTheRightClub = new System.Windows.Forms.Button();
             this.btnPictureRound = new System.Windows.Forms.Button();
             this.btnTrueOrFalseRound = new System.Windows.Forms.Button();
             this.btnTypeItRound = new System.Windows.Forms.Button();
@@ -100,7 +100,7 @@
             this.lblAnswer.AutoSize = true;
             this.lblAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer.ForeColor = System.Drawing.Color.White;
-            this.lblAnswer.Location = new System.Drawing.Point(27, 18);
+            this.lblAnswer.Location = new System.Drawing.Point(30, 13);
             this.lblAnswer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAnswer.Name = "lblAnswer";
             this.lblAnswer.Size = new System.Drawing.Size(174, 20);
@@ -119,7 +119,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(488, 56);
+            this.btnNext.Location = new System.Drawing.Point(493, 9);
             this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(277, 50);
@@ -169,7 +169,7 @@
             this.pnlFinish.Controls.Add(this.btnFinishSession);
             this.pnlFinish.Controls.Add(this.lblFinish);
             this.pnlFinish.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFinish.Location = new System.Drawing.Point(0, 745);
+            this.pnlFinish.Location = new System.Drawing.Point(0, 656);
             this.pnlFinish.Name = "pnlFinish";
             this.pnlFinish.Size = new System.Drawing.Size(783, 241);
             this.pnlFinish.TabIndex = 17;
@@ -226,9 +226,9 @@
             this.pnlAnswer.Controls.Add(this.button1);
             this.pnlAnswer.Controls.Add(this.lblAnswer);
             this.pnlAnswer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlAnswer.Location = new System.Drawing.Point(0, 624);
+            this.pnlAnswer.Location = new System.Drawing.Point(0, 588);
             this.pnlAnswer.Name = "pnlAnswer";
-            this.pnlAnswer.Size = new System.Drawing.Size(783, 121);
+            this.pnlAnswer.Size = new System.Drawing.Size(783, 68);
             this.pnlAnswer.TabIndex = 11;
             this.pnlAnswer.Visible = false;
             // 
@@ -261,7 +261,7 @@
             this.pnlTypeIt.Controls.Add(this.txtBoxAnswer);
             this.pnlTypeIt.Controls.Add(this.btnSubmit);
             this.pnlTypeIt.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTypeIt.Location = new System.Drawing.Point(0, 175);
+            this.pnlTypeIt.Location = new System.Drawing.Point(0, 139);
             this.pnlTypeIt.Name = "pnlTypeIt";
             this.pnlTypeIt.Size = new System.Drawing.Size(783, 221);
             this.pnlTypeIt.TabIndex = 20;
@@ -321,19 +321,18 @@
             this.pnlQuestion.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlQuestion.Location = new System.Drawing.Point(0, 0);
             this.pnlQuestion.Name = "pnlQuestion";
-            this.pnlQuestion.Size = new System.Drawing.Size(783, 175);
+            this.pnlQuestion.Size = new System.Drawing.Size(783, 139);
             this.pnlQuestion.TabIndex = 21;
             this.pnlQuestion.Visible = false;
             // 
             // pctBoxPicture
             // 
-            this.pctBoxPicture.Location = new System.Drawing.Point(533, 48);
+            this.pctBoxPicture.Location = new System.Drawing.Point(628, 37);
             this.pctBoxPicture.Name = "pctBoxPicture";
-            this.pctBoxPicture.Size = new System.Drawing.Size(124, 124);
+            this.pctBoxPicture.Size = new System.Drawing.Size(107, 99);
             this.pctBoxPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxPicture.TabIndex = 16;
             this.pctBoxPicture.TabStop = false;
-            this.pctBoxPicture.Visible = false;
             // 
             // lblQuestionNumber
             // 
@@ -388,7 +387,7 @@
             this.lblQuestion.Location = new System.Drawing.Point(121, 48);
             this.lblQuestion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuestion.Name = "lblQuestion";
-            this.lblQuestion.Size = new System.Drawing.Size(418, 118);
+            this.lblQuestion.Size = new System.Drawing.Size(418, 59);
             this.lblQuestion.TabIndex = 0;
             this.lblQuestion.Text = "Question Text";
             // 
@@ -402,7 +401,7 @@
             this.pnlMultipleChoiceOptions.Controls.Add(this.btnOption3);
             this.pnlMultipleChoiceOptions.Controls.Add(this.btnOption1);
             this.pnlMultipleChoiceOptions.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMultipleChoiceOptions.Location = new System.Drawing.Point(0, 396);
+            this.pnlMultipleChoiceOptions.Location = new System.Drawing.Point(0, 360);
             this.pnlMultipleChoiceOptions.Name = "pnlMultipleChoiceOptions";
             this.pnlMultipleChoiceOptions.Size = new System.Drawing.Size(783, 139);
             this.pnlMultipleChoiceOptions.TabIndex = 22;
@@ -512,7 +511,7 @@
             this.pnlTrueOrFalseOptions.Controls.Add(this.btnFalse);
             this.pnlTrueOrFalseOptions.Controls.Add(this.btnTrue);
             this.pnlTrueOrFalseOptions.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTrueOrFalseOptions.Location = new System.Drawing.Point(0, 535);
+            this.pnlTrueOrFalseOptions.Location = new System.Drawing.Point(0, 499);
             this.pnlTrueOrFalseOptions.Name = "pnlTrueOrFalseOptions";
             this.pnlTrueOrFalseOptions.Size = new System.Drawing.Size(783, 89);
             this.pnlTrueOrFalseOptions.TabIndex = 23;
@@ -562,13 +561,13 @@
             this.pnlTypeOfRound.Controls.Add(this.btnBack);
             this.pnlTypeOfRound.Controls.Add(this.btnSurpriseMeRound);
             this.pnlTypeOfRound.Controls.Add(this.btnMultipleChoiceRound);
-            this.pnlTypeOfRound.Controls.Add(this.btnDragAndDrop);
+            this.pnlTypeOfRound.Controls.Add(this.btnChooseTheRightClub);
             this.pnlTypeOfRound.Controls.Add(this.btnPictureRound);
             this.pnlTypeOfRound.Controls.Add(this.btnTrueOrFalseRound);
             this.pnlTypeOfRound.Controls.Add(this.btnTypeItRound);
             this.pnlTypeOfRound.Controls.Add(this.lblTypeOfRound);
             this.pnlTypeOfRound.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTypeOfRound.Location = new System.Drawing.Point(0, 986);
+            this.pnlTypeOfRound.Location = new System.Drawing.Point(0, 897);
             this.pnlTypeOfRound.Name = "pnlTypeOfRound";
             this.pnlTypeOfRound.Size = new System.Drawing.Size(783, 301);
             this.pnlTypeOfRound.TabIndex = 24;
@@ -627,22 +626,22 @@
             this.btnMultipleChoiceRound.UseVisualStyleBackColor = false;
             this.btnMultipleChoiceRound.Click += new System.EventHandler(this.btnMultipleChoiceRound_Click);
             // 
-            // btnDragAndDrop
+            // btnChooseTheRightClub
             // 
-            this.btnDragAndDrop.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDragAndDrop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
-            this.btnDragAndDrop.FlatAppearance.BorderSize = 0;
-            this.btnDragAndDrop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
-            this.btnDragAndDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDragAndDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDragAndDrop.ForeColor = System.Drawing.Color.White;
-            this.btnDragAndDrop.Location = new System.Drawing.Point(126, 239);
-            this.btnDragAndDrop.Name = "btnDragAndDrop";
-            this.btnDragAndDrop.Size = new System.Drawing.Size(250, 50);
-            this.btnDragAndDrop.TabIndex = 4;
-            this.btnDragAndDrop.Text = "Drag \'n\' Drop";
-            this.btnDragAndDrop.UseVisualStyleBackColor = false;
-            this.btnDragAndDrop.Click += new System.EventHandler(this.btnDragAndDrop_Click);
+            this.btnChooseTheRightClub.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnChooseTheRightClub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
+            this.btnChooseTheRightClub.FlatAppearance.BorderSize = 0;
+            this.btnChooseTheRightClub.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
+            this.btnChooseTheRightClub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChooseTheRightClub.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChooseTheRightClub.ForeColor = System.Drawing.Color.White;
+            this.btnChooseTheRightClub.Location = new System.Drawing.Point(126, 239);
+            this.btnChooseTheRightClub.Name = "btnChooseTheRightClub";
+            this.btnChooseTheRightClub.Size = new System.Drawing.Size(250, 50);
+            this.btnChooseTheRightClub.TabIndex = 4;
+            this.btnChooseTheRightClub.Text = "Choose the right club";
+            this.btnChooseTheRightClub.UseVisualStyleBackColor = false;
+            this.btnChooseTheRightClub.Click += new System.EventHandler(this.btnDragAndDrop_Click);
             // 
             // btnPictureRound
             // 
@@ -719,7 +718,7 @@
             this.pnlChooseTheRightClub.Controls.Add(this.pctBoxFlag);
             this.pnlChooseTheRightClub.Controls.Add(this.pctBoxGolfBall);
             this.pnlChooseTheRightClub.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlChooseTheRightClub.Location = new System.Drawing.Point(0, 1287);
+            this.pnlChooseTheRightClub.Location = new System.Drawing.Point(0, 1198);
             this.pnlChooseTheRightClub.Name = "pnlChooseTheRightClub";
             this.pnlChooseTheRightClub.Size = new System.Drawing.Size(783, 300);
             this.pnlChooseTheRightClub.TabIndex = 25;
@@ -730,7 +729,7 @@
             this.lblDistanceToHole.ForeColor = System.Drawing.Color.White;
             this.lblDistanceToHole.Location = new System.Drawing.Point(340, 10);
             this.lblDistanceToHole.Name = "lblDistanceToHole";
-            this.lblDistanceToHole.Size = new System.Drawing.Size(124, 20);
+            this.lblDistanceToHole.Size = new System.Drawing.Size(84, 13);
             this.lblDistanceToHole.TabIndex = 7;
             this.lblDistanceToHole.Text = "Distance to hole";
             // 
@@ -758,7 +757,7 @@
             this.lblChooseAClub.ForeColor = System.Drawing.Color.White;
             this.lblChooseAClub.Location = new System.Drawing.Point(8, 9);
             this.lblChooseAClub.Name = "lblChooseAClub";
-            this.lblChooseAClub.Size = new System.Drawing.Size(110, 20);
+            this.lblChooseAClub.Size = new System.Drawing.Size(75, 13);
             this.lblChooseAClub.TabIndex = 4;
             this.lblChooseAClub.Text = "Choose a club";
             // 
@@ -782,7 +781,7 @@
             "Driver"});
             this.comboBoxChooseAClub.Location = new System.Drawing.Point(124, 6);
             this.comboBoxChooseAClub.Name = "comboBoxChooseAClub";
-            this.comboBoxChooseAClub.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxChooseAClub.Size = new System.Drawing.Size(121, 21);
             this.comboBoxChooseAClub.TabIndex = 3;
             // 
             // pctBoxFlag
@@ -810,7 +809,7 @@
             this.pnlPicture.Controls.Add(this.pctBoxLocation);
             this.pnlPicture.Controls.Add(this.pctBoxMap);
             this.pnlPicture.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlPicture.Location = new System.Drawing.Point(0, 1587);
+            this.pnlPicture.Location = new System.Drawing.Point(0, 1498);
             this.pnlPicture.Name = "pnlPicture";
             this.pnlPicture.Size = new System.Drawing.Size(783, 500);
             this.pnlPicture.TabIndex = 26;
@@ -921,7 +920,7 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnSurpriseMeRound;
         private System.Windows.Forms.Button btnMultipleChoiceRound;
-        private System.Windows.Forms.Button btnDragAndDrop;
+        private System.Windows.Forms.Button btnChooseTheRightClub;
         private System.Windows.Forms.Button btnPictureRound;
         private System.Windows.Forms.Button btnTrueOrFalseRound;
         private System.Windows.Forms.Button btnTypeItRound;

@@ -122,7 +122,7 @@ namespace The_ULTIMATE_golf_quiz
             pnlTrueOrFalseOptions.Visible = false;
             pnlMultipleChoiceOptions.Visible = false;
             pnlFinish.Visible = false;
-           // pnlChooseTheRightClub.Visible = false;
+            pnlChooseTheRightClub.Visible = false;
             pnlPicture.Visible = false;
             pnlTypeOfRound.Visible = false;
 
@@ -171,7 +171,7 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnDragAndDrop_Click(object sender, EventArgs e)
         {
-            QuestionFileHandler.RoundType = "Drag n Drop";
+            QuestionFileHandler.RoundType = "Choose Club";
             setup();
         }
 
@@ -199,7 +199,7 @@ namespace The_ULTIMATE_golf_quiz
         }
         #endregion SetupForRound
 
-        #region SetQuestion
+        #region GetQuestion
         // Question method
         public void GetQuestion()
         {
@@ -342,12 +342,17 @@ namespace The_ULTIMATE_golf_quiz
                             pctBoxPicture.Visible = true;
                             pnlPicture.Visible = true;
                             pnlPicture.Dock = DockStyle.Fill;
+                            
                         }
                         else
                         {
                             frmQuizQuestionsInitialisation();
                             MessageBox.Show("You have completed all available questions for the picture round, Congratulations!");
                         }
+                        break;
+                    case "Choose Club":
+                        pnlChooseTheRightClub.Visible = true;
+                        pnlChooseTheRightClub.Dock = DockStyle.Fill;
                         break;
 
                     default:
@@ -362,7 +367,7 @@ namespace The_ULTIMATE_golf_quiz
                 RoundFinishedScreen();
             }                                          
         }
-        #endregion SetQuestion
+        #endregion GetQuestion
 
         #region QuizAnswerButtonClicks
         //-------------------------------------------------------------------------------------------------------
@@ -735,22 +740,22 @@ namespace The_ULTIMATE_golf_quiz
             { "3 wood", Tuple.Create<int,int>(14,136) },
             { "Driver", Tuple.Create<int,int>(10,150) }*/
 
-        private readonly Dictionary<string, Tuple<int,int>> clubLoftAndMaxDistanceYds = new Dictionary<string, Tuple<int,int>>
+        private readonly Dictionary<string, (int,int)> clubLoftAndMaxDistanceYds = new Dictionary<string, (int,int)>
         {
-            { "Putter", Tuple.Create<int,int>(0,50) },
-            { "Lob wedge", Tuple.Create<int,int>(60,106) },
-            { "Sand wedge", Tuple.Create<int,int>(56,115) },
-            { "Gap wedge", Tuple.Create<int,int>(52,129) },
-            { "Pitching wedge", Tuple.Create<int,int>(48,148) },
-            { "9 iron", Tuple.Create<int,int>(42,163) },
-            { "8 iron", Tuple.Create<int,int>(38,175) },
-            { "7 iron", Tuple.Create<int,int>(34,192) },
-            { "6 iron", Tuple.Create<int,int>(29,207) },
-            { "5 iron", Tuple.Create<int,int>(25,219) },
-            { "4 iron", Tuple.Create<int,int>(22,240) },
-            { "5 wood", Tuple.Create<int,int>(18,273) },
-            { "3 wood", Tuple.Create<int,int>(14,293) },
-            { "Driver", Tuple.Create<int,int>(10,326) }
+            { "Putter", (0,50) },
+            { "Lob wedge", (60,106) },
+            { "Sand wedge", (56, 115) },
+            { "Gap wedge", (52, 129) },
+            { "Pitching wedge", (48, 148) },
+            { "9 iron", (42, 163) },
+            { "8 iron", (38, 175) },
+            { "7 iron", (34, 192) },
+            { "6 iron", (29, 207) },
+            { "5 iron", (25, 219) },
+            { "4 iron", (22, 240) },
+            { "5 wood", (18, 273) },
+            { "3 wood", (14, 293) },
+            { "Driver", (10, 326) }
         };
 
 
@@ -768,7 +773,7 @@ namespace The_ULTIMATE_golf_quiz
 
 
 
-            const double gravity = 10;
+            const double gravity = 9.81;
             const double metresToYards = 1.094;
 
 
@@ -823,13 +828,14 @@ namespace The_ULTIMATE_golf_quiz
             // set start position for ball
             int ballX = ballStartX;
             int ballY = ballStartY;
+                   
 
             while (sy >= 0)
             {
                 // increment time
                 timeInSecs += intervalInSecs;
 
-                // caclulate horizontal (sx) and vertical (sy) position in metres
+                // calculate horizontal (sx) and vertical (sy) position in metres
                 // s = (u*t) + (a*t*t)
                 sx = (ux * timeInSecs);
                 sy = (uy * timeInSecs) - (0.5 * gravity * timeInSecs * timeInSecs);
@@ -855,8 +861,11 @@ namespace The_ULTIMATE_golf_quiz
         private int y;
         private void pctBoxMap_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(string.Format("X: {0} Y: {1}", x, y));
+            MouseEventArgs mouseEvent = (MouseEventArgs)e;
+            // MessageBox.Show(string.Format("X: {0} Y: {1}", x, y));
+            pctBoxLocation.Location = new Point(mouseEvent.X, mouseEvent.Y);
         }
+        
     }
 }
 /*PC13, Where is this course?, USA,1,1,
