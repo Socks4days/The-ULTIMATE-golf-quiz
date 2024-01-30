@@ -24,6 +24,10 @@ namespace The_ULTIMATE_golf_quiz
         // starting location of ball on panel
         private int ballStartX { get; set; }
         private int ballStartY { get; set; }
+        private int flagStartX { get; set; }
+        private int flagStartY { get; set; }
+        private int distanceToFlagYds { get; set; }
+        private int ydsToPixelsScale { get; set; }
 
         #endregion Properties
 
@@ -97,6 +101,7 @@ namespace The_ULTIMATE_golf_quiz
             btnSubmit.Enabled = true;
             btnTrue.Enabled = true;
             btnFalse.Enabled = true;
+            btnChooseAClubGo.Enabled = true;
         }
         #endregion AnswerButtonsEnabling
 
@@ -138,8 +143,11 @@ namespace The_ULTIMATE_golf_quiz
             pnlTypeOfRound.Dock = DockStyle.Fill;
             pnlTypeOfRound.Visible = true;
 
+            // remember start position of ball and flag
             ballStartX = pctBoxGolfBall.Location.X;
             ballStartY = pctBoxGolfBall.Location.Y;
+            flagStartX = pctBoxFlag.Location.X;
+            flagStartY = pctBoxFlag.Location.Y;
 
     }
         #endregion Initialisation
@@ -209,6 +217,8 @@ namespace The_ULTIMATE_golf_quiz
             pnlTypeIt.Visible = false;
             pctBoxPicture.Visible = false;
             lblAnswer.Visible = false;
+            Random random = new Random();
+
 
             // If the amount of questions asked this round is less than 10 then it will ask another question
             if (NumberOfQuestionsAskedThisRound < 10)
@@ -219,7 +229,6 @@ namespace The_ULTIMATE_golf_quiz
                         // if the amount of type it questions in the list is more than 0, ie its not empty, then it will ask another question
                         if (typeItQuestionList.Count > 0)
                         {
-                            Random random = new Random();
                             // sets a variable equal to a number between 0 and the total amount of questions in the list of type it questions
                             int randomisedQuestionNumber = random.Next(0, QuestionFileHandler.TypeItQuestions.Count-1);
                             // the current question is equal to the question in the list with the index of the random number generated
@@ -253,7 +262,6 @@ namespace The_ULTIMATE_golf_quiz
                         // Same things for true or false questions
                         if (trueOrFalseQuestionList.Count > 0)
                         {
-                            Random random = new Random();
                             // sets a variable equal to a number between 0 and the total amount of questions in the list of t or f questions
                             int randomisedQuestionNumber = random.Next(0, QuestionFileHandler.TrueOrFalseQuestions.Count-1);
 
@@ -283,7 +291,6 @@ namespace The_ULTIMATE_golf_quiz
                     case "Multiple Choice":
                         if (multipleChoiceQuestionList.Count > 0)
                         {
-                            Random random = new Random();
                             // sets a variable equal to a number between 0 and the total amount of questions in the list of multi choice questions
                             int randomisedQuestionNumber = random.Next(0, QuestionFileHandler.MultiChoiceQuestions.Count - 1);
                             MultiChoiceQuestion currentMultipleChoiceQuestion = QuestionFileHandler.MultiChoiceQuestions[randomisedQuestionNumber];
@@ -317,7 +324,6 @@ namespace The_ULTIMATE_golf_quiz
                     case "Picture":
                         if (pictureQuestionList.Count > 0)
                         {
-                            Random random = new Random();
                             // sets a variable equal to a number between 0 and the total amount of questions in the list of multi choice questions
                             int randomisedQuestionNumber = random.Next(0, QuestionFileHandler.PictureQuestions.Count - 1);
                             PictureQuestion currentPictureQuestion = QuestionFileHandler.PictureQuestions[randomisedQuestionNumber];
@@ -353,6 +359,14 @@ namespace The_ULTIMATE_golf_quiz
                     case "Choose Club":
                         pnlChooseTheRightClub.Visible = true;
                         pnlChooseTheRightClub.Dock = DockStyle.Fill;
+                        distanceToFlagYds = random.Next(10, 330);
+                        ydsToPixelsScale = 2;
+                        int flagPositionX = ballStartX + distanceToFlagYds * ydsToPixelsScale;
+                        pctBoxFlag.Location = new Point(flagPositionX,flagStartY);
+                        lblQuestion.Text = ("Choose the club you think will get you closest to the hole");
+                        lblDifficulty.Text = "Difficulty: Medium";
+                        lblDistanceToHole.Text = "Distance to hole: " + distanceToFlagYds + " yards";
+                        pctBoxGolfBall.Location = new Point(ballStartX, ballStartY);
                         break;
 
                     default:
@@ -603,6 +617,119 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
+        private void btnChooseAClubGo_Click(object sender, EventArgs e)
+        {
+            // Animate ball moving to hole
+
+
+            // s = (u*t) + (a*t*t)
+            // assume no air fiction and no wind
+            // sx = (u * cos(loft) * t) + ((0) * t * t)
+            // assume gravity is -10
+            // sy = (u * sin(loft) * t) + ((-10) * t * t)
+
+
+
+
+            const double gravity = 9.81;
+            const double metresToYards = 1.094;
+
+
+
+            // postition of flag on panel
+            int flagX = pctBoxFlag.Location.X;
+            int flagY = pctBoxFlag.Location.Y;
+
+            double sx = 0;
+            double sy = 0;
+
+            // Get loft and swing speed for selected club
+            string selectedClub = comboBoxChooseAClub.Text;
+            if (selectedClub == "")
+            {
+                MessageBox.Show("You need to select a club first!");
+                return;
+            }
+
+            // Move ball back to start
+            
+
+            double loftInDegrees = clubLoftAndMaxDistanceYds[selectedClub].Item1;
+            double loftInRadians = loftInDegrees * Math.PI / 180;
+            double maxDistanceYds = clubLoftAndMaxDistanceYds[selectedClub].Item2;
+            double maxDistanceMetres = maxDistanceYds / metresToYards;
+
+            // Formula for horizontal distance the ball will go using loft and initial speed
+            // horizontal distance = ( initial horizontal speed^2 * sin(2 * loft) ) / g
+            // initial horizontal speed = square root of ( (horizontal distance * g) / sin (2 * loft) )
+            double swingSpeedMPS = Math.Sqrt((maxDistanceMetres * gravity) / Math.Sin(2 * loftInRadians));
+
+
+            // Convert swing speed from metres per second to mph
+            const double milesPerHourToMetresPerSec = 0.44704;
+            double swingSpeedMPH = swingSpeedMPS / milesPerHourToMetresPerSec;
+
+            // Set wind speed
+            double wind = 0;
+
+            // Calculate starting horizontal (ux) and vertical (uy) speed based on loft (converted from degrees to radians)
+            double ux = swingSpeedMPS * Math.Cos(loftInRadians);
+            double uy = swingSpeedMPS * Math.Sin(loftInRadians);
+
+            double timeInAir = maxDistanceMetres / ux;
+
+
+            // initialise starting time and interval for loop
+            double timeInSecs = 0;
+            double intervalInSecs = 0.1;
+
+            // set start position for ball
+            int ballX = ballStartX;
+            int ballY = ballStartY;
+
+
+            while (sy >= 0)
+            {
+                // increment time
+                timeInSecs += intervalInSecs;
+
+                // calculate horizontal (sx) and vertical (sy) position in metres
+                // s = (u*t) + (a*t*t)
+                sx = (ux * timeInSecs);
+                sy = (uy * timeInSecs) - (0.5 * gravity * timeInSecs * timeInSecs);
+
+                // move ball to position on canvas
+                ballX = ballStartX + (int)sx * ydsToPixelsScale;
+                ballY = ballStartY - (int)sy * ydsToPixelsScale;
+
+                pctBoxGolfBall.Location = new Point(ballX, ballY);
+
+
+                // wait interval seconds
+                Thread.Sleep((int)(intervalInSecs * 100));
+            }
+
+            int distanceTravelledinMetres = ballX - ballStartX;
+            int distanceTravelledinYards = (int)(distanceTravelledinMetres * metresToYards / ydsToPixelsScale);
+            int distanceFromHoleYds = Math.Abs(distanceToFlagYds - distanceTravelledinYards);
+            int points = 0;
+            if (distanceFromHoleYds <= 10)
+                points = 5;
+            else if (distanceFromHoleYds <= 20)
+                points = 3;
+            else if (distanceFromHoleYds  < 30)
+                points = 1;
+            AnswerButtonsDisable();
+            pnlAnswer.Visible = true;
+            lblAnswer.Visible = true;
+            btnNext.Visible = true;
+            lblAnswer.Text = "Your ball went " + distanceTravelledinYards + " yards so you were " + distanceFromHoleYds + " yards from the hole"
+                + "\nYou score " + points + " points";
+            TotalScoreForCurrentRound += points;
+            TotalPointsAvailable += 5;
+        }
+
+
         //-------------------------------------------------------------------------------------------------------------------
         #endregion QuizAnswerButtonClicks
 
@@ -657,6 +784,8 @@ namespace The_ULTIMATE_golf_quiz
                 questionTypes.Remove("Picture");
                 RoundFinishedScreen();
             }
+            else if (QuestionFileHandler.RoundType == "Choose Club")
+                GetQuestion();
         }
 
         #endregion NextQuestionButtonClicked
@@ -759,103 +888,31 @@ namespace The_ULTIMATE_golf_quiz
         };
 
 
-        private void btnChooseAClubGo_Click(object sender, EventArgs e)
-        {
-            // Animate ball moving to hole
-
-
-            // s = (u*t) + (a*t*t)
-            // assume no air fiction and no wind
-            // sx = (u * cos(loft) * t) + ((0) * t * t)
-            // assume gravity is -10
-            // sy = (u * sin(loft) * t) + ((-10) * t * t)
+        
 
 
 
 
-            const double gravity = 9.81;
-            const double metresToYards = 1.094;
 
 
 
-            // postition of flag on panel
-            int flagX = pctBoxFlag.Location.X;
-            int flagY = pctBoxFlag.Location.Y;
-
-            double sx = 0;
-            double sy = 0;
-
-            // Get loft and swing speed for selected club
-            string selectedClub = comboBoxChooseAClub.Text;
-            if (selectedClub == "")
-            {
-                MessageBox.Show("You need to select a club first!");
-                return;
-            }
-
-            // Move ball back to start
-            pctBoxGolfBall.Location = new Point(ballStartX, ballStartY);
-
-            double loftInDegrees = clubLoftAndMaxDistanceYds[selectedClub].Item1;
-            double loftInRadians = loftInDegrees * Math.PI / 180;
-            double maxDistanceYds = clubLoftAndMaxDistanceYds[selectedClub].Item2;
-            double maxDistanceMetres = maxDistanceYds / metresToYards;
-
-            // Formula for horizontal distance the ball will go using loft and initial speed
-            // horizontal distance = ( initial horizontal speed^2 * sin(2 * loft) ) / g
-            // initial horizontal speed = square root of ( (horizontal distance * g) / sin (2 * loft) )
-            double swingSpeedMPS = Math.Sqrt( (maxDistanceMetres * gravity) / Math.Sin (2 * loftInRadians) );
 
 
-            // Convert swing speed from metres per second to mph
-            const double milesPerHourToMetresPerSec = 0.44704;
-            double swingSpeedMPH = swingSpeedMPS / milesPerHourToMetresPerSec;
-
-            // Set wind speed
-            double wind = 0;
-
-            // Calculate starting horizontal (ux) and vertical (uy) speed based on loft (converted from degrees to radians)
-            double ux = swingSpeedMPS * Math.Cos(loftInRadians);
-            double uy = swingSpeedMPS * Math.Sin(loftInRadians);
-
-            double timeInAir = maxDistanceMetres / ux;
 
 
-            // initialise starting time and interval for loop
-            double timeInSecs = 0;
-            double intervalInSecs = 0.1;
-
-            // set start position for ball
-            int ballX = ballStartX;
-            int ballY = ballStartY;
-                   
-
-            while (sy >= 0)
-            {
-                // increment time
-                timeInSecs += intervalInSecs;
-
-                // calculate horizontal (sx) and vertical (sy) position in metres
-                // s = (u*t) + (a*t*t)
-                sx = (ux * timeInSecs);
-                sy = (uy * timeInSecs) - (0.5 * gravity * timeInSecs * timeInSecs);
-
-                // move ball to position on canvas
-                ballX = ballStartX + (int)sx;
-                ballY = ballStartY - (int)sy;
-
-                pctBoxGolfBall.Location = new Point(ballX, ballY);
 
 
-                // wait interval seconds
-                Thread.Sleep((int)(intervalInSecs*100));
-            }
 
-            int distanceTravelledinMetres = ballX - ballStartX;
-            int distanceTravelledinYards = (int)(distanceTravelledinMetres * metresToYards);
-            lblDistanceToHole.Text = "Distance travelled: " + distanceTravelledinYards + " yards";
 
-        }
+
+
+
+
+
+
+
+
+
 
         private int x;
         private int y;

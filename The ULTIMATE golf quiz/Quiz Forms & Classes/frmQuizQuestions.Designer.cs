@@ -711,12 +711,12 @@
             // 
             // pnlChooseTheRightClub
             // 
+            this.pnlChooseTheRightClub.Controls.Add(this.pctBoxGolfBall);
             this.pnlChooseTheRightClub.Controls.Add(this.lblDistanceToHole);
             this.pnlChooseTheRightClub.Controls.Add(this.btnChooseAClubGo);
             this.pnlChooseTheRightClub.Controls.Add(this.lblChooseAClub);
             this.pnlChooseTheRightClub.Controls.Add(this.comboBoxChooseAClub);
             this.pnlChooseTheRightClub.Controls.Add(this.pctBoxFlag);
-            this.pnlChooseTheRightClub.Controls.Add(this.pctBoxGolfBall);
             this.pnlChooseTheRightClub.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlChooseTheRightClub.Location = new System.Drawing.Point(0, 1198);
             this.pnlChooseTheRightClub.Name = "pnlChooseTheRightClub";
