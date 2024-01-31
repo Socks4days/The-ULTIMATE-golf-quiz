@@ -247,4 +247,19 @@
   <data name="Location" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Location.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FlagLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Golf flag left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FlagLeftWeak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Golf flag gentle left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FlagNone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Golf flag no wind.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FlagRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Golf flag right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FlagRightWeak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Golf flag gentle right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

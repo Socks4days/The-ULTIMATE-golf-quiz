@@ -28,6 +28,7 @@ namespace The_ULTIMATE_golf_quiz
         private int flagStartY { get; set; }
         private int distanceToFlagYds { get; set; }
         private int ydsToPixelsScale { get; set; }
+       
 
         #endregion Properties
 
@@ -90,6 +91,8 @@ namespace The_ULTIMATE_golf_quiz
             btnSubmit.Enabled = false;
             btnTrue.Enabled = false;
             btnFalse.Enabled = false;
+            btnChooseAClubGo.Enabled = false;
+            comboBoxChooseAClub.Enabled = false;
         }
         private void AnswerButtonsEnabled()
         {
@@ -102,6 +105,7 @@ namespace The_ULTIMATE_golf_quiz
             btnTrue.Enabled = true;
             btnFalse.Enabled = true;
             btnChooseAClubGo.Enabled = true;
+            comboBoxChooseAClub.Enabled = true;
         }
         #endregion AnswerButtonsEnabling
 
@@ -201,6 +205,7 @@ namespace The_ULTIMATE_golf_quiz
             pnlQuestion.Dock = DockStyle.Top;
             pnlAnswer.Dock = DockStyle.Bottom;
             btnNext.Visible = false;
+           //pnlAnswer.BackColor = Color.FromArgb(55, 55, 55);
             
             // Then gets the initial question
             GetQuestion();
@@ -367,6 +372,24 @@ namespace The_ULTIMATE_golf_quiz
                         lblDifficulty.Text = "Difficulty: Medium";
                         lblDistanceToHole.Text = "Distance to hole: " + distanceToFlagYds + " yards";
                         pctBoxGolfBall.Location = new Point(ballStartX, ballStartY);
+                        NumberOfQuestionsAskedThisRound++;
+                        Random windDirectionRnd = new Random();
+                        int windDirection = windDirectionRnd.Next(0, 1);
+                        Random windSpeedRnd = new Random();
+                        int windSpeed = windSpeedRnd.Next(0, 50);
+                        if (windDirection == 0 && windSpeed > 20)
+                            pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagLeft");
+                        else if (windDirection == 1 && windSpeed > 20)
+                            pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagRight");
+                        else if (windDirection == 0 && windSpeed <= 20 && windSpeed > 5)
+                            pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagLeftWeak");
+                        else if (windDirection == 1 && windSpeed <= 20 && windSpeed > 5)
+                            pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagRightWeak");
+                        else
+                            pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagNone");
+                        pctBoxFlag.BackColor = Color.Transparent;
+                        lblWindSpeed.Text = "Wind Speed: " + windSpeed;
+                        // pnlAnswer.BackColor = Color.DarkGreen;
                         break;
 
                     default:
@@ -709,8 +732,8 @@ namespace The_ULTIMATE_golf_quiz
                 Thread.Sleep((int)(intervalInSecs * 100));
             }
 
-            int distanceTravelledinMetres = ballX - ballStartX;
-            int distanceTravelledinYards = (int)(distanceTravelledinMetres * metresToYards / ydsToPixelsScale);
+            int distanceTravelledinMetres = (ballX - ballStartX) / ydsToPixelsScale;
+            int distanceTravelledinYards = (int)(distanceTravelledinMetres * metresToYards);
             int distanceFromHoleYds = Math.Abs(distanceToFlagYds - distanceTravelledinYards);
             int points = 0;
             if (distanceFromHoleYds <= 10)
@@ -727,6 +750,7 @@ namespace The_ULTIMATE_golf_quiz
                 + "\nYou score " + points + " points";
             TotalScoreForCurrentRound += points;
             TotalPointsAvailable += 5;
+            
         }
 
 
@@ -803,6 +827,7 @@ namespace The_ULTIMATE_golf_quiz
             pnlTypeIt.Visible = false;
             pnlTrueOrFalseOptions.Visible = false;
             pnlMultipleChoiceOptions.Visible = false;
+            pnlChooseTheRightClub.Visible = false;
             SplashScreen.player.totalScoreForCurrentSession += TotalScoreForCurrentRound;
             if (SplashScreen.player.totalScoreForCurrentSession > SplashScreen.player.highscore)
             {

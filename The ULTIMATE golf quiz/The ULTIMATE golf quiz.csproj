@@ -306,6 +306,11 @@
     <Content Include="Resources\Default2.png" />
     <Content Include="Resources\Female1.png" />
     <Content Include="Resources\Female2.png" />
+    <None Include="Resources\Golf flag left.png" />
+    <None Include="Resources\Golf flag right.png" />
+    <None Include="Resources\Golf flag gentle left.png" />
+    <None Include="Resources\Golf flag gentle right.png" />
+    <None Include="Resources\Golf flag no wind.png" />
     <Content Include="Resources\Golf flag.jpg" />
     <Content Include="Resources\Golf flag1.jpg" />
     <Content Include="Resources\Golf logo.png" />
