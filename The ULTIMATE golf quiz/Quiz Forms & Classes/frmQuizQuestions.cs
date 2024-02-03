@@ -690,35 +690,44 @@ namespace The_ULTIMATE_golf_quiz
             double loftInRadians = loftInDegrees * Math.PI / 180;
             double maxDistanceYds = clubLoftAndMaxDistanceYds[selectedClub].Item2;
 
-            // adjust distance based on wind speed and direction - 1% for every 1 mph
             double actualDistanceYds = 0;
-            if (windDirection == 0) // wind blowing to left (hitting into wind)
+            double swingSpeed = 0;
+            double ux = 0;
+            double uy = 0;
+
+            // for putter, ignore wind speed and gravity
+            if (selectedClub == "Putter")
             {
-                // reduce distance by 1% for every 1 mph
-                actualDistanceYds = maxDistanceYds * (100 - windSpeed) / 100;
+                actualDistanceYds = maxDistanceYds;
+                ux = maxDistanceYds / 10; // 10 seconds for a 50 yard putt
             }
+            // otherwise adjust distance based on wind speed and direction - 1% for every 1 mph
             else
             {
-                // increase distance by 1% for every 1 mph
-                actualDistanceYds = maxDistanceYds * (100 + windSpeed) / 100;
+                if (windDirection == 0) // wind blowing to left (hitting into wind)
+                {
+                    // reduce distance by 1% for every 1 mph
+                    actualDistanceYds = maxDistanceYds * (100 - windSpeed) / 100;
+                }
+                else
+                {
+                    // increase distance by 1% for every 1 mph
+                    actualDistanceYds = maxDistanceYds * (100 + windSpeed) / 100;
+                }
+
+                // Formula for horizontal distance the ball will go using loft and initial speed
+                // horizontal distance = ( initial horizontal speed^2 * sin(2 * loft) ) / g
+                // initial horizontal speed = square root of ( (horizontal distance * g) / sin (2 * loft) )
+                swingSpeed = Math.Sqrt((actualDistanceYds * gravity) / Math.Sin(2 * loftInRadians));
+
+                // Calculate starting horizontal (ux) and vertical (uy) speed based on loft (converted from degrees to radians)
+                ux = swingSpeed * Math.Cos(loftInRadians);
+                uy = swingSpeed * Math.Sin(loftInRadians);
+
+ 
             }
 
-            // Formula for horizontal distance the ball will go using loft and initial speed
-            // horizontal distance = ( initial horizontal speed^2 * sin(2 * loft) ) / g
-            // initial horizontal speed = square root of ( (horizontal distance * g) / sin (2 * loft) )
-            double swingSpeed = Math.Sqrt((actualDistanceYds * gravity) / Math.Sin(2 * loftInRadians));
-
-
-            // Convert swing speed from metres per second to mph
-            //const double milesPerHourToMetresPerSec = 0.44704;
-            //double swingSpeedMPH = swingSpeed / milesPerHourToMetresPerSec;
-
-            // Calculate starting horizontal (ux) and vertical (uy) speed based on loft (converted from degrees to radians)
-            double ux = swingSpeed * Math.Cos(loftInRadians);
-            double uy = swingSpeed * Math.Sin(loftInRadians);
-
-            double timeInAir = actualDistanceYds / ux;
-
+            double timeBallInMotion = actualDistanceYds / ux;
 
             // initialise starting time and interval for loop
             double timeInSecs = 0;
@@ -729,7 +738,7 @@ namespace The_ULTIMATE_golf_quiz
             int ballY = ballStartY;
 
 
-            while (sy >= 0)
+            while (timeInSecs < timeBallInMotion)
             {
                 // increment time
                 timeInSecs += intervalInSecs;
@@ -737,7 +746,16 @@ namespace The_ULTIMATE_golf_quiz
                 // calculate horizontal (sx) and vertical (sy) position in metres
                 // s = (u*t) + (a*t*t)
                 sx = (ux * timeInSecs);
-                sy = (uy * timeInSecs) - (0.5 * gravity * timeInSecs * timeInSecs);
+
+                // for putter, ignore height
+                if (selectedClub == "Putter")
+                {
+                    sy = 0;
+                }
+                else
+                {
+                    sy = (uy * timeInSecs) - (0.5 * gravity * timeInSecs * timeInSecs);
+                }
 
                 // move ball to position on canvas
                 ballX = ballStartX + (int)sx * ydsToPixelsScale;
