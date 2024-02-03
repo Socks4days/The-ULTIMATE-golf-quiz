@@ -26,7 +26,10 @@ namespace The_ULTIMATE_golf_quiz
         private int ballStartY { get; set; }
         private int flagStartX { get; set; }
         private int flagStartY { get; set; }
-        private int distanceToFlagYds { get; set; }
+        private int holeStartX { get; set; }
+        private int holeStartY { get; set; }
+        private int distanceToHoleYds { get; set; }
+        
         private int ydsToPixelsScale { get; set; }
        
 
@@ -115,7 +118,6 @@ namespace The_ULTIMATE_golf_quiz
             txtBoxAnswer.KeyDown += KeyPressedDown;
             KeyDown += KeyPressedDown;
             NumberOfQuestionsAskedThisRound = 0;
-            
         }
 
         #region Initialisation
@@ -134,6 +136,7 @@ namespace The_ULTIMATE_golf_quiz
             pnlChooseTheRightClub.Visible = false;
             pnlPicture.Visible = false;
             pnlTypeOfRound.Visible = false;
+            pnlGrass.Visible = false;
 
             if (QuestionFileHandler.TypeItQuestions.Count > 0)
                 questionTypes.Add("Type It");
@@ -152,6 +155,8 @@ namespace The_ULTIMATE_golf_quiz
             ballStartY = pctBoxGolfBall.Location.Y;
             flagStartX = pctBoxFlag.Location.X;
             flagStartY = pctBoxFlag.Location.Y;
+            holeStartX = pnlHole.Location.X;
+            holeStartY = pnlHole.Location.Y;
 
     }
         #endregion Initialisation
@@ -363,14 +368,15 @@ namespace The_ULTIMATE_golf_quiz
                         break;
                     case "Choose Club":
                         pnlChooseTheRightClub.Visible = true;
+                        pnlGrass.Visible = true;
                         pnlChooseTheRightClub.Dock = DockStyle.Fill;
-                        distanceToFlagYds = random.Next(10, 330);
+                        distanceToHoleYds = random.Next(10, 330);
                         ydsToPixelsScale = 2;
-                        int flagPositionX = ballStartX + distanceToFlagYds * ydsToPixelsScale;
+                        int flagPositionX = ballStartX + distanceToHoleYds * ydsToPixelsScale;
                         pctBoxFlag.Location = new Point(flagPositionX,flagStartY);
                         lblQuestion.Text = ("Choose the club you think will get you closest to the hole");
                         lblDifficulty.Text = "Difficulty: Medium";
-                        lblDistanceToHole.Text = "Distance to hole: " + distanceToFlagYds + " yards";
+                        lblDistanceToHole.Text = "Distance to hole: " + distanceToHoleYds + " yards";
                         pctBoxGolfBall.Location = new Point(ballStartX, ballStartY);
                         NumberOfQuestionsAskedThisRound++;
                         Random windDirectionRnd = new Random();
@@ -651,12 +657,8 @@ namespace The_ULTIMATE_golf_quiz
             // assume gravity is -10
             // sy = (u * sin(loft) * t) + ((-10) * t * t)
 
-
-
-
             const double gravity = 9.81;
             const double metresToYards = 1.094;
-
 
 
             // postition of flag on panel
@@ -727,14 +729,13 @@ namespace The_ULTIMATE_golf_quiz
 
                 pctBoxGolfBall.Location = new Point(ballX, ballY);
 
-
                 // wait interval seconds
                 Thread.Sleep((int)(intervalInSecs * 100));
             }
 
             int distanceTravelledinMetres = (ballX - ballStartX) / ydsToPixelsScale;
             int distanceTravelledinYards = (int)(distanceTravelledinMetres * metresToYards);
-            int distanceFromHoleYds = Math.Abs(distanceToFlagYds - distanceTravelledinYards);
+            int distanceFromHoleYds = Math.Abs(distanceToHoleYds - distanceTravelledinYards);
             int points = 0;
             if (distanceFromHoleYds <= 10)
                 points = 5;
@@ -879,23 +880,9 @@ namespace The_ULTIMATE_golf_quiz
         #endregion Exiting
 
 
-           /* { "Putter", Tuple.Create<int,int>(0,20) },          // 106 yds
-            { "Lob wedge", Tuple.Create<int,int>(60,67) },      // 115 yds
-            { "Sand wedge", Tuple.Create<int,int>(56,73) },     // 129 yds
-            { "Gap wedge", Tuple.Create<int,int>(52,83) },      // 148 yds
-            { "Pitching wedge", Tuple.Create<int,int>(48,93) }, // 163 yds 
-            { "9 iron", Tuple.Create<int,int>(42,98) },
-            { "8 iron", Tuple.Create<int,int>(38,102) },
-            { "7 iron", Tuple.Create<int,int>(34,105) },
-            { "6 iron", Tuple.Create<int,int>(29,109) },
-            { "5 iron", Tuple.Create<int,int>(25,113) },
-            { "4 iron", Tuple.Create<int,int>(22,117) },
-            { "5 wood", Tuple.Create<int,int>(18,130) },
-            { "3 wood", Tuple.Create<int,int>(14,136) },
-            { "Driver", Tuple.Create<int,int>(10,150) }*/
 
         private readonly Dictionary<string, (int,int)> clubLoftAndMaxDistanceYds = new Dictionary<string, (int,int)>
-        {
+        { 
             { "Putter", (0,50) },
             { "Lob wedge", (60,106) },
             { "Sand wedge", (56, 115) },
@@ -911,31 +898,6 @@ namespace The_ULTIMATE_golf_quiz
             { "3 wood", (14, 293) },
             { "Driver", (10, 326) }
         };
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
