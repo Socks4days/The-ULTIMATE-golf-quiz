@@ -29,6 +29,9 @@ namespace The_ULTIMATE_golf_quiz
         private int holeStartX { get; set; }
         private int holeStartY { get; set; }
         private int distanceToHoleYds { get; set; }
+
+        private int windSpeed { get; set; }
+        private int windDirection { get; set; }
         
         private int ydsToPixelsScale { get; set; }
        
@@ -383,9 +386,9 @@ namespace The_ULTIMATE_golf_quiz
                         NumberOfQuestionsAskedThisRound++;
 
                         Random windDirectionRnd = new Random();
-                        int windDirection = windDirectionRnd.Next(0, 1);
+                        windDirection = windDirectionRnd.Next(0, 1);
                         Random windSpeedRnd = new Random();
-                        int windSpeed = windSpeedRnd.Next(0, 50);
+                        windSpeed = windSpeedRnd.Next(0, 50);
                         if (windDirection == 0 && windSpeed > 20)
                             pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagLeft");
                         else if (windDirection == 1 && windSpeed > 20)
@@ -661,6 +664,8 @@ namespace The_ULTIMATE_golf_quiz
             // sy = (u * sin(loft) * t) + ((-10) * t * t)
 
             const double metresToYards = 1.094;
+
+            // set value of gravity in yards per second (all distances in yards)
             const double gravity = 9.81 * metresToYards;
 
             // postition of flag on panel
@@ -684,26 +689,35 @@ namespace The_ULTIMATE_golf_quiz
             double loftInDegrees = clubLoftAndMaxDistanceYds[selectedClub].Item1;
             double loftInRadians = loftInDegrees * Math.PI / 180;
             double maxDistanceYds = clubLoftAndMaxDistanceYds[selectedClub].Item2;
-            //double maxDistanceMetres = maxDistanceYds / metresToYards;
+
+            // adjust distance based on wind speed and direction - 1% for every 1 mph
+            double actualDistanceYds = 0;
+            if (windDirection == 0) // wind blowing to left (hitting into wind)
+            {
+                // reduce distance by 1% for every 1 mph
+                actualDistanceYds = maxDistanceYds * (100 - windSpeed) / 100;
+            }
+            else
+            {
+                // increase distance by 1% for every 1 mph
+                actualDistanceYds = maxDistanceYds * (100 + windSpeed) / 100;
+            }
 
             // Formula for horizontal distance the ball will go using loft and initial speed
             // horizontal distance = ( initial horizontal speed^2 * sin(2 * loft) ) / g
             // initial horizontal speed = square root of ( (horizontal distance * g) / sin (2 * loft) )
-            double swingSpeed = Math.Sqrt((maxDistanceYds * gravity) / Math.Sin(2 * loftInRadians));
+            double swingSpeed = Math.Sqrt((actualDistanceYds * gravity) / Math.Sin(2 * loftInRadians));
 
 
             // Convert swing speed from metres per second to mph
             //const double milesPerHourToMetresPerSec = 0.44704;
             //double swingSpeedMPH = swingSpeed / milesPerHourToMetresPerSec;
 
-            // Set wind speed
-            double wind = 0;
-
             // Calculate starting horizontal (ux) and vertical (uy) speed based on loft (converted from degrees to radians)
             double ux = swingSpeed * Math.Cos(loftInRadians);
             double uy = swingSpeed * Math.Sin(loftInRadians);
 
-            double timeInAir = maxDistanceYds / ux;
+            double timeInAir = actualDistanceYds / ux;
 
 
             // initialise starting time and interval for loop
@@ -739,10 +753,13 @@ namespace The_ULTIMATE_golf_quiz
             int distanceFromHoleYds = Math.Abs(distanceToHoleYds - distanceTravelledinYards);
             int points = 0;
             if (distanceFromHoleYds <= 10)
+            {
+                NumberOfQuestionsAnsweredCorrectly++;
                 points = 5;
+            }
             else if (distanceFromHoleYds <= 20)
                 points = 3;
-            else if (distanceFromHoleYds  < 30)
+            else if (distanceFromHoleYds < 30)
                 points = 1;
             AnswerButtonsDisable();
             pnlAnswer.Visible = true;
