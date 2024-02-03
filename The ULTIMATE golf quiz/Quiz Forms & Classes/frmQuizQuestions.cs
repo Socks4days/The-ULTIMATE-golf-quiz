@@ -155,8 +155,6 @@ namespace The_ULTIMATE_golf_quiz
             ballStartY = pctBoxGolfBall.Location.Y;
             flagStartX = pctBoxFlag.Location.X;
             flagStartY = pctBoxFlag.Location.Y;
-            holeStartX = pnlHole.Location.X;
-            holeStartY = pnlHole.Location.Y;
 
     }
         #endregion Initialisation
@@ -367,18 +365,23 @@ namespace The_ULTIMATE_golf_quiz
                         }
                         break;
                     case "Choose Club":
+
                         pnlChooseTheRightClub.Visible = true;
                         pnlGrass.Visible = true;
                         pnlChooseTheRightClub.Dock = DockStyle.Fill;
+
                         distanceToHoleYds = random.Next(10, 330);
                         ydsToPixelsScale = 2;
                         int flagPositionX = ballStartX + distanceToHoleYds * ydsToPixelsScale;
-                        pctBoxFlag.Location = new Point(flagPositionX,flagStartY);
+                        pctBoxFlag.Location = new Point(flagPositionX - (pctBoxFlag.Width / 2), flagStartY);
+
                         lblQuestion.Text = ("Choose the club you think will get you closest to the hole");
                         lblDifficulty.Text = "Difficulty: Medium";
                         lblDistanceToHole.Text = "Distance to hole: " + distanceToHoleYds + " yards";
-                        pctBoxGolfBall.Location = new Point(ballStartX, ballStartY);
+                        pctBoxGolfBall.Location = new Point(ballStartX - (pctBoxGolfBall.Width / 2), ballStartY);
+
                         NumberOfQuestionsAskedThisRound++;
+
                         Random windDirectionRnd = new Random();
                         int windDirection = windDirectionRnd.Next(0, 1);
                         Random windSpeedRnd = new Random();
@@ -657,9 +660,8 @@ namespace The_ULTIMATE_golf_quiz
             // assume gravity is -10
             // sy = (u * sin(loft) * t) + ((-10) * t * t)
 
-            const double gravity = 9.81;
             const double metresToYards = 1.094;
-
+            const double gravity = 9.81 * metresToYards;
 
             // postition of flag on panel
             int flagX = pctBoxFlag.Location.X;
@@ -682,26 +684,26 @@ namespace The_ULTIMATE_golf_quiz
             double loftInDegrees = clubLoftAndMaxDistanceYds[selectedClub].Item1;
             double loftInRadians = loftInDegrees * Math.PI / 180;
             double maxDistanceYds = clubLoftAndMaxDistanceYds[selectedClub].Item2;
-            double maxDistanceMetres = maxDistanceYds / metresToYards;
+            //double maxDistanceMetres = maxDistanceYds / metresToYards;
 
             // Formula for horizontal distance the ball will go using loft and initial speed
             // horizontal distance = ( initial horizontal speed^2 * sin(2 * loft) ) / g
             // initial horizontal speed = square root of ( (horizontal distance * g) / sin (2 * loft) )
-            double swingSpeedMPS = Math.Sqrt((maxDistanceMetres * gravity) / Math.Sin(2 * loftInRadians));
+            double swingSpeed = Math.Sqrt((maxDistanceYds * gravity) / Math.Sin(2 * loftInRadians));
 
 
             // Convert swing speed from metres per second to mph
-            const double milesPerHourToMetresPerSec = 0.44704;
-            double swingSpeedMPH = swingSpeedMPS / milesPerHourToMetresPerSec;
+            //const double milesPerHourToMetresPerSec = 0.44704;
+            //double swingSpeedMPH = swingSpeed / milesPerHourToMetresPerSec;
 
             // Set wind speed
             double wind = 0;
 
             // Calculate starting horizontal (ux) and vertical (uy) speed based on loft (converted from degrees to radians)
-            double ux = swingSpeedMPS * Math.Cos(loftInRadians);
-            double uy = swingSpeedMPS * Math.Sin(loftInRadians);
+            double ux = swingSpeed * Math.Cos(loftInRadians);
+            double uy = swingSpeed * Math.Sin(loftInRadians);
 
-            double timeInAir = maxDistanceMetres / ux;
+            double timeInAir = maxDistanceYds / ux;
 
 
             // initialise starting time and interval for loop
@@ -727,14 +729,13 @@ namespace The_ULTIMATE_golf_quiz
                 ballX = ballStartX + (int)sx * ydsToPixelsScale;
                 ballY = ballStartY - (int)sy * ydsToPixelsScale;
 
-                pctBoxGolfBall.Location = new Point(ballX, ballY);
+                pctBoxGolfBall.Location = new Point(ballX - (pctBoxGolfBall.Width / 2), ballY);
 
                 // wait interval seconds
                 Thread.Sleep((int)(intervalInSecs * 100));
             }
 
-            int distanceTravelledinMetres = (ballX - ballStartX) / ydsToPixelsScale;
-            int distanceTravelledinYards = (int)(distanceTravelledinMetres * metresToYards);
+            int distanceTravelledinYards = (ballX - ballStartX) / ydsToPixelsScale;
             int distanceFromHoleYds = Math.Abs(distanceToHoleYds - distanceTravelledinYards);
             int points = 0;
             if (distanceFromHoleYds <= 10)

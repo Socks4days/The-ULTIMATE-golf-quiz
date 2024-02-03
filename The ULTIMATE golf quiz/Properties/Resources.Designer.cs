@@ -259,6 +259,56 @@ namespace The_ULTIMATE_golf_quiz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Golf_flag_gentle_left {
+            get {
+                object obj = ResourceManager.GetObject("Golf_flag_gentle_left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Golf_flag_gentle_right {
+            get {
+                object obj = ResourceManager.GetObject("Golf_flag_gentle_right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Golf_flag_left {
+            get {
+                object obj = ResourceManager.GetObject("Golf_flag_left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Golf_flag_no_wind {
+            get {
+                object obj = ResourceManager.GetObject("Golf_flag_no_wind", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Golf_flag_right {
+            get {
+                object obj = ResourceManager.GetObject("Golf_flag_right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Golf_flag1 {
             get {
                 object obj = ResourceManager.GetObject("Golf_flag1", resourceCulture);
