@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Reflection;
+
 
 namespace The_ULTIMATE_golf_quiz
 {
@@ -26,16 +28,15 @@ namespace The_ULTIMATE_golf_quiz
         private int ballStartY { get; set; }
         private int flagStartX { get; set; }
         private int flagStartY { get; set; }
-        private int holeStartX { get; set; }
-        private int holeStartY { get; set; }
+      
         private int distanceToHoleYds { get; set; }
 
         private int windSpeed { get; set; }
         private int windDirection { get; set; }
         
         private int ydsToPixelsScale { get; set; }
+        private int goButtonClickCount { get; set; }
        
-
         #endregion Properties
 
         #region Lists
@@ -117,10 +118,23 @@ namespace The_ULTIMATE_golf_quiz
 
         public frmQuizQuestions()
         {
+            backgroundMusicPlayer.SoundLocation = "Background Music.wav";
+            backgroundMusicPlayer.Load();
             InitializeComponent();
+            startMusicPlayer();
             txtBoxAnswer.KeyDown += KeyPressedDown;
             KeyDown += KeyPressedDown;
-            NumberOfQuestionsAskedThisRound = 0;
+            NumberOfQuestionsAskedThisRound = 0;           
+        }
+        System.Media.SoundPlayer backgroundMusicPlayer = new System.Media.SoundPlayer();
+        
+        private void stopMusicPlayer()
+        {
+           backgroundMusicPlayer.Stop();
+        }  
+        private void startMusicPlayer()
+        {           
+            backgroundMusicPlayer.PlayLooping();
         }
 
         #region Initialisation
@@ -359,7 +373,8 @@ namespace The_ULTIMATE_golf_quiz
                             pctBoxPicture.Visible = true;
                             pnlPicture.Visible = true;
                             pnlPicture.Dock = DockStyle.Fill;
-                            
+                            lblAnswer.Text = "Click a point on the map to select a location";
+                            lblAnswer.Visible = true;
                         }
                         else
                         {
@@ -402,6 +417,13 @@ namespace The_ULTIMATE_golf_quiz
                         pctBoxFlag.BackColor = Color.Transparent;
                         lblWindSpeed.Text = "Wind Speed: " + windSpeed;
                         // pnlAnswer.BackColor = Color.DarkGreen;
+
+                        // reset go button and hide power progress bar
+                        btnChooseAClubGo.Text = "Go!";
+                        goButtonClickCount = 0;
+                        progressBarPower.Visible = false;
+                        lblPower.Visible = false;
+
                         break;
 
                     default:
@@ -654,8 +676,38 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnChooseAClubGo_Click(object sender, EventArgs e)
         {
-            // Animate ball moving to hole
+            // If this is the first time the go button is clicked, start the power timer
+            if (goButtonClickCount == 0)
+            {
+                // Reset/show the power progress bar and start the power meter
+                progressBarPower.Value = progressBarPower.Minimum;
+                progressBarPower.Visible = true;
+                lblPower.Visible = true;
+                timerPower.Enabled = true;
+                timerPower.Start();
+                goButtonClickCount = 1;
+                btnChooseAClubGo.Text = "Stop!";
+                return;
+            }
+            stopMusicPlayer();
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+            player.SoundLocation = "Golf Ball.wav";
+            player.Load();
+            player.Play();
+            
+            // Otherwise (second time go button click), stop the timer and animate the ball
+            // Stop the power meter
+            goButtonClickCount = 2;
+            timerPower.Enabled = false;
+            timerPower.Stop();
 
+            
+
+           
+            // Get the power value selected by the player
+            double powerSelected = progressBarPower.Value;
+
+            // Animate ball moving to hole
 
             // s = (u*t) + (a*t*t)
             // assume no air fiction and no wind
@@ -698,7 +750,7 @@ namespace The_ULTIMATE_golf_quiz
             // for putter, ignore wind speed and gravity
             if (selectedClub == "Putter")
             {
-                actualDistanceYds = maxDistanceYds;
+                actualDistanceYds = maxDistanceYds * (powerSelected / 100);
                 ux = maxDistanceYds / 10; // 10 seconds for a 50 yard putt
             }
             // otherwise adjust distance based on wind speed and direction - 1% for every 1 mph
@@ -715,6 +767,9 @@ namespace The_ULTIMATE_golf_quiz
                     actualDistanceYds = maxDistanceYds * (100 + windSpeed) / 100;
                 }
 
+                // Apply power selected to distance
+                actualDistanceYds = actualDistanceYds * (powerSelected / 100);
+
                 // Formula for horizontal distance the ball will go using loft and initial speed
                 // horizontal distance = ( initial horizontal speed^2 * sin(2 * loft) ) / g
                 // initial horizontal speed = square root of ( (horizontal distance * g) / sin (2 * loft) )
@@ -724,7 +779,6 @@ namespace The_ULTIMATE_golf_quiz
                 ux = swingSpeed * Math.Cos(loftInRadians);
                 uy = swingSpeed * Math.Sin(loftInRadians);
 
- 
             }
 
             double timeBallInMotion = actualDistanceYds / ux;
@@ -766,7 +820,7 @@ namespace The_ULTIMATE_golf_quiz
                 // wait interval seconds
                 Thread.Sleep((int)(intervalInSecs * 100));
             }
-
+            startMusicPlayer();
             int distanceTravelledinYards = (ballX - ballStartX) / ydsToPixelsScale;
             int distanceFromHoleYds = Math.Abs(distanceToHoleYds - distanceTravelledinYards);
             int points = 0;
@@ -787,7 +841,6 @@ namespace The_ULTIMATE_golf_quiz
                 + "\nYou score " + points + " points";
             TotalScoreForCurrentRound += points;
             TotalPointsAvailable += 5;
-            
         }
 
 
@@ -936,27 +989,68 @@ namespace The_ULTIMATE_golf_quiz
         };
 
 
-
-        private int x;
-        private int y;
         private void pctBoxMap_Click(object sender, EventArgs e)
         {
             MouseEventArgs mouseEvent = (MouseEventArgs)e;
             // MessageBox.Show(string.Format("X: {0} Y: {1}", x, y));
-            pctBoxLocation.Location = new Point(mouseEvent.X, mouseEvent.Y);
+            int mapX = pctBoxMap.Location.X;
+            int mapY = pctBoxMap.Location.Y;
+
+            pctBoxLocation.Location = new Point(mapX + mouseEvent.X - (pctBoxLocation.Width / 2), mapY + mouseEvent.Y - pctBoxLocation.Height);
+
+            // Get location selected (convert map panel width to 0-1000 range)
+            int x = (1000 * mouseEvent.X) / pctBoxMap.Width;
+            int y = (1000 * mouseEvent.Y) / pctBoxMap.Height;
+
+            // Check if the player is close to the right answer
+            if (Math.Abs(currentPictureQuestion1.CorrectLocationX - x) <= 50
+                && Math.Abs(currentPictureQuestion1.CorrectLocationY - y) <= 50)
+            {
+                lblAnswer.Text = String.Format("Correct! {0} ({1}, {2} )\nYou selected ({3}, {4})",
+                    currentPictureQuestion1.CorrectAnswer, currentPictureQuestion1.CorrectLocationX, currentPictureQuestion1.CorrectLocationY, x, y);
+                NumberOfQuestionsAnsweredCorrectly++;
+                TotalScoreForCurrentRound += currentPictureQuestion1.Points;
+            }
+            else
+            {
+                lblAnswer.Text = String.Format("No, {0} ({1}, {2} )\nYou selected ({3}, {4})",
+                    currentPictureQuestion1.CorrectAnswer, currentPictureQuestion1.CorrectLocationX, currentPictureQuestion1.CorrectLocationY, x, y);
+            }
+
+            AnswerButtonsDisable();
+            pnlAnswer.Visible = true;
+            lblAnswer.Visible = true;
+            btnNext.Visible = true;
+            TotalPointsAvailable += currentPictureQuestion1.Points;
+
         }
-        
+
+        private int ticks = 0;
+        private void timerPower_Tick(object sender, EventArgs e)
+        {
+            ticks++;
+            progressBarPower.Value = ticks;
+            // Stop when reach 100 or go button has been clicked a second time
+            if (ticks == 100 || goButtonClickCount == 2)
+            {
+                timerPower.Enabled = false;
+                timerPower.Stop();
+                ticks = 0;
+            }
+        }
+
+
     }
 }
-/*PC13, Where is this course?, USA,1,1,
-PC14, Where is this course?, USA
-PC15, Where is this course?, UAE
-PC16, Where is this course?, Spain
-PC17, Where is this course?, France
-PC18, Where is this course?, Scotland
-PC19, Where is this course?, Northern Ireland
-PC20, Where is this course?, Australia
-PC21, Where is this course?, South Africa
-PC22, Where is this course?, Chile
-PC23, Where is this course?, USA
-PC24, Where is this course?, USA*/
+/*PC13,Where is this course?,USA,1,1,
+PC14,Where is this course?,USA
+PC15,Where is this course?,UAE
+PC16,Where is this course?,Spain
+PC17,Where is this course?,France
+PC18,Where is this course?,Scotland
+PC19,Where is this course?,Northern Ireland
+PC20,Where is this course?,Australia
+PC21,Where is this course?,South Africa
+PC22,Where is this course?,Chile
+PC23,Where is this course?,USA
+PC24,Where is this course?,USA*/

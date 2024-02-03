@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuizQuestions));
             this.lblAnswer = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
@@ -45,11 +46,11 @@
             this.txtBoxAnswer = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.pnlQuestion = new System.Windows.Forms.Panel();
-            this.pctBoxPicture = new System.Windows.Forms.PictureBox();
             this.lblQuestionNumber = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
             this.lblDifficulty = new System.Windows.Forms.Label();
             this.lblQuestion = new System.Windows.Forms.Label();
+            this.pctBoxPicture = new System.Windows.Forms.PictureBox();
             this.pnlMultipleChoiceOptions = new System.Windows.Forms.Panel();
             this.btnOption2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -70,17 +71,20 @@
             this.btnTypeItRound = new System.Windows.Forms.Button();
             this.lblTypeOfRound = new System.Windows.Forms.Label();
             this.pnlChooseTheRightClub = new System.Windows.Forms.Panel();
-            this.pctBoxGolfBall = new System.Windows.Forms.PictureBox();
+            this.lblPower = new System.Windows.Forms.Label();
+            this.progressBarPower = new System.Windows.Forms.ProgressBar();
             this.lblWindSpeed = new System.Windows.Forms.Label();
             this.lblDistanceToHole = new System.Windows.Forms.Label();
             this.btnChooseAClubGo = new System.Windows.Forms.Button();
             this.lblChooseAClub = new System.Windows.Forms.Label();
             this.comboBoxChooseAClub = new System.Windows.Forms.ComboBox();
-            this.pctBoxFlag = new System.Windows.Forms.PictureBox();
             this.pnlGrass = new System.Windows.Forms.Panel();
+            this.pctBoxGolfBall = new System.Windows.Forms.PictureBox();
+            this.pctBoxFlag = new System.Windows.Forms.PictureBox();
             this.pnlPicture = new System.Windows.Forms.Panel();
             this.pctBoxLocation = new System.Windows.Forms.PictureBox();
             this.pctBoxMap = new System.Windows.Forms.PictureBox();
+            this.timerPower = new System.Windows.Forms.Timer(this.components);
             this.pnlFinish.SuspendLayout();
             this.pnlAnswer.SuspendLayout();
             this.pnlTypeIt.SuspendLayout();
@@ -169,7 +173,7 @@
             this.pnlFinish.Controls.Add(this.btnFinishSession);
             this.pnlFinish.Controls.Add(this.lblFinish);
             this.pnlFinish.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFinish.Location = new System.Drawing.Point(0, 653);
+            this.pnlFinish.Location = new System.Drawing.Point(0, 610);
             this.pnlFinish.Name = "pnlFinish";
             this.pnlFinish.Size = new System.Drawing.Size(724, 241);
             this.pnlFinish.TabIndex = 17;
@@ -226,7 +230,7 @@
             this.pnlAnswer.Controls.Add(this.button1);
             this.pnlAnswer.Controls.Add(this.lblAnswer);
             this.pnlAnswer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlAnswer.Location = new System.Drawing.Point(0, 585);
+            this.pnlAnswer.Location = new System.Drawing.Point(0, 542);
             this.pnlAnswer.Name = "pnlAnswer";
             this.pnlAnswer.Size = new System.Drawing.Size(724, 68);
             this.pnlAnswer.TabIndex = 11;
@@ -261,7 +265,7 @@
             this.pnlTypeIt.Controls.Add(this.txtBoxAnswer);
             this.pnlTypeIt.Controls.Add(this.btnSubmit);
             this.pnlTypeIt.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTypeIt.Location = new System.Drawing.Point(0, 136);
+            this.pnlTypeIt.Location = new System.Drawing.Point(0, 93);
             this.pnlTypeIt.Name = "pnlTypeIt";
             this.pnlTypeIt.Size = new System.Drawing.Size(724, 221);
             this.pnlTypeIt.TabIndex = 20;
@@ -313,7 +317,6 @@
             // 
             this.pnlQuestion.AutoSize = true;
             this.pnlQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.pnlQuestion.Controls.Add(this.pctBoxPicture);
             this.pnlQuestion.Controls.Add(this.lblQuestionNumber);
             this.pnlQuestion.Controls.Add(this.btnReturn);
             this.pnlQuestion.Controls.Add(this.lblDifficulty);
@@ -321,18 +324,9 @@
             this.pnlQuestion.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlQuestion.Location = new System.Drawing.Point(0, 0);
             this.pnlQuestion.Name = "pnlQuestion";
-            this.pnlQuestion.Size = new System.Drawing.Size(724, 136);
+            this.pnlQuestion.Size = new System.Drawing.Size(724, 93);
             this.pnlQuestion.TabIndex = 21;
             this.pnlQuestion.Visible = false;
-            // 
-            // pctBoxPicture
-            // 
-            this.pctBoxPicture.Location = new System.Drawing.Point(557, 34);
-            this.pctBoxPicture.Name = "pctBoxPicture";
-            this.pctBoxPicture.Size = new System.Drawing.Size(107, 99);
-            this.pctBoxPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pctBoxPicture.TabIndex = 16;
-            this.pctBoxPicture.TabStop = false;
             // 
             // lblQuestionNumber
             // 
@@ -391,6 +385,16 @@
             this.lblQuestion.TabIndex = 0;
             this.lblQuestion.Text = "Question Text";
             // 
+            // pctBoxPicture
+            // 
+            this.pctBoxPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pctBoxPicture.Location = new System.Drawing.Point(553, 6);
+            this.pctBoxPicture.Name = "pctBoxPicture";
+            this.pctBoxPicture.Size = new System.Drawing.Size(147, 144);
+            this.pctBoxPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBoxPicture.TabIndex = 16;
+            this.pctBoxPicture.TabStop = false;
+            // 
             // pnlMultipleChoiceOptions
             // 
             this.pnlMultipleChoiceOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
@@ -401,7 +405,7 @@
             this.pnlMultipleChoiceOptions.Controls.Add(this.btnOption3);
             this.pnlMultipleChoiceOptions.Controls.Add(this.btnOption1);
             this.pnlMultipleChoiceOptions.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMultipleChoiceOptions.Location = new System.Drawing.Point(0, 357);
+            this.pnlMultipleChoiceOptions.Location = new System.Drawing.Point(0, 314);
             this.pnlMultipleChoiceOptions.Name = "pnlMultipleChoiceOptions";
             this.pnlMultipleChoiceOptions.Size = new System.Drawing.Size(724, 139);
             this.pnlMultipleChoiceOptions.TabIndex = 22;
@@ -511,7 +515,7 @@
             this.pnlTrueOrFalseOptions.Controls.Add(this.btnFalse);
             this.pnlTrueOrFalseOptions.Controls.Add(this.btnTrue);
             this.pnlTrueOrFalseOptions.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTrueOrFalseOptions.Location = new System.Drawing.Point(0, 496);
+            this.pnlTrueOrFalseOptions.Location = new System.Drawing.Point(0, 453);
             this.pnlTrueOrFalseOptions.Name = "pnlTrueOrFalseOptions";
             this.pnlTrueOrFalseOptions.Size = new System.Drawing.Size(724, 89);
             this.pnlTrueOrFalseOptions.TabIndex = 23;
@@ -567,7 +571,7 @@
             this.pnlTypeOfRound.Controls.Add(this.btnTypeItRound);
             this.pnlTypeOfRound.Controls.Add(this.lblTypeOfRound);
             this.pnlTypeOfRound.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTypeOfRound.Location = new System.Drawing.Point(0, 894);
+            this.pnlTypeOfRound.Location = new System.Drawing.Point(0, 851);
             this.pnlTypeOfRound.Name = "pnlTypeOfRound";
             this.pnlTypeOfRound.Size = new System.Drawing.Size(724, 301);
             this.pnlTypeOfRound.TabIndex = 24;
@@ -711,6 +715,8 @@
             // 
             // pnlChooseTheRightClub
             // 
+            this.pnlChooseTheRightClub.Controls.Add(this.lblPower);
+            this.pnlChooseTheRightClub.Controls.Add(this.progressBarPower);
             this.pnlChooseTheRightClub.Controls.Add(this.lblWindSpeed);
             this.pnlChooseTheRightClub.Controls.Add(this.lblDistanceToHole);
             this.pnlChooseTheRightClub.Controls.Add(this.btnChooseAClubGo);
@@ -720,20 +726,28 @@
             this.pnlChooseTheRightClub.Controls.Add(this.pctBoxGolfBall);
             this.pnlChooseTheRightClub.Controls.Add(this.pctBoxFlag);
             this.pnlChooseTheRightClub.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlChooseTheRightClub.Location = new System.Drawing.Point(0, 1195);
+            this.pnlChooseTheRightClub.Location = new System.Drawing.Point(0, 1152);
             this.pnlChooseTheRightClub.Name = "pnlChooseTheRightClub";
             this.pnlChooseTheRightClub.Size = new System.Drawing.Size(724, 333);
             this.pnlChooseTheRightClub.TabIndex = 25;
             // 
-            // pctBoxGolfBall
+            // lblPower
             // 
-            this.pctBoxGolfBall.Image = global::The_ULTIMATE_golf_quiz.Properties.Resources.running_golf_ball;
-            this.pctBoxGolfBall.Location = new System.Drawing.Point(72, 266);
-            this.pctBoxGolfBall.Name = "pctBoxGolfBall";
-            this.pctBoxGolfBall.Size = new System.Drawing.Size(38, 38);
-            this.pctBoxGolfBall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pctBoxGolfBall.TabIndex = 0;
-            this.pctBoxGolfBall.TabStop = false;
+            this.lblPower.AutoSize = true;
+            this.lblPower.ForeColor = System.Drawing.Color.White;
+            this.lblPower.Location = new System.Drawing.Point(8, 37);
+            this.lblPower.Name = "lblPower";
+            this.lblPower.Size = new System.Drawing.Size(37, 13);
+            this.lblPower.TabIndex = 11;
+            this.lblPower.Text = "Power";
+            // 
+            // progressBarPower
+            // 
+            this.progressBarPower.Location = new System.Drawing.Point(124, 33);
+            this.progressBarPower.Name = "progressBarPower";
+            this.progressBarPower.Size = new System.Drawing.Size(121, 23);
+            this.progressBarPower.Step = 1;
+            this.progressBarPower.TabIndex = 10;
             // 
             // lblWindSpeed
             // 
@@ -767,7 +781,7 @@
             this.btnChooseAClubGo.ForeColor = System.Drawing.Color.White;
             this.btnChooseAClubGo.Location = new System.Drawing.Point(263, 6);
             this.btnChooseAClubGo.Name = "btnChooseAClubGo";
-            this.btnChooseAClubGo.Size = new System.Drawing.Size(46, 28);
+            this.btnChooseAClubGo.Size = new System.Drawing.Size(61, 28);
             this.btnChooseAClubGo.TabIndex = 6;
             this.btnChooseAClubGo.Text = "Go!";
             this.btnChooseAClubGo.UseVisualStyleBackColor = false;
@@ -806,6 +820,25 @@
             this.comboBoxChooseAClub.Size = new System.Drawing.Size(121, 21);
             this.comboBoxChooseAClub.TabIndex = 3;
             // 
+            // pnlGrass
+            // 
+            this.pnlGrass.BackColor = System.Drawing.Color.DarkGreen;
+            this.pnlGrass.Location = new System.Drawing.Point(0, 302);
+            this.pnlGrass.Name = "pnlGrass";
+            this.pnlGrass.Size = new System.Drawing.Size(740, 30);
+            this.pnlGrass.TabIndex = 8;
+            this.pnlGrass.Visible = false;
+            // 
+            // pctBoxGolfBall
+            // 
+            this.pctBoxGolfBall.Image = global::The_ULTIMATE_golf_quiz.Properties.Resources.running_golf_ball;
+            this.pctBoxGolfBall.Location = new System.Drawing.Point(72, 266);
+            this.pctBoxGolfBall.Name = "pctBoxGolfBall";
+            this.pctBoxGolfBall.Size = new System.Drawing.Size(38, 38);
+            this.pctBoxGolfBall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBoxGolfBall.TabIndex = 0;
+            this.pctBoxGolfBall.TabStop = false;
+            // 
             // pctBoxFlag
             // 
             this.pctBoxFlag.BackColor = System.Drawing.Color.Transparent;
@@ -817,49 +850,46 @@
             this.pctBoxFlag.TabIndex = 1;
             this.pctBoxFlag.TabStop = false;
             // 
-            // pnlGrass
-            // 
-            this.pnlGrass.BackColor = System.Drawing.Color.DarkGreen;
-            this.pnlGrass.Location = new System.Drawing.Point(0, 302);
-            this.pnlGrass.Name = "pnlGrass";
-            this.pnlGrass.Size = new System.Drawing.Size(740, 30);
-            this.pnlGrass.TabIndex = 8;
-            this.pnlGrass.Visible = false;
-            // 
             // pnlPicture
             // 
+            this.pnlPicture.Controls.Add(this.pctBoxPicture);
             this.pnlPicture.Controls.Add(this.pctBoxLocation);
             this.pnlPicture.Controls.Add(this.pctBoxMap);
             this.pnlPicture.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlPicture.Location = new System.Drawing.Point(0, 1528);
+            this.pnlPicture.Location = new System.Drawing.Point(0, 1485);
             this.pnlPicture.Name = "pnlPicture";
             this.pnlPicture.Size = new System.Drawing.Size(724, 500);
             this.pnlPicture.TabIndex = 26;
             // 
             // pctBoxLocation
             // 
-            this.pctBoxLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pctBoxLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pctBoxLocation.BackColor = System.Drawing.Color.Transparent;
             this.pctBoxLocation.Image = global::The_ULTIMATE_golf_quiz.Properties.Resources.Location;
             this.pctBoxLocation.InitialImage = ((System.Drawing.Image)(resources.GetObject("pctBoxLocation.InitialImage")));
-            this.pctBoxLocation.Location = new System.Drawing.Point(-24, 6);
+            this.pctBoxLocation.Location = new System.Drawing.Point(3, 414);
             this.pctBoxLocation.Name = "pctBoxLocation";
-            this.pctBoxLocation.Size = new System.Drawing.Size(24, 31);
+            this.pctBoxLocation.Size = new System.Drawing.Size(21, 31);
             this.pctBoxLocation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxLocation.TabIndex = 1;
             this.pctBoxLocation.TabStop = false;
             // 
             // pctBoxMap
             // 
-            this.pctBoxMap.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pctBoxMap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pctBoxMap.Image = global::The_ULTIMATE_golf_quiz.Properties.Resources.Screenshot_2024_01_26_085609;
-            this.pctBoxMap.Location = new System.Drawing.Point(5, 6);
+            this.pctBoxMap.Location = new System.Drawing.Point(0, 0);
             this.pctBoxMap.Name = "pctBoxMap";
-            this.pctBoxMap.Size = new System.Drawing.Size(708, 386);
+            this.pctBoxMap.Size = new System.Drawing.Size(724, 500);
             this.pctBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxMap.TabIndex = 0;
             this.pctBoxMap.TabStop = false;
             this.pctBoxMap.Click += new System.EventHandler(this.pctBoxMap_Click);
+            // 
+            // timerPower
+            // 
+            this.timerPower.Interval = 5;
+            this.timerPower.Tick += new System.EventHandler(this.timerPower_Tick);
             // 
             // frmQuizQuestions
             // 
@@ -960,5 +990,8 @@
         private System.Windows.Forms.PictureBox pctBoxLocation;
         private System.Windows.Forms.Panel pnlGrass;
         private System.Windows.Forms.Label lblWindSpeed;
+        private System.Windows.Forms.Label lblPower;
+        private System.Windows.Forms.ProgressBar progressBarPower;
+        private System.Windows.Forms.Timer timerPower;
     }
 }

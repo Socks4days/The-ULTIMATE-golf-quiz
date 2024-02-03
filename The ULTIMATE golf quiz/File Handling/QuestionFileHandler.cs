@@ -168,7 +168,7 @@ namespace The_ULTIMATE_golf_quiz
 
         public static void ReadInPictureQuestions()
         {
-            string[] pictureQuestionData = new string[6];
+            string[] pictureQuestionData = new string[8];
             string line;
             try
             {
@@ -184,12 +184,10 @@ namespace The_ULTIMATE_golf_quiz
                         pictureQuestion.Question = pictureQuestionData[1];
                         pictureQuestion.CorrectAnswer = pictureQuestionData[2];
                         pictureQuestion.Points = Convert.ToInt32(pictureQuestionData[3]);
-                        pictureQuestion.Difficulty = Convert.ToInt32(pictureQuestionData[4]);
-                        //pictureQuestion.Option1 = pictureQuestionData[5];
-                       // pictureQuestion.Option2 = pictureQuestionData[6];
-                       // pictureQuestion.Option3 = pictureQuestionData[7];
-                       // pictureQuestion.Option4 = pictureQuestionData[8];
+                        pictureQuestion.Difficulty = Convert.ToInt32(pictureQuestionData[4]);                        
                         pictureQuestion.PictureId = pictureQuestionData[5];
+                        pictureQuestion.CorrectLocationX = Convert.ToInt32(pictureQuestionData[6]);
+                        pictureQuestion.CorrectLocationY = Convert.ToInt32(pictureQuestionData[7]);
                         // adds the question from the csv into the list of questions
                         PictureQuestions.Add(pictureQuestion);
                     }
@@ -212,9 +210,9 @@ namespace The_ULTIMATE_golf_quiz
                 // Write details of each user into the file
                 foreach (PictureQuestion pictureQuestion in PictureQuestions)
                 {
-                    sw.WriteLine("{0},{1},{2},{3},{4},{5}",
+                    sw.WriteLine("{0},{1},{2},{3},{4},{5},{6},{7}",
                     pictureQuestion.Id, pictureQuestion.Question, pictureQuestion.CorrectAnswer, pictureQuestion.Points,
-                    pictureQuestion.Difficulty, pictureQuestion.PictureId);
+                    pictureQuestion.Difficulty, pictureQuestion.PictureId, pictureQuestion.CorrectLocationX, pictureQuestion.CorrectLocationY);
                 }
                 sw.Close();
             }

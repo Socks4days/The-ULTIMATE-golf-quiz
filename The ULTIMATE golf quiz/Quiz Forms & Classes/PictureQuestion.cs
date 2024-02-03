@@ -11,10 +11,14 @@ namespace The_ULTIMATE_golf_quiz
         public PictureQuestion() { }
 
         public string PictureId { get; set; }
+        public int CorrectLocationX { get; set; }
+        public int CorrectLocationY { get; set; }
 
-        public PictureQuestion(string id, string question, string correctAnswer, int points, int difficulty, string pictureId) : base(id, question, correctAnswer, points, difficulty)
+        public PictureQuestion(string id, string question, string correctAnswer, int points, int difficulty, string pictureId, int correctLocationX, int correctLocationY) : base(id, question, correctAnswer, points, difficulty)
         {
-            this.PictureId = pictureId;
+            PictureId = pictureId;
+            CorrectLocationX = correctLocationX;
+            CorrectLocationY = correctLocationY;
         }
     }
 }
