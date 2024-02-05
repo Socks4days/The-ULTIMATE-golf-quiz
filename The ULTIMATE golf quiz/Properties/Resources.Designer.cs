@@ -499,9 +499,9 @@ namespace The_ULTIMATE_golf_quiz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Tom_McKibben {
+        internal static System.Drawing.Bitmap Tom_McKibbin {
             get {
-                object obj = ResourceManager.GetObject("Tom McKibben", resourceCulture);
+                object obj = ResourceManager.GetObject("Tom McKibbin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

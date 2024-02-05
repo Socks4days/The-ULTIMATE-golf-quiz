@@ -401,16 +401,16 @@ namespace The_ULTIMATE_golf_quiz
                         NumberOfQuestionsAskedThisRound++;
 
                         Random windDirectionRnd = new Random();
-                        windDirection = windDirectionRnd.Next(0, 1);
+                        windDirection = windDirectionRnd.Next(0,1);
                         Random windSpeedRnd = new Random();
                         windSpeed = windSpeedRnd.Next(0, 50);
-                        if (windDirection == 0 && windSpeed > 20)
+                        if (windDirection == 1 && windSpeed > 20)
                             pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagLeft");
-                        else if (windDirection == 1 && windSpeed > 20)
+                        else if (windDirection == 0 && windSpeed > 20)
                             pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagRight");
-                        else if (windDirection == 0 && windSpeed <= 20 && windSpeed > 5)
-                            pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagLeftWeak");
                         else if (windDirection == 1 && windSpeed <= 20 && windSpeed > 5)
+                            pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagLeftWeak");
+                        else if (windDirection == 0 && windSpeed <= 20 && windSpeed > 5)
                             pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagRightWeak");
                         else
                             pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagNone");
@@ -423,7 +423,7 @@ namespace The_ULTIMATE_golf_quiz
                         goButtonClickCount = 0;
                         progressBarPower.Visible = false;
                         lblPower.Visible = false;
-
+                        pctBoxMap.Enabled = true;
                         break;
 
                     default:
@@ -841,6 +841,7 @@ namespace The_ULTIMATE_golf_quiz
                 + "\nYou score " + points + " points";
             TotalScoreForCurrentRound += points;
             TotalPointsAvailable += 5;
+            pctBoxMap.Enabled = false;
         }
 
 
@@ -996,6 +997,7 @@ namespace The_ULTIMATE_golf_quiz
             int mapX = pctBoxMap.Location.X;
             int mapY = pctBoxMap.Location.Y;
 
+            QuestionFileHandler.PictureQuestions.Remove(currentPictureQuestion1);
             pctBoxLocation.Location = new Point(mapX + mouseEvent.X - (pctBoxLocation.Width / 2), mapY + mouseEvent.Y - pctBoxLocation.Height);
 
             // Get location selected (convert map panel width to 0-1000 range)
