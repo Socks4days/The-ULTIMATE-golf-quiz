@@ -126,6 +126,8 @@ namespace The_ULTIMATE_golf_quiz
             KeyDown += KeyPressedDown;
             NumberOfQuestionsAskedThisRound = 0;           
         }
+
+        #region Music
         System.Media.SoundPlayer backgroundMusicPlayer = new System.Media.SoundPlayer();
         
         private void stopMusicPlayer()
@@ -136,6 +138,7 @@ namespace The_ULTIMATE_golf_quiz
         {           
             backgroundMusicPlayer.PlayLooping();
         }
+        #endregion Music
 
         #region Initialisation
         private void frmQuizQuestions_Load(object sender, EventArgs e)
@@ -281,8 +284,6 @@ namespace The_ULTIMATE_golf_quiz
                         }
                         break;
 
-
-
                     case "True or False":
                         // Same things for true or false questions
                         if (trueOrFalseQuestionList.Count > 0)
@@ -310,8 +311,6 @@ namespace The_ULTIMATE_golf_quiz
                             MessageBox.Show("You have completed all available questions for true or false, Congratulations!");
                         }
                         break;
-
-
 
                     case "Multiple Choice":
                         if (multipleChoiceQuestionList.Count > 0)
@@ -382,6 +381,7 @@ namespace The_ULTIMATE_golf_quiz
                             MessageBox.Show("You have completed all available questions for the picture round, Congratulations!");
                         }
                         break;
+
                     case "Choose Club":
 
                         pnlChooseTheRightClub.Visible = true;
@@ -389,7 +389,8 @@ namespace The_ULTIMATE_golf_quiz
                         pnlChooseTheRightClub.Dock = DockStyle.Fill;
 
                         distanceToHoleYds = random.Next(10, 330);
-                        ydsToPixelsScale = 2;
+                        ydsToPixelsScale = 2; // ((pnlChooseTheRightClub.Width / (flagStartX - ballStartX)));
+                        pnlGrass.Width = pnlGrass.Width * ydsToPixelsScale;
                         int flagPositionX = ballStartX + distanceToHoleYds * ydsToPixelsScale;
                         pctBoxFlag.Location = new Point(flagPositionX - (pctBoxFlag.Width / 2), flagStartY);
 
@@ -1044,15 +1045,4 @@ namespace The_ULTIMATE_golf_quiz
 
     }
 }
-/*PC13,Where is this course?,USA,1,1,
-PC14,Where is this course?,USA
-PC15,Where is this course?,UAE
-PC16,Where is this course?,Spain
-PC17,Where is this course?,France
-PC18,Where is this course?,Scotland
-PC19,Where is this course?,Northern Ireland
-PC20,Where is this course?,Australia
-PC21,Where is this course?,South Africa
-PC22,Where is this course?,Chile
-PC23,Where is this course?,USA
-PC24,Where is this course?,USA*/
+/**/

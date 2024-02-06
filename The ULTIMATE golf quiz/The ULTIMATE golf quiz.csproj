@@ -61,11 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\frmResetUserPassword.cs">
+    <Compile Include="Admin\frmResetOrDeleteUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\frmResetUserPassword.Designer.cs">
-      <DependentUpon>frmResetUserPassword.cs</DependentUpon>
+    <Compile Include="Admin\frmResetOrDeleteUser.Designer.cs">
+      <DependentUpon>frmResetOrDeleteUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\frmViewUsers.cs">
       <SubType>Form</SubType>
@@ -77,6 +77,7 @@
     <Compile Include="Classes for users\Player.cs" />
     <Compile Include="Classes for users\User.cs" />
     <Compile Include="File Handling\QuestionFileHandler.cs" />
+    <Compile Include="File Handling\AvatarFileHandler.cs" />
     <Compile Include="File Handling\UserFileHandler.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Quiz Forms &amp; Classes\AddQuestions.cs">
@@ -166,8 +167,8 @@
     <Compile Include="Splash Login Reg Menu\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Admin\frmResetUserPassword.resx">
-      <DependentUpon>frmResetUserPassword.cs</DependentUpon>
+    <EmbeddedResource Include="Admin\frmResetOrDeleteUser.resx">
+      <DependentUpon>frmResetOrDeleteUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\frmViewUsers.resx">
       <DependentUpon>frmViewUsers.cs</DependentUpon>
@@ -183,7 +184,6 @@
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmQuestions.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmQuizQuestions.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmReg.resources" />
-    <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmResetUserPassword.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmSettings.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmTrueOrFalse.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmTrueOrFalseQuestions.resources" />
@@ -255,6 +255,7 @@
     <None Include="bin\Debug\The ULTIMATE golf quiz.exe.config" />
     <None Include="bin\Debug\TrueOrFalseQuestions.csv" />
     <None Include="bin\Debug\TypeItQuestions.csv" />
+    <None Include="bin\Debug\Avatar Paths.csv" />
     <None Include="bin\Debug\Users - Copy.csv" />
     <None Include="bin\Debug\Users.csv" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />

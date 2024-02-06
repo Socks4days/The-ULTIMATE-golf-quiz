@@ -16,6 +16,7 @@ namespace The_ULTIMATE_golf_quiz
     {
         List<Player> players = UserFileHandler.players;
         int currentAvatarIndex = SplashScreen.player.avatar;
+        public static List<string> avatars = new List<string>();
         private string[] avatarPaths = { "Default1", "Default2", "Tiger Woods", "Rory McIllroy", "Female1", "Female2" };
         
         bool saveButtonClicked = false;

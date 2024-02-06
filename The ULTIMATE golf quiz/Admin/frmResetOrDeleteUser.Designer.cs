@@ -1,6 +1,6 @@
 ﻿namespace The_ULTIMATE_golf_quiz
 {
-    partial class frmResetUserPassword
+    partial class frmResetOrDeleteUser
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,6 @@
             this.listViewPlayers = new System.Windows.Forms.ListView();
             this.columnHeaderUsers = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnReturn = new System.Windows.Forms.Button();
-            this.lblViewPlayers = new System.Windows.Forms.Label();
             this.lblAdvice = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -40,9 +39,7 @@
             // listViewPlayers
             // 
             this.listViewPlayers.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
-            this.listViewPlayers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewPlayers.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listViewPlayers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.listViewPlayers.CheckBoxes = true;
             this.listViewPlayers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -52,9 +49,9 @@
             this.listViewPlayers.ForeColor = System.Drawing.Color.White;
             this.listViewPlayers.GridLines = true;
             this.listViewPlayers.HideSelection = false;
-            this.listViewPlayers.Location = new System.Drawing.Point(269, 72);
+            this.listViewPlayers.Location = new System.Drawing.Point(289, 73);
             this.listViewPlayers.Name = "listViewPlayers";
-            this.listViewPlayers.Size = new System.Drawing.Size(250, 320);
+            this.listViewPlayers.Size = new System.Drawing.Size(204, 320);
             this.listViewPlayers.TabIndex = 10;
             this.listViewPlayers.UseCompatibleStateImageBehavior = false;
             this.listViewPlayers.View = System.Windows.Forms.View.Details;
@@ -62,7 +59,7 @@
             // columnHeaderUsers
             // 
             this.columnHeaderUsers.Text = "Players";
-            this.columnHeaderUsers.Width = 800;
+            this.columnHeaderUsers.Width = 200;
             // 
             // btnReturn
             // 
@@ -84,30 +81,16 @@
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
-            // lblViewPlayers
-            // 
-            this.lblViewPlayers.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblViewPlayers.AutoSize = true;
-            this.lblViewPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblViewPlayers.ForeColor = System.Drawing.Color.White;
-            this.lblViewPlayers.Location = new System.Drawing.Point(338, 11);
-            this.lblViewPlayers.Name = "lblViewPlayers";
-            this.lblViewPlayers.Size = new System.Drawing.Size(87, 25);
-            this.lblViewPlayers.TabIndex = 12;
-            this.lblViewPlayers.Text = "All users";
-            // 
             // lblAdvice
             // 
-            this.lblAdvice.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblAdvice.AutoSize = true;
             this.lblAdvice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdvice.ForeColor = System.Drawing.Color.White;
-            this.lblAdvice.Location = new System.Drawing.Point(7, 173);
+            this.lblAdvice.Location = new System.Drawing.Point(106, 11);
             this.lblAdvice.Name = "lblAdvice";
-            this.lblAdvice.Size = new System.Drawing.Size(264, 125);
+            this.lblAdvice.Size = new System.Drawing.Size(92, 20);
             this.lblAdvice.TabIndex = 13;
-            this.lblAdvice.Text = "To reset user password:\r\n- Select any user who needs \r\npassword reset\r\n- Hit the " +
-    "button to reset\r\n- It will default to Password1!\r\n";
+            this.lblAdvice.Text = "Instructions";
             // 
             // btnReset
             // 
@@ -152,15 +135,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.ClientSize = new System.Drawing.Size(764, 481);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.lblViewPlayers);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.listViewPlayers);
             this.Controls.Add(this.lblAdvice);
+            this.Controls.Add(this.btnDelete);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmResetUserPassword";
-            this.Text = "Player reset";
+            this.Text = "Player reset or delete";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,7 +153,6 @@
         private System.Windows.Forms.ListView listViewPlayers;
         private System.Windows.Forms.ColumnHeader columnHeaderUsers;
         private System.Windows.Forms.Button btnReturn;
-        private System.Windows.Forms.Label lblViewPlayers;
         private System.Windows.Forms.Label lblAdvice;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnDelete;

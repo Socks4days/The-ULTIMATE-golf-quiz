@@ -44,10 +44,10 @@
             this.lblChangeAvatar.AutoSize = true;
             this.lblChangeAvatar.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChangeAvatar.ForeColor = System.Drawing.Color.White;
-            this.lblChangeAvatar.Location = new System.Drawing.Point(206, 17);
+            this.lblChangeAvatar.Location = new System.Drawing.Point(168, 11);
             this.lblChangeAvatar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChangeAvatar.Name = "lblChangeAvatar";
-            this.lblChangeAvatar.Size = new System.Drawing.Size(360, 44);
+            this.lblChangeAvatar.Size = new System.Drawing.Size(446, 54);
             this.lblChangeAvatar.TabIndex = 0;
             this.lblChangeAvatar.Text = "Change Your Avatar";
             // 

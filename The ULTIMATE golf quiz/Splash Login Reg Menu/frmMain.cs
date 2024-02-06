@@ -12,13 +12,44 @@ namespace The_ULTIMATE_golf_quiz
 {
     public partial class frmMain : Form
     {
+       // public string formChoice { get; set; } 
         public frmMain()
         {
-            // thing to do, find out how to get the back button on each form to call the method to reset button colours
-            InitializeComponent();
+            InitializeComponent();           
+            hideSubMenus();
+            setUpAfterLogin();
+        }
+       /* private void formSelector()
+        {
+            switch (formChoice)
+            {
+                case "Splash":
+                    
+                    openChildForm(new SplashScreen());
+                    break;
+                case "Login":
+                    
+                    openChildForm(new frmLogin());
+                    break;
+                case "Register":
+                    
+                    openChildForm(new frmReg());
+                    break;
+                case "Main":
+                    
+                    break;
+                default:
+                    
+                    break;
+            }
+                
+        }*/
+        private void setUpAfterLogin()
+        {
             hideSubMenus();
             setTitleLabels();
             setAvatar();
+            showMenus();
             if (SplashScreen.player.isAdmin == 0)
             {
                 btnAdmin.Visible = false;
@@ -30,6 +61,18 @@ namespace The_ULTIMATE_golf_quiz
             pnlSettingsSubMenu.Visible = false;
             pnlAdminSubMenu.Visible = false;
         }
+        private void hideMenus()
+        {
+            pnlSideMenu.Visible = false;
+            pnlTitleBar.Visible = false;
+        }
+        private void showMenus()
+        {
+            pnlSideMenu.Visible = true;
+            pnlTitleBar.Visible = true;
+        }
+
+
 
         private void toggleSubMenu(Panel selectedSubMenu)
         {
@@ -59,7 +102,7 @@ namespace The_ULTIMATE_golf_quiz
             int avatarIndex = SplashScreen.player.avatar;
             pctBoxAvatar.Image = (Image)Properties.Resources.ResourceManager.GetObject(avatarPaths[avatarIndex]);
         }
-        #endregion
+        #endregion topMenuSetup
 
 
         private Form activeForm = null;
@@ -75,6 +118,12 @@ namespace The_ULTIMATE_golf_quiz
             pnlFormContainer.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+        }
+
+        private void closeChildForm()
+        {
+            if (activeForm != null)
+                activeForm.Close();
         }
 
 
@@ -98,6 +147,7 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
+            closeChildForm();
             toggleSubMenu(pnlSettingsSubMenu);
             resetButtonColours();
         }
@@ -125,7 +175,8 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnDeleteAccount_Click(object sender, EventArgs e)
         {
-            
+            closeChildForm();
+            openChildForm(new frmUserInfo());
             List<Player> players = UserFileHandler.players;
             DialogResult result = MessageBox.Show("This action is permanent! \nDo you wish to continue?", "Delete Account", MessageBoxButtons.YesNo);
 
@@ -152,7 +203,8 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            toggleSubMenu(pnlAdminSubMenu);
+            closeChildForm();
+            toggleSubMenu(pnlAdminSubMenu);           
             resetButtonColours();
         }
 
@@ -163,13 +215,12 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnResetPassword_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmResetUserPassword());
+            openChildForm(new frmResetOrDeleteUser("Reset"));
         }
 
         private void btnDeleteUserAccount_Click(object sender, EventArgs e)
         {
-
-            openChildForm(new frmResetUserPassword());
+            openChildForm(new frmResetOrDeleteUser("Delete"));
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

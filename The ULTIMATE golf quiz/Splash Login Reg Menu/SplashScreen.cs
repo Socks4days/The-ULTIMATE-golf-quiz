@@ -39,7 +39,7 @@ namespace The_ULTIMATE_golf_quiz
             // Creates and starts timer when the splash screen loads 
             timeLeft = 10;
             tmrload.Start();
-            new frmMainMenu();
+           
         }
 
         public int timeLeft { get; set; }
@@ -54,6 +54,7 @@ namespace The_ULTIMATE_golf_quiz
                 // stops timer when it gets to the required width and then shows the login screen
                 tmrload.Stop();
                 this.Hide();
+               // new frmMain().formChoice = "Login";
                 new frmLogin().Show();
             }
         }

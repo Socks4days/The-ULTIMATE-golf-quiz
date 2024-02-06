@@ -448,7 +448,7 @@
             this.lblUltimateGolfQuiz.AutoSize = true;
             this.lblUltimateGolfQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUltimateGolfQuiz.ForeColor = System.Drawing.Color.White;
-            this.lblUltimateGolfQuiz.Location = new System.Drawing.Point(192, 113);
+            this.lblUltimateGolfQuiz.Location = new System.Drawing.Point(193, 113);
             this.lblUltimateGolfQuiz.Name = "lblUltimateGolfQuiz";
             this.lblUltimateGolfQuiz.Size = new System.Drawing.Size(404, 37);
             this.lblUltimateGolfQuiz.TabIndex = 1;
@@ -459,7 +459,7 @@
             this.pctBoxLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pctBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pctBoxLogo.Image = global::The_ULTIMATE_golf_quiz.Properties.Resources.Golf_logo3;
-            this.pctBoxLogo.Location = new System.Drawing.Point(238, 119);
+            this.pctBoxLogo.Location = new System.Drawing.Point(239, 119);
             this.pctBoxLogo.Name = "pctBoxLogo";
             this.pctBoxLogo.Size = new System.Drawing.Size(288, 239);
             this.pctBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -476,11 +476,11 @@
             this.Controls.Add(this.pnlSideMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5);
-            this.MinimumSize = new System.Drawing.Size(1006, 591);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.MinimumSize = new System.Drawing.Size(1006, 589);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmMain";
+            this.Text = "The ULTIMATE Golf Quiz";
             this.pnlSideMenu.ResumeLayout(false);
             this.pnlAdminSubMenu.ResumeLayout(false);
             this.pnlSettingsSubMenu.ResumeLayout(false);

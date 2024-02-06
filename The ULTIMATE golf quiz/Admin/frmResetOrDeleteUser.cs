@@ -10,11 +10,9 @@ using System.Windows.Forms;
 
 namespace The_ULTIMATE_golf_quiz
 {
-    public partial class frmResetUserPassword : Form
+    public partial class frmResetOrDeleteUser : Form
     {
-        public int isDelete { get; set; }
-        public int isReset { get; set; }
-        public frmResetUserPassword()
+        public frmResetOrDeleteUser(string mode)
         {
             InitializeComponent();
 
@@ -24,11 +22,11 @@ namespace The_ULTIMATE_golf_quiz
                 string playerName = player.username;
                 listViewPlayers.Items.Add(playerName);
             }
-            if (isDelete == 1)
+            if (mode == "Delete")
             {
                 DeleteAccount();
             }
-            else if (isReset == 1)
+            else if (mode == "Reset")
             {
                 Reset();
             }
@@ -36,12 +34,12 @@ namespace The_ULTIMATE_golf_quiz
         List<string> playersToEdit = new List<string>();
         public void DeleteAccount()
         {
-            lblAdvice.Text = "To delete user:\r\n- Select any user to delete\r\n- Hit delete and their\r\naccount will be removed\r\n";
+            lblAdvice.Text = "To delete one or more users, select the users from the list and then hit 'Delete'\r\n";
             btnReset.Visible = false;
         }
         public void Reset()
         {
-            lblAdvice.Text = "To reset user password:\r\n- Select any user who needs \r\npassword reset\r\n- Hit the button to reset\r\n- It will default to Password1!\r\n" + "";
+            lblAdvice.Text = "To reset one or more users passwords, select the users from the list and then hit 'Reset'\r\nTheir password will be reset to Password1!\r\n";
             btnDelete.Visible = false;
         }
 
@@ -119,5 +117,7 @@ namespace The_ULTIMATE_golf_quiz
                     
             }
         }
+
+
     }
 }

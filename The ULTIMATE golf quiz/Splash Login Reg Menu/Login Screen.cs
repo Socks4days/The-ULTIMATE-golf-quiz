@@ -64,6 +64,7 @@ namespace The_ULTIMATE_golf_quiz
             {
                 this.Hide();
                 new frmMain().Show();
+             //   new frmMain().formChoice = "Main";
             } 
             else 
             {
@@ -83,8 +84,9 @@ namespace The_ULTIMATE_golf_quiz
         private void registerbtn_Click(object sender, EventArgs e)
         {
             // Opens the register screen when pressed
-           
+
             this.Hide();
+           // new frmMain().formChoice = "Register";
             new frmReg().Show();
         }
                 
