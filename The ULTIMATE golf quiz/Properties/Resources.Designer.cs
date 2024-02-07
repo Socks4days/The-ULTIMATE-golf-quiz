@@ -389,9 +389,9 @@ namespace The_ULTIMATE_golf_quiz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap N__Ireland {
+        internal static System.Drawing.Bitmap Northern_Ireland {
             get {
-                object obj = ResourceManager.GetObject("N. Ireland", resourceCulture);
+                object obj = ResourceManager.GetObject("Northern Ireland", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -176,10 +176,7 @@ namespace The_ULTIMATE_golf_quiz
             flagStartX = pctBoxFlag.Location.X;
             flagStartY = pctBoxFlag.Location.Y;
 
-            //  remember size and start position of picture round player picture box (before it is zoomed)
-            originalImageWidth = pctBoxPicture.Width;
-            originalImageHeight = pctBoxPicture.Height;
-          
+         
         }
         #endregion Initialisation
 
@@ -382,6 +379,9 @@ namespace The_ULTIMATE_golf_quiz
                             lblAnswer.Text = "Click a point on the map to select a location";
                             lblAnswer.Visible = true;
                             pictureQuestionAnswered = false;
+
+                            // reset the imageZoomed flag and resize the picture to the new panel size
+                            zoomPictureBox(false);
                         }
                         else
                         {
@@ -928,6 +928,7 @@ namespace The_ULTIMATE_golf_quiz
             pnlTrueOrFalseOptions.Visible = false;
             pnlMultipleChoiceOptions.Visible = false;
             pnlChooseTheRightClub.Visible = false;
+            pnlPicture.Visible = false;
             SplashScreen.player.totalScoreForCurrentSession += TotalScoreForCurrentRound;
             if (SplashScreen.player.totalScoreForCurrentSession > SplashScreen.player.highscore)
             {
@@ -1054,16 +1055,15 @@ namespace The_ULTIMATE_golf_quiz
         }
 
         bool imageZoomed = false;
-        int originalImageWidth = 0;
-        int originalImageHeight = 0;
+        int originalImageWidth = 140;
+        int originalImageHeight = 140;
 
-        private void pctBoxPicture_Click(object sender, EventArgs e)
+        private void zoomPictureBox(bool zoomImage)
         {
-
-            if (!imageZoomed) 
+            if (zoomImage)
             {
-                // Scale image to 80% of the panel width/height (whichever is smaller)
-                int newImageWidth = (int) (Math.Min (pnlPicture.Width, pnlPicture.Height) * 0.8);
+                // Scale image to 80% of the panel width/height (whichever is smaller), but no smaller than 140x140
+                int newImageWidth = Math.Max(140, (int)(Math.Min(pnlPicture.Width, pnlPicture.Height) * 0.8));
                 int newImageHeight = newImageWidth;
 
                 pctBoxPicture.Size = new Size(newImageWidth, newImageHeight);
@@ -1074,19 +1074,22 @@ namespace The_ULTIMATE_golf_quiz
             {
                 pctBoxPicture.Size = new Size((originalImageWidth), (originalImageHeight));
                 pctBoxPicture.Location = new Point(pnlPicture.Width - originalImageWidth - 20, 20);
-                imageZoomed = false;    
+                imageZoomed = false;
             }
+        }
 
-           
+        private void pctBoxPicture_Click(object sender, EventArgs e)
+        {
+            // Toggle image zoom
+            zoomPictureBox(!imageZoomed);
         }
 
         private void frmQuizQuestions_Resize(object sender, EventArgs e)
         {
             if (QuestionFileHandler.RoundType == "Picture")
             {
-                // reset the imageZoomed flag and resize the picture to the new panel size
-                imageZoomed = !imageZoomed;
-                pctBoxPicture_Click(sender, e);
+                // resize the picture to the new panel size
+                zoomPictureBox(imageZoomed);
             }
         }
     }

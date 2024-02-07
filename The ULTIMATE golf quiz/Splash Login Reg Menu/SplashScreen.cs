@@ -26,7 +26,6 @@ namespace The_ULTIMATE_golf_quiz
             QuestionFileHandler.ReadInMultiChoiceQuestions();
             QuestionFileHandler.ReadInPictureQuestions();
             //QuestionFileHandler.ReadInTypeItQuestions();
-
         }
 
         // Create Player object for the duration of the program
@@ -49,7 +48,7 @@ namespace The_ULTIMATE_golf_quiz
             pictureBox1.Show();
             pnlSmall.Width += 6;
             pictureBox1.Location = new Point(pictureBox1.Location.X + 6, pictureBox1.Location.Y);
-            if (pnlSmall.Width >= 511)
+            if (pnlSmall.Width >= 773)
             {
                 // stops timer when it gets to the required width and then shows the login screen
                 tmrload.Stop();
