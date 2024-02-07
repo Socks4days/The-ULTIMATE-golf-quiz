@@ -176,7 +176,11 @@ namespace The_ULTIMATE_golf_quiz
             flagStartX = pctBoxFlag.Location.X;
             flagStartY = pctBoxFlag.Location.Y;
 
-    }
+            //  remember size and start position of picture round player picture box (before it is zoomed)
+            originalImageWidth = pctBoxPicture.Width;
+            originalImageHeight = pctBoxPicture.Height;
+          
+        }
         #endregion Initialisation
 
         #region RoundTypeButtonClicks
@@ -236,6 +240,8 @@ namespace The_ULTIMATE_golf_quiz
         #endregion SetupForRound
 
         #region GetQuestion
+
+        private bool pictureQuestionAnswered = false;
         // Question method
         public void GetQuestion()
         {
@@ -348,6 +354,7 @@ namespace The_ULTIMATE_golf_quiz
                     case "Picture":
                         if (pictureQuestionList.Count > 0)
                         {
+                            
                             // sets a variable equal to a number between 0 and the total amount of questions in the list of multi choice questions
                             int randomisedQuestionNumber = random.Next(0, QuestionFileHandler.PictureQuestions.Count - 1);
                             PictureQuestion currentPictureQuestion = QuestionFileHandler.PictureQuestions[randomisedQuestionNumber];
@@ -374,6 +381,7 @@ namespace The_ULTIMATE_golf_quiz
                             pnlPicture.Dock = DockStyle.Fill;
                             lblAnswer.Text = "Click a point on the map to select a location";
                             lblAnswer.Visible = true;
+                            pictureQuestionAnswered = false;
                         }
                         else
                         {
@@ -993,39 +1001,42 @@ namespace The_ULTIMATE_golf_quiz
 
         private void pctBoxMap_Click(object sender, EventArgs e)
         {
-            MouseEventArgs mouseEvent = (MouseEventArgs)e;
-            // MessageBox.Show(string.Format("X: {0} Y: {1}", x, y));
-            int mapX = pctBoxMap.Location.X;
-            int mapY = pctBoxMap.Location.Y;
-
-            QuestionFileHandler.PictureQuestions.Remove(currentPictureQuestion1);
-            pctBoxLocation.Location = new Point(mapX + mouseEvent.X - (pctBoxLocation.Width / 2), mapY + mouseEvent.Y - pctBoxLocation.Height);
-
-            // Get location selected (convert map panel width to 0-1000 range)
-            int x = (1000 * mouseEvent.X) / pctBoxMap.Width;
-            int y = (1000 * mouseEvent.Y) / pctBoxMap.Height;
-
-            // Check if the player is close to the right answer
-            if (Math.Abs(currentPictureQuestion1.CorrectLocationX - x) <= 50
-                && Math.Abs(currentPictureQuestion1.CorrectLocationY - y) <= 50)
+            if (!pictureQuestionAnswered)
             {
-                lblAnswer.Text = String.Format("Correct! {0} ({1}, {2} )\nYou selected ({3}, {4})",
-                    currentPictureQuestion1.CorrectAnswer, currentPictureQuestion1.CorrectLocationX, currentPictureQuestion1.CorrectLocationY, x, y);
-                NumberOfQuestionsAnsweredCorrectly++;
-                TotalScoreForCurrentRound += currentPictureQuestion1.Points;
-            }
-            else
-            {
-                lblAnswer.Text = String.Format("No, {0} ({1}, {2} )\nYou selected ({3}, {4})",
-                    currentPictureQuestion1.CorrectAnswer, currentPictureQuestion1.CorrectLocationX, currentPictureQuestion1.CorrectLocationY, x, y);
-            }
+                MouseEventArgs mouseEvent = (MouseEventArgs)e;
+                // MessageBox.Show(string.Format("X: {0} Y: {1}", x, y));
+                int mapX = pctBoxMap.Location.X;
+                int mapY = pctBoxMap.Location.Y;
 
-            AnswerButtonsDisable();
-            pnlAnswer.Visible = true;
-            lblAnswer.Visible = true;
-            btnNext.Visible = true;
-            TotalPointsAvailable += currentPictureQuestion1.Points;
+                QuestionFileHandler.PictureQuestions.Remove(currentPictureQuestion1);
+                pctBoxLocation.Location = new Point(mapX + mouseEvent.X - (pctBoxLocation.Width / 2), mapY + mouseEvent.Y - pctBoxLocation.Height);
 
+                // Get location selected (convert map panel width to 0-1000 range)
+                int x = (1000 * mouseEvent.X) / pctBoxMap.Width;
+                int y = (1000 * mouseEvent.Y) / pctBoxMap.Height;
+
+                // Check if the player is close to the right answer
+                if (Math.Abs(currentPictureQuestion1.CorrectLocationX - x) <= 50
+                    && Math.Abs(currentPictureQuestion1.CorrectLocationY - y) <= 50)
+                {
+                    lblAnswer.Text = String.Format("Correct! {0} ({1}, {2} )\nYou selected ({3}, {4})",
+                        currentPictureQuestion1.CorrectAnswer, currentPictureQuestion1.CorrectLocationX, currentPictureQuestion1.CorrectLocationY, x, y);
+                    NumberOfQuestionsAnsweredCorrectly++;
+                    TotalScoreForCurrentRound += currentPictureQuestion1.Points;
+                }
+                else
+                {
+                    lblAnswer.Text = String.Format("No, {0} ({1}, {2} )\nYou selected ({3}, {4})",
+                        currentPictureQuestion1.CorrectAnswer, currentPictureQuestion1.CorrectLocationX, currentPictureQuestion1.CorrectLocationY, x, y);
+                }
+                pictureQuestionAnswered = true;
+
+                AnswerButtonsDisable();
+                pnlAnswer.Visible = true;
+                lblAnswer.Visible = true;
+                btnNext.Visible = true;
+                TotalPointsAvailable += currentPictureQuestion1.Points;
+            }           
         }
 
         private int ticks = 0;
@@ -1042,7 +1053,42 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
+        bool imageZoomed = false;
+        int originalImageWidth = 0;
+        int originalImageHeight = 0;
 
+        private void pctBoxPicture_Click(object sender, EventArgs e)
+        {
+
+            if (!imageZoomed) 
+            {
+                // Scale image to 80% of the panel width/height (whichever is smaller)
+                int newImageWidth = (int) (Math.Min (pnlPicture.Width, pnlPicture.Height) * 0.8);
+                int newImageHeight = newImageWidth;
+
+                pctBoxPicture.Size = new Size(newImageWidth, newImageHeight);
+                pctBoxPicture.Location = new Point((pnlPicture.Width / 2) - (pctBoxPicture.Width / 2), (pnlPicture.Height / 2) - (pctBoxPicture.Height / 2));
+                imageZoomed = true;
+            }
+            else
+            {
+                pctBoxPicture.Size = new Size((originalImageWidth), (originalImageHeight));
+                pctBoxPicture.Location = new Point(pnlPicture.Width - originalImageWidth - 20, 20);
+                imageZoomed = false;    
+            }
+
+           
+        }
+
+        private void frmQuizQuestions_Resize(object sender, EventArgs e)
+        {
+            if (QuestionFileHandler.RoundType == "Picture")
+            {
+                // reset the imageZoomed flag and resize the picture to the new panel size
+                imageZoomed = !imageZoomed;
+                pctBoxPicture_Click(sender, e);
+            }
+        }
     }
 }
 /**/

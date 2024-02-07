@@ -388,12 +388,13 @@
             // pctBoxPicture
             // 
             this.pctBoxPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pctBoxPicture.Location = new System.Drawing.Point(574, 6);
+            this.pctBoxPicture.Location = new System.Drawing.Point(580, 20);
             this.pctBoxPicture.Name = "pctBoxPicture";
-            this.pctBoxPicture.Size = new System.Drawing.Size(147, 144);
+            this.pctBoxPicture.Size = new System.Drawing.Size(140, 140);
             this.pctBoxPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxPicture.TabIndex = 16;
             this.pctBoxPicture.TabStop = false;
+            this.pctBoxPicture.Click += new System.EventHandler(this.pctBoxPicture_Click);
             // 
             // pnlMultipleChoiceOptions
             // 
@@ -911,6 +912,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "The Quiz";
             this.Load += new System.EventHandler(this.frmQuizQuestions_Load);
+            this.Resize += new System.EventHandler(this.frmQuizQuestions_Resize);
             this.pnlFinish.ResumeLayout(false);
             this.pnlFinish.PerformLayout();
             this.pnlAnswer.ResumeLayout(false);
