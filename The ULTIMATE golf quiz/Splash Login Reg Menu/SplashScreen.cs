@@ -20,12 +20,7 @@ namespace The_ULTIMATE_golf_quiz
             // Read in all the players from the csv file
             UserFileHandler.ReadInPlayers();
             
-            // Read in the questions from the csv file
-            QuestionFileHandler.ReadInTypeItQuestions();
-            QuestionFileHandler.ReadInTrueOrFalseQuestions();
-            QuestionFileHandler.ReadInMultiChoiceQuestions();
-            QuestionFileHandler.ReadInPictureQuestions();
-            //QuestionFileHandler.ReadInTypeItQuestions();
+           
         }
 
         // Create Player object for the duration of the program

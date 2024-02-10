@@ -247,10 +247,8 @@
     <EmbeddedResource Include="Splash Login Reg Menu\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="bin\Debug\a" />
     <None Include="bin\Debug\MultiChoiceQuestions.csv" />
     <None Include="bin\Debug\PictureQuestions.csv" />
-    <None Include="bin\Debug\Player Files\QuestionsAnswered_a.csv" />
     <None Include="bin\Debug\QuestionAnswered_a.csv" />
     <None Include="bin\Debug\The ULTIMATE golf quiz.exe.config" />
     <None Include="bin\Debug\TrueOrFalseQuestions.csv" />
@@ -348,6 +346,7 @@
     <Content Include="Resources\Male2.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\Player Files\" />
     <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

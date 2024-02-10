@@ -22,6 +22,8 @@ namespace The_ULTIMATE_golf_quiz
         {
             string[] typeItQuestionData = new string[5];
             string line;
+            // clear any old questions
+            TypeItQuestions = new List<TypeItQuestion>();
             try 
             { 
             string filePath = "TypeItQuestions.csv";
@@ -70,6 +72,8 @@ namespace The_ULTIMATE_golf_quiz
         {
             string[] trueOrFalseQuestionData = new string[5];
             string line;
+            // clear any old questions
+            TrueOrFalseQuestions = new List<TrueOrFalseQuestion>();
             try
             {
                 string filePath = "TrueOrFalseQuestions.csv";
@@ -117,6 +121,8 @@ namespace The_ULTIMATE_golf_quiz
         {
             string[] multiChoiceQuestionData = new string[9];
             string line;
+            // clear any old questions
+            MultiChoiceQuestions = new List<MultiChoiceQuestion>();
             try
             {
                 string filePath = "MultiChoiceQuestions.csv";
@@ -170,6 +176,8 @@ namespace The_ULTIMATE_golf_quiz
         {
             string[] pictureQuestionData = new string[8];
             string line;
+            // clear any old questions
+            PictureQuestions = new List<PictureQuestion>();
             try
             {
                 string filePath = "PictureQuestions.csv";

@@ -87,5 +87,66 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
+        public static void ReadPlayerQuestionAnswered(Player player)
+        {
+            string playerFilePathWithUsername = playerQuestionAnsweredFilePath.Replace("PLAYER", player.username);
+            string line;
+            string questionID;
+            bool questionAnsweredCorrectly;
+            string[] playersAnsweredQuestions = new string[2];
+
+            // Clear and read in all questions 
+            QuestionFileHandler.ReadInTypeItQuestions();
+            QuestionFileHandler.ReadInTrueOrFalseQuestions();
+            QuestionFileHandler.ReadInMultiChoiceQuestions();
+            QuestionFileHandler.ReadInPictureQuestions();
+
+            try
+            {
+                using (StreamReader sr = new StreamReader(playerFilePathWithUsername))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        line = sr.ReadLine();
+                        // puts all of the information into the already created array
+                        playersAnsweredQuestions = line.Split(',').ToArray();
+
+                        questionID = playersAnsweredQuestions[0];
+                        questionAnsweredCorrectly = Convert.ToBoolean(playersAnsweredQuestions[1]);
+
+                        // adds all the players that are in the csv into the original splash screen list of players
+                        TypeItQuestion typeItQuestion = QuestionFileHandler.TypeItQuestions.Find(x => x.Id == questionID);
+                        if (typeItQuestion != null)
+                        {
+                            QuestionFileHandler.TypeItQuestions.Remove(typeItQuestion);
+                        }
+                        TrueOrFalseQuestion trueOrFalseQuestion = QuestionFileHandler.TrueOrFalseQuestions.Find(x => x.Id == questionID);
+                        if (trueOrFalseQuestion != null)
+                        {
+                            QuestionFileHandler.TrueOrFalseQuestions.Remove(trueOrFalseQuestion);
+                        }
+                        MultiChoiceQuestion multiChoiceQuestion = QuestionFileHandler.MultiChoiceQuestions.Find(x => x.Id == questionID);
+                        if (multiChoiceQuestion != null)
+                        {
+                            QuestionFileHandler.MultiChoiceQuestions.Remove(multiChoiceQuestion);
+                        }
+                        PictureQuestion pictureQuestion = QuestionFileHandler.PictureQuestions.Find(x => x.Id == questionID);
+                        if (pictureQuestion != null)
+                        {
+                            QuestionFileHandler.PictureQuestions.Remove(pictureQuestion);
+                        }
+
+                    }
+                    sr.Close();
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                // File doesn't exist the first time the player logs in
+
+            }
+
+        }
+
     }
 }

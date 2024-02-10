@@ -485,10 +485,14 @@ namespace The_ULTIMATE_golf_quiz
                 lblAnswer.Text = "Correct";
                 TotalScoreForCurrentRound += currentTrueOrFalseQuestion1.Points;
                 NumberOfQuestionsAnsweredCorrectly++;
+                UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentTrueOrFalseQuestion1, true);
+
             }
             else
             {
                 lblAnswer.Text = "Incorrect, it's false";
+                UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentTrueOrFalseQuestion1, false);
+
             }
         }
 
@@ -505,10 +509,13 @@ namespace The_ULTIMATE_golf_quiz
                 lblAnswer.Text = "Correct";
                 TotalScoreForCurrentRound += currentTrueOrFalseQuestion1.Points;
                 NumberOfQuestionsAnsweredCorrectly++;
+                UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentTrueOrFalseQuestion1, true);
+
             }
             else
             {
                lblAnswer.Text = "Incorrect, it's true";
+                UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentTrueOrFalseQuestion1, false);
             }
         }
 
@@ -530,27 +537,17 @@ namespace The_ULTIMATE_golf_quiz
                    lblAnswer.Text = "Correct";
                     TotalScoreForCurrentRound += currentMultipleChoiceQuestion1.Points;
                     NumberOfQuestionsAnsweredCorrectly++;
+                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentMultipleChoiceQuestion1, true);
+
                 }
                 else
                 {
                    lblAnswer.Text = "Incorrect, the answer is " + currentMultipleChoiceQuestion1.CorrectAnswer;
+                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentMultipleChoiceQuestion1, false);
 
                 }
             }
-            else if (QuestionFileHandler.RoundType == "Picture")
-            {
-                QuestionFileHandler.PictureQuestions.Remove(currentPictureQuestion1);
-                if (currentPictureQuestion1.CorrectAnswer == btnOption1.Text)
-                {
-                    TotalScoreForCurrentRound += currentPictureQuestion1.Points;
-                    NumberOfQuestionsAnsweredCorrectly++;
-                    lblAnswer.Text = "Correct";
-                }
-                else
-                {
-                    lblAnswer.Text = "Incorrect, the answer is " + currentPictureQuestion1.CorrectAnswer;
-                }
-            }
+           
             
         }
 
@@ -570,29 +567,17 @@ namespace The_ULTIMATE_golf_quiz
                     TotalScoreForCurrentRound += currentMultipleChoiceQuestion1.Points;
                     NumberOfQuestionsAnsweredCorrectly++;
                     lblAnswer.Text = "Correct";
+                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentMultipleChoiceQuestion1, true);
+
                 }
                 else
                 {
                    lblAnswer.Text = "Incorrect, the answer is " + currentMultipleChoiceQuestion1.CorrectAnswer;
+                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentMultipleChoiceQuestion1, false);
 
                 }
             }
-            else if (QuestionFileHandler.RoundType == "Picture")
-            {
-                QuestionFileHandler.PictureQuestions.Remove(currentPictureQuestion1);
-                if (currentPictureQuestion1.CorrectAnswer == btnOption2.Text)
-                {
-                    
-                    TotalScoreForCurrentRound += currentPictureQuestion1.Points;
-                    NumberOfQuestionsAnsweredCorrectly++;
-                    lblAnswer.Text = "Correct";
-                }
-                else
-                {
-                   
-                    lblAnswer.Text = "Incorrect, the answer is " + currentPictureQuestion1.CorrectAnswer;
-                }
-            }
+           
         }
 
         private void btnOption3_Click(object sender, EventArgs e)
@@ -608,35 +593,22 @@ namespace The_ULTIMATE_golf_quiz
                 QuestionFileHandler.MultiChoiceQuestions.Remove(currentMultipleChoiceQuestion1);
                 if (currentMultipleChoiceQuestion1.CorrectAnswer == btnOption3.Text)
                 {
-                   
+
                     TotalScoreForCurrentRound += currentMultipleChoiceQuestion1.Points;
                     NumberOfQuestionsAnsweredCorrectly++;
                     lblAnswer.Text = "Correct";
+                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentMultipleChoiceQuestion1, true);
+
                 }
                 else
                 {
-                    
+
                     lblAnswer.Text = "Incorrect, the answer is " + currentMultipleChoiceQuestion1.CorrectAnswer;
+                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentMultipleChoiceQuestion1, false);
 
                 }
             }
-            else if (QuestionFileHandler.RoundType == "Picture")
-            {
-                QuestionFileHandler.PictureQuestions.Remove(currentPictureQuestion1);
-                if (currentPictureQuestion1.CorrectAnswer == btnOption3.Text)
-                {
-                    
-                    TotalScoreForCurrentRound += currentPictureQuestion1.Points;
-                    NumberOfQuestionsAnsweredCorrectly++;
-                    lblAnswer.Text = "Correct";
-                }
-                else
-                {
-                    
-                    lblAnswer.Text = "Incorrect, the answer is " + currentPictureQuestion1.CorrectAnswer;
-                }
-            }
-        }
+        }    
 
         private void btnOption4_Click(object sender, EventArgs e)
         {
@@ -651,32 +623,65 @@ namespace The_ULTIMATE_golf_quiz
                 QuestionFileHandler.MultiChoiceQuestions.Remove(currentMultipleChoiceQuestion1);
                 if (currentMultipleChoiceQuestion1.CorrectAnswer == btnOption4.Text)
                 {
-                   
+
                     TotalScoreForCurrentRound += currentMultipleChoiceQuestion1.Points;
                     NumberOfQuestionsAnsweredCorrectly++;
                     lblAnswer.Text = "Correct";
+                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentMultipleChoiceQuestion1, true);
+
                 }
                 else
                 {
-                    
+
                     lblAnswer.Text = "Incorrect, the answer is " + currentMultipleChoiceQuestion1.CorrectAnswer;
+                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentMultipleChoiceQuestion1, false);
+
                 }
             }
-            else if (QuestionFileHandler.RoundType == "Picture")
+           
+        }
+
+        private void pctBoxMap_Click(object sender, EventArgs e)
+        {
+            if (!pictureQuestionAnswered)
             {
+                MouseEventArgs mouseEvent = (MouseEventArgs)e;
+                // MessageBox.Show(string.Format("X: {0} Y: {1}", x, y));
+                int mapX = pctBoxMap.Location.X;
+                int mapY = pctBoxMap.Location.Y;
+
                 QuestionFileHandler.PictureQuestions.Remove(currentPictureQuestion1);
-                if (currentPictureQuestion1.CorrectAnswer == btnOption4.Text)
+                pctBoxLocation.Location = new Point(mapX + mouseEvent.X - (pctBoxLocation.Width / 2), mapY + mouseEvent.Y - pctBoxLocation.Height);
+
+                // Get location selected (convert map panel width to 0-1000 range)
+                int x = (1000 * mouseEvent.X) / pctBoxMap.Width;
+                int y = (1000 * mouseEvent.Y) / pctBoxMap.Height;
+
+                // Check if the player is close to the right answer
+                if (Math.Abs(currentPictureQuestion1.CorrectLocationX - x) <= 50
+                    && Math.Abs(currentPictureQuestion1.CorrectLocationY - y) <= 50)
                 {
-                   
-                    TotalScoreForCurrentRound += currentPictureQuestion1.Points;
+                    lblAnswer.Text = String.Format("Correct! {0} ({1}, {2} )\nYou selected ({3}, {4})",
+                        currentPictureQuestion1.CorrectAnswer, currentPictureQuestion1.CorrectLocationX, currentPictureQuestion1.CorrectLocationY, x, y);
                     NumberOfQuestionsAnsweredCorrectly++;
-                    lblAnswer.Text = "Correct";
+                    TotalScoreForCurrentRound += currentPictureQuestion1.Points;
+                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentPictureQuestion1, true);
+
                 }
                 else
                 {
-                    
-                    lblAnswer.Text = "Incorrect, the answer is " + currentPictureQuestion1.CorrectAnswer;
+                    lblAnswer.Text = String.Format("No, {0} ({1}, {2} )\nYou selected ({3}, {4})",
+                        currentPictureQuestion1.CorrectAnswer, currentPictureQuestion1.CorrectLocationX, currentPictureQuestion1.CorrectLocationY, x, y);
+                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentMultipleChoiceQuestion1, false);
+
                 }
+                pictureQuestionAnswered = true;
+
+                AnswerButtonsDisable();
+                pnlAnswer.Visible = true;
+                lblAnswer.Visible = true;
+                btnNext.Visible = true;
+                TotalPointsAvailable += currentPictureQuestion1.Points;
             }
         }
 
@@ -991,45 +996,7 @@ namespace The_ULTIMATE_golf_quiz
         };
 
 
-        private void pctBoxMap_Click(object sender, EventArgs e)
-        {
-            if (!pictureQuestionAnswered)
-            {
-                MouseEventArgs mouseEvent = (MouseEventArgs)e;
-                // MessageBox.Show(string.Format("X: {0} Y: {1}", x, y));
-                int mapX = pctBoxMap.Location.X;
-                int mapY = pctBoxMap.Location.Y;
-
-                QuestionFileHandler.PictureQuestions.Remove(currentPictureQuestion1);
-                pctBoxLocation.Location = new Point(mapX + mouseEvent.X - (pctBoxLocation.Width / 2), mapY + mouseEvent.Y - pctBoxLocation.Height);
-
-                // Get location selected (convert map panel width to 0-1000 range)
-                int x = (1000 * mouseEvent.X) / pctBoxMap.Width;
-                int y = (1000 * mouseEvent.Y) / pctBoxMap.Height;
-
-                // Check if the player is close to the right answer
-                if (Math.Abs(currentPictureQuestion1.CorrectLocationX - x) <= 50
-                    && Math.Abs(currentPictureQuestion1.CorrectLocationY - y) <= 50)
-                {
-                    lblAnswer.Text = String.Format("Correct! {0} ({1}, {2} )\nYou selected ({3}, {4})",
-                        currentPictureQuestion1.CorrectAnswer, currentPictureQuestion1.CorrectLocationX, currentPictureQuestion1.CorrectLocationY, x, y);
-                    NumberOfQuestionsAnsweredCorrectly++;
-                    TotalScoreForCurrentRound += currentPictureQuestion1.Points;
-                }
-                else
-                {
-                    lblAnswer.Text = String.Format("No, {0} ({1}, {2} )\nYou selected ({3}, {4})",
-                        currentPictureQuestion1.CorrectAnswer, currentPictureQuestion1.CorrectLocationX, currentPictureQuestion1.CorrectLocationY, x, y);
-                }
-                pictureQuestionAnswered = true;
-
-                AnswerButtonsDisable();
-                pnlAnswer.Visible = true;
-                lblAnswer.Visible = true;
-                btnNext.Visible = true;
-                TotalPointsAvailable += currentPictureQuestion1.Points;
-            }           
-        }
+       
 
         private int ticks = 0;
         private void timerPower_Tick(object sender, EventArgs e)

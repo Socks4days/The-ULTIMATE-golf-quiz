@@ -24,6 +24,8 @@ namespace The_ULTIMATE_golf_quiz
             // Code to be able to hit enter to do same thing as submit when in the password textbox
             passwordtxtbox.KeyDown += KeyPressedDown;
             KeyDown += KeyPressedDown;
+
+           
         }
 
         private void KeyPressedDown(object sender, KeyEventArgs e)
@@ -62,6 +64,10 @@ namespace The_ULTIMATE_golf_quiz
 
             if (foundUser)
             {
+                // Load in questions for player
+                UserFileHandler.ReadPlayerQuestionAnswered(SplashScreen.player);
+
+
                 this.Hide();
                 new frmMain().Show();
              //   new frmMain().formChoice = "Main";
