@@ -32,8 +32,7 @@ namespace The_ULTIMATE_golf_quiz
         private int distanceToHoleYds { get; set; }
 
         private int windSpeed { get; set; }
-        private int windDirection { get; set; }
-        
+        private int windDirection { get; set; }        
         private int ydsToPixelsScale { get; set; }
         private int goButtonClickCount { get; set; }
        
@@ -236,7 +235,7 @@ namespace The_ULTIMATE_golf_quiz
         }
         #endregion SetupForRound
 
-        #region GetQuestion
+        #region GetQuestion 
 
         private bool pictureQuestionAnswered = false;
         // Question method
@@ -272,7 +271,7 @@ namespace The_ULTIMATE_golf_quiz
                             txtBoxAnswer.Enabled = true;
                             this.ActiveControl = txtBoxAnswer;
                             lblDifficulty.Text = "Difficulty: " + BaseQuestion.DifficultyLevels[currentTypeItQuestion.Difficulty];
-                            TotalPointsAvailable = TotalPointsAvailable + currentTypeItQuestion.Points;
+                            TotalPointsAvailable += currentTypeItQuestion.Points;
                             NumberOfQuestionsAskedThisRound++;
 
                             // Show TypeIt panel
@@ -301,7 +300,7 @@ namespace The_ULTIMATE_golf_quiz
                             lblQuestion.Text = currentTrueOrFalseQuestion.Question;
                             this.ActiveControl = btnTrue;
                             lblDifficulty.Text = "Difficulty: " + BaseQuestion.DifficultyLevels[currentTrueOrFalseQuestion.Difficulty];
-                            TotalPointsAvailable = TotalPointsAvailable + currentTrueOrFalseQuestion.Points;
+                            TotalPointsAvailable += currentTrueOrFalseQuestion.Points;
                             NumberOfQuestionsAskedThisRound++;
 
                             // Show TrueOrFalse panel
@@ -314,7 +313,7 @@ namespace The_ULTIMATE_golf_quiz
                             MessageBox.Show("You have completed all available questions for true or false, Congratulations!");
                         }
                         break;
-
+                        //boys kissing
                     case "Multiple Choice":
                         if (multipleChoiceQuestionList.Count > 0)
                         {
@@ -333,7 +332,7 @@ namespace The_ULTIMATE_golf_quiz
                             btnOption4.Text = currentMultipleChoiceQuestion.Option4;
                             this.ActiveControl = btnOption1;
                             lblDifficulty.Text = "Difficulty: " + BaseQuestion.DifficultyLevels[currentMultipleChoiceQuestion.Difficulty];
-                            TotalPointsAvailable = TotalPointsAvailable + currentMultipleChoiceQuestion.Points;
+                            TotalPointsAvailable += currentMultipleChoiceQuestion.Points;
                             NumberOfQuestionsAskedThisRound++;
 
                             // Show MultipleChoice panel
@@ -368,7 +367,7 @@ namespace The_ULTIMATE_golf_quiz
                             pctBoxPicture.Image = (Image)Properties.Resources.ResourceManager.GetObject(currentPictureQuestion.PictureId);
                             this.ActiveControl = btnOption1;
                             lblDifficulty.Text = "Difficulty: " + BaseQuestion.DifficultyLevels[currentPictureQuestion.Difficulty];
-                            TotalPointsAvailable = TotalPointsAvailable + currentPictureQuestion.Points;
+                           // TotalPointsAvailable += currentPictureQuestion.Points;
                             NumberOfQuestionsAskedThisRound++;
 
                             // Show MultipleChoce and Picture panels
@@ -409,22 +408,20 @@ namespace The_ULTIMATE_golf_quiz
 
                         NumberOfQuestionsAskedThisRound++;
 
-                        Random windDirectionRnd = new Random();
-                        windDirection = windDirectionRnd.Next(0,1);
                         Random windSpeedRnd = new Random();
-                        windSpeed = windSpeedRnd.Next(0, 50);
-                        if (windDirection == 1 && windSpeed > 20)
-                            pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagLeft");
-                        else if (windDirection == 0 && windSpeed > 20)
+                        windSpeed = windSpeedRnd.Next(-25,25);
+                        if (windSpeed >= 15)
                             pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagRight");
-                        else if (windDirection == 1 && windSpeed <= 20 && windSpeed > 5)
+                        else if ( windSpeed <= -15)
+                            pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagLeft");
+                        else if (windSpeed < -5)
                             pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagLeftWeak");
-                        else if (windDirection == 0 && windSpeed <= 20 && windSpeed > 5)
+                        else if ( windSpeed > 5)
                             pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagRightWeak");
                         else
                             pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagNone");
                         pctBoxFlag.BackColor = Color.Transparent;
-                        lblWindSpeed.Text = "Wind Speed: " + windSpeed;
+                        lblWindSpeed.Text = "Wind Speed: " + Math.Abs(windSpeed);
                         // pnlAnswer.BackColor = Color.DarkGreen;
 
                         // reset go button and hide power progress bar
@@ -463,7 +460,7 @@ namespace The_ULTIMATE_golf_quiz
             if (txtBoxAnswer.Text.ToLower() == currentTypeItQuestion1.CorrectAnswer.ToLower())
             {
                 lblAnswer.Text = "Correct";
-                TotalScoreForCurrentRound = TotalScoreForCurrentRound + currentTypeItQuestion1.Points;
+                TotalScoreForCurrentRound += currentTypeItQuestion1.Points;
                 NumberOfQuestionsAnsweredCorrectly++;
                 UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentTypeItQuestion1, true);
             }
@@ -486,7 +483,7 @@ namespace The_ULTIMATE_golf_quiz
             if (currentTrueOrFalseQuestion1.CorrectAnswer == "1")
             {
                 lblAnswer.Text = "Correct";
-                TotalScoreForCurrentRound = TotalScoreForCurrentRound + currentTrueOrFalseQuestion1.Points;
+                TotalScoreForCurrentRound += currentTrueOrFalseQuestion1.Points;
                 NumberOfQuestionsAnsweredCorrectly++;
             }
             else
@@ -506,7 +503,7 @@ namespace The_ULTIMATE_golf_quiz
             if (currentTrueOrFalseQuestion1.CorrectAnswer == "0")
             {
                 lblAnswer.Text = "Correct";
-                TotalScoreForCurrentRound = TotalScoreForCurrentRound + currentTrueOrFalseQuestion1.Points;
+                TotalScoreForCurrentRound += currentTrueOrFalseQuestion1.Points;
                 NumberOfQuestionsAnsweredCorrectly++;
             }
             else
@@ -531,7 +528,7 @@ namespace The_ULTIMATE_golf_quiz
                 if (currentMultipleChoiceQuestion1.CorrectAnswer == btnOption1.Text)
                 {
                    lblAnswer.Text = "Correct";
-                    TotalScoreForCurrentRound = TotalScoreForCurrentRound + currentMultipleChoiceQuestion1.Points;
+                    TotalScoreForCurrentRound += currentMultipleChoiceQuestion1.Points;
                     NumberOfQuestionsAnsweredCorrectly++;
                 }
                 else
@@ -545,7 +542,7 @@ namespace The_ULTIMATE_golf_quiz
                 QuestionFileHandler.PictureQuestions.Remove(currentPictureQuestion1);
                 if (currentPictureQuestion1.CorrectAnswer == btnOption1.Text)
                 {
-                    TotalScoreForCurrentRound = TotalScoreForCurrentRound + currentPictureQuestion1.Points;
+                    TotalScoreForCurrentRound += currentPictureQuestion1.Points;
                     NumberOfQuestionsAnsweredCorrectly++;
                     lblAnswer.Text = "Correct";
                 }
@@ -570,7 +567,7 @@ namespace The_ULTIMATE_golf_quiz
                 QuestionFileHandler.MultiChoiceQuestions.Remove(currentMultipleChoiceQuestion1);
                 if (currentMultipleChoiceQuestion1.CorrectAnswer == btnOption2.Text)
                 {
-                    TotalScoreForCurrentRound = TotalScoreForCurrentRound + currentMultipleChoiceQuestion1.Points;
+                    TotalScoreForCurrentRound += currentMultipleChoiceQuestion1.Points;
                     NumberOfQuestionsAnsweredCorrectly++;
                     lblAnswer.Text = "Correct";
                 }
@@ -586,7 +583,7 @@ namespace The_ULTIMATE_golf_quiz
                 if (currentPictureQuestion1.CorrectAnswer == btnOption2.Text)
                 {
                     
-                    TotalScoreForCurrentRound = TotalScoreForCurrentRound + currentPictureQuestion1.Points;
+                    TotalScoreForCurrentRound += currentPictureQuestion1.Points;
                     NumberOfQuestionsAnsweredCorrectly++;
                     lblAnswer.Text = "Correct";
                 }
@@ -612,7 +609,7 @@ namespace The_ULTIMATE_golf_quiz
                 if (currentMultipleChoiceQuestion1.CorrectAnswer == btnOption3.Text)
                 {
                    
-                    TotalScoreForCurrentRound = TotalScoreForCurrentRound + currentMultipleChoiceQuestion1.Points;
+                    TotalScoreForCurrentRound += currentMultipleChoiceQuestion1.Points;
                     NumberOfQuestionsAnsweredCorrectly++;
                     lblAnswer.Text = "Correct";
                 }
@@ -629,7 +626,7 @@ namespace The_ULTIMATE_golf_quiz
                 if (currentPictureQuestion1.CorrectAnswer == btnOption3.Text)
                 {
                     
-                    TotalScoreForCurrentRound = TotalScoreForCurrentRound + currentPictureQuestion1.Points;
+                    TotalScoreForCurrentRound += currentPictureQuestion1.Points;
                     NumberOfQuestionsAnsweredCorrectly++;
                     lblAnswer.Text = "Correct";
                 }
@@ -655,7 +652,7 @@ namespace The_ULTIMATE_golf_quiz
                 if (currentMultipleChoiceQuestion1.CorrectAnswer == btnOption4.Text)
                 {
                    
-                    TotalScoreForCurrentRound = TotalScoreForCurrentRound + currentMultipleChoiceQuestion1.Points;
+                    TotalScoreForCurrentRound += currentMultipleChoiceQuestion1.Points;
                     NumberOfQuestionsAnsweredCorrectly++;
                     lblAnswer.Text = "Correct";
                 }
@@ -671,7 +668,7 @@ namespace The_ULTIMATE_golf_quiz
                 if (currentPictureQuestion1.CorrectAnswer == btnOption4.Text)
                 {
                    
-                    TotalScoreForCurrentRound = TotalScoreForCurrentRound + currentPictureQuestion1.Points;
+                    TotalScoreForCurrentRound += currentPictureQuestion1.Points;
                     NumberOfQuestionsAnsweredCorrectly++;
                     lblAnswer.Text = "Correct";
                 }
@@ -765,17 +762,11 @@ namespace The_ULTIMATE_golf_quiz
             // otherwise adjust distance based on wind speed and direction - 1% for every 1 mph
             else
             {
-                if (windDirection == 0) // wind blowing to left (hitting into wind)
-                {
-                    // reduce distance by 1% for every 1 mph
-                    actualDistanceYds = maxDistanceYds * (100 - windSpeed) / 100;
-                }
-                else
-                {
-                    // increase distance by 1% for every 1 mph
+                // negative wind blowing to left (hitting into wind)
+                // positive wind speed blowing to the right (hitting with the wind)
+                // reduce or increase distance by 1% for every 1 mph
                     actualDistanceYds = maxDistanceYds * (100 + windSpeed) / 100;
-                }
-
+                
                 // Apply power selected to distance
                 actualDistanceYds = actualDistanceYds * (powerSelected / 100);
 

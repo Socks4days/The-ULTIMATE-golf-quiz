@@ -14,7 +14,7 @@ namespace The_ULTIMATE_golf_quiz
         public static List<TrueOrFalseQuestion> TrueOrFalseQuestions = new List<TrueOrFalseQuestion>();
         public static List<MultiChoiceQuestion> MultiChoiceQuestions = new List<MultiChoiceQuestion>();
         public static List<PictureQuestion> PictureQuestions = new List<PictureQuestion>();
-        //public static List<BaseQuestion> TypeItQuestions = new List<BaseQuestion>();
+      
         public static string RoundType { get; set; }
 
 
