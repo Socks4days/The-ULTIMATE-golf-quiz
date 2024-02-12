@@ -378,6 +378,7 @@ namespace The_ULTIMATE_golf_quiz
                             lblAnswer.Text = "Click a point on the map to select a location";
                             lblAnswer.Visible = true;
                             pictureQuestionAnswered = false;
+                            pctBoxLocation.Visible = false;
 
                             // reset the imageZoomed flag and resize the picture to the new panel size
                             zoomPictureBox(false);
@@ -672,12 +673,13 @@ namespace The_ULTIMATE_golf_quiz
                 {
                     lblAnswer.Text = String.Format("No, {0} ({1}, {2} )\nYou selected ({3}, {4})",
                         currentPictureQuestion1.CorrectAnswer, currentPictureQuestion1.CorrectLocationX, currentPictureQuestion1.CorrectLocationY, x, y);
-                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentMultipleChoiceQuestion1, false);
+                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentPictureQuestion1, false);
 
                 }
                 pictureQuestionAnswered = true;
 
                 AnswerButtonsDisable();
+                pctBoxLocation.Visible = true;
                 pnlAnswer.Visible = true;
                 lblAnswer.Visible = true;
                 btnNext.Visible = true;
