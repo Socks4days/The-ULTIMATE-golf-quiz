@@ -305,6 +305,7 @@
     <Content Include="Resources\Default2.png" />
     <Content Include="Resources\Female1.png" />
     <Content Include="Resources\Female2.png" />
+    <None Include="Resources\Screenshot 2024-02-13 172939.png" />
     <None Include="Resources\Golf flag left.png" />
     <None Include="Resources\Golf flag right.png" />
     <None Include="Resources\Golf flag gentle left.png" />
