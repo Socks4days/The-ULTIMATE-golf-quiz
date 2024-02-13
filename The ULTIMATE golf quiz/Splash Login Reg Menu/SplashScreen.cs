@@ -30,25 +30,21 @@ namespace The_ULTIMATE_golf_quiz
 
         private void SplashScreen_Load(object sender, EventArgs e)
         {
-            // Creates and starts timer when the splash screen loads 
-            timeLeft = 10;
-            tmrload.Start();
-           
+            // Starts timer when the splash screen loads 
+            tmrLoad.Start();           
         }
 
-        public int timeLeft { get; set; }
-        private void timer1_Tick(object sender, EventArgs e)
+        private void tmrLoad_Tick(object sender, EventArgs e)
         {
             // image of golf ball image running alongside the loading bar
             pictureBox1.Show();
             pnlSmall.Width += 6;
             pictureBox1.Location = new Point(pictureBox1.Location.X + 6, pictureBox1.Location.Y);
-            if (pnlSmall.Width >= 773)
+            if (pnlSmall.Width >= panel1.Width)
             {
                 // stops timer when it gets to the required width and then shows the login screen
-                tmrload.Stop();
+                tmrLoad.Stop();
                 this.Hide();
-               // new frmMain().formChoice = "Login";
                 new frmLogin().Show();
             }
         }

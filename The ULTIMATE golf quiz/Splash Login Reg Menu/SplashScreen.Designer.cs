@@ -34,7 +34,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tmrload = new System.Windows.Forms.Timer(this.components);
+            this.tmrLoad = new System.Windows.Forms.Timer(this.components);
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +73,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(127, 92);
+            this.label1.Location = new System.Drawing.Point(174, 95);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(465, 108);
@@ -91,10 +91,10 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // tmrload
+            // tmrLoad
             // 
-            this.tmrload.Interval = 1;
-            this.tmrload.Tick += new System.EventHandler(this.timer1_Tick);
+            this.tmrLoad.Interval = 1;
+            this.tmrLoad.Tick += new System.EventHandler(this.tmrLoad_Tick);
             // 
             // SplashScreen
             // 
@@ -122,7 +122,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlSmall;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Timer tmrload;
+        private System.Windows.Forms.Timer tmrLoad;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
     }

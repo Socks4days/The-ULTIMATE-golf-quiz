@@ -254,6 +254,11 @@ namespace The_ULTIMATE_golf_quiz
             lblAnswer.Visible = false;
             Random random = new Random();
 
+            // Start the countdown to 30 seconds
+            countdown = 30 * 10;
+            progressBarCountdown.Maximum = countdown;
+            timerCountdown.Start();
+
 
             // If the amount of questions asked this round is less than 10 then it will ask another question
             if (NumberOfQuestionsAskedThisRound < 5)
@@ -738,8 +743,8 @@ namespace The_ULTIMATE_golf_quiz
             // Otherwise (second time go button click), stop the timer and animate the ball
             // Stop the power meter
             goButtonClickCount = 2;
-            timerPower.Enabled = false;
             timerPower.Stop();
+            timerPower.Enabled = false;
 
             
 
@@ -1030,10 +1035,13 @@ namespace The_ULTIMATE_golf_quiz
         private int ticks = 0;
         private void timerPower_Tick(object sender, EventArgs e)
         {
-            ticks++;
-            progressBarPower.Value = ticks;
             // Stop when reach 100 or go button has been clicked a second time
-            if (ticks == 100 || goButtonClickCount == 2)
+            if (ticks < 100 && goButtonClickCount != 2)
+            {
+                ticks++;
+                progressBarPower.Value = ticks;
+            }
+            else
             {
                 timerPower.Stop();
                 timerPower.Enabled = false;                
@@ -1110,6 +1118,16 @@ namespace The_ULTIMATE_golf_quiz
             {
                 // move the ball, flag and grass to the right places based on the new window size
                 calculateBallAndFlagPositionRelativeToWindow();
+            }
+        }
+
+        int countdown = 0;
+        private void timerCountdown_Tick(object sender, EventArgs e)
+        {
+            if (countdown > 0)
+            {
+                countdown--;
+                progressBarCountdown.Value = countdown;
             }
         }
     }

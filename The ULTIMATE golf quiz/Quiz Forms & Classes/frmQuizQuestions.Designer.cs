@@ -85,6 +85,8 @@
             this.pctBoxLocation = new System.Windows.Forms.PictureBox();
             this.pctBoxMap = new System.Windows.Forms.PictureBox();
             this.timerPower = new System.Windows.Forms.Timer(this.components);
+            this.progressBarCountdown = new System.Windows.Forms.ProgressBar();
+            this.timerCountdown = new System.Windows.Forms.Timer(this.components);
             this.pnlFinish.SuspendLayout();
             this.pnlAnswer.SuspendLayout();
             this.pnlTypeIt.SuspendLayout();
@@ -317,6 +319,7 @@
             // 
             this.pnlQuestion.AutoSize = true;
             this.pnlQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.pnlQuestion.Controls.Add(this.progressBarCountdown);
             this.pnlQuestion.Controls.Add(this.lblQuestionNumber);
             this.pnlQuestion.Controls.Add(this.btnReturn);
             this.pnlQuestion.Controls.Add(this.lblDifficulty);
@@ -381,7 +384,7 @@
             this.lblQuestion.Location = new System.Drawing.Point(130, 34);
             this.lblQuestion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuestion.Name = "lblQuestion";
-            this.lblQuestion.Size = new System.Drawing.Size(418, 59);
+            this.lblQuestion.Size = new System.Drawing.Size(431, 59);
             this.lblQuestion.TabIndex = 0;
             this.lblQuestion.Text = "Question Text";
             // 
@@ -736,7 +739,7 @@
             // 
             this.lblPower.AutoSize = true;
             this.lblPower.ForeColor = System.Drawing.Color.White;
-            this.lblPower.Location = new System.Drawing.Point(8, 37);
+            this.lblPower.Location = new System.Drawing.Point(8, 43);
             this.lblPower.Name = "lblPower";
             this.lblPower.Size = new System.Drawing.Size(37, 13);
             this.lblPower.TabIndex = 11;
@@ -744,10 +747,11 @@
             // 
             // progressBarPower
             // 
-            this.progressBarPower.Location = new System.Drawing.Point(124, 33);
+            this.progressBarPower.Location = new System.Drawing.Point(121, 39);
             this.progressBarPower.Name = "progressBarPower";
             this.progressBarPower.Size = new System.Drawing.Size(121, 23);
             this.progressBarPower.Step = 1;
+            this.progressBarPower.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBarPower.TabIndex = 10;
             // 
             // lblWindSpeed
@@ -772,7 +776,6 @@
             // 
             // btnChooseAClubGo
             // 
-            this.btnChooseAClubGo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnChooseAClubGo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnChooseAClubGo.FlatAppearance.BorderSize = 0;
             this.btnChooseAClubGo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
@@ -780,7 +783,7 @@
             this.btnChooseAClubGo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChooseAClubGo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseAClubGo.ForeColor = System.Drawing.Color.White;
-            this.btnChooseAClubGo.Location = new System.Drawing.Point(273, 6);
+            this.btnChooseAClubGo.Location = new System.Drawing.Point(257, 6);
             this.btnChooseAClubGo.Name = "btnChooseAClubGo";
             this.btnChooseAClubGo.Size = new System.Drawing.Size(61, 28);
             this.btnChooseAClubGo.TabIndex = 6;
@@ -816,7 +819,7 @@
             "5 wood",
             "3 wood",
             "Driver"});
-            this.comboBoxChooseAClub.Location = new System.Drawing.Point(124, 6);
+            this.comboBoxChooseAClub.Location = new System.Drawing.Point(121, 6);
             this.comboBoxChooseAClub.Name = "comboBoxChooseAClub";
             this.comboBoxChooseAClub.Size = new System.Drawing.Size(121, 21);
             this.comboBoxChooseAClub.TabIndex = 3;
@@ -891,6 +894,19 @@
             // 
             this.timerPower.Interval = 5;
             this.timerPower.Tick += new System.EventHandler(this.timerPower_Tick);
+            // 
+            // progressBarCountdown
+            // 
+            this.progressBarCountdown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBarCountdown.Location = new System.Drawing.Point(568, 36);
+            this.progressBarCountdown.Name = "progressBarCountdown";
+            this.progressBarCountdown.Size = new System.Drawing.Size(165, 23);
+            this.progressBarCountdown.Step = 1;
+            this.progressBarCountdown.TabIndex = 16;
+            // 
+            // timerCountdown
+            // 
+            this.timerCountdown.Tick += new System.EventHandler(this.timerCountdown_Tick);
             // 
             // frmQuizQuestions
             // 
@@ -995,5 +1011,7 @@
         private System.Windows.Forms.Label lblPower;
         private System.Windows.Forms.ProgressBar progressBarPower;
         private System.Windows.Forms.Timer timerPower;
+        private System.Windows.Forms.ProgressBar progressBarCountdown;
+        private System.Windows.Forms.Timer timerCountdown;
     }
 }
