@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -86,6 +87,22 @@ namespace The_ULTIMATE_golf_quiz
                 sw.Close();
             }
         }
+        public static void ClearPlayerQuestionAnswered(Player player)
+        {
+            string playerFilePathWithUsername = playerQuestionAnsweredFilePath.Replace("PLAYER", player.username);
+            using (StreamWriter sw = new StreamWriter(playerFilePathWithUsername))
+            {
+                // Write details of question answered and right/wrong into the file
+                sw.Write("");
+                sw.Close();
+            }
+        }
+
+        public static void DeletePlayerQuestionFile(Player player)
+        {
+            string playerFilePathWithUsername = playerQuestionAnsweredFilePath.Replace("PLAYER", player.username);
+            System.IO.File.Delete(playerFilePathWithUsername);
+        }
 
         public static void ReadPlayerQuestionAnswered(Player player)
         {
@@ -96,10 +113,7 @@ namespace The_ULTIMATE_golf_quiz
             string[] playersAnsweredQuestions = new string[2];
 
             // Clear and read in all questions 
-            QuestionFileHandler.ReadInTypeItQuestions();
-            QuestionFileHandler.ReadInTrueOrFalseQuestions();
-            QuestionFileHandler.ReadInMultiChoiceQuestions();
-            QuestionFileHandler.ReadInPictureQuestions();
+            QuestionFileHandler.ReadInAllQuestions();
 
             try
             {
@@ -146,7 +160,8 @@ namespace The_ULTIMATE_golf_quiz
 
             }
 
+           
         }
-
+        
     }
 }

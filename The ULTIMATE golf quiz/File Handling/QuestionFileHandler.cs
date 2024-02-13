@@ -225,5 +225,14 @@ namespace The_ULTIMATE_golf_quiz
                 sw.Close();
             }
         }
+
+        public static void ReadInAllQuestions()
+        {
+            ReadInTypeItQuestions();
+            ReadInTrueOrFalseQuestions();
+            ReadInMultiChoiceQuestions();
+            ReadInPictureQuestions();
+        }
+
     }
 }

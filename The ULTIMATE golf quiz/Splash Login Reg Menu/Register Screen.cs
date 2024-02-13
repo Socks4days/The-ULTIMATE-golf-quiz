@@ -136,6 +136,8 @@ namespace The_ULTIMATE_golf_quiz
 
                 // Save the list of users back to the CSV file
                 UserFileHandler.SaveAllPlayers();
+                QuestionFileHandler.ReadInAllQuestions();
+
 
                 // ???
                 //frmUserInfo info = new frmUserInfo();

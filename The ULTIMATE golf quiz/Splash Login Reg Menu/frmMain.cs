@@ -188,9 +188,37 @@ namespace The_ULTIMATE_golf_quiz
                     {
                         players.Remove(player);
                         UserFileHandler.SaveAllPlayers();
+                        UserFileHandler.DeletePlayerQuestionFile(player);
                         MessageBox.Show("Account Deleted\nReturning to login screen now");
                         this.Hide();
                         new frmLogin().Show();
+                        break;
+                    }
+                }
+            }
+            else if (result == DialogResult.No)
+            {
+                return;
+            }
+        }
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            closeChildForm();
+            openChildForm(new frmUserInfo());
+            List<Player> players = UserFileHandler.players;
+            DialogResult result = MessageBox.Show("This action is permanent! Your highscore and questions asked will be reset! \nDo you wish to continue?", "Reset Account", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                foreach (Player player in players)
+                {
+                    if (player.username == SplashScreen.player.username)
+                    {
+                       player.highscore = 0;
+                        UserFileHandler.ClearPlayerQuestionAnswered(player);
+                        UserFileHandler.SaveAllPlayers();
+                        QuestionFileHandler.ReadInAllQuestions();
+                        MessageBox.Show("Account reset");                       
                         break;
                     }
                 }
@@ -252,8 +280,9 @@ namespace The_ULTIMATE_golf_quiz
             btnLogout.BackColor = Color.FromArgb(33, 33, 33);
         }
 
+
         #endregion ButtonColouring
 
-
+       
     }
 }

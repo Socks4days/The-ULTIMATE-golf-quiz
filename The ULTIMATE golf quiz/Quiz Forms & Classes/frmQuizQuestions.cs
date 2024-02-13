@@ -165,6 +165,7 @@ namespace The_ULTIMATE_golf_quiz
                 questionTypes.Add("Multiple Choice");
             if (QuestionFileHandler.PictureQuestions.Count > 0)
                 questionTypes.Add("Picture");
+            questionTypes.Add("Choose Club");
 
             pnlTypeOfRound.Dock = DockStyle.Fill;
             pnlTypeOfRound.Visible = true;
@@ -251,7 +252,7 @@ namespace The_ULTIMATE_golf_quiz
 
 
             // If the amount of questions asked this round is less than 10 then it will ask another question
-            if (NumberOfQuestionsAskedThisRound < 10)
+            if (NumberOfQuestionsAskedThisRound < 5)
             {               
                 switch (QuestionFileHandler.RoundType)
                 {
@@ -1008,8 +1009,8 @@ namespace The_ULTIMATE_golf_quiz
             // Stop when reach 100 or go button has been clicked a second time
             if (ticks == 100 || goButtonClickCount == 2)
             {
-                timerPower.Enabled = false;
                 timerPower.Stop();
+                timerPower.Enabled = false;                
                 ticks = 0;
             }
         }
