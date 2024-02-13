@@ -239,6 +239,9 @@ namespace The_ULTIMATE_golf_quiz
         #region GetQuestion 
 
         private bool pictureQuestionAnswered = false;
+        private int flagPositionX = 0;
+        private int ballPositionX = 0;
+
         // Question method
         public void GetQuestion()
         {
@@ -398,9 +401,21 @@ namespace The_ULTIMATE_golf_quiz
                         pnlChooseTheRightClub.Dock = DockStyle.Fill;
 
                         distanceToHoleYds = random.Next(10, 330);
-                        ydsToPixelsScale = 2; // ((pnlChooseTheRightClub.Width / (flagStartX - ballStartX)));
-                        pnlGrass.Width = pnlGrass.Width * ydsToPixelsScale;
-                        int flagPositionX = ballStartX + distanceToHoleYds * ydsToPixelsScale;
+
+                        // Default scale to convert yards to pixels is 2 for window of with 740 (default)
+                        // Increase the scale if the window is larger
+                        ydsToPixelsScale = Math.Max (2, 2 * pnlChooseTheRightClub.Width / 740); // ((pnlChooseTheRightClub.Width / (flagStartX - ballStartX)));
+
+                        // Move the grass panel so it always appears at the bottom of the window and is the full width when the window size is changed
+                        pnlGrass.Width = pnlChooseTheRightClub.Width;
+                        pnlGrass.Location = new Point(pnlGrass.Location.X, pnlChooseTheRightClub.Height - pnlGrass.Height);
+
+
+                        // Reset the Y positiion of the flag and ball to the bottom of the 'choose the right club' panel
+                        flagStartY = pnlChooseTheRightClub.Height - pnlGrass.Height - pctBoxFlag.Height + 10;
+                        ballStartY = pnlChooseTheRightClub.Height - pnlGrass.Height - pctBoxGolfBall.Height;
+
+                        flagPositionX = ballStartX + distanceToHoleYds * ydsToPixelsScale;
                         pctBoxFlag.Location = new Point(flagPositionX - (pctBoxFlag.Width / 2), flagStartY);
 
                         lblQuestion.Text = ("Choose the club you think will get you closest to the hole");
@@ -688,6 +703,12 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
+
+        private int ballX = 0;
+        private int ballY = 0;
+        private double sx = 0;
+        private double sy = 0;
+
         private void btnChooseAClubGo_Click(object sender, EventArgs e)
         {
             // If this is the first time the go button is clicked, start the power timer
@@ -738,8 +759,8 @@ namespace The_ULTIMATE_golf_quiz
             int flagX = pctBoxFlag.Location.X;
             int flagY = pctBoxFlag.Location.Y;
 
-            double sx = 0;
-            double sy = 0;
+            sx = 0;
+            sy = 0;
 
             // Get loft and swing speed for selected club
             string selectedClub = comboBoxChooseAClub.Text;
@@ -796,8 +817,8 @@ namespace The_ULTIMATE_golf_quiz
             double intervalInSecs = 0.1;
 
             // set start position for ball
-            int ballX = ballStartX;
-            int ballY = ballStartY;
+            ballX = ballStartX;
+            ballY = ballStartY;
 
 
             while (timeInSecs < timeBallInMotion)
@@ -1039,6 +1060,34 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
+        private void calculateBallAndFlagPositionRelativeToWindow ()
+        {
+            // Default scale to convert yards to pixels is 2 for window of with 740 (default)
+            // Increase the scale if the window is larger
+            ydsToPixelsScale = Math.Max(2, 2 * pnlChooseTheRightClub.Width / 740); // ((pnlChooseTheRightClub.Width / (flagStartX - ballStartX)));
+
+            // Move the grass panel so it always appears at the bottom of the window and is the full width when the window size is changed
+            pnlGrass.Width = pnlChooseTheRightClub.Width;
+            pnlGrass.Location = new Point(pnlGrass.Location.X, pnlChooseTheRightClub.Height - pnlGrass.Height);
+
+
+            // Reset the Y positiion of the flag and ball to the bottom of the 'choose the right club' panel
+            flagStartY = pnlChooseTheRightClub.Height - pnlGrass.Height - pctBoxFlag.Height + 10;
+            flagPositionX = ballStartX + distanceToHoleYds * ydsToPixelsScale;
+
+            // Recalculate position of ball using new scale
+            ballStartY = pnlChooseTheRightClub.Height - pnlGrass.Height - pctBoxGolfBall.Height;
+            ballX = ballStartX + (int)sx * ydsToPixelsScale;
+            ballY = ballStartY - (int)sy * ydsToPixelsScale;
+
+            // Move the flag
+            pctBoxFlag.Location = new Point(flagPositionX - (pctBoxFlag.Width / 2), flagStartY);
+
+            // Move the ball
+            pctBoxGolfBall.Location = new Point(ballX - (pctBoxFlag.Width / 2), ballY);
+
+        }
+
         private void pctBoxPicture_Click(object sender, EventArgs e)
         {
             // Toggle image zoom
@@ -1051,6 +1100,11 @@ namespace The_ULTIMATE_golf_quiz
             {
                 // resize the picture to the new panel size
                 zoomPictureBox(imageZoomed);
+            }
+            else if (QuestionFileHandler.RoundType == "Choose Club")
+            {
+                // move the ball, flag and grass to the right places based on the new window size
+                calculateBallAndFlagPositionRelativeToWindow();
             }
         }
     }
