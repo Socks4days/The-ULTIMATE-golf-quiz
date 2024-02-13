@@ -123,7 +123,13 @@ namespace The_ULTIMATE_golf_quiz
             startMusicPlayer();
             txtBoxAnswer.KeyDown += KeyPressedDown;
             KeyDown += KeyPressedDown;
-            NumberOfQuestionsAskedThisRound = 0;           
+            NumberOfQuestionsAskedThisRound = 0;
+
+            // remember start position of ball and flag (only the first time the form is created)
+            ballStartX = pctBoxGolfBall.Location.X;
+            ballStartY = pctBoxGolfBall.Location.Y;
+            flagStartX = pctBoxFlag.Location.X;
+            flagStartY = pctBoxFlag.Location.Y;
         }
 
         #region Music
@@ -142,6 +148,7 @@ namespace The_ULTIMATE_golf_quiz
         #region Initialisation
         private void frmQuizQuestions_Load(object sender, EventArgs e)
         {
+            // initialise the form (when first loaded and at the start of each round)
             frmQuizQuestionsInitialisation();
         }
         private void frmQuizQuestionsInitialisation()
@@ -169,12 +176,6 @@ namespace The_ULTIMATE_golf_quiz
 
             pnlTypeOfRound.Dock = DockStyle.Fill;
             pnlTypeOfRound.Visible = true;
-
-            // remember start position of ball and flag
-            ballStartX = pctBoxGolfBall.Location.X;
-            ballStartY = pctBoxGolfBall.Location.Y;
-            flagStartX = pctBoxFlag.Location.X;
-            flagStartY = pctBoxFlag.Location.Y;
 
          
         }
@@ -400,6 +401,8 @@ namespace The_ULTIMATE_golf_quiz
                         pnlGrass.Visible = true;
                         pnlChooseTheRightClub.Dock = DockStyle.Fill;
 
+                        sx = 0;
+                        sy = 0;
                         distanceToHoleYds = random.Next(10, 330);
 
                         // Default scale to convert yards to pixels is 2 for window of with 740 (default)
@@ -414,6 +417,8 @@ namespace The_ULTIMATE_golf_quiz
                         // Reset the Y positiion of the flag and ball to the bottom of the 'choose the right club' panel
                         flagStartY = pnlChooseTheRightClub.Height - pnlGrass.Height - pctBoxFlag.Height + 10;
                         ballStartY = pnlChooseTheRightClub.Height - pnlGrass.Height - pctBoxGolfBall.Height;
+                        ballX = ballStartX;
+                        ballY = ballStartY;
 
                         flagPositionX = ballStartX + distanceToHoleYds * ydsToPixelsScale;
                         pctBoxFlag.Location = new Point(flagPositionX - (pctBoxFlag.Width / 2), flagStartY);
@@ -453,7 +458,7 @@ namespace The_ULTIMATE_golf_quiz
                         break;
                 }
 
-                lblQuestionNumber.Text = QuestionFileHandler.RoundType + " " + NumberOfQuestionsAskedThisRound.ToString() + "/10";
+                lblQuestionNumber.Text = QuestionFileHandler.RoundType + " " + NumberOfQuestionsAskedThisRound.ToString() + "/5";
             }
             else
             {
