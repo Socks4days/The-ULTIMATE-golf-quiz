@@ -32,6 +32,7 @@
             this.pnlSideMenu = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.pnlAdminSubMenu = new System.Windows.Forms.Panel();
+            this.btnAddQuestions = new System.Windows.Forms.Button();
             this.btnDeleteUserAccount = new System.Windows.Forms.Button();
             this.btnResetPassword = new System.Windows.Forms.Button();
             this.btnViewUsers = new System.Windows.Forms.Button();
@@ -55,7 +56,6 @@
             this.pnlFormContainer = new System.Windows.Forms.Panel();
             this.lblUltimateGolfQuiz = new System.Windows.Forms.Label();
             this.pctBoxLogo = new System.Windows.Forms.PictureBox();
-            this.btnAddQuestions = new System.Windows.Forms.Button();
             this.pnlSideMenu.SuspendLayout();
             this.pnlAdminSubMenu.SuspendLayout();
             this.pnlSettingsSubMenu.SuspendLayout();
@@ -116,6 +116,25 @@
             this.pnlAdminSubMenu.Name = "pnlAdminSubMenu";
             this.pnlAdminSubMenu.Size = new System.Drawing.Size(233, 205);
             this.pnlAdminSubMenu.TabIndex = 6;
+            // 
+            // btnAddQuestions
+            // 
+            this.btnAddQuestions.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddQuestions.FlatAppearance.BorderSize = 0;
+            this.btnAddQuestions.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
+            this.btnAddQuestions.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
+            this.btnAddQuestions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddQuestions.ForeColor = System.Drawing.Color.White;
+            this.btnAddQuestions.Location = new System.Drawing.Point(0, 150);
+            this.btnAddQuestions.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddQuestions.Name = "btnAddQuestions";
+            this.btnAddQuestions.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnAddQuestions.Size = new System.Drawing.Size(233, 50);
+            this.btnAddQuestions.TabIndex = 7;
+            this.btnAddQuestions.Text = "Add Questions";
+            this.btnAddQuestions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddQuestions.UseVisualStyleBackColor = true;
+            this.btnAddQuestions.Click += new System.EventHandler(this.btnAddQuestions_Click);
             // 
             // btnDeleteUserAccount
             // 
@@ -488,25 +507,6 @@
             this.pctBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxLogo.TabIndex = 0;
             this.pctBoxLogo.TabStop = false;
-            // 
-            // btnAddQuestions
-            // 
-            this.btnAddQuestions.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAddQuestions.FlatAppearance.BorderSize = 0;
-            this.btnAddQuestions.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
-            this.btnAddQuestions.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
-            this.btnAddQuestions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddQuestions.ForeColor = System.Drawing.Color.White;
-            this.btnAddQuestions.Location = new System.Drawing.Point(0, 150);
-            this.btnAddQuestions.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddQuestions.Name = "btnAddQuestions";
-            this.btnAddQuestions.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnAddQuestions.Size = new System.Drawing.Size(233, 50);
-            this.btnAddQuestions.TabIndex = 7;
-            this.btnAddQuestions.Text = "Add Questions";
-            this.btnAddQuestions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddQuestions.UseVisualStyleBackColor = true;
-            this.btnAddQuestions.Click += new System.EventHandler(this.btnAddQuestions_Click);
             // 
             // frmMain
             // 

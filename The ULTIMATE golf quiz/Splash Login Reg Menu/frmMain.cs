@@ -132,6 +132,10 @@ namespace The_ULTIMATE_golf_quiz
         private void btnGoToQuiz_Click(object sender, EventArgs e)
         {
             hideSubMenus();
+            // Reload questions for the current player, removing any already answered
+            UserFileHandler.ReadPlayerQuestionAnswered(SplashScreen.player);
+
+            // Open the quiz form
             openChildForm(new frmQuizQuestions());
             resetButtonColours();
             btnGoToQuiz.BackColor = Color.FromArgb(0, 75, 0);
