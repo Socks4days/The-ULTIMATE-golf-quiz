@@ -80,12 +80,6 @@
     <Compile Include="File Handling\AvatarFileHandler.cs" />
     <Compile Include="File Handling\UserFileHandler.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
-    <Compile Include="Quiz Forms &amp; Classes\AddQuestions.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Quiz Forms &amp; Classes\AddQuestions.Designer.cs">
-      <DependentUpon>AddQuestions.cs</DependentUpon>
-    </Compile>
     <Compile Include="Quiz Forms &amp; Classes\AddTypeIt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,8 +167,6 @@
     <EmbeddedResource Include="Admin\frmViewUsers.resx">
       <DependentUpon>frmViewUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.AddQuestions.resources" />
-    <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.AddTypeIt.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmAvatarChange.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmChangePass.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmLeaderboard.resources" />
@@ -198,9 +190,6 @@
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.Quiz_Forms___Classes.TrueOrFalseForm%281%29.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.SplashScreen.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.TrueOrFalseForm.resources" />
-    <EmbeddedResource Include="Quiz Forms &amp; Classes\AddQuestions.resx">
-      <DependentUpon>AddQuestions.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Quiz Forms &amp; Classes\AddTypeIt.resx">
       <DependentUpon>AddTypeIt.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,10 +261,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="obj\Debug\The ULTIMATE golf quiz.csproj.AssemblyReference.cache" />
-    <None Include="Resources\amalie-steiness.gif" />
     <None Include="Resources\desktop.ini" />
     <None Include="Resources\golf ball running back.gif" />
-    <None Include="Resources\Golf Club.jpg" />
     <None Include="Resources\running golf ball.gif" />
   </ItemGroup>
   <ItemGroup>
@@ -311,11 +298,6 @@
     <None Include="Resources\Golf flag gentle left.png" />
     <None Include="Resources\Golf flag gentle right.png" />
     <None Include="Resources\Golf flag no wind.png" />
-    <Content Include="Resources\Golf flag.jpg" />
-    <Content Include="Resources\Golf flag1.jpg" />
-    <Content Include="Resources\Golf logo.png" />
-    <Content Include="Resources\Golf logo1.png" />
-    <Content Include="Resources\Golf logo2.png" />
     <Content Include="Resources\Golf logo3.png" />
     <None Include="Resources\Screenshot 2024-01-26 085609.png" />
     <None Include="Resources\Screenshot 2024-01-25 151958.png" />
@@ -341,7 +323,6 @@
     <None Include="Resources\Screenshot 2024-01-25 144806.png" />
     <None Include="Resources\Screenshot 2024-01-25 144636.png" />
     <None Include="Resources\Screenshot 2024-01-25 144603.png" />
-    <None Include="Resources\Jon Rahm.bmp" />
     <None Include="Resources\Location.png" />
     <Content Include="Resources\Male1.png" />
     <Content Include="Resources\Male2.png" />

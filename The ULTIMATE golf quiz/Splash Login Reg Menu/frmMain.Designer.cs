@@ -37,6 +37,7 @@
             this.btnViewUsers = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.pnlSettingsSubMenu = new System.Windows.Forms.Panel();
+            this.btnReset = new System.Windows.Forms.Button();
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnChangeAvatar = new System.Windows.Forms.Button();
@@ -54,7 +55,7 @@
             this.pnlFormContainer = new System.Windows.Forms.Panel();
             this.lblUltimateGolfQuiz = new System.Windows.Forms.Label();
             this.pctBoxLogo = new System.Windows.Forms.PictureBox();
-            this.btnReset = new System.Windows.Forms.Button();
+            this.btnAddQuestions = new System.Windows.Forms.Button();
             this.pnlSideMenu.SuspendLayout();
             this.pnlAdminSubMenu.SuspendLayout();
             this.pnlSettingsSubMenu.SuspendLayout();
@@ -92,7 +93,7 @@
             this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(0, 703);
+            this.btnLogout.Location = new System.Drawing.Point(0, 758);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -106,13 +107,14 @@
             // pnlAdminSubMenu
             // 
             this.pnlAdminSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.pnlAdminSubMenu.Controls.Add(this.btnAddQuestions);
             this.pnlAdminSubMenu.Controls.Add(this.btnDeleteUserAccount);
             this.pnlAdminSubMenu.Controls.Add(this.btnResetPassword);
             this.pnlAdminSubMenu.Controls.Add(this.btnViewUsers);
             this.pnlAdminSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlAdminSubMenu.Location = new System.Drawing.Point(0, 553);
             this.pnlAdminSubMenu.Name = "pnlAdminSubMenu";
-            this.pnlAdminSubMenu.Size = new System.Drawing.Size(233, 150);
+            this.pnlAdminSubMenu.Size = new System.Drawing.Size(233, 205);
             this.pnlAdminSubMenu.TabIndex = 6;
             // 
             // btnDeleteUserAccount
@@ -204,6 +206,25 @@
             this.pnlSettingsSubMenu.Name = "pnlSettingsSubMenu";
             this.pnlSettingsSubMenu.Size = new System.Drawing.Size(233, 253);
             this.pnlSettingsSubMenu.TabIndex = 4;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
+            this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Location = new System.Drawing.Point(0, 200);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnReset.Size = new System.Drawing.Size(233, 50);
+            this.btnReset.TabIndex = 8;
+            this.btnReset.Text = "Reset Account";
+            this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnDeleteAccount
             // 
@@ -468,24 +489,24 @@
             this.pctBoxLogo.TabIndex = 0;
             this.pctBoxLogo.TabStop = false;
             // 
-            // btnReset
+            // btnAddQuestions
             // 
-            this.btnReset.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReset.FlatAppearance.BorderSize = 0;
-            this.btnReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
-            this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
-            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(0, 200);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnReset.Size = new System.Drawing.Size(233, 50);
-            this.btnReset.TabIndex = 8;
-            this.btnReset.Text = "Reset Account";
-            this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.btnAddQuestions.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddQuestions.FlatAppearance.BorderSize = 0;
+            this.btnAddQuestions.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
+            this.btnAddQuestions.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
+            this.btnAddQuestions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddQuestions.ForeColor = System.Drawing.Color.White;
+            this.btnAddQuestions.Location = new System.Drawing.Point(0, 150);
+            this.btnAddQuestions.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddQuestions.Name = "btnAddQuestions";
+            this.btnAddQuestions.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnAddQuestions.Size = new System.Drawing.Size(233, 50);
+            this.btnAddQuestions.TabIndex = 7;
+            this.btnAddQuestions.Text = "Add Questions";
+            this.btnAddQuestions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddQuestions.UseVisualStyleBackColor = true;
+            this.btnAddQuestions.Click += new System.EventHandler(this.btnAddQuestions_Click);
             // 
             // frmMain
             // 
@@ -544,5 +565,6 @@
         private System.Windows.Forms.Label lblHighscore;
         private System.Windows.Forms.PictureBox pctBoxAvatar;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnAddQuestions;
     }
 }

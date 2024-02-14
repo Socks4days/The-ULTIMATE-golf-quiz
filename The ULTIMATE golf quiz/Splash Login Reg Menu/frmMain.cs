@@ -251,6 +251,11 @@ namespace The_ULTIMATE_golf_quiz
             openChildForm(new frmResetOrDeleteUser("Delete"));
         }
 
+        private void btnAddQuestions_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmAddQuestions());
+        }
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -281,8 +286,9 @@ namespace The_ULTIMATE_golf_quiz
         }
 
 
+
         #endregion ButtonColouring
 
-       
+        
     }
 }

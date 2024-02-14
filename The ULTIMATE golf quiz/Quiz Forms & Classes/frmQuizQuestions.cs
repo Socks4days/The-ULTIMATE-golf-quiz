@@ -99,6 +99,7 @@ namespace The_ULTIMATE_golf_quiz
             btnFalse.Enabled = false;
             btnChooseAClubGo.Enabled = false;
             comboBoxChooseAClub.Enabled = false;
+            pctBoxMap.Enabled = false;
         }
         private void AnswerButtonsEnabled()
         {
@@ -112,6 +113,7 @@ namespace The_ULTIMATE_golf_quiz
             btnFalse.Enabled = true;
             btnChooseAClubGo.Enabled = true;
             comboBoxChooseAClub.Enabled = true;
+            pctBoxMap.Enabled=true; 
         }
         #endregion AnswerButtonsEnabling
 
@@ -119,6 +121,8 @@ namespace The_ULTIMATE_golf_quiz
         {
             backgroundMusicPlayer.SoundLocation = "Background Music.wav";
             backgroundMusicPlayer.Load();
+            countdownPlayer.SoundLocation = "Countdown.wav";
+            countdownPlayer.Load();
             InitializeComponent();
             startMusicPlayer();
             txtBoxAnswer.KeyDown += KeyPressedDown;
@@ -134,14 +138,25 @@ namespace The_ULTIMATE_golf_quiz
 
         #region Music
         System.Media.SoundPlayer backgroundMusicPlayer = new System.Media.SoundPlayer();
+        System.Media.SoundPlayer countdownPlayer = new System.Media.SoundPlayer();
+       
         
-        private void stopMusicPlayer()
-        {
-           backgroundMusicPlayer.Stop();
-        }  
+       
         private void startMusicPlayer()
         {           
             backgroundMusicPlayer.PlayLooping();
+        }
+        private void stopMusicPlayer()
+        {
+            backgroundMusicPlayer.Stop();
+        }
+        private void startCountdown()
+        {            
+            countdownPlayer.Play();
+        }
+        private void stopCountdown()
+        {
+            countdownPlayer.Stop();
         }
         #endregion Music
 
@@ -252,17 +267,20 @@ namespace The_ULTIMATE_golf_quiz
             pnlTypeIt.Visible = false;
             pctBoxPicture.Visible = false;
             lblAnswer.Visible = false;
+            lblQuestion.ForeColor = Color.White;
             Random random = new Random();
 
-            // Start the countdown to 30 seconds
-            countdown = 30 * 10;
-            progressBarCountdown.Maximum = countdown;
-            timerCountdown.Start();
+            
 
 
             // If the amount of questions asked this round is less than 10 then it will ask another question
             if (NumberOfQuestionsAskedThisRound < 5)
-            {               
+            {
+                // Start the countdown to 30 seconds
+                countdown = 30 * 10;
+                progressBarCountdown.Maximum = countdown;
+                timerCountdown.Start();
+                startCountdown();
                 switch (QuestionFileHandler.RoundType)
                 {
                     case "Type It":
@@ -467,6 +485,7 @@ namespace The_ULTIMATE_golf_quiz
             }
             else
             {
+                
                 // if the user has been asked their 10 questions, then they will be shown the finish panel
                 RoundFinishedScreen();
             }                                          
@@ -477,6 +496,8 @@ namespace The_ULTIMATE_golf_quiz
         //-------------------------------------------------------------------------------------------------------
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            timerCountdown.Stop(); 
+            stopCountdown();
             this.ActiveControl = btnNext;
             lblAnswer.Visible = true;
             QuestionFileHandler.TypeItQuestions.Remove(currentTypeItQuestion1);
@@ -501,6 +522,8 @@ namespace The_ULTIMATE_golf_quiz
         //---------------------------------------------------------------------------------------------------------
         private void btnTrue_Click(object sender, EventArgs e)
         {
+            timerCountdown.Stop();
+            stopCountdown();
             pnlAnswer.Visible = true;
             AnswerButtonsDisable(); 
             lblAnswer.Visible = true;
@@ -525,6 +548,8 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnFalse_Click(object sender, EventArgs e)
         {
+            timerCountdown.Stop();
+            stopCountdown();
             pnlAnswer.Visible = true;
             lblAnswer.Visible = true;
             AnswerButtonsDisable();
@@ -550,6 +575,8 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnOption1_Click(object sender, EventArgs e)
         {
+            timerCountdown.Stop();
+            stopCountdown();
             pnlAnswer.Visible = true;
             AnswerButtonsDisable();
             lblAnswer.Visible = true;
@@ -580,6 +607,8 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnOption2_Click(object sender, EventArgs e)
         {
+            timerCountdown.Stop();
+            stopCountdown();
             pnlAnswer.Visible = true;
             AnswerButtonsDisable();
             lblAnswer.Visible = true;
@@ -609,6 +638,8 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnOption3_Click(object sender, EventArgs e)
         {
+            timerCountdown.Stop();
+            stopCountdown();
             pnlAnswer.Visible = true;
             AnswerButtonsDisable();
             btnNext.Visible = true;
@@ -639,6 +670,8 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnOption4_Click(object sender, EventArgs e)
         {
+            timerCountdown.Stop();
+            stopCountdown();
             pnlAnswer.Visible = true;
             AnswerButtonsDisable();
             btnNext.Visible = true;
@@ -672,6 +705,8 @@ namespace The_ULTIMATE_golf_quiz
         {
             if (!pictureQuestionAnswered)
             {
+                timerCountdown.Stop();
+                stopCountdown();
                 MouseEventArgs mouseEvent = (MouseEventArgs)e;
                 // MessageBox.Show(string.Format("X: {0} Y: {1}", x, y));
                 int mapX = pctBoxMap.Location.X;
@@ -721,6 +756,8 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnChooseAClubGo_Click(object sender, EventArgs e)
         {
+            timerCountdown.Stop();
+            stopCountdown();
             // If this is the first time the go button is clicked, start the power timer
             if (goButtonClickCount == 0)
             {
@@ -859,7 +896,7 @@ namespace The_ULTIMATE_golf_quiz
                 // wait interval seconds
                 Thread.Sleep((int)(intervalInSecs * 100));
             }
-            startMusicPlayer();
+           
             int distanceTravelledinYards = (ballX - ballStartX) / ydsToPixelsScale;
             int distanceFromHoleYds = Math.Abs(distanceToHoleYds - distanceTravelledinYards);
             int points = 0;
@@ -947,6 +984,7 @@ namespace The_ULTIMATE_golf_quiz
         #region EndOfRound
         private void RoundFinishedScreen()
         {
+            stopCountdown();
             pnlFinish.Visible = true;
             pnlFinish.Dock = DockStyle.Fill;
             lblQuestionsAnsweredCorrectly.Text = "You got " + NumberOfQuestionsAnsweredCorrectly + "/" + NumberOfQuestionsAskedThisRound + " questions correct!";
@@ -992,6 +1030,7 @@ namespace The_ULTIMATE_golf_quiz
 
             if (result == DialogResult.Yes)
             {
+                stopCountdown();
                 this.Close(); 
             }
             else if (result == DialogResult.No)
@@ -1002,6 +1041,7 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            stopCountdown();
             this.Close();
         }
 
@@ -1125,9 +1165,21 @@ namespace The_ULTIMATE_golf_quiz
         private void timerCountdown_Tick(object sender, EventArgs e)
         {
             if (countdown > 0)
-            {
+            {                
                 countdown--;
                 progressBarCountdown.Value = countdown;
+            }
+            else
+            {
+                
+                lblQuestion.Text = "TIME'S UP!!";
+                lblQuestion.ForeColor = Color.Red;
+                AnswerButtonsDisable();
+                btnNext.Visible = true;
+                lblAnswer.Visible = true;
+                // If the question hasn't been answered treat it as incorrect
+                // Show out of time message and stop player from answering
+                // TO DO
             }
         }
     }

@@ -46,6 +46,7 @@
             this.txtBoxAnswer = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.pnlQuestion = new System.Windows.Forms.Panel();
+            this.progressBarCountdown = new System.Windows.Forms.ProgressBar();
             this.lblQuestionNumber = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
             this.lblDifficulty = new System.Windows.Forms.Label();
@@ -85,7 +86,6 @@
             this.pctBoxLocation = new System.Windows.Forms.PictureBox();
             this.pctBoxMap = new System.Windows.Forms.PictureBox();
             this.timerPower = new System.Windows.Forms.Timer(this.components);
-            this.progressBarCountdown = new System.Windows.Forms.ProgressBar();
             this.timerCountdown = new System.Windows.Forms.Timer(this.components);
             this.pnlFinish.SuspendLayout();
             this.pnlAnswer.SuspendLayout();
@@ -330,6 +330,15 @@
             this.pnlQuestion.Size = new System.Drawing.Size(745, 93);
             this.pnlQuestion.TabIndex = 21;
             this.pnlQuestion.Visible = false;
+            // 
+            // progressBarCountdown
+            // 
+            this.progressBarCountdown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBarCountdown.Location = new System.Drawing.Point(568, 36);
+            this.progressBarCountdown.Name = "progressBarCountdown";
+            this.progressBarCountdown.Size = new System.Drawing.Size(165, 23);
+            this.progressBarCountdown.Step = 1;
+            this.progressBarCountdown.TabIndex = 16;
             // 
             // lblQuestionNumber
             // 
@@ -894,15 +903,6 @@
             // 
             this.timerPower.Interval = 5;
             this.timerPower.Tick += new System.EventHandler(this.timerPower_Tick);
-            // 
-            // progressBarCountdown
-            // 
-            this.progressBarCountdown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBarCountdown.Location = new System.Drawing.Point(568, 36);
-            this.progressBarCountdown.Name = "progressBarCountdown";
-            this.progressBarCountdown.Size = new System.Drawing.Size(165, 23);
-            this.progressBarCountdown.Step = 1;
-            this.progressBarCountdown.TabIndex = 16;
             // 
             // timerCountdown
             // 
