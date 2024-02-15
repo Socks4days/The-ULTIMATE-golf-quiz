@@ -180,6 +180,8 @@ namespace The_ULTIMATE_golf_quiz
         private void btnDeleteAccount_Click(object sender, EventArgs e)
         {
             closeChildForm();
+            resetButtonColours();
+            btnDeleteAccount.BackColor = Color.FromArgb(0,75,0);
             openChildForm(new frmUserInfo());
             List<Player> players = UserFileHandler.players;
             DialogResult result = MessageBox.Show("This action is permanent! \nDo you wish to continue?", "Delete Account", MessageBoxButtons.YesNo);
@@ -208,6 +210,8 @@ namespace The_ULTIMATE_golf_quiz
         private void btnReset_Click(object sender, EventArgs e)
         {
             closeChildForm();
+            resetButtonColours();
+            btnReset.BackColor = Color.FromArgb(0, 75, 0);
             openChildForm(new frmUserInfo());
             List<Player> players = UserFileHandler.players;
             DialogResult result = MessageBox.Show("This action is permanent! Your highscore and questions asked will be reset! \nDo you wish to continue?", "Reset Account", MessageBoxButtons.YesNo);
@@ -243,21 +247,29 @@ namespace The_ULTIMATE_golf_quiz
         private void btnViewUsers_Click(object sender, EventArgs e)
         {
             openChildForm(new frmViewUsers());
+            resetButtonColours();
+            btnViewUsers.BackColor = Color.FromArgb(0, 75, 0);
         }
 
         private void btnResetPassword_Click(object sender, EventArgs e)
         {
             openChildForm(new frmResetOrDeleteUser("Reset"));
+            resetButtonColours();
+            btnResetPassword.BackColor = Color.FromArgb(0,75,0);
         }
 
         private void btnDeleteUserAccount_Click(object sender, EventArgs e)
         {
             openChildForm(new frmResetOrDeleteUser("Delete"));
+            resetButtonColours();
+            btnDeleteUserAccount.BackColor = Color.FromArgb(0, 75, 0);
         }
 
         private void btnAddQuestions_Click(object sender, EventArgs e)
         {
             openChildForm(new frmAddQuestions());
+            resetButtonColours();
+            btnAddQuestions.BackColor = Color.FromArgb(0,75,0);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -284,8 +296,11 @@ namespace The_ULTIMATE_golf_quiz
             btnUserInfo.BackColor = Color.FromArgb(55, 55, 55);
             btnChangeAvatar.BackColor = Color.FromArgb(55, 55, 55);
             btnChangePassword.BackColor = Color.FromArgb(55, 55, 55);
+            btnDeleteAccount.BackColor = Color.FromArgb(55, 55, 55);
             btnViewUsers.BackColor = Color.FromArgb(55, 55, 55);
             btnResetPassword.BackColor = Color.FromArgb(55, 55, 55);
+            btnDeleteUserAccount.BackColor = Color.FromArgb(55,55, 55);
+            btnAddQuestions.BackColor = Color.FromArgb(55, 55, 55);
             btnLogout.BackColor = Color.FromArgb(33, 33, 33);
         }
 
