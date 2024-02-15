@@ -64,10 +64,6 @@ namespace The_ULTIMATE_golf_quiz
 
             if (foundUser)
             {
-                // Load in questions for player
-                UserFileHandler.ReadPlayerQuestionAnswered(SplashScreen.player);
-
-
                 this.Hide();
                 new frmMain().Show();
              //   new frmMain().formChoice = "Main";

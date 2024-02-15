@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.Reflection;
-
+using System.IO;
 
 namespace The_ULTIMATE_golf_quiz
 {
@@ -117,6 +117,30 @@ namespace The_ULTIMATE_golf_quiz
         }
         #endregion AnswerButtonsEnabling
 
+        #region Music
+        System.Media.SoundPlayer backgroundMusicPlayer = new System.Media.SoundPlayer();
+        System.Media.SoundPlayer countdownPlayer = new System.Media.SoundPlayer();
+
+
+
+        private void startMusicPlayer()
+        {
+            backgroundMusicPlayer.PlayLooping();
+        }
+        private void stopMusicPlayer()
+        {
+            backgroundMusicPlayer.Stop();
+        }
+        private void startCountdown()
+        {
+            countdownPlayer.Play();
+        }
+        private void stopCountdown()
+        {
+            countdownPlayer.Stop();
+        }
+        #endregion Music
+
         public frmQuizQuestions()
         {
             backgroundMusicPlayer.SoundLocation = "Background Music.wav";
@@ -136,30 +160,7 @@ namespace The_ULTIMATE_golf_quiz
             flagStartY = pctBoxFlag.Location.Y;
         }
 
-        #region Music
-        System.Media.SoundPlayer backgroundMusicPlayer = new System.Media.SoundPlayer();
-        System.Media.SoundPlayer countdownPlayer = new System.Media.SoundPlayer();
        
-        
-       
-        private void startMusicPlayer()
-        {           
-            backgroundMusicPlayer.PlayLooping();
-        }
-        private void stopMusicPlayer()
-        {
-            backgroundMusicPlayer.Stop();
-        }
-        private void startCountdown()
-        {            
-            countdownPlayer.Play();
-        }
-        private void stopCountdown()
-        {
-            countdownPlayer.Stop();
-        }
-        #endregion Music
-
         #region Initialisation
         private void frmQuizQuestions_Load(object sender, EventArgs e)
         {
@@ -229,7 +230,7 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnSurpriseMeRound_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
+            Random random = new Random(Guid.NewGuid().GetHashCode());
             QuestionFileHandler.RoundType = questionTypes[random.Next(0, questionTypes.Count)];
             setup();
         }
@@ -268,7 +269,8 @@ namespace The_ULTIMATE_golf_quiz
             pctBoxPicture.Visible = false;
             lblAnswer.Visible = false;
             lblQuestion.ForeColor = Color.White;
-            Random random = new Random();
+            // Seed random number generator with a unique guid to ensure question order is correctly randomised
+            Random random = new Random(Guid.NewGuid().GetHashCode());
 
             
 
@@ -288,7 +290,7 @@ namespace The_ULTIMATE_golf_quiz
                         if (typeItQuestionList.Count > 0)
                         {
                             // sets a variable equal to a number between 0 and the total amount of questions in the list of type it questions
-                            int randomisedQuestionNumber = random.Next(0, QuestionFileHandler.TypeItQuestions.Count-1);
+                            int randomisedQuestionNumber = random.Next(0, QuestionFileHandler.TypeItQuestions.Count);
                             // the current question is equal to the question in the list with the index of the random number generated
                             TypeItQuestion currentTypeItQuestion = QuestionFileHandler.TypeItQuestions[randomisedQuestionNumber];
                             // sets the current question equal to the base question with the randomised index
@@ -319,7 +321,7 @@ namespace The_ULTIMATE_golf_quiz
                         if (trueOrFalseQuestionList.Count > 0)
                         {
                             // sets a variable equal to a number between 0 and the total amount of questions in the list of t or f questions
-                            int randomisedQuestionNumber = random.Next(0, QuestionFileHandler.TrueOrFalseQuestions.Count-1);
+                            int randomisedQuestionNumber = random.Next(0, QuestionFileHandler.TrueOrFalseQuestions.Count);
 
                             TrueOrFalseQuestion currentTrueOrFalseQuestion = QuestionFileHandler.TrueOrFalseQuestions[randomisedQuestionNumber];
                             currentTrueOrFalseQuestion1 = currentTrueOrFalseQuestion;
@@ -346,7 +348,7 @@ namespace The_ULTIMATE_golf_quiz
                         if (multipleChoiceQuestionList.Count > 0)
                         {
                             // sets a variable equal to a number between 0 and the total amount of questions in the list of multi choice questions
-                            int randomisedQuestionNumber = random.Next(0, QuestionFileHandler.MultiChoiceQuestions.Count - 1);
+                            int randomisedQuestionNumber = random.Next(0, QuestionFileHandler.MultiChoiceQuestions.Count);
                             MultiChoiceQuestion currentMultipleChoiceQuestion = QuestionFileHandler.MultiChoiceQuestions[randomisedQuestionNumber];
                             // sets the current question equal to the base question with the randomised index
                             currentMultipleChoiceQuestion1 = currentMultipleChoiceQuestion;
@@ -380,7 +382,7 @@ namespace The_ULTIMATE_golf_quiz
                         {
                             
                             // sets a variable equal to a number between 0 and the total amount of questions in the list of multi choice questions
-                            int randomisedQuestionNumber = random.Next(0, QuestionFileHandler.PictureQuestions.Count - 1);
+                            int randomisedQuestionNumber = random.Next(0, QuestionFileHandler.PictureQuestions.Count);
                             PictureQuestion currentPictureQuestion = QuestionFileHandler.PictureQuestions[randomisedQuestionNumber];
                             // sets the current question equal to the base question with the randomised index
                             currentPictureQuestion1 = currentPictureQuestion;
@@ -388,11 +390,24 @@ namespace The_ULTIMATE_golf_quiz
 
                             // Question preparation
                             lblQuestion.Text = currentPictureQuestion.Question;
-                           // btnOption1.Text = currentPictureQuestion.Option1;
-                           // btnOption2.Text = currentPictureQuestion.Option2;
-                           // btnOption3.Text = currentPictureQuestion.Option3;
-                           // btnOption4.Text = currentPictureQuestion.Option4;
-                            pctBoxPicture.Image = (Image)Properties.Resources.ResourceManager.GetObject(currentPictureQuestion.PictureId);
+
+                            if (currentPictureQuestion.PictureId.Contains("FILEPATH"))
+                            {
+                                try
+                                {
+                                    // Load the selected image into the picturebox 
+                                    pctBoxPicture.Image = Image.FromFile(currentPictureQuestion.PictureId.Replace("FILEPATH",""));
+                                }
+                                catch (FileNotFoundException fnf)
+                                {
+                                    MessageBox.Show("Error: Could not find your file from " + currentPictureQuestion.PictureId.Replace("FILEPATH", "") + "\nError: " + fnf.Message);
+                                }
+                            }
+                            else
+                            {
+                                pctBoxPicture.Image = (Image)Properties.Resources.ResourceManager.GetObject(currentPictureQuestion.PictureId);
+                            }
+
                             this.ActiveControl = btnOption1;
                             lblDifficulty.Text = "Difficulty: " + BaseQuestion.DifficultyLevels[currentPictureQuestion.Difficulty];
                            // TotalPointsAvailable += currentPictureQuestion.Points;

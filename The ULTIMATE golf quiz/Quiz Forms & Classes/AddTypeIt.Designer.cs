@@ -49,14 +49,10 @@
             this.lblAnswerTypeIt = new System.Windows.Forms.Label();
             this.txtBoxTypeItAnswer = new System.Windows.Forms.TextBox();
             this.pnlAnswerMulti = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.lblAnswerMultiOption2 = new System.Windows.Forms.Label();
-            this.lblAnswerMultiOption3 = new System.Windows.Forms.Label();
-            this.lblAnswerMultiOption4 = new System.Windows.Forms.Label();
-            this.lblAnswerMultiOption1 = new System.Windows.Forms.Label();
+            this.txtBoxMultiOption3 = new System.Windows.Forms.TextBox();
+            this.txtBoxMultiOption4 = new System.Windows.Forms.TextBox();
+            this.txtBoxMultiOption2 = new System.Windows.Forms.TextBox();
+            this.txtBoxMultiOption1 = new System.Windows.Forms.TextBox();
             this.pnlAnswerTrueOrFalse = new System.Windows.Forms.Panel();
             this.rButonFalse = new System.Windows.Forms.RadioButton();
             this.rButtonTrue = new System.Windows.Forms.RadioButton();
@@ -69,6 +65,15 @@
             this.btnMultipleChoice = new System.Windows.Forms.Button();
             this.btnPicture = new System.Windows.Forms.Button();
             this.btnTypeIt = new System.Windows.Forms.Button();
+            this.groupBoxTrueFalse = new System.Windows.Forms.GroupBox();
+            this.groupBoxMultipleChoice = new System.Windows.Forms.GroupBox();
+            this.radioButtonOption1 = new System.Windows.Forms.RadioButton();
+            this.radioButtonOption2 = new System.Windows.Forms.RadioButton();
+            this.radioButtonOption3 = new System.Windows.Forms.RadioButton();
+            this.radioButtonOption4 = new System.Windows.Forms.RadioButton();
+            this.pnlAddPicture = new System.Windows.Forms.Panel();
+            this.pctBoxImageUploaded = new System.Windows.Forms.PictureBox();
+            this.btnSelectPhoto = new System.Windows.Forms.Button();
             this.groupBoxDifficulty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDPoints)).BeginInit();
             this.pnlQuestion.SuspendLayout();
@@ -81,6 +86,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxMap)).BeginInit();
             this.pnlChooseQuestionType.SuspendLayout();
+            this.groupBoxTrueFalse.SuspendLayout();
+            this.groupBoxMultipleChoice.SuspendLayout();
+            this.pnlAddPicture.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxImageUploaded)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReturn
@@ -265,7 +274,7 @@
             this.pnlQuestion.Controls.Add(this.txtBoxQuestion);
             this.pnlQuestion.Controls.Add(this.lblQuestion);
             this.pnlQuestion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlQuestion.Location = new System.Drawing.Point(0, 76);
+            this.pnlQuestion.Location = new System.Drawing.Point(0, 328);
             this.pnlQuestion.Name = "pnlQuestion";
             this.pnlQuestion.Size = new System.Drawing.Size(745, 80);
             this.pnlQuestion.TabIndex = 1;
@@ -287,7 +296,7 @@
             this.pnlDiffPointsAdd.Controls.Add(this.groupBoxDifficulty);
             this.pnlDiffPointsAdd.Controls.Add(this.lblPoints);
             this.pnlDiffPointsAdd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlDiffPointsAdd.Location = new System.Drawing.Point(0, 1178);
+            this.pnlDiffPointsAdd.Location = new System.Drawing.Point(0, 1481);
             this.pnlDiffPointsAdd.Name = "pnlDiffPointsAdd";
             this.pnlDiffPointsAdd.Size = new System.Drawing.Size(745, 211);
             this.pnlDiffPointsAdd.TabIndex = 7;
@@ -297,7 +306,7 @@
             this.pnlAnswerTypeIt.Controls.Add(this.lblAnswerTypeIt);
             this.pnlAnswerTypeIt.Controls.Add(this.txtBoxTypeItAnswer);
             this.pnlAnswerTypeIt.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlAnswerTypeIt.Location = new System.Drawing.Point(0, 156);
+            this.pnlAnswerTypeIt.Location = new System.Drawing.Point(0, 408);
             this.pnlAnswerTypeIt.Name = "pnlAnswerTypeIt";
             this.pnlAnswerTypeIt.Size = new System.Drawing.Size(745, 70);
             this.pnlAnswerTypeIt.TabIndex = 2;
@@ -321,102 +330,62 @@
             // 
             // pnlAnswerMulti
             // 
-            this.pnlAnswerMulti.Controls.Add(this.textBox5);
-            this.pnlAnswerMulti.Controls.Add(this.textBox4);
-            this.pnlAnswerMulti.Controls.Add(this.textBox3);
-            this.pnlAnswerMulti.Controls.Add(this.textBox2);
-            this.pnlAnswerMulti.Controls.Add(this.lblAnswerMultiOption2);
-            this.pnlAnswerMulti.Controls.Add(this.lblAnswerMultiOption3);
-            this.pnlAnswerMulti.Controls.Add(this.lblAnswerMultiOption4);
-            this.pnlAnswerMulti.Controls.Add(this.lblAnswerMultiOption1);
+            this.pnlAnswerMulti.Controls.Add(this.groupBoxMultipleChoice);
+            this.pnlAnswerMulti.Controls.Add(this.txtBoxMultiOption3);
+            this.pnlAnswerMulti.Controls.Add(this.txtBoxMultiOption4);
+            this.pnlAnswerMulti.Controls.Add(this.txtBoxMultiOption2);
+            this.pnlAnswerMulti.Controls.Add(this.txtBoxMultiOption1);
             this.pnlAnswerMulti.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlAnswerMulti.Location = new System.Drawing.Point(0, 226);
+            this.pnlAnswerMulti.Location = new System.Drawing.Point(0, 478);
             this.pnlAnswerMulti.Name = "pnlAnswerMulti";
-            this.pnlAnswerMulti.Size = new System.Drawing.Size(745, 150);
+            this.pnlAnswerMulti.Size = new System.Drawing.Size(745, 224);
             this.pnlAnswerMulti.TabIndex = 3;
             // 
-            // textBox5
+            // txtBoxMultiOption3
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(42, 98);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(294, 26);
-            this.textBox5.TabIndex = 5;
+            this.txtBoxMultiOption3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxMultiOption3.Location = new System.Drawing.Point(308, 135);
+            this.txtBoxMultiOption3.Name = "txtBoxMultiOption3";
+            this.txtBoxMultiOption3.Size = new System.Drawing.Size(294, 26);
+            this.txtBoxMultiOption3.TabIndex = 5;
             // 
-            // textBox4
+            // txtBoxMultiOption4
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(399, 98);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(294, 26);
-            this.textBox4.TabIndex = 7;
+            this.txtBoxMultiOption4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxMultiOption4.Location = new System.Drawing.Point(308, 183);
+            this.txtBoxMultiOption4.Name = "txtBoxMultiOption4";
+            this.txtBoxMultiOption4.Size = new System.Drawing.Size(294, 26);
+            this.txtBoxMultiOption4.TabIndex = 7;
             // 
-            // textBox3
+            // txtBoxMultiOption2
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(399, 33);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(294, 26);
-            this.textBox3.TabIndex = 3;
+            this.txtBoxMultiOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxMultiOption2.Location = new System.Drawing.Point(308, 87);
+            this.txtBoxMultiOption2.Name = "txtBoxMultiOption2";
+            this.txtBoxMultiOption2.Size = new System.Drawing.Size(294, 26);
+            this.txtBoxMultiOption2.TabIndex = 3;
             // 
-            // textBox2
+            // txtBoxMultiOption1
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(42, 33);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(294, 26);
-            this.textBox2.TabIndex = 1;
-            // 
-            // lblAnswerMultiOption2
-            // 
-            this.lblAnswerMultiOption2.AutoSize = true;
-            this.lblAnswerMultiOption2.Location = new System.Drawing.Point(467, 10);
-            this.lblAnswerMultiOption2.Name = "lblAnswerMultiOption2";
-            this.lblAnswerMultiOption2.Size = new System.Drawing.Size(161, 20);
-            this.lblAnswerMultiOption2.TabIndex = 2;
-            this.lblAnswerMultiOption2.Text = "Type the answer here";
-            // 
-            // lblAnswerMultiOption3
-            // 
-            this.lblAnswerMultiOption3.AutoSize = true;
-            this.lblAnswerMultiOption3.Location = new System.Drawing.Point(108, 75);
-            this.lblAnswerMultiOption3.Name = "lblAnswerMultiOption3";
-            this.lblAnswerMultiOption3.Size = new System.Drawing.Size(161, 20);
-            this.lblAnswerMultiOption3.TabIndex = 4;
-            this.lblAnswerMultiOption3.Text = "Type the answer here";
-            // 
-            // lblAnswerMultiOption4
-            // 
-            this.lblAnswerMultiOption4.AutoSize = true;
-            this.lblAnswerMultiOption4.Location = new System.Drawing.Point(467, 75);
-            this.lblAnswerMultiOption4.Name = "lblAnswerMultiOption4";
-            this.lblAnswerMultiOption4.Size = new System.Drawing.Size(161, 20);
-            this.lblAnswerMultiOption4.TabIndex = 6;
-            this.lblAnswerMultiOption4.Text = "Type the answer here";
-            // 
-            // lblAnswerMultiOption1
-            // 
-            this.lblAnswerMultiOption1.AutoSize = true;
-            this.lblAnswerMultiOption1.Location = new System.Drawing.Point(108, 10);
-            this.lblAnswerMultiOption1.Name = "lblAnswerMultiOption1";
-            this.lblAnswerMultiOption1.Size = new System.Drawing.Size(161, 20);
-            this.lblAnswerMultiOption1.TabIndex = 0;
-            this.lblAnswerMultiOption1.Text = "Type the answer here";
+            this.txtBoxMultiOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxMultiOption1.Location = new System.Drawing.Point(308, 39);
+            this.txtBoxMultiOption1.Name = "txtBoxMultiOption1";
+            this.txtBoxMultiOption1.Size = new System.Drawing.Size(294, 26);
+            this.txtBoxMultiOption1.TabIndex = 1;
             // 
             // pnlAnswerTrueOrFalse
             // 
-            this.pnlAnswerTrueOrFalse.Controls.Add(this.rButonFalse);
-            this.pnlAnswerTrueOrFalse.Controls.Add(this.rButtonTrue);
+            this.pnlAnswerTrueOrFalse.Controls.Add(this.groupBoxTrueFalse);
             this.pnlAnswerTrueOrFalse.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlAnswerTrueOrFalse.Location = new System.Drawing.Point(0, 376);
+            this.pnlAnswerTrueOrFalse.Location = new System.Drawing.Point(0, 702);
             this.pnlAnswerTrueOrFalse.Name = "pnlAnswerTrueOrFalse";
-            this.pnlAnswerTrueOrFalse.Size = new System.Drawing.Size(745, 50);
+            this.pnlAnswerTrueOrFalse.Size = new System.Drawing.Size(745, 102);
             this.pnlAnswerTrueOrFalse.TabIndex = 4;
             // 
             // rButonFalse
             // 
             this.rButonFalse.AutoSize = true;
-            this.rButonFalse.Location = new System.Drawing.Point(399, 13);
+            this.rButonFalse.Location = new System.Drawing.Point(114, 25);
             this.rButonFalse.Name = "rButonFalse";
             this.rButonFalse.Size = new System.Drawing.Size(66, 24);
             this.rButonFalse.TabIndex = 1;
@@ -427,7 +396,7 @@
             // rButtonTrue
             // 
             this.rButtonTrue.AutoSize = true;
-            this.rButtonTrue.Location = new System.Drawing.Point(277, 13);
+            this.rButtonTrue.Location = new System.Drawing.Point(16, 25);
             this.rButtonTrue.Name = "rButtonTrue";
             this.rButtonTrue.Size = new System.Drawing.Size(59, 24);
             this.rButtonTrue.TabIndex = 0;
@@ -440,9 +409,9 @@
             this.pnlPicture.Controls.Add(this.pctBoxLocation);
             this.pnlPicture.Controls.Add(this.pctBoxMap);
             this.pnlPicture.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlPicture.Location = new System.Drawing.Point(0, 426);
+            this.pnlPicture.Location = new System.Drawing.Point(0, 804);
             this.pnlPicture.Name = "pnlPicture";
-            this.pnlPicture.Size = new System.Drawing.Size(745, 500);
+            this.pnlPicture.Size = new System.Drawing.Size(745, 494);
             this.pnlPicture.TabIndex = 5;
             // 
             // pctBoxLocation
@@ -451,7 +420,7 @@
             this.pctBoxLocation.BackColor = System.Drawing.Color.Transparent;
             this.pctBoxLocation.Image = global::The_ULTIMATE_golf_quiz.Properties.Resources.Location;
             this.pctBoxLocation.InitialImage = ((System.Drawing.Image)(resources.GetObject("pctBoxLocation.InitialImage")));
-            this.pctBoxLocation.Location = new System.Drawing.Point(3, 414);
+            this.pctBoxLocation.Location = new System.Drawing.Point(3, 408);
             this.pctBoxLocation.Name = "pctBoxLocation";
             this.pctBoxLocation.Size = new System.Drawing.Size(21, 31);
             this.pctBoxLocation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -460,7 +429,7 @@
             // 
             // pctBoxMap
             // 
-            this.pctBoxMap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pctBoxMap.Dock = System.Windows.Forms.DockStyle.Top;
             this.pctBoxMap.Image = global::The_ULTIMATE_golf_quiz.Properties.Resources.Screenshot_2024_01_26_085609;
             this.pctBoxMap.Location = new System.Drawing.Point(0, 0);
             this.pctBoxMap.Name = "pctBoxMap";
@@ -468,6 +437,7 @@
             this.pctBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBoxMap.TabIndex = 0;
             this.pctBoxMap.TabStop = false;
+            this.pctBoxMap.Click += new System.EventHandler(this.pctBoxMap_Click);
             // 
             // pnlChooseQuestionType
             // 
@@ -477,7 +447,7 @@
             this.pnlChooseQuestionType.Controls.Add(this.btnPicture);
             this.pnlChooseQuestionType.Controls.Add(this.btnTypeIt);
             this.pnlChooseQuestionType.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlChooseQuestionType.Location = new System.Drawing.Point(0, 926);
+            this.pnlChooseQuestionType.Location = new System.Drawing.Point(0, 76);
             this.pnlChooseQuestionType.Name = "pnlChooseQuestionType";
             this.pnlChooseQuestionType.Size = new System.Drawing.Size(745, 252);
             this.pnlChooseQuestionType.TabIndex = 6;
@@ -551,6 +521,110 @@
             this.btnTypeIt.UseVisualStyleBackColor = false;
             this.btnTypeIt.Click += new System.EventHandler(this.btnTypeIt_Click);
             // 
+            // groupBoxTrueFalse
+            // 
+            this.groupBoxTrueFalse.Controls.Add(this.rButtonTrue);
+            this.groupBoxTrueFalse.Controls.Add(this.rButonFalse);
+            this.groupBoxTrueFalse.ForeColor = System.Drawing.Color.White;
+            this.groupBoxTrueFalse.Location = new System.Drawing.Point(258, 22);
+            this.groupBoxTrueFalse.Name = "groupBoxTrueFalse";
+            this.groupBoxTrueFalse.Size = new System.Drawing.Size(200, 70);
+            this.groupBoxTrueFalse.TabIndex = 2;
+            this.groupBoxTrueFalse.TabStop = false;
+            this.groupBoxTrueFalse.Text = "Correct Answer";
+            // 
+            // groupBoxMultipleChoice
+            // 
+            this.groupBoxMultipleChoice.Controls.Add(this.radioButtonOption4);
+            this.groupBoxMultipleChoice.Controls.Add(this.radioButtonOption3);
+            this.groupBoxMultipleChoice.Controls.Add(this.radioButtonOption2);
+            this.groupBoxMultipleChoice.Controls.Add(this.radioButtonOption1);
+            this.groupBoxMultipleChoice.ForeColor = System.Drawing.Color.White;
+            this.groupBoxMultipleChoice.Location = new System.Drawing.Point(144, 8);
+            this.groupBoxMultipleChoice.Name = "groupBoxMultipleChoice";
+            this.groupBoxMultipleChoice.Size = new System.Drawing.Size(144, 210);
+            this.groupBoxMultipleChoice.TabIndex = 8;
+            this.groupBoxMultipleChoice.TabStop = false;
+            this.groupBoxMultipleChoice.Text = "Correct Answer";
+            // 
+            // radioButtonOption1
+            // 
+            this.radioButtonOption1.AutoSize = true;
+            this.radioButtonOption1.Location = new System.Drawing.Point(27, 31);
+            this.radioButtonOption1.Name = "radioButtonOption1";
+            this.radioButtonOption1.Size = new System.Drawing.Size(87, 24);
+            this.radioButtonOption1.TabIndex = 0;
+            this.radioButtonOption1.TabStop = true;
+            this.radioButtonOption1.Text = "Option 1";
+            this.radioButtonOption1.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonOption2
+            // 
+            this.radioButtonOption2.AutoSize = true;
+            this.radioButtonOption2.Location = new System.Drawing.Point(27, 79);
+            this.radioButtonOption2.Name = "radioButtonOption2";
+            this.radioButtonOption2.Size = new System.Drawing.Size(87, 24);
+            this.radioButtonOption2.TabIndex = 1;
+            this.radioButtonOption2.TabStop = true;
+            this.radioButtonOption2.Text = "Option 2";
+            this.radioButtonOption2.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonOption3
+            // 
+            this.radioButtonOption3.AutoSize = true;
+            this.radioButtonOption3.Location = new System.Drawing.Point(27, 127);
+            this.radioButtonOption3.Name = "radioButtonOption3";
+            this.radioButtonOption3.Size = new System.Drawing.Size(87, 24);
+            this.radioButtonOption3.TabIndex = 2;
+            this.radioButtonOption3.TabStop = true;
+            this.radioButtonOption3.Text = "Option 3";
+            this.radioButtonOption3.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonOption4
+            // 
+            this.radioButtonOption4.AutoSize = true;
+            this.radioButtonOption4.Location = new System.Drawing.Point(27, 175);
+            this.radioButtonOption4.Name = "radioButtonOption4";
+            this.radioButtonOption4.Size = new System.Drawing.Size(87, 24);
+            this.radioButtonOption4.TabIndex = 3;
+            this.radioButtonOption4.TabStop = true;
+            this.radioButtonOption4.Text = "Option 4";
+            this.radioButtonOption4.UseVisualStyleBackColor = true;
+            // 
+            // pnlAddPicture
+            // 
+            this.pnlAddPicture.Controls.Add(this.btnSelectPhoto);
+            this.pnlAddPicture.Controls.Add(this.pctBoxImageUploaded);
+            this.pnlAddPicture.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlAddPicture.Location = new System.Drawing.Point(0, 1298);
+            this.pnlAddPicture.Name = "pnlAddPicture";
+            this.pnlAddPicture.Size = new System.Drawing.Size(745, 183);
+            this.pnlAddPicture.TabIndex = 8;
+            // 
+            // pctBoxImageUploaded
+            // 
+            this.pctBoxImageUploaded.Location = new System.Drawing.Point(478, 12);
+            this.pctBoxImageUploaded.Name = "pctBoxImageUploaded";
+            this.pctBoxImageUploaded.Size = new System.Drawing.Size(150, 150);
+            this.pctBoxImageUploaded.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBoxImageUploaded.TabIndex = 0;
+            this.pctBoxImageUploaded.TabStop = false;
+            // 
+            // btnSelectPhoto
+            // 
+            this.btnSelectPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
+            this.btnSelectPhoto.FlatAppearance.BorderSize = 0;
+            this.btnSelectPhoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
+            this.btnSelectPhoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
+            this.btnSelectPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectPhoto.Location = new System.Drawing.Point(133, 66);
+            this.btnSelectPhoto.Name = "btnSelectPhoto";
+            this.btnSelectPhoto.Size = new System.Drawing.Size(250, 50);
+            this.btnSelectPhoto.TabIndex = 1;
+            this.btnSelectPhoto.Text = "Select Photo";
+            this.btnSelectPhoto.UseVisualStyleBackColor = false;
+            this.btnSelectPhoto.Click += new System.EventHandler(this.btnSelectPhoto_Click);
+            // 
             // frmAddQuestions
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -558,12 +632,13 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.ClientSize = new System.Drawing.Size(762, 473);
             this.Controls.Add(this.pnlDiffPointsAdd);
-            this.Controls.Add(this.pnlChooseQuestionType);
+            this.Controls.Add(this.pnlAddPicture);
             this.Controls.Add(this.pnlPicture);
             this.Controls.Add(this.pnlAnswerTrueOrFalse);
             this.Controls.Add(this.pnlAnswerMulti);
             this.Controls.Add(this.pnlAnswerTypeIt);
             this.Controls.Add(this.pnlQuestion);
+            this.Controls.Add(this.pnlChooseQuestionType);
             this.Controls.Add(this.pnlTitleMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
@@ -584,12 +659,17 @@
             this.pnlAnswerMulti.ResumeLayout(false);
             this.pnlAnswerMulti.PerformLayout();
             this.pnlAnswerTrueOrFalse.ResumeLayout(false);
-            this.pnlAnswerTrueOrFalse.PerformLayout();
             this.pnlPicture.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxLocation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxMap)).EndInit();
             this.pnlChooseQuestionType.ResumeLayout(false);
             this.pnlChooseQuestionType.PerformLayout();
+            this.groupBoxTrueFalse.ResumeLayout(false);
+            this.groupBoxTrueFalse.PerformLayout();
+            this.groupBoxMultipleChoice.ResumeLayout(false);
+            this.groupBoxMultipleChoice.PerformLayout();
+            this.pnlAddPicture.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxImageUploaded)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -616,14 +696,10 @@
         private System.Windows.Forms.Label lblAnswerTypeIt;
         private System.Windows.Forms.TextBox txtBoxTypeItAnswer;
         private System.Windows.Forms.Panel pnlAnswerMulti;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label lblAnswerMultiOption2;
-        private System.Windows.Forms.Label lblAnswerMultiOption3;
-        private System.Windows.Forms.Label lblAnswerMultiOption4;
-        private System.Windows.Forms.Label lblAnswerMultiOption1;
+        private System.Windows.Forms.TextBox txtBoxMultiOption3;
+        private System.Windows.Forms.TextBox txtBoxMultiOption4;
+        private System.Windows.Forms.TextBox txtBoxMultiOption2;
+        private System.Windows.Forms.TextBox txtBoxMultiOption1;
         private System.Windows.Forms.Panel pnlAnswerTrueOrFalse;
         private System.Windows.Forms.RadioButton rButonFalse;
         private System.Windows.Forms.RadioButton rButtonTrue;
@@ -636,5 +712,14 @@
         private System.Windows.Forms.Button btnTrueOrFalse;
         private System.Windows.Forms.Button btnMultipleChoice;
         private System.Windows.Forms.Button btnPicture;
+        private System.Windows.Forms.GroupBox groupBoxTrueFalse;
+        private System.Windows.Forms.GroupBox groupBoxMultipleChoice;
+        private System.Windows.Forms.RadioButton radioButtonOption4;
+        private System.Windows.Forms.RadioButton radioButtonOption3;
+        private System.Windows.Forms.RadioButton radioButtonOption2;
+        private System.Windows.Forms.RadioButton radioButtonOption1;
+        private System.Windows.Forms.Panel pnlAddPicture;
+        private System.Windows.Forms.PictureBox pctBoxImageUploaded;
+        private System.Windows.Forms.Button btnSelectPhoto;
     }
 }
