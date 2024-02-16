@@ -80,13 +80,11 @@
     <Compile Include="File Handling\AvatarFileHandler.cs" />
     <Compile Include="File Handling\UserFileHandler.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
-    <Compile Include="Quiz Forms &amp; Classes\AddTypeIt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Quiz Forms &amp; Classes\AddTypeIt.Designer.cs">
-      <DependentUpon>AddTypeIt.cs</DependentUpon>
-    </Compile>
     <Compile Include="Quiz Forms &amp; Classes\BaseQuestion.cs" />
+    <Compile Include="Quiz Forms &amp; Classes\frmAddQuestion.cs" />
+    <Compile Include="Quiz Forms &amp; Classes\frmAddQuestion.Designer.cs">
+      <DependentUpon>frmAddQuestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Quiz Forms &amp; Classes\frmQuizQuestions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,8 +188,8 @@
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.Quiz_Forms___Classes.TrueOrFalseForm%281%29.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.SplashScreen.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.TrueOrFalseForm.resources" />
-    <EmbeddedResource Include="Quiz Forms &amp; Classes\AddTypeIt.resx">
-      <DependentUpon>AddTypeIt.cs</DependentUpon>
+    <EmbeddedResource Include="Quiz Forms &amp; Classes\frmAddQuestion.resx">
+      <DependentUpon>frmAddQuestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quiz Forms &amp; Classes\frmQuizQuestions.resx">
       <DependentUpon>frmQuizQuestions.cs</DependentUpon>
