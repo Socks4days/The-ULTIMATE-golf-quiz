@@ -20,7 +20,7 @@ namespace The_ULTIMATE_golf_quiz
             InitializeComponent();                       
         }
         // sets the user who's details are displayed equal to the user that is logged in
-        Player player = SplashScreen.player;
+        Player player = frmSplashScreen.player;
 
         private void frmUserInfo_Load(object sender, EventArgs e)
         {

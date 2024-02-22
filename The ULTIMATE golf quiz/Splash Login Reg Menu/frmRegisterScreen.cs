@@ -14,10 +14,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace The_ULTIMATE_golf_quiz
 {
-    public partial class frmReg : Form
+    public partial class frmRegisterUser : Form
     {
 
-        public frmReg()
+        public frmRegisterUser()
         {
             InitializeComponent();
         }
@@ -109,6 +109,11 @@ namespace The_ULTIMATE_golf_quiz
             }
             else { isAdmin = 0; }
             int avatar = 0;
+            if (gender.ToLower() == "female")
+            {
+               avatar = 1;
+            }
+                       
             int roundsPlayed = 0;
             
             // Check if the username is already taken
@@ -129,10 +134,10 @@ namespace The_ULTIMATE_golf_quiz
             {
 
                 // Set new user as the logged in user
-                SplashScreen.player = new Player(username, password, name, age, gender, nationality, highscore, isAdmin, avatar, roundsPlayed);
+                frmSplashScreen.player = new Player(username, password, name, age, gender, nationality, highscore, isAdmin, avatar, roundsPlayed);
 
                 // Add new user to the list of valid users
-                players.Add(SplashScreen.player);
+                players.Add(frmSplashScreen.player);
 
                 // Save the list of users back to the CSV file
                 UserFileHandler.SaveAllPlayers();
@@ -192,5 +197,7 @@ namespace The_ULTIMATE_golf_quiz
             // if the window is closed, the program will also close
             System.Windows.Forms.Application.Exit();
         }
+
+        
     }
 }

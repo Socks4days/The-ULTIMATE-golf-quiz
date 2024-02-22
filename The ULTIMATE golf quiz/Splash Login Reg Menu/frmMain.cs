@@ -19,38 +19,14 @@ namespace The_ULTIMATE_golf_quiz
             hideSubMenus();
             setUpAfterLogin();
         }
-       /* private void formSelector()
-        {
-            switch (formChoice)
-            {
-                case "Splash":
-                    
-                    openChildForm(new SplashScreen());
-                    break;
-                case "Login":
-                    
-                    openChildForm(new frmLogin());
-                    break;
-                case "Register":
-                    
-                    openChildForm(new frmReg());
-                    break;
-                case "Main":
-                    
-                    break;
-                default:
-                    
-                    break;
-            }
-                
-        }*/
+       
         private void setUpAfterLogin()
         {
             hideSubMenus();
             setTitleLabels();
             setAvatar();
             showMenus();
-            if (SplashScreen.player.isAdmin == 0)
+            if (frmSplashScreen.player.isAdmin == 0)
             {
                 btnAdmin.Visible = false;
             }
@@ -91,15 +67,15 @@ namespace The_ULTIMATE_golf_quiz
         #region topMenuSetup
         private void setTitleLabels()
         {
-            lblCurrentUser.Text = "Current User: " + SplashScreen.player.username + "   ";
-            lblHighscore.Text = "Highscore: " + SplashScreen.player.highscore.ToString() + "   ";
-            lblGamesPlayed.Text = "Rounds played: " + SplashScreen.player.roundsPlayed.ToString();
+            lblCurrentUser.Text = "Current User: " + frmSplashScreen.player.username + "   ";
+            lblHighscore.Text = "Highscore: " + frmSplashScreen.player.highscore.ToString() + "   ";
+            lblGamesPlayed.Text = "Rounds played: " + frmSplashScreen.player.roundsPlayed.ToString();
         }
 
         private void setAvatar()
         {
             string[] avatarPaths = { "Default1", "Default2", "Tiger Woods", "Rory McIllroy", "Female1", "Female2" };
-            int avatarIndex = SplashScreen.player.avatar;
+            int avatarIndex = frmSplashScreen.player.avatar;
             pctBoxAvatar.Image = (Image)Properties.Resources.ResourceManager.GetObject(avatarPaths[avatarIndex]);
         }
         #endregion topMenuSetup
@@ -133,7 +109,7 @@ namespace The_ULTIMATE_golf_quiz
         {
             hideSubMenus();
             // Reload questions for the current player, removing any already answered
-            UserFileHandler.ReadPlayerQuestionAnswered(SplashScreen.player);
+            UserFileHandler.ReadPlayerQuestionAnswered(frmSplashScreen.player);
 
             // Open the quiz form
             openChildForm(new frmQuizQuestions());
@@ -190,7 +166,7 @@ namespace The_ULTIMATE_golf_quiz
             {
                 foreach (Player player in players)
                 {
-                    if (player.username == SplashScreen.player.username)
+                    if (player.username == frmSplashScreen.player.username)
                     {
                         players.Remove(player);
                         UserFileHandler.SaveAllPlayers();
@@ -220,7 +196,7 @@ namespace The_ULTIMATE_golf_quiz
             {
                 foreach (Player player in players)
                 {
-                    if (player.username == SplashScreen.player.username)
+                    if (player.username == frmSplashScreen.player.username)
                     {
                        player.highscore = 0;
                         UserFileHandler.ClearPlayerQuestionAnswered(player);

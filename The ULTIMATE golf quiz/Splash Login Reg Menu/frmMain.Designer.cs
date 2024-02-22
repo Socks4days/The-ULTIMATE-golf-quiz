@@ -131,7 +131,7 @@
             this.btnAddQuestions.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnAddQuestions.Size = new System.Drawing.Size(233, 50);
             this.btnAddQuestions.TabIndex = 7;
-            this.btnAddQuestions.Text = "Add Questions";
+            this.btnAddQuestions.Text = "Add questions";
             this.btnAddQuestions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddQuestions.UseVisualStyleBackColor = true;
             this.btnAddQuestions.Click += new System.EventHandler(this.btnAddQuestions_Click);
@@ -169,7 +169,7 @@
             this.btnResetPassword.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnResetPassword.Size = new System.Drawing.Size(233, 50);
             this.btnResetPassword.TabIndex = 5;
-            this.btnResetPassword.Text = "Reset password";
+            this.btnResetPassword.Text = "Reset user password";
             this.btnResetPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnResetPassword.UseVisualStyleBackColor = true;
             this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
@@ -240,7 +240,7 @@
             this.btnReset.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnReset.Size = new System.Drawing.Size(233, 50);
             this.btnReset.TabIndex = 8;
-            this.btnReset.Text = "Reset Account";
+            this.btnReset.Text = "Reset account";
             this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -490,7 +490,7 @@
             this.lblUltimateGolfQuiz.AutoSize = true;
             this.lblUltimateGolfQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUltimateGolfQuiz.ForeColor = System.Drawing.Color.White;
-            this.lblUltimateGolfQuiz.Location = new System.Drawing.Point(193, 113);
+            this.lblUltimateGolfQuiz.Location = new System.Drawing.Point(194, 113);
             this.lblUltimateGolfQuiz.Name = "lblUltimateGolfQuiz";
             this.lblUltimateGolfQuiz.Size = new System.Drawing.Size(404, 37);
             this.lblUltimateGolfQuiz.TabIndex = 1;
@@ -501,14 +501,14 @@
             this.pctBoxLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pctBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pctBoxLogo.Image = global::The_ULTIMATE_golf_quiz.Properties.Resources.Golf_logo3;
-            this.pctBoxLogo.Location = new System.Drawing.Point(239, 119);
+            this.pctBoxLogo.Location = new System.Drawing.Point(240, 119);
             this.pctBoxLogo.Name = "pctBoxLogo";
             this.pctBoxLogo.Size = new System.Drawing.Size(288, 239);
             this.pctBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxLogo.TabIndex = 0;
             this.pctBoxLogo.TabStop = false;
             // 
-            // frmMain
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -518,9 +518,9 @@
             this.Controls.Add(this.pnlSideMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5);
-            this.MinimumSize = new System.Drawing.Size(1006, 589);
-            this.Name = "frmMain";
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.MinimumSize = new System.Drawing.Size(1006, 588);
+            this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "The ULTIMATE Golf Quiz";
             this.pnlSideMenu.ResumeLayout(false);

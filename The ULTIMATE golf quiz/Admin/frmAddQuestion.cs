@@ -99,7 +99,31 @@ namespace The_ULTIMATE_golf_quiz
                     TypeItQuestion typeItQuestionToAdd = new TypeItQuestion();
                     typeItQuestionToAdd.Question = txtBoxQuestion.Text;
                     typeItQuestionToAdd.CorrectAnswer = txtBoxTypeItAnswer.Text;
-                    typeItQuestionToAdd.Id = "TI" + (QuestionFileHandler.TypeItQuestions.Count + 1).ToString("D2");
+
+
+                    bool uniqueIdFound = false;
+                    // Get the next question number
+                    int nextQuestionNumberTypeIt = QuestionFileHandler.TypeItQuestions.Count + 1;
+                    string questionId = "";
+                    // Check that the question id for that number hasn't already been used
+                    while (!uniqueIdFound)
+                    {
+                        // Add question prefix to number and pad with zeros
+                        questionId = "TI" + nextQuestionNumberTypeIt.ToString("D2");
+                        // If it's already used, add one and check again
+                        if (QuestionFileHandler.TypeItQuestions.FirstOrDefault(item => item.Id == questionId) != null)
+                        {
+                            // A question with that id already exists, so try the next one
+                            nextQuestionNumberTypeIt++;
+                        }
+                        else
+                        {
+                            // The id hasn't been used, stop looking
+                            uniqueIdFound = true;
+                        }
+                    }
+                    // Set the question id
+                    typeItQuestionToAdd.Id = questionId;
                     typeItQuestionToAdd.Points = Convert.ToInt32(nUDPoints.Value);
                     Difficulty();
                     typeItQuestionToAdd.Difficulty = difficulty;
@@ -125,7 +149,29 @@ namespace The_ULTIMATE_golf_quiz
                         trueOrFalseQuestionToAdd.CorrectAnswer = "0";
                     else
                         trueOrFalseQuestionToAdd.CorrectAnswer = "";
+
+
+                    int nextQuestionNumberTf = QuestionFileHandler.TrueOrFalseQuestions.Count + 1;
                     trueOrFalseQuestionToAdd.Id = "TF" + (QuestionFileHandler.TrueOrFalseQuestions.Count + 1).ToString("D2");
+                    string questionIdTF = "";
+                    bool uniqueIdFoundTF = false;
+                    while (!uniqueIdFoundTF)
+                    {
+                        if (QuestionFileHandler.TrueOrFalseQuestions.FirstOrDefault(item => item.Id == questionIdTF) != null)
+                        {
+                            // A question with that id already exists, so try the next one
+                            nextQuestionNumberTf++;
+                        }
+                        else
+                        {
+                            // The id hasn't been used, stop looking
+                            uniqueIdFound = true;
+                        }
+                    }
+                    
+                    trueOrFalseQuestionToAdd.Id = questionIdTF;
+
+
                     trueOrFalseQuestionToAdd.Points = Convert.ToInt32(nUDPoints.Value);
                     Difficulty();
                     trueOrFalseQuestionToAdd.Difficulty = difficulty;
@@ -154,7 +200,28 @@ namespace The_ULTIMATE_golf_quiz
                         multiChoiceQuestionToAdd.CorrectAnswer = txtBoxMultiOption4.Text;
                     else
                         multiChoiceQuestionToAdd.CorrectAnswer = "";
-                    multiChoiceQuestionToAdd.Id = "MC" + (QuestionFileHandler.MultiChoiceQuestions.Count + 1).ToString("D2");
+
+                    int nextQuestionNumberMc = QuestionFileHandler.MultiChoiceQuestions.Count + 1;
+                    multiChoiceQuestionToAdd.Id = "TF" + (QuestionFileHandler.MultiChoiceQuestions.Count + 1).ToString("D2");
+                    string questionIdMc = "";
+                    bool uniqueIdFoundMc = false;
+                    while (!uniqueIdFoundMc)
+                    {
+                        if (QuestionFileHandler.MultiChoiceQuestions.FirstOrDefault(item => item.Id == questionIdMc) != null)
+                        {
+                            // A question with that id already exists, so try the next one
+                            nextQuestionNumberMc++;
+                        }
+                        else
+                        {
+                            // The id hasn't been used, stop looking
+                            uniqueIdFound = true;
+                        }
+                    }
+
+                    multiChoiceQuestionToAdd.Id = questionIdMc;
+
+
                     multiChoiceQuestionToAdd.Points = Convert.ToInt32(nUDPoints.Value);
                     Difficulty();
                     multiChoiceQuestionToAdd.Difficulty = difficulty;
@@ -180,7 +247,28 @@ namespace The_ULTIMATE_golf_quiz
                     PictureQuestion pictureQuestionToAdd = new PictureQuestion();
                     pictureQuestionToAdd.Question = txtBoxQuestion.Text;
                     pictureQuestionToAdd.CorrectAnswer = txtBoxTypeItAnswer.Text;
-                    pictureQuestionToAdd.Id = "PC" + (QuestionFileHandler.PictureQuestions.Count + 1).ToString("D2");
+
+                    int nextQuestionNumberPc = QuestionFileHandler.PictureQuestions.Count + 1;
+                    pictureQuestionToAdd.Id = "TF" + (QuestionFileHandler.PictureQuestions.Count + 1).ToString("D2");
+                    string questionIdPc = "";
+                    bool uniqueIdFoundPc = false;
+                    while (!uniqueIdFoundPc)
+                    {
+                        if (QuestionFileHandler.MultiChoiceQuestions.FirstOrDefault(item => item.Id == questionIdPc) != null)
+                        {
+                            // A question with that id already exists, so try the next one
+                            nextQuestionNumberPc++;
+                        }
+                        else
+                        {
+                            // The id hasn't been used, stop looking
+                            uniqueIdFound = true;
+                        }
+                    }
+
+                    pictureQuestionToAdd.Id = questionIdPc;
+
+
                     pictureQuestionToAdd.Points = Convert.ToInt32(nUDPoints.Value);
                     Difficulty();
                     pictureQuestionToAdd.Difficulty = difficulty;

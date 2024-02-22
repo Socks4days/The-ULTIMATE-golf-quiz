@@ -1,6 +1,6 @@
 ﻿namespace The_ULTIMATE_golf_quiz
 {
-    partial class SplashScreen
+    partial class frmSplashScreen
     {
         /// <summary>
         /// Required designer variable.

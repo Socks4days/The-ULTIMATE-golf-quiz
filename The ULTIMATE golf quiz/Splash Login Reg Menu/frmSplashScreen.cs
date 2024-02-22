@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace The_ULTIMATE_golf_quiz
 {
 
-    public partial class SplashScreen : Form
+    public partial class frmSplashScreen : Form
     {
  
-        public SplashScreen()
+        public frmSplashScreen()
         {
             InitializeComponent();
             // Read in all the players from the csv file
@@ -46,9 +47,7 @@ namespace The_ULTIMATE_golf_quiz
                 tmrLoad.Stop();
                 this.Hide();
                 new frmLogin().Show();
-            }
-        }
-
-        
+            }            
+        }        
     }
 }

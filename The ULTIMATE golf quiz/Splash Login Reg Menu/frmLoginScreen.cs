@@ -50,14 +50,14 @@ namespace The_ULTIMATE_golf_quiz
             string inputPassword = passwordtxtbox.Text;
 
             // Check for user in list of players
-            SplashScreen.player = new Player();
+            frmSplashScreen.player = new Player();
             bool foundUser = false;
             foreach (Player player in players)
             {
                 if ((inputUsername == player.username) && (inputPassword == player.password))
                 {
                     // Found user
-                    SplashScreen.player = player;
+                    frmSplashScreen.player = player;
                     foundUser = true;
                 }
             }
@@ -89,7 +89,7 @@ namespace The_ULTIMATE_golf_quiz
 
             this.Hide();
            // new frmMain().formChoice = "Register";
-            new frmReg().Show();
+            new frmRegisterUser().Show();
         }
                 
         private void loginfrm_FormClosed(object sender, FormClosedEventArgs e)

@@ -525,12 +525,12 @@ namespace The_ULTIMATE_golf_quiz
                 lblAnswer.Text = "Correct";
                 TotalScoreForCurrentRound += currentTypeItQuestion1.Points;
                 NumberOfQuestionsAnsweredCorrectly++;
-                UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentTypeItQuestion1, true);
+                UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentTypeItQuestion1, true);
             }
             else
             {
                 lblAnswer.Text = "Incorrect, the answer is " + currentTypeItQuestion1.CorrectAnswer;
-                UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentTypeItQuestion1, false);
+                UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentTypeItQuestion1, false);
             }
         }
 
@@ -550,13 +550,13 @@ namespace The_ULTIMATE_golf_quiz
                 lblAnswer.Text = "Correct";
                 TotalScoreForCurrentRound += currentTrueOrFalseQuestion1.Points;
                 NumberOfQuestionsAnsweredCorrectly++;
-                UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentTrueOrFalseQuestion1, true);
+                UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentTrueOrFalseQuestion1, true);
 
             }
             else
             {
                 lblAnswer.Text = "Incorrect, it's false";
-                UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentTrueOrFalseQuestion1, false);
+                UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentTrueOrFalseQuestion1, false);
 
             }
         }
@@ -576,13 +576,13 @@ namespace The_ULTIMATE_golf_quiz
                 lblAnswer.Text = "Correct";
                 TotalScoreForCurrentRound += currentTrueOrFalseQuestion1.Points;
                 NumberOfQuestionsAnsweredCorrectly++;
-                UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentTrueOrFalseQuestion1, true);
+                UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentTrueOrFalseQuestion1, true);
 
             }
             else
             {
                lblAnswer.Text = "Incorrect, it's true";
-                UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentTrueOrFalseQuestion1, false);
+                UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentTrueOrFalseQuestion1, false);
             }
         }
 
@@ -606,13 +606,13 @@ namespace The_ULTIMATE_golf_quiz
                    lblAnswer.Text = "Correct";
                     TotalScoreForCurrentRound += currentMultipleChoiceQuestion1.Points;
                     NumberOfQuestionsAnsweredCorrectly++;
-                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentMultipleChoiceQuestion1, true);
+                    UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentMultipleChoiceQuestion1, true);
 
                 }
                 else
                 {
                    lblAnswer.Text = "Incorrect, the answer is " + currentMultipleChoiceQuestion1.CorrectAnswer;
-                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentMultipleChoiceQuestion1, false);
+                    UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentMultipleChoiceQuestion1, false);
 
                 }
             }
@@ -638,13 +638,13 @@ namespace The_ULTIMATE_golf_quiz
                     TotalScoreForCurrentRound += currentMultipleChoiceQuestion1.Points;
                     NumberOfQuestionsAnsweredCorrectly++;
                     lblAnswer.Text = "Correct";
-                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentMultipleChoiceQuestion1, true);
+                    UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentMultipleChoiceQuestion1, true);
 
                 }
                 else
                 {
                    lblAnswer.Text = "Incorrect, the answer is " + currentMultipleChoiceQuestion1.CorrectAnswer;
-                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentMultipleChoiceQuestion1, false);
+                    UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentMultipleChoiceQuestion1, false);
 
                 }
             }
@@ -670,14 +670,14 @@ namespace The_ULTIMATE_golf_quiz
                     TotalScoreForCurrentRound += currentMultipleChoiceQuestion1.Points;
                     NumberOfQuestionsAnsweredCorrectly++;
                     lblAnswer.Text = "Correct";
-                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentMultipleChoiceQuestion1, true);
+                    UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentMultipleChoiceQuestion1, true);
 
                 }
                 else
                 {
 
                     lblAnswer.Text = "Incorrect, the answer is " + currentMultipleChoiceQuestion1.CorrectAnswer;
-                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentMultipleChoiceQuestion1, false);
+                    UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentMultipleChoiceQuestion1, false);
 
                 }
             }
@@ -702,14 +702,14 @@ namespace The_ULTIMATE_golf_quiz
                     TotalScoreForCurrentRound += currentMultipleChoiceQuestion1.Points;
                     NumberOfQuestionsAnsweredCorrectly++;
                     lblAnswer.Text = "Correct";
-                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentMultipleChoiceQuestion1, true);
+                    UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentMultipleChoiceQuestion1, true);
 
                 }
                 else
                 {
 
                     lblAnswer.Text = "Incorrect, the answer is " + currentMultipleChoiceQuestion1.CorrectAnswer;
-                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentMultipleChoiceQuestion1, false);
+                    UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentMultipleChoiceQuestion1, false);
 
                 }
             }
@@ -742,14 +742,14 @@ namespace The_ULTIMATE_golf_quiz
                         currentPictureQuestion1.CorrectAnswer, currentPictureQuestion1.CorrectLocationX, currentPictureQuestion1.CorrectLocationY, x, y);
                     NumberOfQuestionsAnsweredCorrectly++;
                     TotalScoreForCurrentRound += currentPictureQuestion1.Points;
-                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentPictureQuestion1, true);
+                    UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentPictureQuestion1, true);
 
                 }
                 else
                 {
                     lblAnswer.Text = String.Format("No, {0} ({1}, {2} )\nYou selected ({3}, {4})",
                         currentPictureQuestion1.CorrectAnswer, currentPictureQuestion1.CorrectLocationX, currentPictureQuestion1.CorrectLocationY, x, y);
-                    UserFileHandler.SavePlayerQuestionAnswered(SplashScreen.player, currentPictureQuestion1, false);
+                    UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentPictureQuestion1, false);
 
                 }
                 pictureQuestionAnswered = true;
@@ -1012,10 +1012,10 @@ namespace The_ULTIMATE_golf_quiz
             pnlMultipleChoiceOptions.Visible = false;
             pnlChooseTheRightClub.Visible = false;
             pnlPicture.Visible = false;
-            SplashScreen.player.totalScoreForCurrentSession += TotalScoreForCurrentRound;
-            if (SplashScreen.player.totalScoreForCurrentSession > SplashScreen.player.highscore)
+            frmSplashScreen.player.totalScoreForCurrentSession += TotalScoreForCurrentRound;
+            if (frmSplashScreen.player.totalScoreForCurrentSession > frmSplashScreen.player.highscore)
             {
-                SplashScreen.player.highscore = SplashScreen.player.totalScoreForCurrentSession;
+                frmSplashScreen.player.highscore = frmSplashScreen.player.totalScoreForCurrentSession;
                 UserFileHandler.SaveAllPlayers();
             }
         }
@@ -1032,7 +1032,7 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnFinishSession_Click(object sender, EventArgs e)
         {
-            SplashScreen.player.roundsPlayed++;
+            frmSplashScreen.player.roundsPlayed++;
             UserFileHandler.SaveAllPlayers();
             this.Close();
         }

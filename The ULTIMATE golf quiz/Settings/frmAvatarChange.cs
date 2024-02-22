@@ -15,7 +15,7 @@ namespace The_ULTIMATE_golf_quiz
     public partial class frmAvatarChange : Form
     {
         List<Player> players = UserFileHandler.players;
-        int currentAvatarIndex = SplashScreen.player.avatar;
+        int currentAvatarIndex = frmSplashScreen.player.avatar;
         public static List<string> avatars = new List<string>();
         private string[] avatarPaths = { "Default1", "Default2", "Tiger Woods", "Rory McIllroy", "Female1", "Female2" };
         
@@ -37,7 +37,7 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            if (!saveButtonClicked && SplashScreen.player.avatar!=currentAvatarIndex)
+            if (!saveButtonClicked && frmSplashScreen.player.avatar!=currentAvatarIndex)
             {
                 saveButtonClicked= true;
                 DialogResult result = MessageBox.Show("You have unsaved changes! \n Do you want to save them?", "Confirmation", MessageBoxButtons.YesNoCancel);
@@ -134,11 +134,11 @@ namespace The_ULTIMATE_golf_quiz
             }
             foreach (Player player in players)
             {
-                if ((player.username == SplashScreen.player.username) && (player.avatar == avatarNumber))
+                if ((player.username == frmSplashScreen.player.username) && (player.avatar == avatarNumber))
                 {
                     MessageBox.Show("No changes were made");
                 }
-                else if (player.username == SplashScreen.player.username)
+                else if (player.username == frmSplashScreen.player.username)
                 {
                     MessageBox.Show("Preferences saved!");
                     player.avatar = avatarNumber;

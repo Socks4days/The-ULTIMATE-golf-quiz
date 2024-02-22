@@ -908,7 +908,7 @@
             // 
             this.timerCountdown.Tick += new System.EventHandler(this.timerCountdown_Tick);
             // 
-            // frmQuizQuestions
+            // QuizQuestions
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
@@ -924,7 +924,7 @@
             this.Controls.Add(this.pnlTypeIt);
             this.Controls.Add(this.pnlQuestion);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmQuizQuestions";
+            this.Name = "QuizQuestions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "The Quiz";
             this.Load += new System.EventHandler(this.frmQuizQuestions_Load);

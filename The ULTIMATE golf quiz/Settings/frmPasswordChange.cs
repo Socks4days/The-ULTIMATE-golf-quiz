@@ -28,7 +28,7 @@ namespace The_ULTIMATE_golf_quiz
             {
                 Error();
             }
-            else if (txtBoxOriginalPass.Text != SplashScreen.player.password)
+            else if (txtBoxOriginalPass.Text != frmSplashScreen.player.password)
             {
                 MessageBox.Show("Password does not match original password\nPlease try again...");
                 this.ActiveControl = txtBoxOriginalPass;
@@ -82,22 +82,20 @@ namespace The_ULTIMATE_golf_quiz
 
                 }                
                 // set the the players password equal to what they input
-                SplashScreen.player.password = txtBoxConfirm2.Text;
+                frmSplashScreen.player.password = txtBoxConfirm2.Text;
 
                 // loop through each player to find the right player to set new password
                 foreach (Player player in players)
                 {
                     // when the right player is found then set the password equal to what they input
-                    if (player.username == SplashScreen.player.username)
+                    if (player.username == frmSplashScreen.player.username)
                     {
                         player.password = txtBoxConfirm2.Text;
                     }
                 }
                 UserFileHandler.SaveAllPlayers();
                 // when done, send them back to the main menu
-                frmMainMenu mainMenu = new frmMainMenu();
-                this.Hide();
-                mainMenu.Show();
+                this.Close();
                 // let the user know that their password was valid and it was set successfully
                 MessageBox.Show("Password changed successfully!");
             }         

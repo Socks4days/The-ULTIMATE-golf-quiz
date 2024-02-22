@@ -77,12 +77,13 @@
     <Compile Include="Classes for users\Player.cs" />
     <Compile Include="Classes for users\User.cs" />
     <Compile Include="File Handling\QuestionFileHandler.cs" />
-    <Compile Include="File Handling\AvatarFileHandler.cs" />
     <Compile Include="File Handling\UserFileHandler.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Quiz Forms &amp; Classes\BaseQuestion.cs" />
-    <Compile Include="Quiz Forms &amp; Classes\frmAddQuestion.cs" />
-    <Compile Include="Quiz Forms &amp; Classes\frmAddQuestion.Designer.cs">
+    <Compile Include="Admin\frmAddQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmAddQuestion.Designer.cs">
       <DependentUpon>frmAddQuestion.cs</DependentUpon>
     </Compile>
     <Compile Include="Quiz Forms &amp; Classes\frmQuizQuestions.cs">
@@ -91,36 +92,35 @@
     <Compile Include="Quiz Forms &amp; Classes\frmQuizQuestions.Designer.cs">
       <DependentUpon>frmQuizQuestions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quiz Forms &amp; Classes\Leaderboard.cs">
+    <Compile Include="Quiz Forms &amp; Classes\frmLeaderboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quiz Forms &amp; Classes\Leaderboard.Designer.cs">
-      <DependentUpon>Leaderboard.cs</DependentUpon>
+    <Compile Include="Quiz Forms &amp; Classes\frmLeaderboard.Designer.cs">
+      <DependentUpon>frmLeaderboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Quiz Forms &amp; Classes\MultiChoiceQuestion.cs" />
     <Compile Include="Quiz Forms &amp; Classes\PictureQuestion.cs" />
     <Compile Include="Quiz Forms &amp; Classes\TrueOrFalseQuestion.cs" />
-    <Compile Include="Quiz Forms &amp; Classes\TypeIt.cs" />
     <Compile Include="Quiz Forms &amp; Classes\TypeItQuestion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Settings\AvatarChange.cs">
+    <Compile Include="Settings\frmAvatarChange.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Settings\AvatarChange.Designer.cs">
-      <DependentUpon>AvatarChange.cs</DependentUpon>
+    <Compile Include="Settings\frmAvatarChange.Designer.cs">
+      <DependentUpon>frmAvatarChange.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings\Password Change.cs">
+    <Compile Include="Settings\frmPasswordChange.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Settings\Password Change.Designer.cs">
-      <DependentUpon>Password Change.cs</DependentUpon>
+    <Compile Include="Settings\frmPasswordChange.Designer.cs">
+      <DependentUpon>frmPasswordChange.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings\User Info.cs">
+    <Compile Include="Settings\frmUserInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Settings\User Info.Designer.cs">
-      <DependentUpon>User Info.cs</DependentUpon>
+    <Compile Include="Settings\frmUserInfo.Designer.cs">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Splash Login Reg Menu\frmMain.cs">
       <SubType>Form</SubType>
@@ -128,36 +128,23 @@
     <Compile Include="Splash Login Reg Menu\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Splash Login Reg Menu\Login Screen.cs">
+    <Compile Include="Splash Login Reg Menu\frmLoginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Splash Login Reg Menu\Login Screen.Designer.cs">
-      <DependentUpon>Login Screen.cs</DependentUpon>
+    <Compile Include="Splash Login Reg Menu\frmLoginScreen.Designer.cs">
+      <DependentUpon>frmLoginScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Splash Login Reg Menu\Logout Splash.cs">
+    <Compile Include="Splash Login Reg Menu\frmRegisterScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Splash Login Reg Menu\Logout Splash.Designer.cs">
-      <DependentUpon>Logout Splash.cs</DependentUpon>
+    <Compile Include="Splash Login Reg Menu\frmRegisterScreen.Designer.cs">
+      <DependentUpon>frmRegisterScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Splash Login Reg Menu\mainMenu.cs">
+    <Compile Include="Splash Login Reg Menu\frmSplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Splash Login Reg Menu\mainMenu.Designer.cs">
-      <DependentUpon>mainMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Splash Login Reg Menu\Register Screen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Splash Login Reg Menu\Register Screen.Designer.cs">
-      <DependentUpon>Register Screen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Splash Login Reg Menu\Register.cs" />
-    <Compile Include="Splash Login Reg Menu\SplashScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Splash Login Reg Menu\SplashScreen.Designer.cs">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
+    <Compile Include="Splash Login Reg Menu\frmSplashScreen.Designer.cs">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Admin\frmResetOrDeleteUser.resx">
       <DependentUpon>frmResetOrDeleteUser.cs</DependentUpon>
@@ -169,33 +156,22 @@
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmChangePass.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmLeaderboard.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmLogin.resources" />
-    <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmMain.resources" />
-    <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmMainMenu.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmQuestions.resources" />
-    <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmQuizQuestions.resources" />
-    <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmReg.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmSettings.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmTrueOrFalse.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmTrueOrFalseQuestions.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmTypeIt.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmUserInfo.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.frmViewUsers.resources" />
-    <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.loginfrm.resources" />
-    <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.Logout_Splash.resources" />
-    <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.mainMenu.resources" />
-    <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.NewMainMenu.resources" />
     <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.Properties.Resources.resources" />
-    <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.Quiz_Forms___Classes.TrueOrFalseForm%281%29.resources" />
-    <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.SplashScreen.resources" />
-    <EmbeddedResource Include="obj\Debug\The_ULTIMATE_golf_quiz.TrueOrFalseForm.resources" />
-    <EmbeddedResource Include="Quiz Forms &amp; Classes\frmAddQuestion.resx">
+    <EmbeddedResource Include="Admin\frmAddQuestion.resx">
       <DependentUpon>frmAddQuestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quiz Forms &amp; Classes\frmQuizQuestions.resx">
       <DependentUpon>frmQuizQuestions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quiz Forms &amp; Classes\Leaderboard.resx">
-      <DependentUpon>Leaderboard.cs</DependentUpon>
+    <EmbeddedResource Include="Quiz Forms &amp; Classes\frmLeaderboard.resx">
+      <DependentUpon>frmLeaderboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -207,32 +183,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Settings\AvatarChange.resx">
-      <DependentUpon>AvatarChange.cs</DependentUpon>
+    <EmbeddedResource Include="Settings\frmAvatarChange.resx">
+      <DependentUpon>frmAvatarChange.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Settings\Password Change.resx">
-      <DependentUpon>Password Change.cs</DependentUpon>
+    <EmbeddedResource Include="Settings\frmPasswordChange.resx">
+      <DependentUpon>frmPasswordChange.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Settings\User Info.resx">
-      <DependentUpon>User Info.cs</DependentUpon>
+    <EmbeddedResource Include="Settings\frmUserInfo.resx">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Splash Login Reg Menu\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Splash Login Reg Menu\Login Screen.resx">
-      <DependentUpon>Login Screen.cs</DependentUpon>
+    <EmbeddedResource Include="Splash Login Reg Menu\frmLoginScreen.resx">
+      <DependentUpon>frmLoginScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Splash Login Reg Menu\Logout Splash.resx">
-      <DependentUpon>Logout Splash.cs</DependentUpon>
+    <EmbeddedResource Include="Splash Login Reg Menu\frmRegisterScreen.resx">
+      <DependentUpon>frmRegisterScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Splash Login Reg Menu\mainMenu.resx">
-      <DependentUpon>mainMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Splash Login Reg Menu\Register Screen.resx">
-      <DependentUpon>Register Screen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Splash Login Reg Menu\SplashScreen.resx">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
+    <EmbeddedResource Include="Splash Login Reg Menu\frmSplashScreen.resx">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bin\Debug\MultiChoiceQuestions.csv" />
     <None Include="bin\Debug\PictureQuestions.csv" />
