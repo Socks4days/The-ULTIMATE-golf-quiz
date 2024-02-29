@@ -62,7 +62,7 @@
             this.btnLeft.Location = new System.Drawing.Point(210, 344);
             this.btnLeft.Margin = new System.Windows.Forms.Padding(4);
             this.btnLeft.Name = "btnLeft";
-            this.btnLeft.Size = new System.Drawing.Size(93, 85);
+            this.btnLeft.Size = new System.Drawing.Size(93, 45);
             this.btnLeft.TabIndex = 11;
             this.btnLeft.Text = "⇐";
             this.btnLeft.UseVisualStyleBackColor = false;
@@ -79,7 +79,7 @@
             this.btnRight.Location = new System.Drawing.Point(470, 344);
             this.btnRight.Margin = new System.Windows.Forms.Padding(4);
             this.btnRight.Name = "btnRight";
-            this.btnRight.Size = new System.Drawing.Size(96, 85);
+            this.btnRight.Size = new System.Drawing.Size(96, 45);
             this.btnRight.TabIndex = 12;
             this.btnRight.Text = "⇒";
             this.btnRight.UseVisualStyleBackColor = false;
@@ -108,7 +108,7 @@
             this.btnSave.Location = new System.Drawing.Point(311, 344);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(151, 85);
+            this.btnSave.Size = new System.Drawing.Size(151, 45);
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -116,12 +116,15 @@
             // 
             // btnAddOwn
             // 
-            this.btnAddOwn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAddOwn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
+            this.btnAddOwn.FlatAppearance.BorderSize = 0;
+            this.btnAddOwn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddOwn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddOwn.Location = new System.Drawing.Point(341, 437);
+            this.btnAddOwn.ForeColor = System.Drawing.Color.White;
+            this.btnAddOwn.Location = new System.Drawing.Point(311, 437);
             this.btnAddOwn.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddOwn.Name = "btnAddOwn";
-            this.btnAddOwn.Size = new System.Drawing.Size(79, 30);
+            this.btnAddOwn.Size = new System.Drawing.Size(151, 30);
             this.btnAddOwn.TabIndex = 15;
             this.btnAddOwn.Text = "Upload Your own!";
             this.btnAddOwn.UseVisualStyleBackColor = false;

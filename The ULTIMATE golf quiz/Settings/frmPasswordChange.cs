@@ -16,7 +16,8 @@ namespace The_ULTIMATE_golf_quiz
         public frmChangePass()
         {
             InitializeComponent();
-            //txtBoxOriginalPass.
+            txtBoxConfirm.KeyDown += KeyPressedDown;
+            KeyDown += KeyPressedDown;
         }
         List<Player> players = UserFileHandler.players;
 
@@ -24,14 +25,14 @@ namespace The_ULTIMATE_golf_quiz
         {
            
             // when the user attempts to change their password the program first checks if the textbox is empty and if so, throws an error, alerting the user
-            if (txtBoxConfirm2.Text == "")
+            if (txtBoxConfirm.Text == "")
             {
                 Error();
             }
-            else if (txtBoxOriginalPass.Text != frmSplashScreen.player.password)
+            else if (txtBoxOriginalPassword.Text != frmSplashScreen.player.password)
             {
                 MessageBox.Show("Password does not match original password\nPlease try again...");
-                this.ActiveControl = txtBoxOriginalPass;
+                this.ActiveControl = txtBoxOriginalPassword;
                 return;
             }
             else
@@ -45,7 +46,7 @@ namespace The_ULTIMATE_golf_quiz
         public void PasswordValidation()
         {
             // sets the variable equal to what the user has input 
-            string password = txtBoxConfirm2.Text;
+            string password = txtBoxConfirm.Text;
 
             // Password check: has more than 7 characters, has a capital letter and has a number
             if ((password.Length >= 8 ) && (password.Length <= 15) && (password.Any(char.IsUpper)) && (password.Any(char.IsDigit)))
@@ -77,12 +78,12 @@ namespace The_ULTIMATE_golf_quiz
         {            
             if (validPassword == true)
             {
-                if (txtBoxConfirm1.Text == txtBoxConfirm2.Text)
+                if (txtBoxNewPassword.Text == txtBoxConfirm.Text)
                 {
 
                 }                
                 // set the the players password equal to what they input
-                frmSplashScreen.player.password = txtBoxConfirm2.Text;
+                frmSplashScreen.player.password = txtBoxConfirm.Text;
 
                 // loop through each player to find the right player to set new password
                 foreach (Player player in players)
@@ -90,7 +91,7 @@ namespace The_ULTIMATE_golf_quiz
                     // when the right player is found then set the password equal to what they input
                     if (player.username == frmSplashScreen.player.username)
                     {
-                        player.password = txtBoxConfirm2.Text;
+                        player.password = txtBoxConfirm.Text;
                     }
                 }
                 UserFileHandler.SaveAllPlayers();
@@ -117,15 +118,16 @@ namespace The_ULTIMATE_golf_quiz
         // if the check box is ticked, then the user will be able to see what they have input, otherwise they will only see '*'
         private void cboxPass_CheckedChanged(object sender, EventArgs e)
         {
-            if (cboxPass.Checked)
+            if (cboxPassword.Checked)
             {
-                txtBoxOriginalPass.PasswordChar = '\0';
+                txtBoxOriginalPassword.PasswordChar = '\0';
             }
             else
             {
-                txtBoxOriginalPass.PasswordChar = '*';
+                txtBoxOriginalPassword.PasswordChar = '*';
             }
         }
+       
         private void KeyPressedDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -141,6 +143,16 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
-        
+        private void cBoxNewPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cBoxNewPassword.Checked)
+            {
+                txtBoxNewPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtBoxNewPassword.PasswordChar = '*';
+            }
+        }
     }
 }

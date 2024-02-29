@@ -58,7 +58,6 @@ namespace The_ULTIMATE_golf_quiz
                     if (listViewItem.Checked)
                     {
                         playersToEdit.Add(listViewItem.Text);
-
                     }
                 }
                 else MessageBox.Show("There are no available players to reset password");
