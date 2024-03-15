@@ -16,7 +16,7 @@ namespace The_ULTIMATE_golf_quiz
         {
             InitializeComponent();
             // Sort player list by descending highscore
-            List<Player> sortedPlayerList = UserFileHandler.players.OrderByDescending(o=>o.highscore).ToList();
+            List<Player> sortedPlayerList = UserFileHandler.players.OrderByDescending(p=>p.highscore).ToList();
             // Add each player in the sorted list to the leader board
             foreach (Player player in sortedPlayerList)
             {

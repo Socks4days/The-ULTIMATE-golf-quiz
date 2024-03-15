@@ -281,7 +281,7 @@ namespace The_ULTIMATE_golf_quiz
                 // Start the countdown to 30 seconds
                 countdown = 30 * 10;
                 progressBarCountdown.Maximum = countdown;
-                timerCountdown.Start();
+                tmrCountdown.Start();
                 startCountdown();
                 switch (QuestionFileHandler.RoundType)
                 {
@@ -511,7 +511,7 @@ namespace The_ULTIMATE_golf_quiz
         //-------------------------------------------------------------------------------------------------------
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            timerCountdown.Stop(); 
+            tmrCountdown.Stop(); 
             stopCountdown();
             this.ActiveControl = btnNext;
             lblAnswer.Visible = true;
@@ -537,7 +537,7 @@ namespace The_ULTIMATE_golf_quiz
         //---------------------------------------------------------------------------------------------------------
         private void btnTrue_Click(object sender, EventArgs e)
         {
-            timerCountdown.Stop();
+            tmrCountdown.Stop();
             stopCountdown();
             pnlAnswer.Visible = true;
             AnswerButtonsDisable(); 
@@ -563,7 +563,7 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnFalse_Click(object sender, EventArgs e)
         {
-            timerCountdown.Stop();
+            tmrCountdown.Stop();
             stopCountdown();
             pnlAnswer.Visible = true;
             lblAnswer.Visible = true;
@@ -590,7 +590,7 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnOption1_Click(object sender, EventArgs e)
         {
-            timerCountdown.Stop();
+            tmrCountdown.Stop();
             stopCountdown();
             pnlAnswer.Visible = true;
             AnswerButtonsDisable();
@@ -622,7 +622,7 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnOption2_Click(object sender, EventArgs e)
         {
-            timerCountdown.Stop();
+            tmrCountdown.Stop();
             stopCountdown();
             pnlAnswer.Visible = true;
             AnswerButtonsDisable();
@@ -653,7 +653,7 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnOption3_Click(object sender, EventArgs e)
         {
-            timerCountdown.Stop();
+            tmrCountdown.Stop();
             stopCountdown();
             pnlAnswer.Visible = true;
             AnswerButtonsDisable();
@@ -685,7 +685,7 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnOption4_Click(object sender, EventArgs e)
         {
-            timerCountdown.Stop();
+            tmrCountdown.Stop();
             stopCountdown();
             pnlAnswer.Visible = true;
             AnswerButtonsDisable();
@@ -720,7 +720,7 @@ namespace The_ULTIMATE_golf_quiz
         {
             if (!pictureQuestionAnswered)
             {
-                timerCountdown.Stop();
+                tmrCountdown.Stop();
                 stopCountdown();
                 MouseEventArgs mouseEvent = (MouseEventArgs)e;
                 // MessageBox.Show(string.Format("X: {0} Y: {1}", x, y));
@@ -771,7 +771,7 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnChooseAClubGo_Click(object sender, EventArgs e)
         {
-            timerCountdown.Stop();
+            tmrCountdown.Stop();
             stopCountdown();
             // If this is the first time the go button is clicked, start the power timer
             if (goButtonClickCount == 0)
@@ -780,8 +780,8 @@ namespace The_ULTIMATE_golf_quiz
                 progressBarPower.Value = progressBarPower.Minimum;
                 progressBarPower.Visible = true;
                 lblPower.Visible = true;
-                timerPower.Enabled = true;
-                timerPower.Start();
+                tmrPower.Enabled = true;
+                tmrPower.Start();
                 goButtonClickCount = 1;
                 btnChooseAClubGo.Text = "Stop!";
                 return;
@@ -795,8 +795,8 @@ namespace The_ULTIMATE_golf_quiz
             // Otherwise (second time go button click), stop the timer and animate the ball
             // Stop the power meter
             goButtonClickCount = 2;
-            timerPower.Stop();
-            timerPower.Enabled = false;
+            tmrPower.Stop();
+            tmrPower.Enabled = false;
 
             
 
@@ -1025,7 +1025,9 @@ namespace The_ULTIMATE_golf_quiz
         private void btnNextRound_Click(object sender, EventArgs e)
         {
             NumberOfQuestionsAskedThisRound = 0;
+            frmSplashScreen.player.roundsPlayed++;
             frmQuizQuestionsInitialisation();
+
         }
 
         //-----------------------------------------------------------------
@@ -1098,8 +1100,8 @@ namespace The_ULTIMATE_golf_quiz
             }
             else
             {
-                timerPower.Stop();
-                timerPower.Enabled = false;                
+                tmrPower.Stop();
+                tmrPower.Enabled = false;                
                 ticks = 0;
             }
         }

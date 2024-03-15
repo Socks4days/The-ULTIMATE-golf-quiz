@@ -35,7 +35,7 @@
             this.usernametxtbox = new System.Windows.Forms.TextBox();
             this.registerbtn = new System.Windows.Forms.Button();
             this.cboxPassword = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // submitbtn
@@ -43,6 +43,8 @@
             this.submitbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.submitbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.submitbtn.FlatAppearance.BorderSize = 0;
+            this.submitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
+            this.submitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.submitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submitbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitbtn.ForeColor = System.Drawing.Color.White;
@@ -85,12 +87,12 @@
             this.passwordtxtbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passwordtxtbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.passwordtxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passwordtxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordtxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordtxtbox.ForeColor = System.Drawing.Color.White;
             this.passwordtxtbox.Location = new System.Drawing.Point(195, 216);
             this.passwordtxtbox.Name = "passwordtxtbox";
             this.passwordtxtbox.PasswordChar = '*';
-            this.passwordtxtbox.Size = new System.Drawing.Size(355, 31);
+            this.passwordtxtbox.Size = new System.Drawing.Size(355, 28);
             this.passwordtxtbox.TabIndex = 1;
             // 
             // usernametxtbox
@@ -98,11 +100,11 @@
             this.usernametxtbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.usernametxtbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.usernametxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.usernametxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernametxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernametxtbox.ForeColor = System.Drawing.Color.White;
             this.usernametxtbox.Location = new System.Drawing.Point(195, 133);
             this.usernametxtbox.Name = "usernametxtbox";
-            this.usernametxtbox.Size = new System.Drawing.Size(355, 31);
+            this.usernametxtbox.Size = new System.Drawing.Size(355, 28);
             this.usernametxtbox.TabIndex = 0;
             this.usernametxtbox.WordWrap = false;
             // 
@@ -111,6 +113,8 @@
             this.registerbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.registerbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.registerbtn.FlatAppearance.BorderSize = 0;
+            this.registerbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
+            this.registerbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.registerbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerbtn.ForeColor = System.Drawing.Color.White;
@@ -128,7 +132,7 @@
             this.cboxPassword.AutoSize = true;
             this.cboxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxPassword.ForeColor = System.Drawing.Color.White;
-            this.cboxPassword.Location = new System.Drawing.Point(409, 270);
+            this.cboxPassword.Location = new System.Drawing.Point(409, 250);
             this.cboxPassword.Name = "cboxPassword";
             this.cboxPassword.Size = new System.Drawing.Size(141, 24);
             this.cboxPassword.TabIndex = 10;
@@ -136,16 +140,16 @@
             this.cboxPassword.UseVisualStyleBackColor = true;
             this.cboxPassword.CheckedChanged += new System.EventHandler(this.cboxPassword_CheckedChanged);
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(323, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 42);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Login";
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(323, 45);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(96, 37);
+            this.lblTitle.TabIndex = 11;
+            this.lblTitle.Text = "Login";
             // 
             // frmLogin
             // 
@@ -153,7 +157,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(760, 472);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.cboxPassword);
             this.Controls.Add(this.registerbtn);
             this.Controls.Add(this.usernametxtbox);
@@ -181,7 +185,7 @@
         private System.Windows.Forms.TextBox usernametxtbox;
         private System.Windows.Forms.Button registerbtn;
         private System.Windows.Forms.CheckBox cboxPassword;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitle;
     }
 }
 

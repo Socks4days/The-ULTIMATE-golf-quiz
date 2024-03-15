@@ -39,11 +39,11 @@
             // 
             this.lblLeaderboard.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblLeaderboard.AutoSize = true;
-            this.lblLeaderboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLeaderboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLeaderboard.ForeColor = System.Drawing.Color.White;
-            this.lblLeaderboard.Location = new System.Drawing.Point(227, 11);
+            this.lblLeaderboard.Location = new System.Drawing.Point(255, 15);
             this.lblLeaderboard.Name = "lblLeaderboard";
-            this.lblLeaderboard.Size = new System.Drawing.Size(334, 55);
+            this.lblLeaderboard.Size = new System.Drawing.Size(277, 46);
             this.lblLeaderboard.TabIndex = 0;
             this.lblLeaderboard.Text = "Top Standings";
             // 
@@ -55,7 +55,7 @@
             this.listViewLeaderboard.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderPlayer,
             this.columnHeaderHighscore});
-            this.listViewLeaderboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewLeaderboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewLeaderboard.ForeColor = System.Drawing.Color.White;
             this.listViewLeaderboard.GridLines = true;
             this.listViewLeaderboard.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -63,7 +63,7 @@
             this.listViewLeaderboard.LabelWrap = false;
             this.listViewLeaderboard.Location = new System.Drawing.Point(156, 76);
             this.listViewLeaderboard.Name = "listViewLeaderboard";
-            this.listViewLeaderboard.Size = new System.Drawing.Size(474, 373);
+            this.listViewLeaderboard.Size = new System.Drawing.Size(424, 373);
             this.listViewLeaderboard.TabIndex = 6;
             this.listViewLeaderboard.UseCompatibleStateImageBehavior = false;
             this.listViewLeaderboard.View = System.Windows.Forms.View.Details;
@@ -71,19 +71,19 @@
             // columnHeaderPlayer
             // 
             this.columnHeaderPlayer.Text = "Player";
-            this.columnHeaderPlayer.Width = 243;
+            this.columnHeaderPlayer.Width = 200;
             // 
             // columnHeaderHighscore
             // 
             this.columnHeaderHighscore.Text = "Highscore";
             this.columnHeaderHighscore.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeaderHighscore.Width = 227;
+            this.columnHeaderHighscore.Width = 200;
             // 
             // btnReturn
             // 
             this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnReturn.FlatAppearance.BorderSize = 0;
-            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(0)))));
+            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
