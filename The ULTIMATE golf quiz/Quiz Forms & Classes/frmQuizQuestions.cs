@@ -222,7 +222,7 @@ namespace The_ULTIMATE_golf_quiz
             setup();
         }
 
-        private void btnDragAndDrop_Click(object sender, EventArgs e)
+        private void btnChooseTheRightClub_Click(object sender, EventArgs e)
         {
             QuestionFileHandler.RoundType = "Choose Club";
             setup();

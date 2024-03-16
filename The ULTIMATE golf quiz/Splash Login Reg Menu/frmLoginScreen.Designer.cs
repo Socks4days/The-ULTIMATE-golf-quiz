@@ -90,6 +90,7 @@
             this.passwordtxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordtxtbox.ForeColor = System.Drawing.Color.White;
             this.passwordtxtbox.Location = new System.Drawing.Point(195, 216);
+            this.passwordtxtbox.MaxLength = 20;
             this.passwordtxtbox.Name = "passwordtxtbox";
             this.passwordtxtbox.PasswordChar = '*';
             this.passwordtxtbox.Size = new System.Drawing.Size(355, 28);
@@ -103,6 +104,7 @@
             this.usernametxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernametxtbox.ForeColor = System.Drawing.Color.White;
             this.usernametxtbox.Location = new System.Drawing.Point(195, 133);
+            this.usernametxtbox.MaxLength = 20;
             this.usernametxtbox.Name = "usernametxtbox";
             this.usernametxtbox.Size = new System.Drawing.Size(355, 28);
             this.usernametxtbox.TabIndex = 0;
