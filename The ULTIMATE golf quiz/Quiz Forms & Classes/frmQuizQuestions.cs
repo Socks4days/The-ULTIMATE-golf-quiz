@@ -1095,7 +1095,7 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
-        // TODO: Check if this is still used
+        // Back arrow button on select round type screen
         private void btnBack_Click(object sender, EventArgs e)
         {
             stopCountdown();
