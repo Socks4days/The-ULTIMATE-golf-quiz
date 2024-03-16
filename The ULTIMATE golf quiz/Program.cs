@@ -10,13 +10,13 @@ namespace The_ULTIMATE_golf_quiz
     {
         /// <summary>
         /// The main entry point for the application.
+        /// Loads the splash screen
         /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // new frmMain().formChoice = "Splash";
             Application.Run(new frmSplashScreen());            
         }
     }

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace The_ULTIMATE_golf_quiz
 {
+    // Multiple Choice question - extends base quesetion class,
+    // adding 4 properties to hold the text for the options
     internal class MultiChoiceQuestion : BaseQuestion
     {
         public MultiChoiceQuestion() { }
@@ -13,7 +15,6 @@ namespace The_ULTIMATE_golf_quiz
         public string Option2 { get; set; }
         public string Option3 { get; set; }
         public string Option4 { get; set; }
-
 
         public MultiChoiceQuestion( string id, string question, string correctAnswer, int points, int difficulty, string option1, string option2, string option3, string option4) :base(id, question, correctAnswer, points, difficulty)
         {

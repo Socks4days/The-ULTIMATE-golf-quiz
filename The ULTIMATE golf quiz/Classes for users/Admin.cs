@@ -14,7 +14,6 @@ namespace The_ULTIMATE_golf_quiz
         public Admin(string username, string password, string name, int age, string gender, string nationality) : 
             base(username, password, name, age, gender, nationality)
         {
-
         }
     }
 }

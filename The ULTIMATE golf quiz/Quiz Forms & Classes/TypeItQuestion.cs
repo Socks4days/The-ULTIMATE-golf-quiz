@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace The_ULTIMATE_golf_quiz
 {
+    // Type It question - extends base question, but doesn't need any new properties
     internal class TypeItQuestion : BaseQuestion
     {
         public TypeItQuestion() { }
         public TypeItQuestion(string id, string question, string correctAnswer, int points, int difficulty) :base(id, question, correctAnswer, points, difficulty) 
         {
-
         }
     }
 }

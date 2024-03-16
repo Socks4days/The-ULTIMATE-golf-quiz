@@ -8,16 +8,16 @@ using System.Windows.Forms;
 
 namespace The_ULTIMATE_golf_quiz
 {
+    // Class for reading and writing question lists from/to CSV files
     internal class QuestionFileHandler
     {
         public static List<TypeItQuestion> TypeItQuestions = new List<TypeItQuestion>();
         public static List<TrueOrFalseQuestion> TrueOrFalseQuestions = new List<TrueOrFalseQuestion>();
         public static List<MultiChoiceQuestion> MultiChoiceQuestions = new List<MultiChoiceQuestion>();
         public static List<PictureQuestion> PictureQuestions = new List<PictureQuestion>();
-      
         public static string RoundType { get; set; }
 
-
+        // Read in the Type It questions
         public static void ReadInTypeItQuestions()
         {
             string[] typeItQuestionData = new string[5];
@@ -50,6 +50,8 @@ namespace The_ULTIMATE_golf_quiz
                 MessageBox.Show(fnf.ToString(), "File Not Found", MessageBoxButtons.OK);
             }
         }
+        
+        // Save the Type It questions
         public static void  SaveAllTypeItQuestions()
         {
             string filePath = "TypeItQuestions.csv";
@@ -68,6 +70,7 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
+        // Read in the True or False questions
         public static void ReadInTrueOrFalseQuestions()
         {
             string[] trueOrFalseQuestionData = new string[5];
@@ -100,6 +103,8 @@ namespace The_ULTIMATE_golf_quiz
                 MessageBox.Show(fnf.ToString(), "File Not Found", MessageBoxButtons.OK);
             }
         }
+        
+        // Save the True or False questions
         public static void SaveAllTrueOrFalseQuestions()
         {
             string filePath = "TrueOrFalseQuestions.csv";
@@ -117,6 +122,8 @@ namespace The_ULTIMATE_golf_quiz
                 sw.Close();
             }
         }
+        
+        // Read in the Multiple Choice questions
         public static void ReadInMultiChoiceQuestions()
         {
             string[] multiChoiceQuestionData = new string[9];
@@ -153,6 +160,8 @@ namespace The_ULTIMATE_golf_quiz
                 MessageBox.Show(fnf.ToString(), "File Not Found", MessageBoxButtons.OK);
             }
         }
+
+        // Save the Multiple Choice questions
         public static void SaveAllMultiChoiceQuestions()
         {
             string filePath = "MultiChoiceQuestions.csv";
@@ -172,6 +181,7 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
+        // Read in the Picture Round questions
         public static void ReadInPictureQuestions()
         {
             string[] pictureQuestionData = new string[8];
@@ -207,6 +217,8 @@ namespace The_ULTIMATE_golf_quiz
                 MessageBox.Show(fnf.ToString(), "File Not Found", MessageBoxButtons.OK);
             }
         }
+
+        // Save the Picture Round questions
         public static void SaveAllPictureQuestions()
         {
             string filePath = "PictureQuestions.csv";
@@ -226,6 +238,7 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
+        // Read in all the different question types
         public static void ReadInAllQuestions()
         {
             ReadInTypeItQuestions();
@@ -233,6 +246,5 @@ namespace The_ULTIMATE_golf_quiz
             ReadInMultiChoiceQuestions();
             ReadInPictureQuestions();
         }
-
     }
 }

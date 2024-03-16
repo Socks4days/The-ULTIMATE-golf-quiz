@@ -8,6 +8,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Xml.Linq;
 namespace The_ULTIMATE_golf_quiz
 {
+    // Player class that extends the base User class with extra player details
     public class Player : User
     {
        // properties of the player class, creating the players highscore and whether they are an admin or not
@@ -20,7 +21,6 @@ namespace The_ULTIMATE_golf_quiz
         // default constructor
         public Player()
         {
-
         }
 
         // creates a player object, inheriting all the properties/behaviours of the user class and adds in the highscore and is/isn't admin
@@ -33,5 +33,4 @@ namespace The_ULTIMATE_golf_quiz
             this.totalScoreForCurrentSession = 0;
         }
     }
-
 }

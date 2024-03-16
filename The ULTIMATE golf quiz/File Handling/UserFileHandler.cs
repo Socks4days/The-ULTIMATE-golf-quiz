@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace The_ULTIMATE_golf_quiz
 {
+    // Class to handle user files:
+    // - Read and write player list from/to CSV file
+    // - Read and write questions answered by player
     public class UserFileHandler
     {
         const string userListFilePath = @"Users.csv";
@@ -18,13 +21,15 @@ namespace The_ULTIMATE_golf_quiz
         public UserFileHandler()
         {
 
-        }        
-        //method that will read in all the players from the csv file
+        }
+        
+        // Method that will read in all the players from the csv file
         public static void ReadInPlayers()
         {
             string line;
             // creates an array to store the current user's information in
             string[] playerInfo = new string[10];
+            
             // creates the list of players and sets it equal to the list of players created in the splash screen
             // List<Player> players = SplashScreen.players;
             // using streamreader to read in all the players
@@ -34,7 +39,7 @@ namespace The_ULTIMATE_golf_quiz
                 while(!sr.EndOfStream)
                 {
                    line = sr.ReadLine();
-                  // puts all of the information into the already created array
+                   // puts all of the information into the already created array
                    playerInfo = line.Split(',').ToArray();
                    Player playerA = new Player();
                    playerA.username = playerInfo[0];
@@ -47,33 +52,33 @@ namespace The_ULTIMATE_golf_quiz
                    playerA.isAdmin = Convert.ToInt32(playerInfo[7]);
                    playerA.avatar = Convert.ToInt32(playerInfo[8]);
                    playerA.roundsPlayed = Convert.ToInt32(playerInfo[9]);
-                    // adds all the players that are in the csv into the original splash screen list of players
+                   // adds all the players that are in the csv into the original splash screen list of players
                    players.Add(playerA);
                 }
                 sr.Close();
             }
-
         }
        
-        // method that will write out to the csv file to save all the users
+        // Method that will write out to the csv file to save all the users
         public static void SaveAllPlayers()
         {
             // again creates a list of all players and sets it equal to the list of players created in the splash screen
-           // List<Player> players = SplashScreen.players;
-           // using streamwriter to write to the csv file
+            // List<Player> players = SplashScreen.players;
+            // using streamwriter to write to the csv file
             using (StreamWriter sw = new StreamWriter(userListFilePath))
             {        
                 // Write details of each user into the file
                 foreach (Player player in players)
                 {
                     sw.WriteLine("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
-                    player.username,player.password,player.name,player.age,player.gender,player.nationality,player.highscore,player.isAdmin,player.avatar,player.roundsPlayed); 
-                    
+                    player.username,player.password,player.name,player.age,player.gender,player.nationality,player.highscore,player.isAdmin,player.avatar,player.roundsPlayed);  
                 }
                 sw.Close();
             }
         }
 
+        // Method that will save the id of each question answered by a player
+        // along with whether their answer was correct or incorrect
         public static void SavePlayerQuestionAnswered(Player player, BaseQuestion question, bool correctAnswer)
         {
             // save whether a player has answered a questions to a file with the player's username
@@ -87,6 +92,8 @@ namespace The_ULTIMATE_golf_quiz
                 sw.Close();
             }
         }
+        
+        // Method that clears the list of answered questions for a player
         public static void ClearPlayerQuestionAnswered(Player player)
         {
             string playerFilePathWithUsername = playerQuestionAnsweredFilePath.Replace("PLAYER", player.username);
@@ -98,12 +105,16 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
+        // Method that deletes the player's questions answered file when their account is deleted
         public static void DeletePlayerQuestionFile(Player player)
         {
             string playerFilePathWithUsername = playerQuestionAnsweredFilePath.Replace("PLAYER", player.username);
             System.IO.File.Delete(playerFilePathWithUsername);
         }
 
+        // Method that reads in all the questions ansered by a player
+        // and then removes any questions they have already answered from the list of questions
+        // so the same question won't be asked twice to the same player
         public static void ReadPlayerQuestionAnswered(Player player)
         {
             string playerFilePathWithUsername = playerQuestionAnsweredFilePath.Replace("PLAYER", player.username);
@@ -157,11 +168,7 @@ namespace The_ULTIMATE_golf_quiz
             catch (FileNotFoundException)
             {
                 // File doesn't exist the first time the player logs in
-
             }
-
-           
         }
-        
     }
 }

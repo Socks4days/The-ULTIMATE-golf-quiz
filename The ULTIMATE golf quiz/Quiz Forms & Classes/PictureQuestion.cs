@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace The_ULTIMATE_golf_quiz
 {
+    // Picture Round question - extends base question class,
+    // adding a property to hold the picture details
+    // and properties to hold the x/y map coordinates of the correct location
     internal class PictureQuestion : BaseQuestion
     {
         public PictureQuestion() { }
