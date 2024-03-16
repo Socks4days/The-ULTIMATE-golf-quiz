@@ -12,6 +12,7 @@ using System.Threading;
 namespace The_ULTIMATE_golf_quiz
 {
 
+    // The splash screen is displayed when the application starts
     public partial class frmSplashScreen : Form
     {
  
@@ -20,14 +21,11 @@ namespace The_ULTIMATE_golf_quiz
             InitializeComponent();
             // Read in all the players from the csv file
             UserFileHandler.ReadInPlayers();
-            
-           
         }
 
-        // Create Player object for the duration of the program
+        // Create Player object and main menu for the duration of the program
         public static Player player = new Player();
-        // Creates a list of players of type player for all forms to access
-
+        public static frmMain mainMenu;
 
         private void SplashScreen_Load(object sender, EventArgs e)
         {

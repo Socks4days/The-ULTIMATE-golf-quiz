@@ -664,7 +664,7 @@
             this.btnChooseTheRightClub.TabIndex = 4;
             this.btnChooseTheRightClub.Text = "Choose the right club";
             this.btnChooseTheRightClub.UseVisualStyleBackColor = false;
-            this.btnChooseTheRightClub.Click += new System.EventHandler(this.btnDragAndDrop_Click);
+            this.btnChooseTheRightClub.Click += new System.EventHandler(this.btnChooseTheRightClub_Click);
             // 
             // btnPictureRound
             // 

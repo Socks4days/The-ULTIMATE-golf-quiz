@@ -14,6 +14,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 
 namespace The_ULTIMATE_golf_quiz
 {
+	// Allows the user to log in or go to the Registration screen if they are a new user
     public partial class frmLogin : Form
     {
         private List<Player> players = UserFileHandler.players;
@@ -24,8 +25,6 @@ namespace The_ULTIMATE_golf_quiz
             // Code to be able to hit enter to do same thing as submit when in the password textbox
             passwordtxtbox.KeyDown += KeyPressedDown;
             KeyDown += KeyPressedDown;
-
-           
         }
 
         private void KeyPressedDown(object sender, KeyEventArgs e)
@@ -37,9 +36,7 @@ namespace The_ULTIMATE_golf_quiz
                     verification();
                     break;
                 default:
-                      
                     break;
-
             }
         }       
 
@@ -65,14 +62,14 @@ namespace The_ULTIMATE_golf_quiz
             if (foundUser)
             {
                 this.Hide();
-                new frmMain().Show();
-             //   new frmMain().formChoice = "Main";
+                // Open the main menu and save a reference to it
+                frmSplashScreen.mainMenu = new frmMain();
+                frmSplashScreen.mainMenu.Show();
             } 
             else 
             {
                 MessageBox.Show("Error, please try again...");
                 passwordtxtbox.Text = "";
-                
             }            
         }       
 
@@ -82,13 +79,11 @@ namespace The_ULTIMATE_golf_quiz
             verification();
         }
 
-
         private void registerbtn_Click(object sender, EventArgs e)
         {
             // Opens the register screen when pressed
-
             this.Hide();
-           // new frmMain().formChoice = "Register";
+            // new frmMain().formChoice = "Register";
             new frmRegisterUser().Show();
         }
                 
@@ -102,7 +97,7 @@ namespace The_ULTIMATE_golf_quiz
         {
             if (cboxPassword.Checked)
             {
-               // when the check box is ticked, the user will be able to see what they have input
+                // when the check box is ticked, the user will be able to see what they have input
                 passwordtxtbox.PasswordChar = '\0';
             }
             else
@@ -111,7 +106,5 @@ namespace The_ULTIMATE_golf_quiz
                 passwordtxtbox.PasswordChar = '*';
             }
         }
-
-        
     }
 }

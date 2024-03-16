@@ -12,13 +12,16 @@ using static System.Windows.Forms.LinkLabel;
 
 namespace The_ULTIMATE_golf_quiz
 {
+    // Settings - Change Avatar
     public partial class frmAvatarChange : Form
     {
+        // Variables for list of players, user's current avatar and list of available avatars
         List<Player> players = UserFileHandler.players;
         int currentAvatarIndex = frmSplashScreen.player.avatar;
         public static List<string> avatars = new List<string>();
         private string[] avatarPaths = { "Default1", "Default2", "Tiger Woods", "Rory McIllroy", "Female1", "Female2" };
-        
+
+        // Initialise form and display current avatar
         bool saveButtonClicked = false;
         public frmAvatarChange()
         {
@@ -26,42 +29,49 @@ namespace The_ULTIMATE_golf_quiz
             UpdateAvatarImage();
         }
 
+        // Method to show the selected avatar from the list
         public void UpdateAvatarImage()
         {
             if (currentAvatarIndex >= 0 && currentAvatarIndex < avatarPaths.Length)
             {
                 pctBoxAvatar.Image = (Image)Properties.Resources.ResourceManager.GetObject(avatarPaths[currentAvatarIndex]);
             }
-           
         }
 
+        // When back arrow button clicked before saving,
+        // warn user then exit if they choose to continue
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            if (!saveButtonClicked && frmSplashScreen.player.avatar!=currentAvatarIndex)
+            // If the selected avatar is different to the saved one, warn the user
+            if (!saveButtonClicked && frmSplashScreen.player.avatar != currentAvatarIndex)
             {
-                saveButtonClicked= true;
                 DialogResult result = MessageBox.Show("You have unsaved changes! \n Do you want to save them?", "Confirmation", MessageBoxButtons.YesNoCancel);
 
                 if (result == DialogResult.Yes)
                 {
+                    // Save change
                     btnSave_Click(sender, e);
                 }
                 else if (result == DialogResult.No)
                 {
+                    // Discard changes
                     this.Close();
                 }
                 else if (result == DialogResult.Cancel)
                 {
+                    // Cancel
                     saveButtonClicked = false;
                 }
             }
             else
             {
+                // If they haven't changed the avator
+                // or they saved it, just exit
                 this.Close();
             }
-           
         }
 
+        // Right button clicked - go to next avatar
         private void btnRight_Click(object sender, EventArgs e)
         {
             currentAvatarIndex = (currentAvatarIndex + 1) % avatarPaths.Length;
@@ -69,6 +79,7 @@ namespace The_ULTIMATE_golf_quiz
             UpdateAvatarImage();
         }
 
+        // Left button clicked - go to previous avatar
         private void btnLeft_Click(object sender, EventArgs e)
         {
             saveButtonClicked = false;
@@ -83,105 +94,28 @@ namespace The_ULTIMATE_golf_quiz
             UpdateAvatarImage();
         }
 
+        // Save button clicked
         private void btnSave_Click(object sender, EventArgs e)
         {
+            // Remember save button has been clicked
             saveButtonClicked = true;
-            int avatarNumber = 0;
-           /* if (avatarNumber < avatarPaths.Length)
-            {
-                string imageName = avatarPaths[avatarNumber];
-                // Assign a number to the image 
-                int imageNumber = avatarNumber + 1;
-                avatarNumber++;
-            }
-            foreach (string avatar in avatarPaths)
-            {
-                avatarNumber = avatarNumber + 1;
-            }*/
-            
-            switch (currentAvatarIndex)
-            {
-                case 0:
-                    {
-                        avatarNumber = 0;
-                    }
-                    break;
-                case 1:
-                    {
-                        avatarNumber = 1;
-                    }
-                    break;
-                case 2:
-                    {
-                        avatarNumber = 2;
-                    }
-                    break;
-                case 3:
-                    {
-                        avatarNumber = 3;
-                    }
-                    break;
-                case 4:
-                    {
-                        avatarNumber = 4;
-                    }
-                    break;
-                case 5:
-                    {
-                        avatarNumber = 5;
-                    }
-                    break;
-            }
+
+            // Get player's current avatar and save it if it has changed
             foreach (Player player in players)
             {
-                if ((player.username == frmSplashScreen.player.username) && (player.avatar == avatarNumber))
+                if ((player.username == frmSplashScreen.player.username) && (player.avatar == currentAvatarIndex))
                 {
                     MessageBox.Show("No changes were made");
                 }
                 else if (player.username == frmSplashScreen.player.username)
                 {
-                    MessageBox.Show("Preferences saved!");
-                    player.avatar = avatarNumber;
-                }
-            }
-            UserFileHandler.SaveAllPlayers();            
-        }
-
-        private void btnAddOwn_Click(object sender, EventArgs e)
-        {
-            saveButtonClicked = false;
-            OpenFileDialog uploadAvatar = new OpenFileDialog();
-
-            // Set the filter to allow only image files
-            uploadAvatar.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif";
-
-            if (uploadAvatar.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    // Load the selected image into the picturebox 
-                   pctBoxAvatar.Image = new System.Drawing.Bitmap(uploadAvatar.FileName);
-                    foreach (string avatar in avatarPaths)
-                    {
-                        if (Convert.ToString(pctBoxAvatar.Image) != avatar)
-                        {
-                            List<string> avatars = avatarPaths.ToList();
-                            avatars.Add(Convert.ToString(pctBoxAvatar.Image));
-                            avatarPaths = avatars.ToArray();
-                        }
-                        else
-                        {
-                            MessageBox.Show("That image already exists");
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: Could not read your file. Error: " + ex.Message);
+                    // Save the player's new avatar
+                    player.avatar = currentAvatarIndex;
+                    UserFileHandler.SaveAllPlayers();
+                    frmSplashScreen.mainMenu.setAvatar();
+                    MessageBox.Show("Preferences saved!");                    
                 }
             }
         }
-
-        
     }
 }

@@ -14,13 +14,14 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace The_ULTIMATE_golf_quiz
 {
+    // Register a new user
     public partial class frmRegisterUser : Form
     {
-
         public frmRegisterUser()
         {
             InitializeComponent();
         }
+
         List<Player> players = UserFileHandler.players;
         private void Registerbtn_Click(object sender, EventArgs e)
         {
@@ -32,8 +33,10 @@ namespace The_ULTIMATE_golf_quiz
                 return;
             }
             
-            // when register button is clicked, check to see if any of the textboxes have been left empty, and if so, throw an error message addressing this
-            else if ((txtBoxUser.Text == "") || (txtBoxPassword.Text == "") || (txtBoxName.Text == "") || (txtBoxAge.Text == "") || (txtBoxGender.Text == "") || (txtBoxNation.Text == ""))
+            // when register button is clicked, check to see if any of the textboxes have been left empty
+            // if so, throw an error message addressing this
+            else if ((txtBoxUser.Text == "") || (txtBoxPassword.Text == "") || (txtBoxName.Text == "")
+                    || (txtBoxAge.Text == "") || (txtBoxGender.Text == "") || (txtBoxNation.Text == ""))
             {
                 Error();
             }
@@ -51,7 +54,8 @@ namespace The_ULTIMATE_golf_quiz
             string password = txtBoxPassword.Text;
 
             // checks to see if the input password passes all the checks: More than 8 chatacters, contain a capital, contain a number
-            if ((password.Length >= 8)&&(password.Length <= 15) && (password.Any(char.IsUpper)) && (password.Any(char.IsDigit)))
+            if ((password.Length >= 8)&&(password.Length <= 15) 
+                && (password.Any(char.IsUpper)) && (password.Any(char.IsDigit)))
             {
                 // if it passes, bool is set equal to true and program can continue
                 validPassword = true;
@@ -67,17 +71,16 @@ namespace The_ULTIMATE_golf_quiz
                 lblPassError.Visible = true; 
             }
 
-       
-
             // Creates a list of valid password symbols and populates it
-            List<char> symbols = new List<char>() { '@', '<', '>', '*', '!', '£', '$', '%', '&', '^', '.',':', ';', '/', '?', '#'};
+            List<char> symbols = new List<char>() 
+                { '@', '<', '>', '*', '!', '£', '$', '%', '&', '^', '.',':', ';', '/', '?', '#'};
             
             // checks to see if the input password contains one of these symbols 
             foreach( char sym in symbols)
             {
                 if((password.Contains(sym)))
                 {                    
-                   // if it does, then the program runs the register method which will register the user as a valid user
+                    // if it does, then the program runs the register method which will register the user as a valid user
                     Register();
                 }                
                 else
@@ -86,6 +89,7 @@ namespace The_ULTIMATE_golf_quiz
                 }
             }
         }
+        
         // method that registers the user as a valid user
         public Player Register()
         {
@@ -98,6 +102,7 @@ namespace The_ULTIMATE_golf_quiz
             string nationality = txtBoxNation.Text;
             int highscore = 0;
             int isAdmin = 0;
+            
             // checks to see if the admin checkbox is ticked and if so, the admin box will contain a 1 and if not, a 0
             if ((cboxAdmin.Checked)&&(txtBoxPassword.Text=="Admin123!"))
             {
@@ -132,7 +137,6 @@ namespace The_ULTIMATE_golf_quiz
             // if both the username and password are valid, the program can continue to register the user
             if (validPassword == true && validUsername == true)
             {
-
                 // Set new user as the logged in user
                 frmSplashScreen.player = new Player(username, password, name, age, gender, nationality, highscore, isAdmin, avatar, roundsPlayed);
 
@@ -143,16 +147,12 @@ namespace The_ULTIMATE_golf_quiz
                 UserFileHandler.SaveAllPlayers();
                 QuestionFileHandler.ReadInAllQuestions();
 
-
-                // ???
-                //frmUserInfo info = new frmUserInfo();
-
                 // Go to the main menu
                 this.Hide();
                 new frmMain().Show();
             }
             // returns the new player values
-            return new Player(username, password, name, age, gender, nationality, highscore, isAdmin, avatar, roundsPlayed);//changed to player from user
+            return new Player(username, password, name, age, gender, nationality, highscore, isAdmin, avatar, roundsPlayed);
         }
                
         private void btnReset_Click(object sender, EventArgs e)
@@ -175,7 +175,7 @@ namespace The_ULTIMATE_golf_quiz
 
         private void Error()
         {
-           // shows an error indicating which boxes need to be filled in to be valid
+            // shows an error indicating which boxes need to be filled in to be valid
             MessageBox.Show("Please complete all indicated fields.");            
             lblErrorU.Visible = true;
             lblErrorP.Visible = true;
@@ -187,7 +187,7 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-           // when clicked, the program will be directed back to the login screen
+            // when back arrow clicked, the program will be directed back to the login screen
             this.Hide();
             new frmLogin().Show();
         }
@@ -197,7 +197,5 @@ namespace The_ULTIMATE_golf_quiz
             // if the window is closed, the program will also close
             System.Windows.Forms.Application.Exit();
         }
-
-        
     }
 }

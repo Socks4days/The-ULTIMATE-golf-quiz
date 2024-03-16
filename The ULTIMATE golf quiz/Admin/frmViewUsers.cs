@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace The_ULTIMATE_golf_quiz
 {
+    // Admin - View Users
     public partial class frmViewUsers : Form
     {
+        // Display form and add all players into the list view
         public frmViewUsers()
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
+        // Close the form when the back arrow is clicked
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Close();

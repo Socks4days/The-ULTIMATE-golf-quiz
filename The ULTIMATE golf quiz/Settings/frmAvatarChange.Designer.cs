@@ -33,7 +33,6 @@
             this.btnRight = new System.Windows.Forms.Button();
             this.pctBoxAvatar = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnAddOwn = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxAvatar)).BeginInit();
             this.SuspendLayout();
@@ -120,23 +119,6 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnAddOwn
-            // 
-            this.btnAddOwn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
-            this.btnAddOwn.FlatAppearance.BorderSize = 0;
-            this.btnAddOwn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddOwn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddOwn.ForeColor = System.Drawing.Color.White;
-            this.btnAddOwn.Location = new System.Drawing.Point(311, 437);
-            this.btnAddOwn.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddOwn.Name = "btnAddOwn";
-            this.btnAddOwn.Size = new System.Drawing.Size(151, 30);
-            this.btnAddOwn.TabIndex = 15;
-            this.btnAddOwn.Text = "Upload Your own!";
-            this.btnAddOwn.UseVisualStyleBackColor = false;
-            this.btnAddOwn.Visible = false;
-            this.btnAddOwn.Click += new System.EventHandler(this.btnAddOwn_Click);
-            // 
             // btnReturn
             // 
             this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
@@ -163,7 +145,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.ClientSize = new System.Drawing.Size(760, 472);
             this.Controls.Add(this.btnReturn);
-            this.Controls.Add(this.btnAddOwn);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnRight);
             this.Controls.Add(this.btnLeft);
@@ -186,7 +167,6 @@
         private System.Windows.Forms.Button btnLeft;
         private System.Windows.Forms.Button btnRight;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnAddOwn;
         private System.Windows.Forms.Button btnReturn;
     }
 }

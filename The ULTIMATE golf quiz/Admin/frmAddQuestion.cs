@@ -12,17 +12,22 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace The_ULTIMATE_golf_quiz
 {
+    // Admin - Add Questions
     public partial class frmAddQuestions : Form
     {
         private int difficulty;
         public frmAddQuestions()
         {
-            InitializeComponent();           
+            InitializeComponent();
+
+            // Display panel to select the type of question to add
             selectQuestionType();
 
             // Read in all the questions again without deleting those answered by the player
             QuestionFileHandler.ReadInAllQuestions();
         }
+        
+        // Show the select question type panel and hide other panels
         private void selectQuestionType()
         {
             pnlChooseQuestionType.Visible = true;
@@ -36,14 +41,15 @@ namespace The_ULTIMATE_golf_quiz
             pnlAddPicture.Visible = false;
         }
 
-        private string questionToAddType { get; set; }
-
+        // If back arrow clicked, warn user if they are adding a question and return to main menu
         private void btnReturn_Click(object sender, EventArgs e)
         {
+            // If showing the choose question type panel, just exit
             if (pnlChooseQuestionType.Visible)
             {
                 this.Close();
             }
+            // Otherwise warn they user their new question won't be saved
             else
             {
                 DialogResult result = MessageBox.Show("Your question will not be saved!\nDo you wish to leave?", "Confirmation", MessageBoxButtons.YesNo);
@@ -52,6 +58,8 @@ namespace The_ULTIMATE_golf_quiz
                     selectQuestionType(); 
             }
         }    
+        
+        // Method to map difficulty radio buttons to difficulty level
         private void Difficulty()
         {
             difficulty = 0;
@@ -76,10 +84,11 @@ namespace The_ULTIMATE_golf_quiz
                 difficulty = 5;
             }
         }
+        
+        // Clear question details
         private void resetQuestion()
         {
             // Reset input form
-
             rBtnEasy.Checked = false;
             rBtnMedium.Checked = false;
             rBtnHard.Checked = false;
@@ -90,26 +99,40 @@ namespace The_ULTIMATE_golf_quiz
             nUDPoints.Value = 1;
             this.ActiveControl = txtBoxQuestion;
             pctBoxLocation.Visible = false;
+            txtBoxMultiOption1.Text = "";
+            txtBoxMultiOption2.Text = "";
+            txtBoxMultiOption3.Text = "";
+            txtBoxMultiOption4.Text = "";
+            rBtnOption1.Checked = false;
+            rBtnOption2.Checked = false;
+            rBtnOption3.Checked = false;
+            rBtnOption4.Checked = false;
+            rBtnTrue.Checked = false;
+            rBtnFalse.Checked = false;
+            pctBoxImageUploaded.Image = null;
         }
+        
+        //----------------------------------------------------------------------------
+        // Add question button clicked
+        private string questionToAddType { get; set; }
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            // Check all details entered for the selected question type
+            // then save to the correct question file
             switch (questionToAddType)
             {
+                //--------------------------------------------------------------------
+                // Add Type It question
                 case "Type It":
-                    TypeItQuestion typeItQuestionToAdd = new TypeItQuestion();
-                    typeItQuestionToAdd.Question = txtBoxQuestion.Text;
-                    typeItQuestionToAdd.CorrectAnswer = txtBoxTypeItAnswer.Text;
-
-
+                    // Get the next question number and check it hasn't already been used
                     bool uniqueIdFound = false;
-                    // Get the next question number
                     int nextQuestionNumberTypeIt = QuestionFileHandler.TypeItQuestions.Count + 1;
                     string questionId = "";
-                    // Check that the question id for that number hasn't already been used
                     while (!uniqueIdFound)
                     {
                         // Add question prefix to number and pad with zeros
                         questionId = "TI" + nextQuestionNumberTypeIt.ToString("D2");
+                        
                         // If it's already used, add one and check again
                         if (QuestionFileHandler.TypeItQuestions.FirstOrDefault(item => item.Id == questionId) != null)
                         {
@@ -122,8 +145,12 @@ namespace The_ULTIMATE_golf_quiz
                             uniqueIdFound = true;
                         }
                     }
-                    // Set the question id
+                    
+                    // Set the question details and the save it to the CSV file
+                    TypeItQuestion typeItQuestionToAdd = new TypeItQuestion();
                     typeItQuestionToAdd.Id = questionId;
+                    typeItQuestionToAdd.Question = txtBoxQuestion.Text;
+                    typeItQuestionToAdd.CorrectAnswer = txtBoxTypeItAnswer.Text;
                     typeItQuestionToAdd.Points = Convert.ToInt32(nUDPoints.Value);
                     Difficulty();
                     typeItQuestionToAdd.Difficulty = difficulty;
@@ -140,23 +167,19 @@ namespace The_ULTIMATE_golf_quiz
                     }
                     break;
 
+                //--------------------------------------------------------------------
+                // Add True or False question
                 case "True or False":
-                    TrueOrFalseQuestion trueOrFalseQuestionToAdd = new TrueOrFalseQuestion();
-                    trueOrFalseQuestionToAdd.Question = txtBoxQuestion.Text;
-                    if (rButtonTrue.Checked)
-                        trueOrFalseQuestionToAdd.CorrectAnswer = "1";
-                    else if (rButonFalse.Checked)
-                        trueOrFalseQuestionToAdd.CorrectAnswer = "0";
-                    else
-                        trueOrFalseQuestionToAdd.CorrectAnswer = "";
-
-
-                    int nextQuestionNumberTf = QuestionFileHandler.TrueOrFalseQuestions.Count + 1;
-                    trueOrFalseQuestionToAdd.Id = "TF" + (QuestionFileHandler.TrueOrFalseQuestions.Count + 1).ToString("D2");
-                    string questionIdTF = "";
+                    // Get the next question number and check it hasn't already been used
                     bool uniqueIdFoundTF = false;
+                    int nextQuestionNumberTf = QuestionFileHandler.TrueOrFalseQuestions.Count + 1;
+                    string questionIdTF = "";
                     while (!uniqueIdFoundTF)
                     {
+                        // Add question prefix to number and pad with zeros
+                        questionIdTF = "TF" + (QuestionFileHandler.TrueOrFalseQuestions.Count + 1).ToString("D2");
+
+                        // If it's already used, add one and check again
                         if (QuestionFileHandler.TrueOrFalseQuestions.FirstOrDefault(item => item.Id == questionIdTF) != null)
                         {
                             // A question with that id already exists, so try the next one
@@ -165,13 +188,20 @@ namespace The_ULTIMATE_golf_quiz
                         else
                         {
                             // The id hasn't been used, stop looking
-                            uniqueIdFound = true;
+                            uniqueIdFoundTF = true;
                         }
                     }
                     
+                    // Set the question details and the save it to the CSV file
+                    TrueOrFalseQuestion trueOrFalseQuestionToAdd = new TrueOrFalseQuestion();
                     trueOrFalseQuestionToAdd.Id = questionIdTF;
-
-
+                    trueOrFalseQuestionToAdd.Question = txtBoxQuestion.Text;
+                    if (rBtnTrue.Checked)
+                        trueOrFalseQuestionToAdd.CorrectAnswer = "1";
+                    else if (rBtnFalse.Checked)
+                        trueOrFalseQuestionToAdd.CorrectAnswer = "0";
+                    else
+                        trueOrFalseQuestionToAdd.CorrectAnswer = "";
                     trueOrFalseQuestionToAdd.Points = Convert.ToInt32(nUDPoints.Value);
                     Difficulty();
                     trueOrFalseQuestionToAdd.Difficulty = difficulty;
@@ -187,26 +217,20 @@ namespace The_ULTIMATE_golf_quiz
                         questionUnsuccessfullyAdded();
                     }
                     break;
-                case "Multiple Choice":
-                    MultiChoiceQuestion multiChoiceQuestionToAdd = new MultiChoiceQuestion();
-                    multiChoiceQuestionToAdd.Question = txtBoxQuestion.Text;
-                    if (radioButtonOption1.Checked)
-                        multiChoiceQuestionToAdd.CorrectAnswer = txtBoxMultiOption1.Text;
-                    else if (radioButtonOption2.Checked)
-                        multiChoiceQuestionToAdd.CorrectAnswer = txtBoxMultiOption2.Text;
-                    else if (radioButtonOption3.Checked)
-                        multiChoiceQuestionToAdd.CorrectAnswer = txtBoxMultiOption3.Text;
-                    else if (radioButtonOption4.Checked)
-                        multiChoiceQuestionToAdd.CorrectAnswer = txtBoxMultiOption4.Text;
-                    else
-                        multiChoiceQuestionToAdd.CorrectAnswer = "";
 
-                    int nextQuestionNumberMc = QuestionFileHandler.MultiChoiceQuestions.Count + 1;
-                    multiChoiceQuestionToAdd.Id = "TF" + (QuestionFileHandler.MultiChoiceQuestions.Count + 1).ToString("D2");
-                    string questionIdMc = "";
+                //--------------------------------------------------------------------
+                // Add Multiple Choice question
+                case "Multiple Choice":
+                    // Get the next question number and check it hasn't already been used
                     bool uniqueIdFoundMc = false;
+                    int nextQuestionNumberMc = QuestionFileHandler.MultiChoiceQuestions.Count + 1;
+                    string questionIdMc = "";
                     while (!uniqueIdFoundMc)
                     {
+                        // Add question prefix to number and pad with zeros
+                        questionIdMc = "MC" + (nextQuestionNumberMc).ToString("D2");
+
+                        // If it's already used, add one and check again
                         if (QuestionFileHandler.MultiChoiceQuestions.FirstOrDefault(item => item.Id == questionIdMc) != null)
                         {
                             // A question with that id already exists, so try the next one
@@ -215,13 +239,24 @@ namespace The_ULTIMATE_golf_quiz
                         else
                         {
                             // The id hasn't been used, stop looking
-                            uniqueIdFound = true;
+                            uniqueIdFoundMc = true;
                         }
                     }
 
+                    // Set the question details and the save it to the CSV file
+                    MultiChoiceQuestion multiChoiceQuestionToAdd = new MultiChoiceQuestion();
                     multiChoiceQuestionToAdd.Id = questionIdMc;
-
-
+                    multiChoiceQuestionToAdd.Question = txtBoxQuestion.Text;
+                    if (rBtnOption1.Checked)
+                        multiChoiceQuestionToAdd.CorrectAnswer = txtBoxMultiOption1.Text;
+                    else if (rBtnOption2.Checked)
+                        multiChoiceQuestionToAdd.CorrectAnswer = txtBoxMultiOption2.Text;
+                    else if (rBtnOption3.Checked)
+                        multiChoiceQuestionToAdd.CorrectAnswer = txtBoxMultiOption3.Text;
+                    else if (rBtnOption4.Checked)
+                        multiChoiceQuestionToAdd.CorrectAnswer = txtBoxMultiOption4.Text;
+                    else
+                        multiChoiceQuestionToAdd.CorrectAnswer = "";
                     multiChoiceQuestionToAdd.Points = Convert.ToInt32(nUDPoints.Value);
                     Difficulty();
                     multiChoiceQuestionToAdd.Difficulty = difficulty;
@@ -243,17 +278,20 @@ namespace The_ULTIMATE_golf_quiz
                     }
 
                     break;
+                    
+                //--------------------------------------------------------------------
+                // Add Picture Round question
                 case "Picture":
-                    PictureQuestion pictureQuestionToAdd = new PictureQuestion();
-                    pictureQuestionToAdd.Question = txtBoxQuestion.Text;
-                    pictureQuestionToAdd.CorrectAnswer = txtBoxTypeItAnswer.Text;
-
-                    int nextQuestionNumberPc = QuestionFileHandler.PictureQuestions.Count + 1;
-                    pictureQuestionToAdd.Id = "TF" + (QuestionFileHandler.PictureQuestions.Count + 1).ToString("D2");
-                    string questionIdPc = "";
+                    // Get the next question number and check it hasn't already been used
                     bool uniqueIdFoundPc = false;
+                    int nextQuestionNumberPc = QuestionFileHandler.PictureQuestions.Count + 1;
+                    string questionIdPc = "";
                     while (!uniqueIdFoundPc)
                     {
+                        // Add question prefix to number and pad with zeros
+                        questionIdPc = "PC" + (nextQuestionNumberPc).ToString("D2");
+
+                        // If it's already used, add one and check again
                         if (QuestionFileHandler.MultiChoiceQuestions.FirstOrDefault(item => item.Id == questionIdPc) != null)
                         {
                             // A question with that id already exists, so try the next one
@@ -262,13 +300,15 @@ namespace The_ULTIMATE_golf_quiz
                         else
                         {
                             // The id hasn't been used, stop looking
-                            uniqueIdFound = true;
+                            uniqueIdFoundPc = true;
                         }
                     }
 
+                    // Set the question details and the save it to the CSV file
+                    PictureQuestion pictureQuestionToAdd = new PictureQuestion();
                     pictureQuestionToAdd.Id = questionIdPc;
-
-
+                    pictureQuestionToAdd.Question = txtBoxQuestion.Text;
+                    pictureQuestionToAdd.CorrectAnswer = txtBoxTypeItAnswer.Text;
                     pictureQuestionToAdd.Points = Convert.ToInt32(nUDPoints.Value);
                     Difficulty();
                     pictureQuestionToAdd.Difficulty = difficulty;
@@ -290,37 +330,47 @@ namespace The_ULTIMATE_golf_quiz
             }           
         }
 
+        //--------------------------------------------------------------------------------
+        // Select question type buttons
+        //--------------------------------------------------------------------------------
+        // Select question type - Type It button clicked
         private void btnTypeIt_Click(object sender, EventArgs e)
         {
             questionToAddType = "Type It";
             setup();
         }
 
+        // Select question type - True or False button clicked
         private void btnTrueOrFalse_Click(object sender, EventArgs e)
         {
             questionToAddType = "True or False";
             setup();
         }
 
+        // Select question type - Multiple Choice button clicked
         private void btnMultipleChoice_Click(object sender, EventArgs e)
         {
             questionToAddType = "Multiple Choice";
             setup();
         }
 
+        // Select question type - Picture Round button clicked
         private void btnPicture_Click(object sender, EventArgs e)
         {
             questionToAddType = "Picture";
             setup();
         }
+        
+        // Show the right panels for the selected question type
         private void setup()
         {
+            // Hide the choose question type panel, show the shared panels
             pnlChooseQuestionType.Visible = false;
             pnlQuestion.Visible = true;
             pnlQuestion.SendToBack();
             pnlTitleMenu.SendToBack();
             
-           
+            // Show the specific panels needed for each question type
             switch(questionToAddType)
             {
                 case "Type It":
@@ -346,6 +396,8 @@ namespace The_ULTIMATE_golf_quiz
             this.ActiveControl = txtBoxQuestion;
             pnlDiffPointsAdd.Visible = true;
         }
+        
+        // Message boxes
         private void questionSuccessfullyAdded()
         {
             MessageBox.Show("Question successfully added");
@@ -355,25 +407,27 @@ namespace The_ULTIMATE_golf_quiz
             MessageBox.Show("You are missing parts of the question that are required\nPlease fill them in to add your question");
         }
 
+        //-----------------------------------------------------------------------
+        // Picture round - save location when user clicks on the map
         int x = 0;
         int y = 0;
         private void pctBoxMap_Click(object sender, EventArgs e)
         {
+            // Show location marker and move to where the user clicked
             pctBoxLocation.Visible = true;
             MouseEventArgs mouseEvent = (MouseEventArgs)e;
             int mapX = pctBoxMap.Location.X;
             int mapY = pctBoxMap.Location.Y;
-
             pctBoxLocation.Location = new Point(mapX + mouseEvent.X - (pctBoxLocation.Width / 2), mapY + mouseEvent.Y - pctBoxLocation.Height);
 
-            // Get location selected (convert map panel width to 0-1000 range)
+            // Get location selected and convert it to between 0-1000 to handle different screen sizes
             x = (1000 * mouseEvent.X) / pctBoxMap.Width;
             y = (1000 * mouseEvent.Y) / pctBoxMap.Height;
-
         }
+
+        //-----------------------------------------------------------------------
+        // Picture round - allow user to select an image file for the question picture
         string selectedImageFilePath = "";
-
-
         private void btnSelectPhoto_Click(object sender, EventArgs e)
         {
             OpenFileDialog uploadImage = new OpenFileDialog();

@@ -69,6 +69,7 @@
             this.txtBoxConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.txtBoxConfirm.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxConfirm.ForeColor = System.Drawing.Color.White;
             this.txtBoxConfirm.Location = new System.Drawing.Point(176, 315);
             this.txtBoxConfirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxConfirm.Name = "txtBoxConfirm";
@@ -137,6 +138,7 @@
             this.txtBoxNewPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.txtBoxNewPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxNewPassword.ForeColor = System.Drawing.Color.White;
             this.txtBoxNewPassword.Location = new System.Drawing.Point(176, 230);
             this.txtBoxNewPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxNewPassword.Name = "txtBoxNewPassword";
@@ -150,6 +152,7 @@
             this.txtBoxOriginalPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.txtBoxOriginalPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxOriginalPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxOriginalPassword.ForeColor = System.Drawing.Color.White;
             this.txtBoxOriginalPassword.Location = new System.Drawing.Point(175, 127);
             this.txtBoxOriginalPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxOriginalPassword.Name = "txtBoxOriginalPassword";

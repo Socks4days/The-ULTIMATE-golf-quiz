@@ -13,18 +13,20 @@ using System.Xml.Linq;
 
 namespace The_ULTIMATE_golf_quiz
 {
+    // Settings - User Info form 
     public partial class frmUserInfo : Form
     {
         public frmUserInfo()
         {
             InitializeComponent();                       
         }
+        
         // sets the user who's details are displayed equal to the user that is logged in
         Player player = frmSplashScreen.player;
 
         private void frmUserInfo_Load(object sender, EventArgs e)
         {
-            // when the form is loaded, the textboxes are populated with all the relevant information
+            // When the form is loaded, the textboxes are populated with all the relevant information
             lblUserText.Text = player.username;            
             lblPasswordText.Text = player.password;          
             lblNameText.Text = player.name;
@@ -35,10 +37,8 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            // when clicked, the user will be directed back 
+            // When the back arrow is clicked, close the form 
             this.Close();
         }
-
-       
     }
 }
