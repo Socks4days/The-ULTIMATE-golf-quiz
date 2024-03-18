@@ -82,7 +82,7 @@
             this.btnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReg.ForeColor = System.Drawing.Color.White;
-            this.btnReg.Location = new System.Drawing.Point(714, 489);
+            this.btnReg.Location = new System.Drawing.Point(529, 398);
             this.btnReg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReg.Name = "btnReg";
             this.btnReg.Size = new System.Drawing.Size(188, 41);
@@ -97,7 +97,7 @@
             this.txtBoxUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxUser.ForeColor = System.Drawing.Color.White;
-            this.txtBoxUser.Location = new System.Drawing.Point(181, 178);
+            this.txtBoxUser.Location = new System.Drawing.Point(136, 137);
             this.txtBoxUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxUser.Name = "txtBoxUser";
             this.txtBoxUser.Size = new System.Drawing.Size(238, 28);
@@ -109,7 +109,7 @@
             this.txtBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPassword.ForeColor = System.Drawing.Color.White;
-            this.txtBoxPassword.Location = new System.Drawing.Point(181, 251);
+            this.txtBoxPassword.Location = new System.Drawing.Point(136, 198);
             this.txtBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxPassword.Name = "txtBoxPassword";
             this.txtBoxPassword.PasswordChar = '*';
@@ -122,7 +122,7 @@
             this.txtBoxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxName.ForeColor = System.Drawing.Color.White;
-            this.txtBoxName.Location = new System.Drawing.Point(181, 326);
+            this.txtBoxName.Location = new System.Drawing.Point(136, 271);
             this.txtBoxName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxName.Name = "txtBoxName";
             this.txtBoxName.Size = new System.Drawing.Size(238, 28);
@@ -134,7 +134,7 @@
             this.txtBoxAge.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxAge.ForeColor = System.Drawing.Color.White;
-            this.txtBoxAge.Location = new System.Drawing.Point(648, 172);
+            this.txtBoxAge.Location = new System.Drawing.Point(493, 137);
             this.txtBoxAge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxAge.Name = "txtBoxAge";
             this.txtBoxAge.Size = new System.Drawing.Size(219, 28);
@@ -146,7 +146,7 @@
             this.txtBoxGender.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxGender.ForeColor = System.Drawing.Color.White;
-            this.txtBoxGender.Location = new System.Drawing.Point(648, 252);
+            this.txtBoxGender.Location = new System.Drawing.Point(493, 201);
             this.txtBoxGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxGender.Name = "txtBoxGender";
             this.txtBoxGender.Size = new System.Drawing.Size(219, 28);
@@ -158,7 +158,7 @@
             this.txtBoxNation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxNation.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxNation.ForeColor = System.Drawing.Color.White;
-            this.txtBoxNation.Location = new System.Drawing.Point(648, 326);
+            this.txtBoxNation.Location = new System.Drawing.Point(493, 272);
             this.txtBoxNation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxNation.Name = "txtBoxNation";
             this.txtBoxNation.Size = new System.Drawing.Size(219, 28);
@@ -209,7 +209,7 @@
             this.lblAge.BackColor = System.Drawing.Color.Transparent;
             this.lblAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAge.ForeColor = System.Drawing.Color.White;
-            this.lblAge.Location = new System.Drawing.Point(400, 140);
+            this.lblAge.Location = new System.Drawing.Point(407, 140);
             this.lblAge.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(42, 20);
@@ -222,7 +222,7 @@
             this.lblGender.BackColor = System.Drawing.Color.Transparent;
             this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.ForeColor = System.Drawing.Color.White;
-            this.lblGender.Location = new System.Drawing.Point(400, 205);
+            this.lblGender.Location = new System.Drawing.Point(407, 205);
             this.lblGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(67, 20);
@@ -235,7 +235,7 @@
             this.lblNation.BackColor = System.Drawing.Color.Transparent;
             this.lblNation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNation.ForeColor = System.Drawing.Color.White;
-            this.lblNation.Location = new System.Drawing.Point(400, 269);
+            this.lblNation.Location = new System.Drawing.Point(406, 275);
             this.lblNation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNation.Name = "lblNation";
             this.lblNation.Size = new System.Drawing.Size(86, 20);
@@ -260,7 +260,7 @@
             this.lblErrorP.AutoSize = true;
             this.lblErrorP.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorP.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorP.Location = new System.Drawing.Point(29, 200);
+            this.lblErrorP.Location = new System.Drawing.Point(33, 200);
             this.lblErrorP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblErrorP.Name = "lblErrorP";
             this.lblErrorP.Size = new System.Drawing.Size(23, 29);
@@ -273,7 +273,7 @@
             this.lblErrorNam.AutoSize = true;
             this.lblErrorNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorNam.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorNam.Location = new System.Drawing.Point(384, 269);
+            this.lblErrorNam.Location = new System.Drawing.Point(390, 275);
             this.lblErrorNam.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblErrorNam.Name = "lblErrorNam";
             this.lblErrorNam.Size = new System.Drawing.Size(23, 29);
@@ -286,7 +286,7 @@
             this.lblErrorA.AutoSize = true;
             this.lblErrorA.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorA.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorA.Location = new System.Drawing.Point(384, 136);
+            this.lblErrorA.Location = new System.Drawing.Point(391, 136);
             this.lblErrorA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblErrorA.Name = "lblErrorA";
             this.lblErrorA.Size = new System.Drawing.Size(23, 29);
@@ -299,7 +299,7 @@
             this.lblErrorG.AutoSize = true;
             this.lblErrorG.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorG.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorG.Location = new System.Drawing.Point(384, 208);
+            this.lblErrorG.Location = new System.Drawing.Point(391, 208);
             this.lblErrorG.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblErrorG.Name = "lblErrorG";
             this.lblErrorG.Size = new System.Drawing.Size(23, 29);
@@ -368,7 +368,7 @@
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
             this.btnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBack.Location = new System.Drawing.Point(21, 14);
+            this.btnBack.Location = new System.Drawing.Point(12, 11);
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(56, 41);
@@ -382,7 +382,7 @@
             // 
             this.cboxAdmin.AutoSize = true;
             this.cboxAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxAdmin.Location = new System.Drawing.Point(563, 297);
+            this.cboxAdmin.Location = new System.Drawing.Point(556, 317);
             this.cboxAdmin.Name = "cboxAdmin";
             this.cboxAdmin.Size = new System.Drawing.Size(156, 24);
             this.cboxAdmin.TabIndex = 24;

@@ -149,7 +149,9 @@ namespace The_ULTIMATE_golf_quiz
 
                 // Go to the main menu
                 this.Hide();
-                new frmMain().Show();
+                // Open the main menu and save a reference to it
+                frmSplashScreen.mainMenu = new frmMain();
+                frmSplashScreen.mainMenu.Show();
             }
             // returns the new player values
             return new Player(username, password, name, age, gender, nationality, highscore, isAdmin, avatar, roundsPlayed);

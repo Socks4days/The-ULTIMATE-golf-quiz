@@ -818,6 +818,8 @@
             // 
             // comboBoxChooseAClub
             // 
+            this.comboBoxChooseAClub.BackColor = System.Drawing.Color.White;
+            this.comboBoxChooseAClub.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxChooseAClub.FormattingEnabled = true;
             this.comboBoxChooseAClub.Items.AddRange(new object[] {
             "Putter",
@@ -836,7 +838,7 @@
             "Driver"});
             this.comboBoxChooseAClub.Location = new System.Drawing.Point(121, 6);
             this.comboBoxChooseAClub.Name = "comboBoxChooseAClub";
-            this.comboBoxChooseAClub.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxChooseAClub.Size = new System.Drawing.Size(121, 28);
             this.comboBoxChooseAClub.TabIndex = 3;
             // 
             // pnlGrass

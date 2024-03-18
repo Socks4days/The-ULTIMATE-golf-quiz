@@ -1048,13 +1048,17 @@ namespace The_ULTIMATE_golf_quiz
             
             // Add the score for the round to the player's total score for this session
             frmSplashScreen.player.totalScoreForCurrentSession += TotalScoreForCurrentRound;
-            
+            frmSplashScreen.player.roundsPlayed++;
+
             // If the score is better than the player's high score, save their new highscore
             if (frmSplashScreen.player.totalScoreForCurrentSession > frmSplashScreen.player.highscore)
             {
                 frmSplashScreen.player.highscore = frmSplashScreen.player.totalScoreForCurrentSession;
-                UserFileHandler.SaveAllPlayers();
             }
+
+            // Save player details and update title bar
+            UserFileHandler.SaveAllPlayers();
+            frmSplashScreen.mainMenu.setTitleLabels();
         }
         #endregion EndOfRound
 
@@ -1064,7 +1068,6 @@ namespace The_ULTIMATE_golf_quiz
         private void btnNextRound_Click(object sender, EventArgs e)
         {
             NumberOfQuestionsAskedThisRound = 0;
-            frmSplashScreen.player.roundsPlayed++;
             frmQuizQuestionsInitialisation();
         }
 
@@ -1073,7 +1076,6 @@ namespace The_ULTIMATE_golf_quiz
         // Exit the quiz and go back to the main menu
         private void btnFinishSession_Click(object sender, EventArgs e)
         {
-            frmSplashScreen.player.roundsPlayed++;
             UserFileHandler.SaveAllPlayers();
             this.Close();
         }

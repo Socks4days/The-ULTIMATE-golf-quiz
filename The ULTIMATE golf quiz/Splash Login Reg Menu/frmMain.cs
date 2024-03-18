@@ -71,7 +71,7 @@ namespace The_ULTIMATE_golf_quiz
 
         #region topMenuSetup
         // Set the logged in user's details in the title panel
-        private void setTitleLabels()
+        public void setTitleLabels()
         {
             lblCurrentUser.Text = "Current User: " + frmSplashScreen.player.username + "   ";
             lblHighscore.Text = "Highscore: " + frmSplashScreen.player.highscore.ToString() + "   ";
