@@ -417,7 +417,7 @@ namespace The_ULTIMATE_golf_quiz
                                 }
                                 catch (FileNotFoundException fnf)
                                 {
-                                    MessageBox.Show("Error: Could not find your file from " + currentPictureQuestion.PictureId.Replace("FILEPATH", "") + "\nError: " + fnf.Message);
+                                    MessageBox.Show("ShowError: Could not find your file from " + currentPictureQuestion.PictureId.Replace("FILEPATH", "") + "\nError: " + fnf.Message);
                                 }
                             }
                             else
@@ -435,7 +435,7 @@ namespace The_ULTIMATE_golf_quiz
                             pctBoxPicture.Visible = true;
                             pnlPicture.Visible = true;
                             pnlPicture.Dock = DockStyle.Fill;
-                            lblAnswer.Text = "Click a point on the map to select a location";
+                            lblAnswer.Text = "Click a point on the map to select the location of the answer";
                             lblAnswer.Visible = true;
                             pictureQuestionAnswered = false;
                             pctBoxLocation.Visible = false;
@@ -484,7 +484,7 @@ namespace The_ULTIMATE_golf_quiz
                         pctBoxFlag.Location = new Point(flagPositionX - (pctBoxFlag.Width / 2), flagStartY);
 
                         // Set up the question details
-                        lblQuestion.Text = ("Choose the club you think will get you closest to the hole");
+                        lblQuestion.Text = ("Choose the club you think will get you closest to the hole. Click Go to start the power meter then Stop to take your shot!");
                         lblDifficulty.Text = "Difficulty: Medium";
                         lblDistanceToHole.Text = "Distance to hole: " + distanceToHoleYds + " yards";
                         pctBoxGolfBall.Location = new Point(ballStartX - (pctBoxGolfBall.Width / 2), ballStartY);
@@ -710,7 +710,7 @@ namespace The_ULTIMATE_golf_quiz
                 
                 QuestionFileHandler.PictureQuestions.Remove(currentPictureQuestion1);
 
-                // MessageBox.Show(string.Format("X: {0} Y: {1}", x, y));
+                
                 int mapX = pctBoxMap.Location.X;
                 int mapY = pctBoxMap.Location.Y;
 
@@ -783,6 +783,14 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnChooseAClubGo_Click(object sender, EventArgs e)
         {
+            // Check the player has selected a club
+            string selectedClub = comboBoxChooseAClub.Text;
+            if (selectedClub == "")
+            {
+                MessageBox.Show("You need to select a club first!");
+                return;
+            }
+
             // Stop the countdown timer
             tmrCountdown.Stop();
             stopCountdown();
@@ -817,17 +825,16 @@ namespace The_ULTIMATE_golf_quiz
 
             // Animate ball moving to hole
 
-            // s = (u*t) + (a*t*t)
+            // s = (u * t) + 0.5 * (a * t * t)
             // assume no air fiction and no wind
-            // sx = (u * cos(loft) * t) + ((0) * t * t)
-            // assume gravity is -10
-            // sy = (u * sin(loft) * t) + ((-10) * t * t)
+            // sx = (u * cos(loft) * t) + 0.5 * (0 * t * t)
+            // sy = (u * sin(loft) * t) + 0.5 * (g * t * t)
 
             // set value of gravity in yards per second (all distances in yards)
             const double metresToYards = 1.094;
             const double gravity = 9.81 * metresToYards;
 
-            // get the postition of the flag on panel
+            // get the position of the flag on panel
             int flagX = pctBoxFlag.Location.X;
             int flagY = pctBoxFlag.Location.Y;
 
@@ -837,16 +844,10 @@ namespace The_ULTIMATE_golf_quiz
 
             // Get loft and swing speed for selected club
             // Then calculate the distance that the ball will go
-            string selectedClub = comboBoxChooseAClub.Text;
-            if (selectedClub == "")
-            {
-                MessageBox.Show("You need to select a club first!");
-                return;
-            }
             // Look up loft based on club selected and convert to radians
             double loftInDegrees = clubLoftAndMaxDistanceYds[selectedClub].Item1;
             double loftInRadians = loftInDegrees * Math.PI / 180;
-            // Look up th max distance for the selected club for a perfect shot with no wind
+            // Look up the max distance for the selected club for a perfect shot with no wind
             double maxDistanceYds = clubLoftAndMaxDistanceYds[selectedClub].Item2;
             
             // Now calculate the actual distance and starting speed based on the power and wind
@@ -858,7 +859,7 @@ namespace The_ULTIMATE_golf_quiz
             // For putter, ignore wind speed and gravity
             if (selectedClub == "Putter")
             {
-                // Actual distnce is max distance times percentage power
+                // Actual distance is max distance times percentage power
                 actualDistanceYds = maxDistanceYds * (powerSelected / 100);
                 // base the speed of the putt on the distance (10 seconds for a 50 yard putt)
                 ux = maxDistanceYds / 10;
@@ -902,7 +903,7 @@ namespace The_ULTIMATE_golf_quiz
                 timeInSecs += intervalInSecs;
 
                 // Calculate horizontal (sx) and vertical (sy) position in metres
-                // s = (u*t) + (a*t*t)
+                // s = (u * t) + 0.5 * (a * t * t)
                 sx = (ux * timeInSecs);
 
                 // For putter, ignore height
@@ -928,7 +929,7 @@ namespace The_ULTIMATE_golf_quiz
                 Thread.Sleep((int)(intervalInSecs * 100));
             }
            
-            // When the ball lands get the final distnace in yards
+            // When the ball lands get the final distance in yards
             // and calculate the distance to the hole
             int distanceTravelledinYards = (ballX - ballStartX) / ydsToPixelsScale;
             int distanceFromHoleYds = Math.Abs(distanceToHoleYds - distanceTravelledinYards);

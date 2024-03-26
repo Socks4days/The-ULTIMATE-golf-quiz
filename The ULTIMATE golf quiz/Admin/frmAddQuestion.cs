@@ -445,7 +445,7 @@ namespace The_ULTIMATE_golf_quiz
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: Could not read your file. Error: " + ex.Message);
+                    MessageBox.Show("ShowError: Could not read your file. ShowError: " + ex.Message);
                 }
             }
         }

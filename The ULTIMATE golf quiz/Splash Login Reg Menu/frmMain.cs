@@ -73,7 +73,7 @@ namespace The_ULTIMATE_golf_quiz
         // Set the logged in user's details in the title panel
         public void setTitleLabels()
         {
-            lblCurrentUser.Text = "Current User: " + frmSplashScreen.player.username + "   ";
+            lblCurrentUser.Text = "User: " + frmSplashScreen.player.username + "   ";
             lblHighscore.Text = "Highscore: " + frmSplashScreen.player.highscore.ToString() + "   ";
             lblGamesPlayed.Text = "Rounds played: " + frmSplashScreen.player.roundsPlayed.ToString();
         }
@@ -101,7 +101,6 @@ namespace The_ULTIMATE_golf_quiz
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
             pnlFormContainer.Controls.Add(childForm);
-            pnlFormContainer.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
         }
@@ -148,7 +147,7 @@ namespace The_ULTIMATE_golf_quiz
         // Open the user info form
         private void btnUserInfo_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmUserInfo());
+            openChildForm(new frmUserInfo("Edit"));
             resetButtonColours();
             btnUserInfo.BackColor = Color.FromArgb(0,75,0);
         }
@@ -175,7 +174,7 @@ namespace The_ULTIMATE_golf_quiz
             closeChildForm();
             resetButtonColours();
             btnDeleteAccount.BackColor = Color.FromArgb(0,75,0);
-            openChildForm(new frmUserInfo());
+            openChildForm(new frmUserInfo("Delete"));
             List<Player> players = UserFileHandler.players;
             DialogResult result = MessageBox.Show("This action is permanent! \nDo you wish to continue?", "Delete Account", MessageBoxButtons.YesNo);
 
@@ -208,7 +207,7 @@ namespace The_ULTIMATE_golf_quiz
             closeChildForm();
             resetButtonColours();
             btnReset.BackColor = Color.FromArgb(0,75,0);
-            openChildForm(new frmUserInfo());
+            openChildForm(new frmUserInfo("Reset"));
             List<Player> players = UserFileHandler.players;
             DialogResult result = MessageBox.Show("This action is permanent! Your highscore and questions asked will be reset! \nDo you wish to continue?", "Reset Account", MessageBoxButtons.YesNo);
 

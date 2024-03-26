@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSplashScreen));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlSmall = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -45,7 +46,7 @@
             this.panel1.Location = new System.Drawing.Point(-12, 431);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(776, 47);
+            this.panel1.Size = new System.Drawing.Size(800, 47);
             this.panel1.TabIndex = 0;
             // 
             // pnlSmall
@@ -65,7 +66,7 @@
             this.panel3.Location = new System.Drawing.Point(-9, -2);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(773, 394);
+            this.panel3.Size = new System.Drawing.Size(800, 394);
             this.panel3.TabIndex = 0;
             // 
             // label1
@@ -99,10 +100,11 @@
             // frmSplashScreen
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(760, 472);
+            this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.pnlSmall);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

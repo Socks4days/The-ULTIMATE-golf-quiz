@@ -16,9 +16,10 @@ namespace The_ULTIMATE_golf_quiz
     // Settings - User Info form 
     public partial class frmUserInfo : Form
     {
-        public frmUserInfo()
+        public frmUserInfo(string mode)
         {
-            InitializeComponent();                       
+            InitializeComponent();
+            btnSubmit.Text = mode;
         }
         
         // sets the user who's details are displayed equal to the user that is logged in
@@ -39,6 +40,12 @@ namespace The_ULTIMATE_golf_quiz
         {
             // When the back arrow is clicked, close the form 
             this.Close();
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            // Depending on form selected - Edit, Delete or Reset user
+            // TODO
         }
     }
 }

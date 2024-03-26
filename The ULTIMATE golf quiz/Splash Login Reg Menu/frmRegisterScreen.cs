@@ -26,19 +26,28 @@ namespace The_ULTIMATE_golf_quiz
         private void Registerbtn_Click(object sender, EventArgs e)
         {
             int age;
-            if (!int.TryParse(txtBoxAge.Text, out age)|| (Convert.ToInt32(txtBoxAge.Text)<0))
-            {
-                MessageBox.Show("What sort of an age is that?\nPlease try again...");
-                this.ActiveControl = txtBoxAge;
-                return;
-            }
-            
+
+            // Hide any previously shown error message
+            ClearError();
+
             // when register button is clicked, check to see if any of the textboxes have been left empty
             // if so, throw an error message addressing this
-            else if ((txtBoxUser.Text == "") || (txtBoxPassword.Text == "") || (txtBoxName.Text == "")
+            if ((txtBoxUser.Text == "") || (txtBoxPassword.Text == "") || (txtBoxName.Text == "")
                     || (txtBoxAge.Text == "") || (txtBoxGender.Text == "") || (txtBoxNation.Text == ""))
             {
-                Error();
+                ShowError("Please complete all indicated fields");
+            }
+            if ((txtBoxUser.Text.Contains(',')) || (txtBoxPassword.Text.Contains(',')) || (txtBoxName.Text.Contains(','))
+                    || (txtBoxAge.Text.Contains(',')) || (txtBoxGender.Text.Contains(',')) || (txtBoxNation.Text.Contains(',')))
+            {
+                ShowError("All fields, including passwords, cannot contain any commas\nPlease remove any commas and try again...");
+                return;
+             }
+            else if (!int.TryParse(txtBoxAge.Text, out age) || (Convert.ToInt32(txtBoxAge.Text)<0))
+            {
+                ShowError("Please enter a valid age in years");
+                this.ActiveControl = txtBoxAge;
+                return;
             }
             else
             {
@@ -60,15 +69,10 @@ namespace The_ULTIMATE_golf_quiz
                 // if it passes, bool is set equal to true and program can continue
                 validPassword = true;
             }
-            else if (password.Contains(','))
-            {
-                MessageBox.Show("Password cannot contain any commas, sorry :(");
-                return;
-            }
             else 
-            { 
+            {
                 // if it fails, a list of the password requirements are shown
-                lblPassError.Visible = true; 
+                ShowError("Enter a password between 8-15 characters, with at least\n1 number, 1 capital letter and 1 symbol");
             }
 
             // Creates a list of valid password symbols and populates it
@@ -85,7 +89,7 @@ namespace The_ULTIMATE_golf_quiz
                 }                
                 else
                 {
-                  lblPassError.Visible = true;
+                    ShowError("Enter a password between 8-15 characters, with at least\n1 number, 1 capital letter and 1 symbol");
                 }
             }
         }
@@ -110,7 +114,7 @@ namespace The_ULTIMATE_golf_quiz
             }
             else if ((cboxAdmin.Checked)&&(txtBoxPassword.Text!="Admin123!"))
             {
-                MessageBox.Show("Invalid admin password.\n Please try again...");
+                ShowError("Invalid admin password.\n Please try again...");
             }
             else { isAdmin = 0; }
             int avatar = 0;
@@ -129,7 +133,7 @@ namespace The_ULTIMATE_golf_quiz
                 {
                     // if someone already has already got the same username, then an error message is thrown saying they have to change it
                     validUsername = false;
-                    MessageBox.Show("Sorry, that username is already taken,\nPlease try another.");
+                    ShowError("Sorry, that username is already taken.\nPlease try a different one...");
                     //sets mouse to go to the username textbox
                     this.ActiveControl=txtBoxUser;
                 }
@@ -165,6 +169,8 @@ namespace The_ULTIMATE_golf_quiz
         public void Reset()
         {
             // When pressed, all textboxes will be cleared
+            // and any previously shown error message hidden
+            ClearError();
             txtBoxUser.Clear();
             txtBoxPassword.Clear();
             txtBoxName.Clear();
@@ -175,17 +181,32 @@ namespace The_ULTIMATE_golf_quiz
             this.ActiveControl = txtBoxUser;
         }
 
-        private void Error()
+        private void ShowError(string errorMessage)
         {
             // shows an error indicating which boxes need to be filled in to be valid
-            MessageBox.Show("Please complete all indicated fields.");            
-            lblErrorU.Visible = true;
-            lblErrorP.Visible = true;
-            lblErrorNam.Visible = true;
-            lblErrorA.Visible = true;
-            lblErrorG.Visible = true;
-            lblErrorNat.Visible = true;
+            if (txtBoxUser.Text == "") lblErrorU.Visible = true;
+            if (txtBoxPassword.Text == "") lblErrorP.Visible = true;
+            if (txtBoxName.Text == "") lblErrorNam.Visible = true;
+            if (txtBoxAge.Text == "") lblErrorA.Visible = true;
+            if (txtBoxGender.Text == "") lblErrorG.Visible = true;
+            if (txtBoxNation.Text == "") lblErrorNat.Visible = true;
+            lblError.Text = errorMessage;
+            lblError.Visible = true;
         }
+
+        private void ClearError()
+        {
+            // hide error message
+            lblErrorU.Visible = false;
+            lblErrorP.Visible = false;
+            lblErrorNam.Visible = false;
+            lblErrorA.Visible = false;
+            lblErrorG.Visible = false;
+            lblErrorNat.Visible = false;
+            lblError.Text = "";
+            lblError.Visible = false;
+        }
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -199,5 +220,6 @@ namespace The_ULTIMATE_golf_quiz
             // if the window is closed, the program will also close
             System.Windows.Forms.Application.Exit();
         }
+
     }
 }

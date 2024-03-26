@@ -124,7 +124,7 @@
             // 
             // txtBoxQuestion
             // 
-            this.txtBoxQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxQuestion.Location = new System.Drawing.Point(17, 35);
             this.txtBoxQuestion.MaxLength = 200;
             this.txtBoxQuestion.Name = "txtBoxQuestion";
@@ -134,7 +134,7 @@
             // lblQuestion
             // 
             this.lblQuestion.AutoSize = true;
-            this.lblQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuestion.ForeColor = System.Drawing.Color.White;
             this.lblQuestion.Location = new System.Drawing.Point(13, 12);
             this.lblQuestion.Name = "lblQuestion";
@@ -149,7 +149,7 @@
             this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAdd.Location = new System.Drawing.Point(414, 124);
@@ -239,7 +239,7 @@
             this.groupBoxDifficulty.Controls.Add(this.rBtnAImpossible);
             this.groupBoxDifficulty.Controls.Add(this.rBtnMedium);
             this.groupBoxDifficulty.Controls.Add(this.rBtnHard);
-            this.groupBoxDifficulty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxDifficulty.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxDifficulty.ForeColor = System.Drawing.Color.White;
             this.groupBoxDifficulty.Location = new System.Drawing.Point(43, 19);
             this.groupBoxDifficulty.Name = "groupBoxDifficulty";
@@ -324,7 +324,7 @@
             // 
             // txtBoxTypeItAnswer
             // 
-            this.txtBoxTypeItAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxTypeItAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxTypeItAnswer.Location = new System.Drawing.Point(17, 29);
             this.txtBoxTypeItAnswer.Name = "txtBoxTypeItAnswer";
             this.txtBoxTypeItAnswer.Size = new System.Drawing.Size(701, 26);
@@ -403,7 +403,7 @@
             // 
             // txtBoxMultiOption3
             // 
-            this.txtBoxMultiOption3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxMultiOption3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxMultiOption3.Location = new System.Drawing.Point(308, 135);
             this.txtBoxMultiOption3.Name = "txtBoxMultiOption3";
             this.txtBoxMultiOption3.Size = new System.Drawing.Size(294, 26);
@@ -411,7 +411,7 @@
             // 
             // txtBoxMultiOption4
             // 
-            this.txtBoxMultiOption4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxMultiOption4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxMultiOption4.Location = new System.Drawing.Point(308, 183);
             this.txtBoxMultiOption4.Name = "txtBoxMultiOption4";
             this.txtBoxMultiOption4.Size = new System.Drawing.Size(294, 26);
@@ -419,7 +419,7 @@
             // 
             // txtBoxMultiOption2
             // 
-            this.txtBoxMultiOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxMultiOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxMultiOption2.Location = new System.Drawing.Point(308, 87);
             this.txtBoxMultiOption2.Name = "txtBoxMultiOption2";
             this.txtBoxMultiOption2.Size = new System.Drawing.Size(294, 26);
@@ -427,7 +427,7 @@
             // 
             // txtBoxMultiOption1
             // 
-            this.txtBoxMultiOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxMultiOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxMultiOption1.Location = new System.Drawing.Point(308, 39);
             this.txtBoxMultiOption1.Name = "txtBoxMultiOption1";
             this.txtBoxMultiOption1.Size = new System.Drawing.Size(294, 26);
@@ -642,7 +642,7 @@
             this.Controls.Add(this.pnlQuestion);
             this.Controls.Add(this.pnlChooseQuestionType);
             this.Controls.Add(this.pnlTitleMenu);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "frmAddQuestions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

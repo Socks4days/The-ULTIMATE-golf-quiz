@@ -150,7 +150,7 @@
             this.btnDeleteUserAccount.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnDeleteUserAccount.Size = new System.Drawing.Size(233, 50);
             this.btnDeleteUserAccount.TabIndex = 6;
-            this.btnDeleteUserAccount.Text = "Delete user account";
+            this.btnDeleteUserAccount.Text = "Delete user";
             this.btnDeleteUserAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeleteUserAccount.UseVisualStyleBackColor = true;
             this.btnDeleteUserAccount.Click += new System.EventHandler(this.btnDeleteUserAccount_Click);
@@ -169,7 +169,7 @@
             this.btnResetPassword.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnResetPassword.Size = new System.Drawing.Size(233, 50);
             this.btnResetPassword.TabIndex = 5;
-            this.btnResetPassword.Text = "Reset user password";
+            this.btnResetPassword.Text = "Reset password";
             this.btnResetPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnResetPassword.UseVisualStyleBackColor = true;
             this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
@@ -422,10 +422,10 @@
             this.btnQuit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuit.ForeColor = System.Drawing.Color.White;
-            this.btnQuit.Location = new System.Drawing.Point(490, 0);
+            this.btnQuit.Location = new System.Drawing.Point(640, 0);
             this.btnQuit.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(250, 50);
+            this.btnQuit.Size = new System.Drawing.Size(100, 50);
             this.btnQuit.TabIndex = 3;
             this.btnQuit.Text = "Quit";
             this.btnQuit.UseVisualStyleBackColor = true;
@@ -436,11 +436,11 @@
             this.lblGamesPlayed.AutoSize = true;
             this.lblGamesPlayed.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblGamesPlayed.ForeColor = System.Drawing.Color.White;
-            this.lblGamesPlayed.Location = new System.Drawing.Point(203, 0);
+            this.lblGamesPlayed.Location = new System.Drawing.Point(196, 0);
             this.lblGamesPlayed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGamesPlayed.Name = "lblGamesPlayed";
             this.lblGamesPlayed.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.lblGamesPlayed.Size = new System.Drawing.Size(116, 35);
+            this.lblGamesPlayed.Size = new System.Drawing.Size(162, 41);
             this.lblGamesPlayed.TabIndex = 2;
             this.lblGamesPlayed.Text = "Games Played:";
             this.lblGamesPlayed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -450,11 +450,11 @@
             this.lblHighscore.AutoSize = true;
             this.lblHighscore.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblHighscore.ForeColor = System.Drawing.Color.White;
-            this.lblHighscore.Location = new System.Drawing.Point(118, 0);
+            this.lblHighscore.Location = new System.Drawing.Point(80, 0);
             this.lblHighscore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHighscore.Name = "lblHighscore";
             this.lblHighscore.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.lblHighscore.Size = new System.Drawing.Size(85, 35);
+            this.lblHighscore.Size = new System.Drawing.Size(116, 41);
             this.lblHighscore.TabIndex = 1;
             this.lblHighscore.Text = "Highscore:";
             this.lblHighscore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -468,9 +468,9 @@
             this.lblCurrentUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCurrentUser.Name = "lblCurrentUser";
             this.lblCurrentUser.Padding = new System.Windows.Forms.Padding(10, 15, 0, 0);
-            this.lblCurrentUser.Size = new System.Drawing.Size(118, 35);
+            this.lblCurrentUser.Size = new System.Drawing.Size(80, 41);
             this.lblCurrentUser.TabIndex = 0;
-            this.lblCurrentUser.Text = "Current User: ";
+            this.lblCurrentUser.Text = "User: ";
             this.lblCurrentUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlFormContainer
@@ -501,7 +501,7 @@
             this.pctBoxLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pctBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pctBoxLogo.Image = global::The_ULTIMATE_golf_quiz.Properties.Resources.Golf_logo3;
-            this.pctBoxLogo.Location = new System.Drawing.Point(241, 123);
+            this.pctBoxLogo.Location = new System.Drawing.Point(242, 123);
             this.pctBoxLogo.Name = "pctBoxLogo";
             this.pctBoxLogo.Size = new System.Drawing.Size(288, 239);
             this.pctBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -510,16 +510,15 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(990, 562);
             this.Controls.Add(this.pnlFormContainer);
             this.Controls.Add(this.pnlTitleBar);
             this.Controls.Add(this.pnlSideMenu);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.MinimumSize = new System.Drawing.Size(1006, 585);
+            this.MinimumSize = new System.Drawing.Size(1006, 583);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "The ULTIMATE Golf Quiz";

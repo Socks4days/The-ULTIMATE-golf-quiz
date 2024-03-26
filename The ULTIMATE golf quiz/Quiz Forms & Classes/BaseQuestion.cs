@@ -21,7 +21,7 @@ namespace The_ULTIMATE_golf_quiz
              {2, "Medium" },
              {3, "Hard" },
              {4, "Almost Impossible" },
-             {5, "TOTALLY IMPOSSIBLE" }
+             {5, "Totally Impossible" }
         };
 
         public BaseQuestion() 

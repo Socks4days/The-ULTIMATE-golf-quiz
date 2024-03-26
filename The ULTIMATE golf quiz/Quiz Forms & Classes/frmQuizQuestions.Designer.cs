@@ -105,13 +105,13 @@
             // 
             // lblAnswer
             // 
-            this.lblAnswer.AutoSize = true;
-            this.lblAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer.ForeColor = System.Drawing.Color.White;
-            this.lblAnswer.Location = new System.Drawing.Point(30, 13);
+            this.lblAnswer.Location = new System.Drawing.Point(7, 3);
             this.lblAnswer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAnswer.MaximumSize = new System.Drawing.Size(450, 100);
             this.lblAnswer.Name = "lblAnswer";
-            this.lblAnswer.Size = new System.Drawing.Size(174, 20);
+            this.lblAnswer.Size = new System.Drawing.Size(441, 62);
             this.lblAnswer.TabIndex = 10;
             this.lblAnswer.Text = "No - the right answer is:";
             // 
@@ -123,9 +123,9 @@
             this.btnNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(517, 11);
+            this.btnNext.Location = new System.Drawing.Point(455, 11);
             this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(250, 50);
@@ -142,9 +142,9 @@
             this.btnFinishSession.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnFinishSession.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnFinishSession.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinishSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinishSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinishSession.ForeColor = System.Drawing.Color.White;
-            this.btnFinishSession.Location = new System.Drawing.Point(421, 169);
+            this.btnFinishSession.Location = new System.Drawing.Point(390, 169);
             this.btnFinishSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFinishSession.Name = "btnFinishSession";
             this.btnFinishSession.Size = new System.Drawing.Size(250, 50);
@@ -157,12 +157,12 @@
             // 
             this.lblFinish.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFinish.AutoSize = true;
-            this.lblFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFinish.ForeColor = System.Drawing.Color.White;
-            this.lblFinish.Location = new System.Drawing.Point(151, 23);
+            this.lblFinish.Location = new System.Drawing.Point(28, 23);
             this.lblFinish.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFinish.Name = "lblFinish";
-            this.lblFinish.Size = new System.Drawing.Size(466, 20);
+            this.lblFinish.Size = new System.Drawing.Size(641, 26);
             this.lblFinish.TabIndex = 13;
             this.lblFinish.Text = "You have completed all questions in this round - congratulations!!";
             // 
@@ -175,9 +175,9 @@
             this.pnlFinish.Controls.Add(this.btnFinishSession);
             this.pnlFinish.Controls.Add(this.lblFinish);
             this.pnlFinish.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFinish.Location = new System.Drawing.Point(0, 610);
+            this.pnlFinish.Location = new System.Drawing.Point(0, 674);
             this.pnlFinish.Name = "pnlFinish";
-            this.pnlFinish.Size = new System.Drawing.Size(779, 241);
+            this.pnlFinish.Size = new System.Drawing.Size(717, 241);
             this.pnlFinish.TabIndex = 17;
             this.pnlFinish.Visible = false;
             // 
@@ -185,11 +185,11 @@
             // 
             this.lblTotalScore.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTotalScore.AutoSize = true;
-            this.lblTotalScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalScore.ForeColor = System.Drawing.Color.White;
-            this.lblTotalScore.Location = new System.Drawing.Point(314, 120);
+            this.lblTotalScore.Location = new System.Drawing.Point(302, 120);
             this.lblTotalScore.Name = "lblTotalScore";
-            this.lblTotalScore.Size = new System.Drawing.Size(90, 20);
+            this.lblTotalScore.Size = new System.Drawing.Size(122, 26);
             this.lblTotalScore.TabIndex = 16;
             this.lblTotalScore.Text = "Total Score";
             // 
@@ -197,11 +197,11 @@
             // 
             this.lblQuestionsAnsweredCorrectly.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblQuestionsAnsweredCorrectly.AutoSize = true;
-            this.lblQuestionsAnsweredCorrectly.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuestionsAnsweredCorrectly.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuestionsAnsweredCorrectly.ForeColor = System.Drawing.Color.White;
-            this.lblQuestionsAnsweredCorrectly.Location = new System.Drawing.Point(286, 79);
+            this.lblQuestionsAnsweredCorrectly.Location = new System.Drawing.Point(267, 80);
             this.lblQuestionsAnsweredCorrectly.Name = "lblQuestionsAnsweredCorrectly";
-            this.lblQuestionsAnsweredCorrectly.Size = new System.Drawing.Size(137, 20);
+            this.lblQuestionsAnsweredCorrectly.Size = new System.Drawing.Size(187, 26);
             this.lblQuestionsAnsweredCorrectly.TabIndex = 15;
             this.lblQuestionsAnsweredCorrectly.Text = "Questions Correct";
             // 
@@ -213,9 +213,9 @@
             this.btnNextRound.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnNextRound.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnNextRound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNextRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNextRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextRound.ForeColor = System.Drawing.Color.White;
-            this.btnNextRound.Location = new System.Drawing.Point(124, 169);
+            this.btnNextRound.Location = new System.Drawing.Point(93, 169);
             this.btnNextRound.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNextRound.Name = "btnNextRound";
             this.btnNextRound.Size = new System.Drawing.Size(250, 50);
@@ -232,9 +232,9 @@
             this.pnlAnswer.Controls.Add(this.button1);
             this.pnlAnswer.Controls.Add(this.lblAnswer);
             this.pnlAnswer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlAnswer.Location = new System.Drawing.Point(0, 542);
+            this.pnlAnswer.Location = new System.Drawing.Point(0, 606);
             this.pnlAnswer.Name = "pnlAnswer";
-            this.pnlAnswer.Size = new System.Drawing.Size(779, 68);
+            this.pnlAnswer.Size = new System.Drawing.Size(717, 68);
             this.pnlAnswer.TabIndex = 11;
             this.pnlAnswer.Visible = false;
             // 
@@ -267,9 +267,9 @@
             this.pnlTypeIt.Controls.Add(this.txtBoxAnswer);
             this.pnlTypeIt.Controls.Add(this.btnSubmit);
             this.pnlTypeIt.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTypeIt.Location = new System.Drawing.Point(0, 93);
+            this.pnlTypeIt.Location = new System.Drawing.Point(0, 114);
             this.pnlTypeIt.Name = "pnlTypeIt";
-            this.pnlTypeIt.Size = new System.Drawing.Size(779, 221);
+            this.pnlTypeIt.Size = new System.Drawing.Size(717, 221);
             this.pnlTypeIt.TabIndex = 20;
             this.pnlTypeIt.Visible = false;
             // 
@@ -277,12 +277,12 @@
             // 
             this.lblEnterYourAnswer.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblEnterYourAnswer.AutoSize = true;
-            this.lblEnterYourAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnterYourAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEnterYourAnswer.ForeColor = System.Drawing.Color.White;
-            this.lblEnterYourAnswer.Location = new System.Drawing.Point(122, 41);
+            this.lblEnterYourAnswer.Location = new System.Drawing.Point(91, 41);
             this.lblEnterYourAnswer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEnterYourAnswer.Name = "lblEnterYourAnswer";
-            this.lblEnterYourAnswer.Size = new System.Drawing.Size(177, 20);
+            this.lblEnterYourAnswer.Size = new System.Drawing.Size(243, 26);
             this.lblEnterYourAnswer.TabIndex = 2;
             this.lblEnterYourAnswer.Text = "Enter your answer here:";
             // 
@@ -293,7 +293,7 @@
             this.txtBoxAnswer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxAnswer.ForeColor = System.Drawing.Color.White;
-            this.txtBoxAnswer.Location = new System.Drawing.Point(124, 79);
+            this.txtBoxAnswer.Location = new System.Drawing.Point(93, 79);
             this.txtBoxAnswer.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxAnswer.Name = "txtBoxAnswer";
             this.txtBoxAnswer.Size = new System.Drawing.Size(547, 28);
@@ -307,9 +307,9 @@
             this.btnSubmit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnSubmit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(421, 121);
+            this.btnSubmit.Location = new System.Drawing.Point(390, 121);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(250, 50);
@@ -330,16 +330,16 @@
             this.pnlQuestion.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlQuestion.Location = new System.Drawing.Point(0, 0);
             this.pnlQuestion.Name = "pnlQuestion";
-            this.pnlQuestion.Size = new System.Drawing.Size(779, 93);
+            this.pnlQuestion.Size = new System.Drawing.Size(717, 114);
             this.pnlQuestion.TabIndex = 21;
             this.pnlQuestion.Visible = false;
             // 
             // progressBarCountdown
             // 
             this.progressBarCountdown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBarCountdown.Location = new System.Drawing.Point(602, 36);
+            this.progressBarCountdown.Location = new System.Drawing.Point(573, 4);
             this.progressBarCountdown.Name = "progressBarCountdown";
-            this.progressBarCountdown.Size = new System.Drawing.Size(165, 23);
+            this.progressBarCountdown.Size = new System.Drawing.Size(141, 33);
             this.progressBarCountdown.Step = 1;
             this.progressBarCountdown.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBarCountdown.TabIndex = 16;
@@ -348,11 +348,11 @@
             // 
             this.lblQuestionNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblQuestionNumber.AutoSize = true;
-            this.lblQuestionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuestionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuestionNumber.ForeColor = System.Drawing.Color.White;
-            this.lblQuestionNumber.Location = new System.Drawing.Point(147, 9);
+            this.lblQuestionNumber.Location = new System.Drawing.Point(94, 9);
             this.lblQuestionNumber.Name = "lblQuestionNumber";
-            this.lblQuestionNumber.Size = new System.Drawing.Size(101, 20);
+            this.lblQuestionNumber.Size = new System.Drawing.Size(139, 26);
             this.lblQuestionNumber.TabIndex = 15;
             this.lblQuestionNumber.Text = "Question No.";
             // 
@@ -380,11 +380,11 @@
             // 
             this.lblDifficulty.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDifficulty.AutoSize = true;
-            this.lblDifficulty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDifficulty.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDifficulty.ForeColor = System.Drawing.Color.White;
-            this.lblDifficulty.Location = new System.Drawing.Point(494, 9);
+            this.lblDifficulty.Location = new System.Drawing.Point(289, 9);
             this.lblDifficulty.Name = "lblDifficulty";
-            this.lblDifficulty.Size = new System.Drawing.Size(69, 20);
+            this.lblDifficulty.Size = new System.Drawing.Size(95, 26);
             this.lblDifficulty.TabIndex = 14;
             this.lblDifficulty.Text = "Difficulty";
             this.lblDifficulty.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -392,19 +392,19 @@
             // lblQuestion
             // 
             this.lblQuestion.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuestion.ForeColor = System.Drawing.Color.White;
-            this.lblQuestion.Location = new System.Drawing.Point(147, 34);
+            this.lblQuestion.Location = new System.Drawing.Point(93, 48);
             this.lblQuestion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuestion.Name = "lblQuestion";
-            this.lblQuestion.Size = new System.Drawing.Size(431, 59);
+            this.lblQuestion.Size = new System.Drawing.Size(620, 66);
             this.lblQuestion.TabIndex = 0;
             this.lblQuestion.Text = "Question Text";
             // 
             // pctBoxPicture
             // 
             this.pctBoxPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pctBoxPicture.Location = new System.Drawing.Point(614, 20);
+            this.pctBoxPicture.Location = new System.Drawing.Point(552, 20);
             this.pctBoxPicture.Name = "pctBoxPicture";
             this.pctBoxPicture.Size = new System.Drawing.Size(140, 140);
             this.pctBoxPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -422,9 +422,9 @@
             this.pnlMultipleChoiceOptions.Controls.Add(this.btnOption3);
             this.pnlMultipleChoiceOptions.Controls.Add(this.btnOption1);
             this.pnlMultipleChoiceOptions.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMultipleChoiceOptions.Location = new System.Drawing.Point(0, 314);
+            this.pnlMultipleChoiceOptions.Location = new System.Drawing.Point(0, 335);
             this.pnlMultipleChoiceOptions.Name = "pnlMultipleChoiceOptions";
-            this.pnlMultipleChoiceOptions.Size = new System.Drawing.Size(779, 139);
+            this.pnlMultipleChoiceOptions.Size = new System.Drawing.Size(717, 182);
             this.pnlMultipleChoiceOptions.TabIndex = 22;
             this.pnlMultipleChoiceOptions.Visible = false;
             // 
@@ -436,12 +436,12 @@
             this.btnOption2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnOption2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnOption2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOption2.ForeColor = System.Drawing.Color.White;
-            this.btnOption2.Location = new System.Drawing.Point(421, 16);
+            this.btnOption2.Location = new System.Drawing.Point(390, 9);
             this.btnOption2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOption2.Name = "btnOption2";
-            this.btnOption2.Size = new System.Drawing.Size(250, 50);
+            this.btnOption2.Size = new System.Drawing.Size(250, 75);
             this.btnOption2.TabIndex = 33;
             this.btnOption2.Text = "Option2";
             this.btnOption2.UseVisualStyleBackColor = false;
@@ -464,12 +464,12 @@
             this.btnOption4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnOption4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnOption4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOption4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOption4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOption4.ForeColor = System.Drawing.Color.White;
-            this.btnOption4.Location = new System.Drawing.Point(421, 77);
+            this.btnOption4.Location = new System.Drawing.Point(390, 96);
             this.btnOption4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOption4.Name = "btnOption4";
-            this.btnOption4.Size = new System.Drawing.Size(250, 50);
+            this.btnOption4.Size = new System.Drawing.Size(250, 75);
             this.btnOption4.TabIndex = 32;
             this.btnOption4.Text = "Option4";
             this.btnOption4.UseVisualStyleBackColor = false;
@@ -496,12 +496,12 @@
             this.btnOption3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnOption3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnOption3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOption3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOption3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOption3.ForeColor = System.Drawing.Color.White;
-            this.btnOption3.Location = new System.Drawing.Point(124, 77);
+            this.btnOption3.Location = new System.Drawing.Point(93, 96);
             this.btnOption3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOption3.Name = "btnOption3";
-            this.btnOption3.Size = new System.Drawing.Size(250, 50);
+            this.btnOption3.Size = new System.Drawing.Size(250, 75);
             this.btnOption3.TabIndex = 31;
             this.btnOption3.Text = "Option3";
             this.btnOption3.UseVisualStyleBackColor = false;
@@ -515,12 +515,12 @@
             this.btnOption1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnOption1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnOption1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOption1.ForeColor = System.Drawing.Color.White;
-            this.btnOption1.Location = new System.Drawing.Point(124, 16);
+            this.btnOption1.Location = new System.Drawing.Point(93, 9);
             this.btnOption1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOption1.Name = "btnOption1";
-            this.btnOption1.Size = new System.Drawing.Size(250, 50);
+            this.btnOption1.Size = new System.Drawing.Size(250, 75);
             this.btnOption1.TabIndex = 30;
             this.btnOption1.Text = "Option1";
             this.btnOption1.UseVisualStyleBackColor = false;
@@ -532,9 +532,9 @@
             this.pnlTrueOrFalseOptions.Controls.Add(this.btnFalse);
             this.pnlTrueOrFalseOptions.Controls.Add(this.btnTrue);
             this.pnlTrueOrFalseOptions.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTrueOrFalseOptions.Location = new System.Drawing.Point(0, 453);
+            this.pnlTrueOrFalseOptions.Location = new System.Drawing.Point(0, 517);
             this.pnlTrueOrFalseOptions.Name = "pnlTrueOrFalseOptions";
-            this.pnlTrueOrFalseOptions.Size = new System.Drawing.Size(779, 89);
+            this.pnlTrueOrFalseOptions.Size = new System.Drawing.Size(717, 89);
             this.pnlTrueOrFalseOptions.TabIndex = 23;
             this.pnlTrueOrFalseOptions.Visible = false;
             // 
@@ -546,9 +546,9 @@
             this.btnFalse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnFalse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnFalse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFalse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFalse.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFalse.ForeColor = System.Drawing.Color.White;
-            this.btnFalse.Location = new System.Drawing.Point(421, 22);
+            this.btnFalse.Location = new System.Drawing.Point(390, 22);
             this.btnFalse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFalse.Name = "btnFalse";
             this.btnFalse.Size = new System.Drawing.Size(250, 50);
@@ -565,9 +565,9 @@
             this.btnTrue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnTrue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnTrue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTrue.ForeColor = System.Drawing.Color.White;
-            this.btnTrue.Location = new System.Drawing.Point(124, 22);
+            this.btnTrue.Location = new System.Drawing.Point(93, 22);
             this.btnTrue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTrue.Name = "btnTrue";
             this.btnTrue.Size = new System.Drawing.Size(250, 50);
@@ -588,9 +588,9 @@
             this.pnlTypeOfRound.Controls.Add(this.btnTypeItRound);
             this.pnlTypeOfRound.Controls.Add(this.lblTypeOfRound);
             this.pnlTypeOfRound.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTypeOfRound.Location = new System.Drawing.Point(0, 851);
+            this.pnlTypeOfRound.Location = new System.Drawing.Point(0, 915);
             this.pnlTypeOfRound.Name = "pnlTypeOfRound";
-            this.pnlTypeOfRound.Size = new System.Drawing.Size(779, 301);
+            this.pnlTypeOfRound.Size = new System.Drawing.Size(717, 301);
             this.pnlTypeOfRound.TabIndex = 24;
             this.pnlTypeOfRound.Visible = false;
             // 
@@ -621,9 +621,9 @@
             this.btnSurpriseMeRound.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnSurpriseMeRound.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnSurpriseMeRound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSurpriseMeRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSurpriseMeRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSurpriseMeRound.ForeColor = System.Drawing.Color.White;
-            this.btnSurpriseMeRound.Location = new System.Drawing.Point(421, 239);
+            this.btnSurpriseMeRound.Location = new System.Drawing.Point(390, 239);
             this.btnSurpriseMeRound.Name = "btnSurpriseMeRound";
             this.btnSurpriseMeRound.Size = new System.Drawing.Size(250, 50);
             this.btnSurpriseMeRound.TabIndex = 5;
@@ -639,9 +639,9 @@
             this.btnMultipleChoiceRound.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnMultipleChoiceRound.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnMultipleChoiceRound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMultipleChoiceRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMultipleChoiceRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMultipleChoiceRound.ForeColor = System.Drawing.Color.White;
-            this.btnMultipleChoiceRound.Location = new System.Drawing.Point(421, 167);
+            this.btnMultipleChoiceRound.Location = new System.Drawing.Point(390, 167);
             this.btnMultipleChoiceRound.Name = "btnMultipleChoiceRound";
             this.btnMultipleChoiceRound.Size = new System.Drawing.Size(250, 50);
             this.btnMultipleChoiceRound.TabIndex = 2;
@@ -656,9 +656,9 @@
             this.btnChooseTheRightClub.FlatAppearance.BorderSize = 0;
             this.btnChooseTheRightClub.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnChooseTheRightClub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChooseTheRightClub.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChooseTheRightClub.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseTheRightClub.ForeColor = System.Drawing.Color.White;
-            this.btnChooseTheRightClub.Location = new System.Drawing.Point(124, 239);
+            this.btnChooseTheRightClub.Location = new System.Drawing.Point(93, 239);
             this.btnChooseTheRightClub.Name = "btnChooseTheRightClub";
             this.btnChooseTheRightClub.Size = new System.Drawing.Size(250, 50);
             this.btnChooseTheRightClub.TabIndex = 4;
@@ -674,9 +674,9 @@
             this.btnPictureRound.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnPictureRound.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnPictureRound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPictureRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPictureRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPictureRound.ForeColor = System.Drawing.Color.White;
-            this.btnPictureRound.Location = new System.Drawing.Point(124, 167);
+            this.btnPictureRound.Location = new System.Drawing.Point(93, 167);
             this.btnPictureRound.Name = "btnPictureRound";
             this.btnPictureRound.Size = new System.Drawing.Size(250, 50);
             this.btnPictureRound.TabIndex = 3;
@@ -692,9 +692,9 @@
             this.btnTrueOrFalseRound.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnTrueOrFalseRound.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnTrueOrFalseRound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrueOrFalseRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrueOrFalseRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTrueOrFalseRound.ForeColor = System.Drawing.Color.White;
-            this.btnTrueOrFalseRound.Location = new System.Drawing.Point(421, 97);
+            this.btnTrueOrFalseRound.Location = new System.Drawing.Point(390, 97);
             this.btnTrueOrFalseRound.Name = "btnTrueOrFalseRound";
             this.btnTrueOrFalseRound.Size = new System.Drawing.Size(250, 50);
             this.btnTrueOrFalseRound.TabIndex = 1;
@@ -710,9 +710,9 @@
             this.btnTypeItRound.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnTypeItRound.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnTypeItRound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTypeItRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTypeItRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTypeItRound.ForeColor = System.Drawing.Color.White;
-            this.btnTypeItRound.Location = new System.Drawing.Point(124, 97);
+            this.btnTypeItRound.Location = new System.Drawing.Point(93, 97);
             this.btnTypeItRound.Name = "btnTypeItRound";
             this.btnTypeItRound.Size = new System.Drawing.Size(250, 50);
             this.btnTypeItRound.TabIndex = 0;
@@ -724,11 +724,11 @@
             // 
             this.lblTypeOfRound.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTypeOfRound.AutoSize = true;
-            this.lblTypeOfRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTypeOfRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTypeOfRound.ForeColor = System.Drawing.Color.White;
-            this.lblTypeOfRound.Location = new System.Drawing.Point(217, 31);
+            this.lblTypeOfRound.Location = new System.Drawing.Point(157, 31);
             this.lblTypeOfRound.Name = "lblTypeOfRound";
-            this.lblTypeOfRound.Size = new System.Drawing.Size(294, 20);
+            this.lblTypeOfRound.Size = new System.Drawing.Size(404, 26);
             this.lblTypeOfRound.TabIndex = 0;
             this.lblTypeOfRound.Text = "What type of round would you like to do?";
             // 
@@ -745,26 +745,27 @@
             this.pnlChooseTheRightClub.Controls.Add(this.pctBoxGolfBall);
             this.pnlChooseTheRightClub.Controls.Add(this.pctBoxFlag);
             this.pnlChooseTheRightClub.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlChooseTheRightClub.Location = new System.Drawing.Point(0, 1152);
+            this.pnlChooseTheRightClub.Location = new System.Drawing.Point(0, 1216);
             this.pnlChooseTheRightClub.Name = "pnlChooseTheRightClub";
-            this.pnlChooseTheRightClub.Size = new System.Drawing.Size(779, 333);
+            this.pnlChooseTheRightClub.Size = new System.Drawing.Size(717, 333);
             this.pnlChooseTheRightClub.TabIndex = 25;
             // 
             // lblPower
             // 
             this.lblPower.AutoSize = true;
+            this.lblPower.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPower.ForeColor = System.Drawing.Color.White;
-            this.lblPower.Location = new System.Drawing.Point(8, 43);
+            this.lblPower.Location = new System.Drawing.Point(7, 60);
             this.lblPower.Name = "lblPower";
-            this.lblPower.Size = new System.Drawing.Size(37, 13);
+            this.lblPower.Size = new System.Drawing.Size(72, 25);
             this.lblPower.TabIndex = 11;
             this.lblPower.Text = "Power";
             // 
             // progressBarPower
             // 
-            this.progressBarPower.Location = new System.Drawing.Point(121, 39);
+            this.progressBarPower.Location = new System.Drawing.Point(144, 54);
             this.progressBarPower.Name = "progressBarPower";
-            this.progressBarPower.Size = new System.Drawing.Size(121, 23);
+            this.progressBarPower.Size = new System.Drawing.Size(157, 33);
             this.progressBarPower.Step = 1;
             this.progressBarPower.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBarPower.TabIndex = 10;
@@ -772,20 +773,22 @@
             // lblWindSpeed
             // 
             this.lblWindSpeed.AutoSize = true;
+            this.lblWindSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWindSpeed.ForeColor = System.Drawing.Color.White;
-            this.lblWindSpeed.Location = new System.Drawing.Point(340, 37);
+            this.lblWindSpeed.Location = new System.Drawing.Point(434, 60);
             this.lblWindSpeed.Name = "lblWindSpeed";
-            this.lblWindSpeed.Size = new System.Drawing.Size(66, 13);
+            this.lblWindSpeed.Size = new System.Drawing.Size(129, 25);
             this.lblWindSpeed.TabIndex = 9;
             this.lblWindSpeed.Text = "Wind Speed";
             // 
             // lblDistanceToHole
             // 
             this.lblDistanceToHole.AutoSize = true;
+            this.lblDistanceToHole.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDistanceToHole.ForeColor = System.Drawing.Color.White;
-            this.lblDistanceToHole.Location = new System.Drawing.Point(340, 10);
+            this.lblDistanceToHole.Location = new System.Drawing.Point(434, 20);
             this.lblDistanceToHole.Name = "lblDistanceToHole";
-            this.lblDistanceToHole.Size = new System.Drawing.Size(84, 13);
+            this.lblDistanceToHole.Size = new System.Drawing.Size(167, 25);
             this.lblDistanceToHole.TabIndex = 7;
             this.lblDistanceToHole.Text = "Distance to hole";
             // 
@@ -796,11 +799,11 @@
             this.btnChooseAClubGo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnChooseAClubGo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnChooseAClubGo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChooseAClubGo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChooseAClubGo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseAClubGo.ForeColor = System.Drawing.Color.White;
-            this.btnChooseAClubGo.Location = new System.Drawing.Point(257, 6);
+            this.btnChooseAClubGo.Location = new System.Drawing.Point(315, 16);
             this.btnChooseAClubGo.Name = "btnChooseAClubGo";
-            this.btnChooseAClubGo.Size = new System.Drawing.Size(61, 28);
+            this.btnChooseAClubGo.Size = new System.Drawing.Size(100, 33);
             this.btnChooseAClubGo.TabIndex = 6;
             this.btnChooseAClubGo.Text = "Go!";
             this.btnChooseAClubGo.UseVisualStyleBackColor = false;
@@ -809,17 +812,18 @@
             // lblChooseAClub
             // 
             this.lblChooseAClub.AutoSize = true;
+            this.lblChooseAClub.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChooseAClub.ForeColor = System.Drawing.Color.White;
-            this.lblChooseAClub.Location = new System.Drawing.Point(8, 9);
+            this.lblChooseAClub.Location = new System.Drawing.Point(7, 19);
             this.lblChooseAClub.Name = "lblChooseAClub";
-            this.lblChooseAClub.Size = new System.Drawing.Size(75, 13);
+            this.lblChooseAClub.Size = new System.Drawing.Size(132, 25);
             this.lblChooseAClub.TabIndex = 4;
-            this.lblChooseAClub.Text = "Choose a club";
+            this.lblChooseAClub.Text = "Choose club";
             // 
             // comboBoxChooseAClub
             // 
             this.comboBoxChooseAClub.BackColor = System.Drawing.Color.White;
-            this.comboBoxChooseAClub.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxChooseAClub.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxChooseAClub.FormattingEnabled = true;
             this.comboBoxChooseAClub.Items.AddRange(new object[] {
             "Putter",
@@ -836,9 +840,9 @@
             "5 wood",
             "3 wood",
             "Driver"});
-            this.comboBoxChooseAClub.Location = new System.Drawing.Point(121, 6);
+            this.comboBoxChooseAClub.Location = new System.Drawing.Point(144, 16);
             this.comboBoxChooseAClub.Name = "comboBoxChooseAClub";
-            this.comboBoxChooseAClub.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxChooseAClub.Size = new System.Drawing.Size(157, 33);
             this.comboBoxChooseAClub.TabIndex = 3;
             // 
             // pnlGrass
@@ -877,9 +881,9 @@
             this.pnlPicture.Controls.Add(this.pctBoxLocation);
             this.pnlPicture.Controls.Add(this.pctBoxMap);
             this.pnlPicture.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlPicture.Location = new System.Drawing.Point(0, 1485);
+            this.pnlPicture.Location = new System.Drawing.Point(0, 1549);
             this.pnlPicture.Name = "pnlPicture";
-            this.pnlPicture.Size = new System.Drawing.Size(779, 500);
+            this.pnlPicture.Size = new System.Drawing.Size(717, 500);
             this.pnlPicture.TabIndex = 26;
             // 
             // pctBoxLocation
@@ -901,7 +905,7 @@
             this.pctBoxMap.Image = global::The_ULTIMATE_golf_quiz.Properties.Resources.Screenshot_2024_01_26_085609;
             this.pctBoxMap.Location = new System.Drawing.Point(0, 0);
             this.pctBoxMap.Name = "pctBoxMap";
-            this.pctBoxMap.Size = new System.Drawing.Size(779, 500);
+            this.pctBoxMap.Size = new System.Drawing.Size(717, 500);
             this.pctBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBoxMap.TabIndex = 0;
             this.pctBoxMap.TabStop = false;
@@ -921,7 +925,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.ClientSize = new System.Drawing.Size(796, 466);
+            this.ClientSize = new System.Drawing.Size(734, 466);
             this.Controls.Add(this.pnlPicture);
             this.Controls.Add(this.pnlChooseTheRightClub);
             this.Controls.Add(this.pnlTypeOfRound);

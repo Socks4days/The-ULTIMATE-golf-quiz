@@ -23,7 +23,7 @@ namespace The_ULTIMATE_golf_quiz
         {
             InitializeComponent();
             // Code to be able to hit enter to do same thing as submit when in the password textbox
-            passwordtxtbox.KeyDown += KeyPressedDown;
+            txtBoxPassword.KeyDown += KeyPressedDown;
             KeyDown += KeyPressedDown;
         }
 
@@ -41,10 +41,25 @@ namespace The_ULTIMATE_golf_quiz
         }       
 
         public void verification()
-        {            
-           // setting variables that user has input to be processed
-            string inputUsername = usernametxtbox.Text;
-            string inputPassword = passwordtxtbox.Text;
+        {
+            // Hide any previously shown error messages
+            ClearError();
+
+            // setting variables that user has input to be processed
+            string inputUsername = txtBoxUsername.Text;
+            string inputPassword = txtBoxPassword.Text;
+
+            // Check username and password entered
+            if (inputUsername == "")
+            {
+                ShowError("Please enter a username");
+                return;
+            }
+            if (inputPassword == "")
+            {
+                ShowError("Please enter a password");
+                return;
+            }
 
             // Check for user in list of players
             frmSplashScreen.player = new Player();
@@ -68,8 +83,8 @@ namespace The_ULTIMATE_golf_quiz
             } 
             else 
             {
-                MessageBox.Show("Error, please try again...");
-                passwordtxtbox.Text = "";
+                ShowError("Credentials don't match an existing account.\nEnter valid details or select Register to create an account.");
+                txtBoxPassword.Text = "";
             }            
         }       
 
@@ -98,13 +113,38 @@ namespace The_ULTIMATE_golf_quiz
             if (cboxPassword.Checked)
             {
                 // when the check box is ticked, the user will be able to see what they have input
-                passwordtxtbox.PasswordChar = '\0';
+                txtBoxPassword.PasswordChar = '\0';
             }
             else
             {
                 // when the check box is unticked, the user will only be able to see * so the password is hidden
-                passwordtxtbox.PasswordChar = '*';
+                txtBoxPassword.PasswordChar = '*';
             }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+            // Clear fields and set focus on username text box
+            // and hide any previously shown error messages
+            ClearError(); txtBoxUsername.Text = "";
+            txtBoxPassword.Text = "";
+            this.ActiveControl = txtBoxUsername;
+        }
+
+        private void ShowError(string errorMessage)
+        {
+            // shows an error indicating which boxes need to be filled in to be valid
+            lblError.Text = errorMessage;
+            lblError.Visible = true;
+            this.ActiveControl = txtBoxUsername;
+        }
+
+        private void ClearError()
+        {
+            // hide error message
+            lblError.Text = "";
+            lblError.Visible = false;
         }
     }
 }

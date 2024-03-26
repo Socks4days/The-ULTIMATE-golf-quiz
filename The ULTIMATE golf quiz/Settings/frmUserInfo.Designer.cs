@@ -43,6 +43,8 @@
             this.lblPasswordText = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.pnlContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUser
@@ -50,11 +52,11 @@
             this.lblUser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUser.AutoSize = true;
             this.lblUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.White;
-            this.lblUser.Location = new System.Drawing.Point(294, 120);
+            this.lblUser.Location = new System.Drawing.Point(120, 84);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(87, 20);
+            this.lblUser.Size = new System.Drawing.Size(119, 26);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "Username:";
             // 
@@ -63,11 +65,11 @@
             this.lblName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblName.AutoSize = true;
             this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(294, 206);
+            this.lblName.Location = new System.Drawing.Point(120, 170);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(55, 20);
+            this.lblName.Size = new System.Drawing.Size(77, 26);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Name:";
             // 
@@ -76,11 +78,11 @@
             this.lblAge.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblAge.AutoSize = true;
             this.lblAge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAge.ForeColor = System.Drawing.Color.White;
-            this.lblAge.Location = new System.Drawing.Point(295, 254);
+            this.lblAge.Location = new System.Drawing.Point(121, 218);
             this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(42, 20);
+            this.lblAge.Size = new System.Drawing.Size(57, 26);
             this.lblAge.TabIndex = 2;
             this.lblAge.Text = "Age:";
             // 
@@ -89,11 +91,11 @@
             this.lblGender.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblGender.AutoSize = true;
             this.lblGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.ForeColor = System.Drawing.Color.White;
-            this.lblGender.Location = new System.Drawing.Point(294, 301);
+            this.lblGender.Location = new System.Drawing.Point(120, 265);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(67, 20);
+            this.lblGender.Size = new System.Drawing.Size(90, 26);
             this.lblGender.TabIndex = 3;
             this.lblGender.Text = "Gender:";
             // 
@@ -102,37 +104,37 @@
             this.lblNation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNation.AutoSize = true;
             this.lblNation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblNation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNation.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNation.ForeColor = System.Drawing.Color.White;
-            this.lblNation.Location = new System.Drawing.Point(294, 354);
+            this.lblNation.Location = new System.Drawing.Point(120, 318);
             this.lblNation.Name = "lblNation";
-            this.lblNation.Size = new System.Drawing.Size(86, 20);
+            this.lblNation.Size = new System.Drawing.Size(120, 26);
             this.lblNation.TabIndex = 4;
             this.lblNation.Text = "Nationality:\r\n";
             // 
             // lblTitle
             // 
-            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitle.AutoSize = true;
             this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(326, 47);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(157, 37);
+            this.lblTitle.Size = new System.Drawing.Size(148, 37);
             this.lblTitle.TabIndex = 5;
-            this.lblTitle.Text = "Your Info:";
+            this.lblTitle.Text = "Your Info";
             // 
             // lblUserText
             // 
             this.lblUserText.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUserText.AutoSize = true;
             this.lblUserText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblUserText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserText.ForeColor = System.Drawing.Color.White;
-            this.lblUserText.Location = new System.Drawing.Point(450, 120);
+            this.lblUserText.Location = new System.Drawing.Point(276, 84);
             this.lblUserText.Name = "lblUserText";
-            this.lblUserText.Size = new System.Drawing.Size(83, 20);
+            this.lblUserText.Size = new System.Drawing.Size(113, 26);
             this.lblUserText.TabIndex = 8;
             this.lblUserText.Text = "Username";
             // 
@@ -141,11 +143,11 @@
             this.lblNameText.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNameText.AutoSize = true;
             this.lblNameText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblNameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameText.ForeColor = System.Drawing.Color.White;
-            this.lblNameText.Location = new System.Drawing.Point(450, 206);
+            this.lblNameText.Location = new System.Drawing.Point(276, 170);
             this.lblNameText.Name = "lblNameText";
-            this.lblNameText.Size = new System.Drawing.Size(51, 20);
+            this.lblNameText.Size = new System.Drawing.Size(71, 26);
             this.lblNameText.TabIndex = 9;
             this.lblNameText.Text = "Name";
             // 
@@ -154,11 +156,11 @@
             this.lblAgeText.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblAgeText.AutoSize = true;
             this.lblAgeText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblAgeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAgeText.ForeColor = System.Drawing.Color.White;
-            this.lblAgeText.Location = new System.Drawing.Point(451, 254);
+            this.lblAgeText.Location = new System.Drawing.Point(277, 218);
             this.lblAgeText.Name = "lblAgeText";
-            this.lblAgeText.Size = new System.Drawing.Size(38, 20);
+            this.lblAgeText.Size = new System.Drawing.Size(51, 26);
             this.lblAgeText.TabIndex = 10;
             this.lblAgeText.Text = "Age";
             // 
@@ -167,11 +169,11 @@
             this.lblGenderText.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblGenderText.AutoSize = true;
             this.lblGenderText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblGenderText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenderText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenderText.ForeColor = System.Drawing.Color.White;
-            this.lblGenderText.Location = new System.Drawing.Point(451, 301);
+            this.lblGenderText.Location = new System.Drawing.Point(277, 265);
             this.lblGenderText.Name = "lblGenderText";
-            this.lblGenderText.Size = new System.Drawing.Size(63, 20);
+            this.lblGenderText.Size = new System.Drawing.Size(84, 26);
             this.lblGenderText.TabIndex = 11;
             this.lblGenderText.Text = "Gender";
             // 
@@ -180,11 +182,11 @@
             this.lblNationText.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNationText.AutoSize = true;
             this.lblNationText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblNationText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNationText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNationText.ForeColor = System.Drawing.Color.White;
-            this.lblNationText.Location = new System.Drawing.Point(451, 354);
+            this.lblNationText.Location = new System.Drawing.Point(277, 318);
             this.lblNationText.Name = "lblNationText";
-            this.lblNationText.Size = new System.Drawing.Size(82, 20);
+            this.lblNationText.Size = new System.Drawing.Size(114, 26);
             this.lblNationText.TabIndex = 12;
             this.lblNationText.Text = "Nationality";
             // 
@@ -193,11 +195,11 @@
             this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.White;
-            this.lblPassword.Location = new System.Drawing.Point(294, 165);
+            this.lblPassword.Location = new System.Drawing.Point(120, 129);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(82, 20);
+            this.lblPassword.Size = new System.Drawing.Size(114, 26);
             this.lblPassword.TabIndex = 13;
             this.lblPassword.Text = "Password:";
             // 
@@ -206,11 +208,11 @@
             this.lblPasswordText.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPasswordText.AutoSize = true;
             this.lblPasswordText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblPasswordText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasswordText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPasswordText.ForeColor = System.Drawing.Color.White;
-            this.lblPasswordText.Location = new System.Drawing.Point(450, 165);
+            this.lblPasswordText.Location = new System.Drawing.Point(276, 129);
             this.lblPasswordText.Name = "lblPasswordText";
-            this.lblPasswordText.Size = new System.Drawing.Size(78, 20);
+            this.lblPasswordText.Size = new System.Drawing.Size(108, 26);
             this.lblPasswordText.TabIndex = 14;
             this.lblPasswordText.Text = "Password";
             // 
@@ -236,11 +238,43 @@
             // 
             // pnlContainer
             // 
+            this.pnlContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.pnlContainer.Controls.Add(this.btnSubmit);
+            this.pnlContainer.Controls.Add(this.lblUser);
+            this.pnlContainer.Controls.Add(this.lblNationText);
+            this.pnlContainer.Controls.Add(this.lblName);
+            this.pnlContainer.Controls.Add(this.lblPasswordText);
+            this.pnlContainer.Controls.Add(this.lblUserText);
+            this.pnlContainer.Controls.Add(this.lblAge);
+            this.pnlContainer.Controls.Add(this.lblGenderText);
+            this.pnlContainer.Controls.Add(this.lblNameText);
+            this.pnlContainer.Controls.Add(this.lblNation);
+            this.pnlContainer.Controls.Add(this.lblAgeText);
+            this.pnlContainer.Controls.Add(this.lblPassword);
+            this.pnlContainer.Controls.Add(this.lblGender);
             this.pnlContainer.Location = new System.Drawing.Point(119, 21);
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(575, 426);
             this.pnlContainer.TabIndex = 16;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
+            this.btnSubmit.FlatAppearance.BorderSize = 0;
+            this.btnSubmit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
+            this.btnSubmit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.Color.White;
+            this.btnSubmit.Location = new System.Drawing.Point(182, 363);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(250, 50);
+            this.btnSubmit.TabIndex = 17;
+            this.btnSubmit.Text = "Edit";
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // frmUserInfo
             // 
@@ -248,25 +282,15 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.ClientSize = new System.Drawing.Size(763, 475);
             this.Controls.Add(this.btnReturn);
-            this.Controls.Add(this.lblNationText);
-            this.Controls.Add(this.lblPasswordText);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.lblGenderText);
-            this.Controls.Add(this.lblUser);
-            this.Controls.Add(this.lblAgeText);
-            this.Controls.Add(this.lblGender);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.lblNation);
-            this.Controls.Add(this.lblNameText);
-            this.Controls.Add(this.lblAge);
-            this.Controls.Add(this.lblUserText);
-            this.Controls.Add(this.lblName);
             this.Controls.Add(this.pnlContainer);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmUserInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Info";
             this.Load += new System.EventHandler(this.frmUserInfo_Load);
+            this.pnlContainer.ResumeLayout(false);
+            this.pnlContainer.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,5 +313,6 @@
         private System.Windows.Forms.Label lblPasswordText;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Panel pnlContainer;
+        private System.Windows.Forms.Button btnSubmit;
     }
 }

@@ -52,7 +52,7 @@
             this.btnChangePass.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnChangePass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePass.ForeColor = System.Drawing.Color.White;
             this.btnChangePass.Location = new System.Drawing.Point(264, 396);
             this.btnChangePass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -121,7 +121,7 @@
             // 
             this.cboxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboxPassword.AutoSize = true;
-            this.cboxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxPassword.ForeColor = System.Drawing.Color.White;
             this.cboxPassword.Location = new System.Drawing.Point(443, 170);
             this.cboxPassword.Margin = new System.Windows.Forms.Padding(4);
@@ -177,7 +177,7 @@
             // 
             this.lblOldPass.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblOldPass.AutoSize = true;
-            this.lblOldPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOldPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOldPass.ForeColor = System.Drawing.Color.White;
             this.lblOldPass.Location = new System.Drawing.Point(172, 99);
             this.lblOldPass.Name = "lblOldPass";
@@ -189,7 +189,7 @@
             // 
             this.lblConfirmPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblConfirmPassword.AutoSize = true;
-            this.lblConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirmPassword.ForeColor = System.Drawing.Color.White;
             this.lblConfirmPassword.Location = new System.Drawing.Point(175, 283);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
@@ -201,7 +201,7 @@
             // 
             this.lblNewPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNewPassword.AutoSize = true;
-            this.lblNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNewPassword.ForeColor = System.Drawing.Color.White;
             this.lblNewPassword.Location = new System.Drawing.Point(173, 202);
             this.lblNewPassword.Name = "lblNewPassword";
@@ -233,7 +233,7 @@
             // 
             this.cBoxNewPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cBoxNewPassword.AutoSize = true;
-            this.cBoxNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBoxNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBoxNewPassword.ForeColor = System.Drawing.Color.White;
             this.cBoxNewPassword.Location = new System.Drawing.Point(443, 273);
             this.cBoxNewPassword.Margin = new System.Windows.Forms.Padding(4);
