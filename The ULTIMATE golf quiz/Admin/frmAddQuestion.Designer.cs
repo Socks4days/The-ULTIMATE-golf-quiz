@@ -214,10 +214,10 @@
             this.rBtnAImpossible.ForeColor = System.Drawing.Color.White;
             this.rBtnAImpossible.Location = new System.Drawing.Point(16, 118);
             this.rBtnAImpossible.Name = "rBtnAImpossible";
-            this.rBtnAImpossible.Size = new System.Drawing.Size(209, 30);
+            this.rBtnAImpossible.Size = new System.Drawing.Size(141, 30);
             this.rBtnAImpossible.TabIndex = 3;
             this.rBtnAImpossible.TabStop = true;
-            this.rBtnAImpossible.Text = "Almost Impossible";
+            this.rBtnAImpossible.Text = "Super Hard";
             this.rBtnAImpossible.UseVisualStyleBackColor = true;
             // 
             // rBtnTImpossible
@@ -226,10 +226,10 @@
             this.rBtnTImpossible.ForeColor = System.Drawing.Color.White;
             this.rBtnTImpossible.Location = new System.Drawing.Point(16, 147);
             this.rBtnTImpossible.Name = "rBtnTImpossible";
-            this.rBtnTImpossible.Size = new System.Drawing.Size(204, 30);
+            this.rBtnTImpossible.Size = new System.Drawing.Size(147, 30);
             this.rBtnTImpossible.TabIndex = 4;
             this.rBtnTImpossible.TabStop = true;
-            this.rBtnTImpossible.Text = "Totally Impossible";
+            this.rBtnTImpossible.Text = "Impossible?";
             this.rBtnTImpossible.UseVisualStyleBackColor = true;
             // 
             // groupBoxDifficulty
@@ -544,7 +544,7 @@
             this.btnTrueOrFalse.Name = "btnTrueOrFalse";
             this.btnTrueOrFalse.Size = new System.Drawing.Size(250, 50);
             this.btnTrueOrFalse.TabIndex = 2;
-            this.btnTrueOrFalse.Text = "True or False";
+            this.btnTrueOrFalse.Text = "Truth or Lie";
             this.btnTrueOrFalse.UseVisualStyleBackColor = false;
             this.btnTrueOrFalse.Click += new System.EventHandler(this.btnTrueOrFalse_Click);
             // 
@@ -559,7 +559,7 @@
             this.btnMultipleChoice.Name = "btnMultipleChoice";
             this.btnMultipleChoice.Size = new System.Drawing.Size(250, 50);
             this.btnMultipleChoice.TabIndex = 3;
-            this.btnMultipleChoice.Text = "Multiple Choice";
+            this.btnMultipleChoice.Text = "Multiple Guess";
             this.btnMultipleChoice.UseVisualStyleBackColor = false;
             this.btnMultipleChoice.Click += new System.EventHandler(this.btnMultipleChoice_Click);
             // 

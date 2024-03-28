@@ -255,6 +255,11 @@
     <Content Include="obj\Debug\The ULTIMATE golf quiz.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\The ULTIMATE golf quiz.exe" />
     <Content Include="obj\Debug\The ULTIMATE golf quiz.pdb" />
+    <None Include="Resources\Quiz True or False question.png" />
+    <None Include="Resources\Quiz Picture Round question.png" />
+    <None Include="Resources\Quiz Multiple Choice question.png" />
+    <None Include="Resources\Quiz Choose the right club - question.png" />
+    <None Include="Resources\Quiz Type It question.png" />
     <None Include="Resources\0 - 90.jpg" />
     <None Include="Resources\Arrow.png" />
     <None Include="Resources\0 - 90.png" />

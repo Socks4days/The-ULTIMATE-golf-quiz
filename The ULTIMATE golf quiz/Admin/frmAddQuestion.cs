@@ -168,8 +168,8 @@ namespace The_ULTIMATE_golf_quiz
                     break;
 
                 //--------------------------------------------------------------------
-                // Add True or False question
-                case "True or False":
+                // Add Truth or Lie question
+                case "Truth or Lie":
                     // Get the next question number and check it hasn't already been used
                     bool uniqueIdFoundTF = false;
                     int nextQuestionNumberTf = QuestionFileHandler.TrueOrFalseQuestions.Count + 1;
@@ -219,8 +219,8 @@ namespace The_ULTIMATE_golf_quiz
                     break;
 
                 //--------------------------------------------------------------------
-                // Add Multiple Choice question
-                case "Multiple Choice":
+                // Add Multiple Guess question
+                case "Multiple Guess":
                     // Get the next question number and check it hasn't already been used
                     bool uniqueIdFoundMc = false;
                     int nextQuestionNumberMc = QuestionFileHandler.MultiChoiceQuestions.Count + 1;
@@ -340,17 +340,17 @@ namespace The_ULTIMATE_golf_quiz
             setup();
         }
 
-        // Select question type - True or False button clicked
+        // Select question type - Truth or Lie button clicked
         private void btnTrueOrFalse_Click(object sender, EventArgs e)
         {
-            questionToAddType = "True or False";
+            questionToAddType = "Truth or Lie";
             setup();
         }
 
-        // Select question type - Multiple Choice button clicked
+        // Select question type - Multiple Guess button clicked
         private void btnMultipleChoice_Click(object sender, EventArgs e)
         {
-            questionToAddType = "Multiple Choice";
+            questionToAddType = "Multiple Guess";
             setup();
         }
 
@@ -377,11 +377,11 @@ namespace The_ULTIMATE_golf_quiz
                     pnlAnswerTypeIt.Visible = true;
                     pnlDiffPointsAdd.BringToFront();
                     break;
-                case "True or False":
+                case "Truth or Lie":
                     pnlAnswerTrueOrFalse.Visible = true;
                     pnlDiffPointsAdd.BringToFront();
                     break;
-                case "Multiple Choice":
+                case "Multiple Guess":
                     pnlAnswerMulti.Visible = true;
                     pnlDiffPointsAdd.BringToFront();
                     break;

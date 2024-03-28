@@ -194,9 +194,9 @@ namespace The_ULTIMATE_golf_quiz
             if (QuestionFileHandler.TypeItQuestions.Count > 0)
                 questionTypes.Add("Type It");
             if (QuestionFileHandler.TrueOrFalseQuestions.Count > 0)
-                questionTypes.Add("True or False");
+                questionTypes.Add("Truth or Lie");
             if (QuestionFileHandler.MultiChoiceQuestions.Count > 0)
-                questionTypes.Add("Multiple Choice");
+                questionTypes.Add("Multiple Guess");
             if (QuestionFileHandler.PictureQuestions.Count > 0)
                 questionTypes.Add("Picture");
             questionTypes.Add("Choose Club");
@@ -218,7 +218,7 @@ namespace The_ULTIMATE_golf_quiz
         // Start a true or false round
         private void btnTrueOrFalseRound_Click(object sender, EventArgs e)
         {
-            QuestionFileHandler.RoundType = "True or False";
+            QuestionFileHandler.RoundType = "Truth or Lie";
             InstructionSetup();
         }
 
@@ -231,7 +231,7 @@ namespace The_ULTIMATE_golf_quiz
         // Start a multiple choice round
         private void btnMultipleChoiceRound_Click(object sender, EventArgs e)
         {
-            QuestionFileHandler.RoundType = "Multiple Choice";
+            QuestionFileHandler.RoundType = "Multiple Guess";
             InstructionSetup();
         }
 
@@ -263,60 +263,55 @@ namespace The_ULTIMATE_golf_quiz
             pnlInstructions.Dock = DockStyle.Fill;
             pnlInstructions.Visible = true;
 
+            zoomPictureBox(false, "Instructions");
+
             resetInstructions();
             string round = QuestionFileHandler.RoundType;
             switch (round)
             {
                 case "Type It":
-                    lblInstructionsQuestion.Text = "A type it question will be displayed at the top";
-                    lblInstructionsAnswer.Text = "Enter your answer in the textbox provided";
-                    lblInstructionsPoints.Text = "You will gain points by answering correctly and the difficulty level";
-                    lblInstructionsTimer.Text = "You will have a certain time limit, be careful it doesn't reach 0!";
+                    lblInstructionsQuestion.Text = "Read the question at the top";
+                    lblInstructionsAnswer.Text = "Carefully type your answer into the textbox provided";
+                    lblInstructionsPoints.Text = "Score points for answering correctly - difficult questions are worth more";
+                    lblInstructionsTimer.Text = "You only have 30 seconds so don't hang around!";
+                    pctBoxInstructionsGameImage.Image = (Image)Properties.Resources.ResourceManager.GetObject(round);
                     break;
-                case "True or False":
-                    lblInstructionsQuestion.Text = "A true or false question will be displayed at the top";
-                    lblInstructionsAnswer.Text = "Answer by selecting either true or false";
-                    lblInstructionsPoints.Text = "You will gain points by answering correctly and the difficulty level";
-                    lblInstructionsTimer.Text = "You will have a certain time limit, be careful it doesn't reach 0!";
+                case "Truth or Lie":
+                    lblInstructionsQuestion.Text = "Read the question at the top";
+                    lblInstructionsAnswer.Text = "Select Truth or Lie to answer but choose wisely - you only get one chance";
+                    lblInstructionsPoints.Text = "Score points for answering correctly - difficult questions are worth more";
+                    lblInstructionsTimer.Text = "You only have 30 seconds so don't hang around!";
+                    pctBoxInstructionsGameImage.Image = (Image)Properties.Resources.ResourceManager.GetObject(round);
                     break;
-                case "Multiple Choice":
-                    lblInstructionsQuestion.Text = "A multiple choice question will appear at the top";
-                    lblInstructionsAnswer.Text = "Answer by selecting the option you think is correct";
-                    lblInstructionsPoints.Text = "You will gain points by answering correctly and the difficulty level";
-                    lblInstructionsTimer.Text = "You will have a certain time limit, be careful it doesn't reach 0!";
+                case "Multiple Guess":
+                    lblInstructionsQuestion.Text = "Read the question at the top";
+                    lblInstructionsAnswer.Text = "Select the option you think is correct but choose wisely - you only get one chance";
+                    lblInstructionsPoints.Text = "Score points for answering correctly - difficult questions are worth more";
+                    lblInstructionsTimer.Text = "You only have 30 seconds so don't hang around!";
+                    pctBoxInstructionsGameImage.Image = (Image)Properties.Resources.ResourceManager.GetObject(round);
                     break;
                 case "Where in the World":
-                    lblInstructionsQuestion.Text = "A geography question with a picture will appear, along with a map";
-                    lblInstructionsAnswer.Text = "You have one click of the map to get as close to the right location as you can";
-                    lblInstructionsPoints.Text = "You will gain points based on how close you are to the correct location";
-                    lblInstructionsTimer.Text = "Tip: Click the picture to make it bigger! Click again to go back to normal";
+                    lblInstructionsQuestion.Text = "Read the question and look at the picture";
+                    lblInstructionsAnswer.Text = "Click on the world map to choose where you think this answer is";
+                    lblInstructionsPoints.Text = "Be careful, you need to be close to score and you only get once chance";
+                    lblInstructionsTimer.Text = "Tip: Click the picture to make it bigger! Click it again to go back to normal";
+                    pctBoxInstructionsGameImage.Image = (Image)Properties.Resources.ResourceManager.GetObject(round);
                     break;
                 case "Go Clubbin":
-                    lblInstructionsQuestion.Text = "A ball, a selection of clubs and a golf hole will appear";
-                    lblInstructionsAnswer.Text = "Select the club you think is most appropriate and click go. Tip: lower clubs go further";
-                    lblInstructionsPoints.Text = "A power meter will appear, press the same button to stop the meter and the ball will fly";
-                    lblInstructionsTimer.Text = "Watch the wind, it can affect the flight. Score points based on how close you get to the hole";
+                    lblInstructionsQuestion.Text = "Which club will get you closest to the hole for the distance shown?";
+                    lblInstructionsAnswer.Text = "Pick your club, then click Go! to start the power meter";
+                    lblInstructionsPoints.Text = "When the meter reaches the right level, click Stop! to let the ball fly!";
+                    lblInstructionsTimer.Text = "Watch out for the wind, it can affect the flight. Tip: Keep an eye on the flag";
+                    pctBoxInstructionsGameImage.Image = (Image)Properties.Resources.ResourceManager.GetObject(round);
                     break;
             }
 
-            lblInstructionsQuestion.Visible = true;
-            Thread.Sleep(1000);
-            pctBoxArrow1.Visible = true;
-            Thread.Sleep(1000);
-            lblInstructionsAnswer.Visible = true;
-            Thread.Sleep(1000);
-            pctBoxArrow2.Visible = true;
-            Thread.Sleep(1000);
-            lblInstructionsPoints.Visible = true;
-            Thread.Sleep(1000);
-            pctBoxArrow3.Visible = true;
-            Thread.Sleep(1000);
-            lblInstructionsTimer.Visible = true;
-            Thread.Sleep(1000);
-            pctBoxArrow4.Visible = true;
-            Thread.Sleep(1000);
-            btnStartRound.Visible = true;
-            
+            tmrInstructions.Interval = 1500;
+            tmrInstructions.Enabled = true;
+            tmrInstructions.Tick += new EventHandler(tmrInstructions_Tick);
+
+            tmrInstructions2.Interval = 1000;
+            tmrInstructions2.Start();
         }
         private void resetInstructions()
         {
@@ -330,12 +325,45 @@ namespace The_ULTIMATE_golf_quiz
             pctBoxArrow4.Visible = false;
             btnStartRound.Visible = false;
         }
+        private void tmrInstructions_Tick(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            tmrInstructions.Stop();
+        }
+        int stopTime = 0;
 
-       
+        private void tmrInstructions2_Tick(object sender, EventArgs e)
+        {
+            stopTime++;
+            if(stopTime == 1) lblInstructionsQuestion.Visible = true;
+            if(stopTime == 2) pctBoxArrow1.Visible = true;
+            if(stopTime == 3) lblInstructionsAnswer.Visible = true;
+            if(stopTime == 4) pctBoxArrow2.Visible = true;            
+            if(stopTime == 5) lblInstructionsPoints.Visible = true;
+            if(stopTime == 6) pctBoxArrow3.Visible = true;
+            if(stopTime == 7) lblInstructionsTimer.Visible = true;
+            if(stopTime == 8) pctBoxArrow4.Visible = true;
+            if (stopTime == 10)
+            {
+                btnStartRound.Visible = true;
+                stopTime = 0;
+                tmrInstructions2.Stop();
+            }
+        }
+        private void pctBoxInstructionsGameImage_Click(object sender, EventArgs e)
+        {
+            zoomPictureBox(!imageZoomed, "Instructions");
+        }
+
         private void btnStartRound_Click(object sender, EventArgs e)
         {
             setup();
-        }        
+        }
+
+        private void btnSkip_Click(object sender, EventArgs e)
+        {
+            setup();
+        }
 
         #endregion Instructions
 
@@ -374,7 +402,9 @@ namespace The_ULTIMATE_golf_quiz
             pctBoxPicture.Visible = false;
             lblAnswer.Visible = false;
             lblQuestion.ForeColor = Color.White;
-            
+
+            lblAnswer.Width = (pnlAnswer.Width - btnNext.Width);
+
             // Seed random number generator with a unique guid to ensure question order is correctly randomised
             Random random = new Random(Guid.NewGuid().GetHashCode());
 
@@ -420,7 +450,7 @@ namespace The_ULTIMATE_golf_quiz
                         }
                         break;
 
-                    case "True or False":
+                    case "Truth or Lie":
                         // Same things for true or false questions
                         if (trueOrFalseQuestionList.Count > 0)
                         {
@@ -448,7 +478,7 @@ namespace The_ULTIMATE_golf_quiz
                         }
                         break;
 
-                    case "Multiple Choice":
+                    case "Multiple Guess":
                         if (multipleChoiceQuestionList.Count > 0)
                         {
                             // sets a variable equal to a number between 0 and the total amount of questions in the list of multi choice questions
@@ -528,7 +558,7 @@ namespace The_ULTIMATE_golf_quiz
                             pctBoxLocation.Visible = false;
 
                             // reset the imageZoomed flag and resize the picture to the new panel size
-                            zoomPictureBox(false);
+                            zoomPictureBox(false, "Where in the World");
                         }
                         else
                         {
@@ -571,8 +601,7 @@ namespace The_ULTIMATE_golf_quiz
                         pctBoxFlag.Location = new Point(flagPositionX - (pctBoxFlag.Width / 2), flagStartY);
 
                         // Set up the question details
-                        lblQuestion.Text = ("Choose the club you think will get you closest to the hole. Click Go to start the power meter then Stop to take your shot!");
-                        lblDifficulty.Text = "Difficulty: Medium";
+                        lblQuestion.Text = ("Choose the club you think will get you closest to the hole.\nClick Go to start the power meter then Stop to take your shot!");
                         lblDistanceToHole.Text = "Distance to hole: " + distanceToHoleYds + " yards";
                         pctBoxGolfBall.Location = new Point(ballStartX - (pctBoxGolfBall.Width / 2), ballStartY);
 
@@ -581,16 +610,36 @@ namespace The_ULTIMATE_golf_quiz
                         // Calculate the wind speed and direction and show the right flag image
                         Random windSpeedRnd = new Random();
                         windSpeed = windSpeedRnd.Next(-25,25);
-                        if (windSpeed >= 15) // strong wind to right
+                        if (windSpeed >= 15)
+                        {
+                            // strong wind to right
                             pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagRight");
-                        else if ( windSpeed <= -15) // strong wind to left
+                            lblDifficulty.Text = "Difficulty: Hard";
+                        } 
+                        else if ( windSpeed <= -15)
+                        {
+                            // strong wind to left
                             pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagLeft");
-                        else if (windSpeed < -5) // gentle wind to left
+                            lblDifficulty.Text = "Difficulty: Hard";
+                        } 
+                        else if (windSpeed < -5)
+                        {
+                            // gentle wind to left
                             pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagLeftWeak");
-                        else if ( windSpeed > 5) // gentle wind to right
+                            lblDifficulty.Text = "Difficulty: Medium";
+                        }
+                        else if ( windSpeed > 5)
+                        {
+                            // gentle wind to right
                             pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagRightWeak");
-                        else // no wind
+                            lblDifficulty.Text = "Difficulty: Medium";
+                        } 
+                        else
+                        {
+                            // no wind
                             pctBoxFlag.Image = (Image)Properties.Resources.ResourceManager.GetObject("FlagNone");
+                            lblDifficulty.Text = "Difficulty: Easy";
+                        }
                         pctBoxFlag.BackColor = Color.Transparent;
                         lblWindSpeed.Text = "Wind Speed: " + Math.Abs(windSpeed);
 
@@ -656,7 +705,7 @@ namespace The_ULTIMATE_golf_quiz
         }
 
         //---------------------------------------------------------------------------------------------------------
-        // True or False - True button clicked
+        // Truth or Lie - True button clicked
         private void btnTrue_Click(object sender, EventArgs e)
         {
             // Stop the timer
@@ -690,7 +739,7 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
-        // True or False - False button clicked
+        // Truth or Lie - False button clicked
         private void btnFalse_Click(object sender, EventArgs e)
         {
             // Stop the timer
@@ -726,31 +775,31 @@ namespace The_ULTIMATE_golf_quiz
         }
 
         //-------------------------------------------------------------------------------------------------------------------
-        // Multiple Choice - option 1 clicked
+        // Multiple Guess - option 1 clicked
         private void btnOption1_Click(object sender, EventArgs e)
         {
             checkMultipleChoiceAnswer(btnOption1.Text);
         }
 
-        // Multiple Choice - option 2 clicked
+        // Multiple Guess - option 2 clicked
         private void btnOption2_Click(object sender, EventArgs e)
         {
             checkMultipleChoiceAnswer(btnOption2.Text);
         }
 
-        // Multiple Choice - option 3 clicked
+        // Multiple Guess - option 3 clicked
         private void btnOption3_Click(object sender, EventArgs e)
         {
             checkMultipleChoiceAnswer(btnOption3.Text);
         }    
 
-        // Multiple Choice - option 4 clicked
+        // Multiple Guess - option 4 clicked
         private void btnOption4_Click(object sender, EventArgs e)
         {
             checkMultipleChoiceAnswer(btnOption4.Text);
         }
         
-        // Multiple Choice - shared method to check if answer is correct
+        // Multiple Guess - shared method to check if answer is correct
         private void checkMultipleChoiceAnswer(string answerSelected)
         {
             // Stop the timer
@@ -785,9 +834,10 @@ namespace The_ULTIMATE_golf_quiz
         }
         
         //-------------------------------------------------------------------------------------------------------------------
-        // Picture Round - map clicked
+        // Where in the World - map clicked
         private void pctBoxMap_Click(object sender, EventArgs e)
         {
+            
             // Check if the user has already clicked on the map
             if (!pictureQuestionAnswered)
             {
@@ -868,13 +918,38 @@ namespace The_ULTIMATE_golf_quiz
             { "Driver", (10, 326) }
         };
 
+        private void tmrGoClubbinError_Tick(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            tmrGoClubbinError.Stop();
+        }
+        int stopTimeGoClubbinError = 0;
+        private void tmrGoClubbinError2_Tick(object sender, EventArgs e)
+        {
+            stopTimeGoClubbinError++;
+            if(stopTimeGoClubbinError == 1)
+            {
+                lblQuestion.Text = "Choose the club you think will get you closest to the hole. Click Go to start the power meter then Stop to take your shot!";
+                lblQuestion.ForeColor = Color.White;
+                stopTimeGoClubbinError = 0;
+                tmrGoClubbinError2.Stop();
+            }
+        }
+
         private void btnChooseAClubGo_Click(object sender, EventArgs e)
         {
             // Check the player has selected a club
             string selectedClub = comboBoxChooseAClub.Text;
             if (selectedClub == "")
             {
-                MessageBox.Show("You need to select a club first!");
+                lblQuestion.Text = "You need to select a club first!";
+                lblQuestion.ForeColor = Color.FromArgb(255, 128, 0);
+
+                tmrGoClubbinError.Enabled = true;
+                tmrGoClubbinError.Tick += new EventHandler(tmrGoClubbinError_Tick);
+
+                tmrGoClubbinError2.Interval = 2000;
+                tmrGoClubbinError2.Start();                
                 return;
             }
 
@@ -1029,17 +1104,22 @@ namespace The_ULTIMATE_golf_quiz
                 points = 5;
             }
             else if (distanceFromHoleYds <= 20)
+            {
+                NumberOfQuestionsAnsweredCorrectly++;
                 points = 3;
-            else if (distanceFromHoleYds < 30)
+            }
+            else if (distanceFromHoleYds <= 30)
+            {
+                NumberOfQuestionsAnsweredCorrectly++;
                 points = 1;
-            
+            }
+
             // Stop the user from trying again and show the results
             AnswerButtonsDisable();
             pnlAnswer.Visible = true;
             lblAnswer.Visible = true;
             btnNext.Visible = true;
-            lblAnswer.Text = "Your ball went " + distanceTravelledinYards + " yards so you were " + distanceFromHoleYds + " yards from the hole"
-                + "\nYou score " + points + " points";
+            lblAnswer.Text = "Your ball went " + distanceTravelledinYards + " yards so you were " + distanceFromHoleYds + " yards from the hole. You score " + points + " points!";
             TotalScoreForCurrentRound += points;
             TotalPointsAvailable += 5;
             pctBoxMap.Enabled = false;
@@ -1073,38 +1153,38 @@ namespace The_ULTIMATE_golf_quiz
                 questionTypes.Remove("Type It");
                 RoundFinishedScreen();
             }
-            // True or False
-            else if (QuestionFileHandler.RoundType == "True or False" && QuestionFileHandler.TrueOrFalseQuestions.Count > 0)
+            // Truth or Lie
+            else if (QuestionFileHandler.RoundType == "Truth or Lie" && QuestionFileHandler.TrueOrFalseQuestions.Count > 0)
             {
                 GetQuestion();
             }
-            else if (QuestionFileHandler.RoundType == "True or False" && QuestionFileHandler.TrueOrFalseQuestions.Count == 0)
+            else if (QuestionFileHandler.RoundType == "Truth or Lie" && QuestionFileHandler.TrueOrFalseQuestions.Count == 0)
             {
-                questionTypes.Remove("True or False");
+                questionTypes.Remove("Truth or Lie");
                 RoundFinishedScreen();
             }
             // Multiple choice
-            else if (QuestionFileHandler.RoundType == "Multiple Choice" && QuestionFileHandler.MultiChoiceQuestions.Count > 0)
+            else if (QuestionFileHandler.RoundType == "Multiple Guess" && QuestionFileHandler.MultiChoiceQuestions.Count > 0)
             {
                 GetQuestion();
             }
-            else if (QuestionFileHandler.RoundType == "Multiple Choice" && QuestionFileHandler.MultiChoiceQuestions.Count == 0)
+            else if (QuestionFileHandler.RoundType == "Multiple Guess" && QuestionFileHandler.MultiChoiceQuestions.Count == 0)
             {
-                questionTypes.Remove("Multiple Choice");
+                questionTypes.Remove("Multiple Guess");
                 RoundFinishedScreen();
             }
-            // Picture Round
-            else if (QuestionFileHandler.RoundType == "Picture" && QuestionFileHandler.PictureQuestions.Count > 0)
+            // Where in the World
+            else if (QuestionFileHandler.RoundType == "Where in the World" && QuestionFileHandler.PictureQuestions.Count > 0)
             {
                 GetQuestion();
             }
-            else if (QuestionFileHandler.RoundType == "Picture" && QuestionFileHandler.PictureQuestions.Count == 0)
+            else if (QuestionFileHandler.RoundType == "Where in the World" && QuestionFileHandler.PictureQuestions.Count == 0)
             {
-                questionTypes.Remove("Picture");
+                questionTypes.Remove("Where in the World");
                 RoundFinishedScreen();
             }
             // No need to check for Go Clubbin as it generates the questions randomly
-            else if (QuestionFileHandler.RoundType == "Choose Club")
+            else if (QuestionFileHandler.RoundType == "Go Clubbin")
                 GetQuestion();
         }
         #endregion NextQuestionButtonClicked
@@ -1239,56 +1319,96 @@ namespace The_ULTIMATE_golf_quiz
         }
 
         //-----------------------------------------------------------------
-        // Picture Round - enlarge/shrink picture when it is clicked
+        // Where in the World - enlarge/shrink picture when it is clicked
         private void pctBoxPicture_Click(object sender, EventArgs e)
         {
             // Toggle image zoom
-            zoomPictureBox(!imageZoomed);
+            zoomPictureBox(!imageZoomed, "Where in the World");
         }
 
         bool imageZoomed = false;
+
+        // Default size of Where in the World picture box
         int originalImageWidth = 140;
         int originalImageHeight = 140;
 
-        // Method to resize picture box based on the size of the window
-        private void zoomPictureBox(bool zoomImage)
-        {
-            if (zoomImage)
-            {
-                // Image zoomed in - move and resize
-                // Scale image to 80% of the panel width/height (whichever is smaller), but no smaller than 140x140
-                int newImageWidth = Math.Max(140, (int)(Math.Min(pnlWhereinTheWorld.Width, pnlWhereinTheWorld.Height) * 0.8));
-                int newImageHeight = newImageWidth;
+        // Default size of Instructions screenshot picture box
+        int originalImageWidthInstructions = 258;
+        int originalImageHeightInstructions = 150;
 
-                pctBoxPicture.Size = new Size(newImageWidth, newImageHeight);
-                pctBoxPicture.Location = new Point((pnlWhereinTheWorld.Width / 2) - (pctBoxPicture.Width / 2), (pnlWhereinTheWorld.Height / 2) - (pctBoxPicture.Height / 2));
-                imageZoomed = true;
-            }
-            else
+        // Method to resize picture box based on the size of the window
+        private void zoomPictureBox(bool zoomImage, string pictureType)
+        {
+            // Picture box in Where in the World quiz
+            if(pictureType == "Where in the World")
             {
-                // Image not zoomed in - just change position to keep it in the top right
-                pctBoxPicture.Size = new Size((originalImageWidth), (originalImageHeight));
-                pctBoxPicture.Location = new Point(pnlWhereinTheWorld.Width - originalImageWidth - 20, 20);
-                imageZoomed = false;
+                if (zoomImage)
+                {
+                    // Image zoomed in - move and resize
+                    // Scale image to 80% of the panel width/height (whichever is smaller), but no smaller than 140x140
+                    int newImageWidth = Math.Max(140, (int)(Math.Min(pnlWhereinTheWorld.Width, pnlWhereinTheWorld.Height) * 0.8));
+                    int newImageHeight = newImageWidth;
+
+                    pctBoxPicture.Size = new Size(newImageWidth, newImageHeight);
+                    pctBoxPicture.Location = new Point((pnlWhereinTheWorld.Width / 2) - (pctBoxPicture.Width / 2), (pnlWhereinTheWorld.Height / 2) - (pctBoxPicture.Height / 2));
+                    imageZoomed = true;
+                }
+                else
+                {
+                    // Image not zoomed in - just change position to keep it in the top right
+                    pctBoxPicture.Size = new Size(originalImageWidth, originalImageHeight);
+                    pctBoxPicture.Location = new Point(pnlWhereinTheWorld.Width - originalImageWidth - 20, 20);
+                    imageZoomed = false;
+                }
             }
+
+            // Picture box for screenshot in instructions
+            if (pictureType == "Instructions")
+            {
+                if (zoomImage)
+                {
+                    // Image zoomed in - move and resize
+                    // Scale image to 80% of the panel width/height (whichever is the smaller scale so the image stays visible)
+                    double zoomScale = Math.Min(pnlInstructions.Width * 0.8 / originalImageWidthInstructions, pnlInstructions.Height * 0.8 / originalImageHeightInstructions);
+                    // Set the image width/height based on the selected scale, but prevent it from going smaller than its original size
+                    int newImageWidth = Math.Max(originalImageWidthInstructions, (int)(originalImageWidthInstructions * zoomScale));
+                    int newImageHeight = Math.Max(originalImageHeightInstructions, (int)(originalImageHeightInstructions * zoomScale));
+
+                    pctBoxInstructionsGameImage.Size = new Size(newImageWidth, newImageHeight);
+                    pctBoxInstructionsGameImage.Location = new Point((pnlInstructions.Width / 2) - (pctBoxInstructionsGameImage.Width / 2), (pnlInstructions.Height / 2) - (pctBoxInstructionsGameImage.Height / 2));
+                    imageZoomed = true;
+                }
+                else
+                {
+                    // Image not zoomed in - just change position to keep it in the middle
+                    pctBoxInstructionsGameImage.Size = new Size(originalImageWidthInstructions, originalImageHeightInstructions);
+                    pctBoxInstructionsGameImage.Location = new Point(pnlInstructions.Width / 2 - pctBoxInstructionsGameImage.Width /2, pnlInstructions.Height / 2 - pctBoxInstructionsGameImage.Height / 2 - 10);
+                    imageZoomed = false;
+                }
+            }
+            
         }
 
         //-----------------------------------------------------------------
         // Window resized event
         //-----------------------------------------------------------------
-        // - Picture Round - resize/reposition picture to fit window
+        // - Where in the World - resize/reposition picture to fit window
         // - Go Clubbin - redraw grass, ball and flag to fit window
         private void frmQuizQuestions_Resize(object sender, EventArgs e)
         {
-            if (QuestionFileHandler.RoundType == "Picture")
+            if (QuestionFileHandler.RoundType == "Where in the World")
             {
                 // resize the picture to the new panel size
-                zoomPictureBox(imageZoomed);
+                zoomPictureBox(imageZoomed, "Where in the World");
             }
-            else if (QuestionFileHandler.RoundType == "Choose Club")
+            else if (QuestionFileHandler.RoundType == "Go Clubbin")
             {
                 // move the ball, flag and grass to the right places based on the new window size
                 calculateBallAndFlagPositionRelativeToWindow();
+            }
+            else
+            {
+                zoomPictureBox(imageZoomed, "Instructions");
             }
         }
 

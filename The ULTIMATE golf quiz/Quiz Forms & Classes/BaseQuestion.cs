@@ -20,8 +20,8 @@ namespace The_ULTIMATE_golf_quiz
              {1, "Easy" },
              {2, "Medium" },
              {3, "Hard" },
-             {4, "Almost Impossible" },
-             {5, "Totally Impossible" }
+             {4, "Super Hard" },
+             {5, "Impossible?" }
         };
 
         public BaseQuestion() 

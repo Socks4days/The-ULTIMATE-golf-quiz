@@ -48,6 +48,7 @@
             this.pnlEdit = new System.Windows.Forms.Panel();
             this.btnEditReturn = new System.Windows.Forms.Button();
             this.pnlContainerEdit = new System.Windows.Forms.Panel();
+            this.lblError = new System.Windows.Forms.Label();
             this.txtBoxPassword = new System.Windows.Forms.TextBox();
             this.txtBoxNationality = new System.Windows.Forms.TextBox();
             this.txtBoxGender = new System.Windows.Forms.TextBox();
@@ -62,12 +63,11 @@
             this.lblEditNationality = new System.Windows.Forms.Label();
             this.lblEditPassword = new System.Windows.Forms.Label();
             this.lblEditGender = new System.Windows.Forms.Label();
-            this.lblError = new System.Windows.Forms.Label();
-            this.lblErrorNat = new System.Windows.Forms.Label();
-            this.lblErrorG = new System.Windows.Forms.Label();
-            this.lblErrorA = new System.Windows.Forms.Label();
-            this.lblErrorNam = new System.Windows.Forms.Label();
             this.lblErrorU = new System.Windows.Forms.Label();
+            this.lblErrorNam = new System.Windows.Forms.Label();
+            this.lblErrorA = new System.Windows.Forms.Label();
+            this.lblErrorG = new System.Windows.Forms.Label();
+            this.lblErrorNat = new System.Windows.Forms.Label();
             this.pnlContainer.SuspendLayout();
             this.pnlInfo.SuspendLayout();
             this.pnlEdit.SuspendLayout();
@@ -362,6 +362,22 @@
             this.pnlContainerEdit.Size = new System.Drawing.Size(575, 452);
             this.pnlContainerEdit.TabIndex = 18;
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.BackColor = System.Drawing.Color.Transparent;
+            this.lblError.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblError.Location = new System.Drawing.Point(13, 330);
+            this.lblError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(548, 50);
+            this.lblError.TabIndex = 21;
+            this.lblError.Text = "Enter a password between 8-15 characters, with at least\r\n1 number, 1 capital lett" +
+    "er and 1 symbol";
+            this.lblError.Visible = false;
+            // 
             // txtBoxPassword
             // 
             this.txtBoxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -551,60 +567,18 @@
             this.lblEditGender.TabIndex = 3;
             this.lblEditGender.Text = "Gender:";
             // 
-            // lblError
+            // lblErrorU
             // 
-            this.lblError.AutoSize = true;
-            this.lblError.BackColor = System.Drawing.Color.Transparent;
-            this.lblError.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblError.Location = new System.Drawing.Point(13, 330);
-            this.lblError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(548, 50);
-            this.lblError.TabIndex = 21;
-            this.lblError.Text = "Enter a password between 8-15 characters, with at least\r\n1 number, 1 capital lett" +
-    "er and 1 symbol";
-            this.lblError.Visible = false;
-            // 
-            // lblErrorNat
-            // 
-            this.lblErrorNat.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorNat.AutoSize = true;
-            this.lblErrorNat.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorNat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblErrorNat.Location = new System.Drawing.Point(69, 279);
-            this.lblErrorNat.Name = "lblErrorNat";
-            this.lblErrorNat.Size = new System.Drawing.Size(31, 39);
-            this.lblErrorNat.TabIndex = 26;
-            this.lblErrorNat.Text = "*";
-            this.lblErrorNat.Visible = false;
-            // 
-            // lblErrorG
-            // 
-            this.lblErrorG.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorG.AutoSize = true;
-            this.lblErrorG.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblErrorG.Location = new System.Drawing.Point(69, 233);
-            this.lblErrorG.Name = "lblErrorG";
-            this.lblErrorG.Size = new System.Drawing.Size(31, 39);
-            this.lblErrorG.TabIndex = 27;
-            this.lblErrorG.Text = "*";
-            this.lblErrorG.Visible = false;
-            // 
-            // lblErrorA
-            // 
-            this.lblErrorA.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorA.AutoSize = true;
-            this.lblErrorA.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblErrorA.Location = new System.Drawing.Point(69, 190);
-            this.lblErrorA.Name = "lblErrorA";
-            this.lblErrorA.Size = new System.Drawing.Size(31, 39);
-            this.lblErrorA.TabIndex = 28;
-            this.lblErrorA.Text = "*";
-            this.lblErrorA.Visible = false;
+            this.lblErrorU.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorU.AutoSize = true;
+            this.lblErrorU.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblErrorU.Location = new System.Drawing.Point(69, 46);
+            this.lblErrorU.Name = "lblErrorU";
+            this.lblErrorU.Size = new System.Drawing.Size(31, 39);
+            this.lblErrorU.TabIndex = 31;
+            this.lblErrorU.Text = "*";
+            this.lblErrorU.Visible = false;
             // 
             // lblErrorNam
             // 
@@ -619,18 +593,44 @@
             this.lblErrorNam.Text = "*";
             this.lblErrorNam.Visible = false;
             // 
-            // lblErrorU
+            // lblErrorA
             // 
-            this.lblErrorU.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblErrorU.AutoSize = true;
-            this.lblErrorU.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblErrorU.Location = new System.Drawing.Point(69, 46);
-            this.lblErrorU.Name = "lblErrorU";
-            this.lblErrorU.Size = new System.Drawing.Size(31, 39);
-            this.lblErrorU.TabIndex = 31;
-            this.lblErrorU.Text = "*";
-            this.lblErrorU.Visible = false;
+            this.lblErrorA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorA.AutoSize = true;
+            this.lblErrorA.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblErrorA.Location = new System.Drawing.Point(69, 190);
+            this.lblErrorA.Name = "lblErrorA";
+            this.lblErrorA.Size = new System.Drawing.Size(31, 39);
+            this.lblErrorA.TabIndex = 28;
+            this.lblErrorA.Text = "*";
+            this.lblErrorA.Visible = false;
+            // 
+            // lblErrorG
+            // 
+            this.lblErrorG.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorG.AutoSize = true;
+            this.lblErrorG.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblErrorG.Location = new System.Drawing.Point(69, 233);
+            this.lblErrorG.Name = "lblErrorG";
+            this.lblErrorG.Size = new System.Drawing.Size(31, 39);
+            this.lblErrorG.TabIndex = 27;
+            this.lblErrorG.Text = "*";
+            this.lblErrorG.Visible = false;
+            // 
+            // lblErrorNat
+            // 
+            this.lblErrorNat.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblErrorNat.AutoSize = true;
+            this.lblErrorNat.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorNat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblErrorNat.Location = new System.Drawing.Point(69, 279);
+            this.lblErrorNat.Name = "lblErrorNat";
+            this.lblErrorNat.Size = new System.Drawing.Size(31, 39);
+            this.lblErrorNat.TabIndex = 26;
+            this.lblErrorNat.Text = "*";
+            this.lblErrorNat.Visible = false;
             // 
             // frmUserInfo
             // 

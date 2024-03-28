@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace The_ULTIMATE_golf_quiz
 {
-    // True or False question - extends base question class, but doesn't need any new properies
+    // Truth or Lie question - extends base question class, but doesn't need any new properies
     internal class TrueOrFalseQuestion : BaseQuestion
     {
         public TrueOrFalseQuestion() { }

@@ -299,6 +299,16 @@ namespace The_ULTIMATE_golf_quiz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Go_Clubbin {
+            get {
+                object obj = ResourceManager.GetObject("Go Clubbin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap golf_ball_running_back {
             get {
                 object obj = ResourceManager.GetObject("golf_ball_running_back", resourceCulture);
@@ -449,6 +459,16 @@ namespace The_ULTIMATE_golf_quiz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Multiple_Guess {
+            get {
+                object obj = ResourceManager.GetObject("Multiple Guess", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Northern_Ireland {
             get {
                 object obj = ResourceManager.GetObject("Northern Ireland", resourceCulture);
@@ -579,6 +599,26 @@ namespace The_ULTIMATE_golf_quiz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Truth_or_Lie {
+            get {
+                object obj = ResourceManager.GetObject("Truth or Lie", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Type_It {
+            get {
+                object obj = ResourceManager.GetObject("Type It", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap UAE {
             get {
                 object obj = ResourceManager.GetObject("UAE", resourceCulture);
@@ -632,6 +672,16 @@ namespace The_ULTIMATE_golf_quiz.Properties {
         internal static System.Drawing.Bitmap Viktor_Hovland {
             get {
                 object obj = ResourceManager.GetObject("Viktor Hovland", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Where_in_the_World {
+            get {
+                object obj = ResourceManager.GetObject("Where in the World", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

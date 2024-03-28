@@ -70,7 +70,7 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
-        // Read in the True or False questions
+        // Read in the Truth or Lie questions
         public static void ReadInTrueOrFalseQuestions()
         {
             string[] trueOrFalseQuestionData = new string[5];
@@ -104,7 +104,7 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
         
-        // Save the True or False questions
+        // Save the Truth or Lie questions
         public static void SaveAllTrueOrFalseQuestions()
         {
             string filePath = "TrueOrFalseQuestions.csv";
@@ -123,7 +123,7 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
         
-        // Read in the Multiple Choice questions
+        // Read in the Multiple Guess questions
         public static void ReadInMultiChoiceQuestions()
         {
             string[] multiChoiceQuestionData = new string[9];
@@ -161,7 +161,7 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
-        // Save the Multiple Choice questions
+        // Save the Multiple Guess questions
         public static void SaveAllMultiChoiceQuestions()
         {
             string filePath = "MultiChoiceQuestions.csv";
