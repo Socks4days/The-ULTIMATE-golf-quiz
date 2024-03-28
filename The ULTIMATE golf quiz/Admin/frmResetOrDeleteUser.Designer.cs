@@ -49,9 +49,9 @@
             this.listViewPlayers.ForeColor = System.Drawing.Color.White;
             this.listViewPlayers.GridLines = true;
             this.listViewPlayers.HideSelection = false;
-            this.listViewPlayers.Location = new System.Drawing.Point(255, 58);
+            this.listViewPlayers.Location = new System.Drawing.Point(247, 24);
             this.listViewPlayers.Name = "listViewPlayers";
-            this.listViewPlayers.Size = new System.Drawing.Size(271, 354);
+            this.listViewPlayers.Size = new System.Drawing.Size(271, 376);
             this.listViewPlayers.TabIndex = 10;
             this.listViewPlayers.UseCompatibleStateImageBehavior = false;
             this.listViewPlayers.View = System.Windows.Forms.View.Details;
@@ -83,12 +83,11 @@
             // 
             // lblAdvice
             // 
-            this.lblAdvice.AutoSize = true;
             this.lblAdvice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdvice.ForeColor = System.Drawing.Color.White;
-            this.lblAdvice.Location = new System.Drawing.Point(106, 11);
+            this.lblAdvice.Location = new System.Drawing.Point(22, 83);
             this.lblAdvice.Name = "lblAdvice";
-            this.lblAdvice.Size = new System.Drawing.Size(111, 25);
+            this.lblAdvice.Size = new System.Drawing.Size(185, 317);
             this.lblAdvice.TabIndex = 13;
             this.lblAdvice.Text = "Instructions";
             // 
@@ -102,7 +101,7 @@
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(266, 420);
+            this.btnReset.Location = new System.Drawing.Point(257, 420);
             this.btnReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(250, 50);
@@ -121,7 +120,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(266, 417);
+            this.btnDelete.Location = new System.Drawing.Point(257, 420);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(250, 50);
@@ -144,7 +143,6 @@
             this.Name = "frmResetOrDeleteUser";
             this.Text = "Player reset or delete";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

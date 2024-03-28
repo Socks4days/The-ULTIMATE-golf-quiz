@@ -174,31 +174,7 @@ namespace The_ULTIMATE_golf_quiz
             closeChildForm();
             resetButtonColours();
             btnDeleteAccount.BackColor = Color.FromArgb(0,75,0);
-            openChildForm(new frmUserInfo("Delete"));
-            List<Player> players = UserFileHandler.players;
-            DialogResult result = MessageBox.Show("This action is permanent! \nDo you wish to continue?", "Delete Account", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
-            {
-                // Delete the account from the player list and then update the players file
-                foreach (Player player in players)
-                {
-                    if (player.username == frmSplashScreen.player.username)
-                    {
-                        players.Remove(player);
-                        UserFileHandler.SaveAllPlayers();
-                        UserFileHandler.DeletePlayerQuestionFile(player);
-                        MessageBox.Show("Account Deleted\nReturning to login screen now");
-                        this.Hide();
-                        new frmLogin().Show();
-                        break;
-                    }
-                }
-            }
-            else if (result == DialogResult.No)
-            {
-                return;
-            }
+            openChildForm(new frmUserInfo("Delete"));            
         }
         
         // Open the user info form and display the reset account message
@@ -208,29 +184,7 @@ namespace The_ULTIMATE_golf_quiz
             resetButtonColours();
             btnReset.BackColor = Color.FromArgb(0,75,0);
             openChildForm(new frmUserInfo("Reset"));
-            List<Player> players = UserFileHandler.players;
-            DialogResult result = MessageBox.Show("This action is permanent! Your highscore and questions asked will be reset! \nDo you wish to continue?", "Reset Account", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
-            {
-                // Reset the player's details and then update the players file
-                foreach (Player player in players)
-                {
-                    if (player.username == frmSplashScreen.player.username)
-                    {
-                        player.highscore = 0;
-                        UserFileHandler.ClearPlayerQuestionAnswered(player);
-                        UserFileHandler.SaveAllPlayers();
-                        QuestionFileHandler.ReadInAllQuestions();
-                        MessageBox.Show("Account reset");                       
-                        break;
-                    }
-                }
-            }
-            else if (result == DialogResult.No)
-            {
-                return;
-            }
+            
         }
 
         // Open the admin menu

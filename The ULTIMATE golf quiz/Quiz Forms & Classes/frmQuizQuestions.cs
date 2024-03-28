@@ -25,7 +25,7 @@ namespace The_ULTIMATE_golf_quiz
         private int NumberOfQuestionsAskedThisRound { get; set; }
         private int TotalPointsAvailable { get; set; }
 
-        // choose the right club properties
+        // Go Clubbin properties
         // starting location of ball on panel
         private int ballStartX { get; set; }
         private int ballStartY { get; set; }
@@ -44,7 +44,7 @@ namespace The_ULTIMATE_golf_quiz
         List<TypeItQuestion> typeItQuestionList = QuestionFileHandler.TypeItQuestions;
         List<TrueOrFalseQuestion> trueOrFalseQuestionList = QuestionFileHandler.TrueOrFalseQuestions;
         List<MultiChoiceQuestion> multipleChoiceQuestionList = QuestionFileHandler.MultiChoiceQuestions;
-        List<PictureQuestion> pictureQuestionList = QuestionFileHandler.PictureQuestions;
+        List<WhereInTheWorld> pictureQuestionList = QuestionFileHandler.PictureQuestions;
         #endregion Lists
 
         #region BaseQuestionsReferredToThroughoutForm
@@ -52,7 +52,7 @@ namespace The_ULTIMATE_golf_quiz
         private TypeItQuestion currentTypeItQuestion1;
         private TrueOrFalseQuestion currentTrueOrFalseQuestion1;
         private MultiChoiceQuestion currentMultipleChoiceQuestion1;
-        private PictureQuestion currentPictureQuestion1;
+        private WhereInTheWorld currentPictureQuestion1;
         #endregion BaseQuestionsReferredToThroughoutForm
 
         #region EnterKeyLogic
@@ -99,7 +99,7 @@ namespace The_ULTIMATE_golf_quiz
             btnSubmit.Enabled = false;
             btnTrue.Enabled = false;
             btnFalse.Enabled = false;
-            btnChooseAClubGo.Enabled = false;
+            btnGoClubbinGo.Enabled = false;
             comboBoxChooseAClub.Enabled = false;
             pctBoxMap.Enabled = false;
         }
@@ -114,7 +114,7 @@ namespace The_ULTIMATE_golf_quiz
             btnSubmit.Enabled = true;
             btnTrue.Enabled = true;
             btnFalse.Enabled = true;
-            btnChooseAClubGo.Enabled = true;
+            btnGoClubbinGo.Enabled = true;
             comboBoxChooseAClub.Enabled = true;
             pctBoxMap.Enabled=true; 
         }
@@ -185,8 +185,8 @@ namespace The_ULTIMATE_golf_quiz
             pnlTrueOrFalseOptions.Visible = false;
             pnlMultipleChoiceOptions.Visible = false;
             pnlFinish.Visible = false;
-            pnlChooseTheRightClub.Visible = false;
-            pnlPicture.Visible = false;
+            pnlGoClubbin.Visible = false;
+            pnlWhereinTheWorld.Visible = false;
             pnlTypeOfRound.Visible = false;
             pnlGrass.Visible = false;
 
@@ -212,34 +212,34 @@ namespace The_ULTIMATE_golf_quiz
         private void btnTypeItRound_Click(object sender, EventArgs e)
         {
             QuestionFileHandler.RoundType = "Type It";
-            setup();
+            InstructionSetup();
         }
 
         // Start a true or false round
         private void btnTrueOrFalseRound_Click(object sender, EventArgs e)
         {
             QuestionFileHandler.RoundType = "True or False";
-            setup();
+            InstructionSetup();
         }
 
         private void btnPictureRound_Click(object sender, EventArgs e)
         {
-            QuestionFileHandler.RoundType = "Picture";
-            setup();
+            QuestionFileHandler.RoundType = "Where in the World";
+            InstructionSetup();
         }
 
         // Start a multiple choice round
         private void btnMultipleChoiceRound_Click(object sender, EventArgs e)
         {
             QuestionFileHandler.RoundType = "Multiple Choice";
-            setup();
+            InstructionSetup();
         }
 
-        // Start choose the right club round (originally named drag and drop)
+        // Start Go Clubbin round (originally named drag and drop)
         private void btnChooseTheRightClub_Click(object sender, EventArgs e)
         {
-            QuestionFileHandler.RoundType = "Choose Club";
-            setup();
+            QuestionFileHandler.RoundType = "Go Clubbin";
+            InstructionSetup();
         }
 
         // Pick a round randomly for the user
@@ -247,17 +247,104 @@ namespace The_ULTIMATE_golf_quiz
         {
             Random random = new Random(Guid.NewGuid().GetHashCode());
             QuestionFileHandler.RoundType = questionTypes[random.Next(0, questionTypes.Count)];
-            setup();
+            InstructionSetup();
         }
         #endregion RoundTypeButtonClicks
+
+        #region Instructions        
+
+        private void InstructionSetup()
+        {
+            // Hide the select round type panel
+            pnlTypeOfRound.Dock = DockStyle.None;
+            pnlTypeOfRound.Visible = false;
+
+            // Show the instructions panel and hide its contents
+            pnlInstructions.Dock = DockStyle.Fill;
+            pnlInstructions.Visible = true;
+
+            resetInstructions();
+            string round = QuestionFileHandler.RoundType;
+            switch (round)
+            {
+                case "Type It":
+                    lblInstructionsQuestion.Text = "A type it question will be displayed at the top";
+                    lblInstructionsAnswer.Text = "Enter your answer in the textbox provided";
+                    lblInstructionsPoints.Text = "You will gain points by answering correctly and the difficulty level";
+                    lblInstructionsTimer.Text = "You will have a certain time limit, be careful it doesn't reach 0!";
+                    break;
+                case "True or False":
+                    lblInstructionsQuestion.Text = "A true or false question will be displayed at the top";
+                    lblInstructionsAnswer.Text = "Answer by selecting either true or false";
+                    lblInstructionsPoints.Text = "You will gain points by answering correctly and the difficulty level";
+                    lblInstructionsTimer.Text = "You will have a certain time limit, be careful it doesn't reach 0!";
+                    break;
+                case "Multiple Choice":
+                    lblInstructionsQuestion.Text = "A multiple choice question will appear at the top";
+                    lblInstructionsAnswer.Text = "Answer by selecting the option you think is correct";
+                    lblInstructionsPoints.Text = "You will gain points by answering correctly and the difficulty level";
+                    lblInstructionsTimer.Text = "You will have a certain time limit, be careful it doesn't reach 0!";
+                    break;
+                case "Where in the World":
+                    lblInstructionsQuestion.Text = "A geography question with a picture will appear, along with a map";
+                    lblInstructionsAnswer.Text = "You have one click of the map to get as close to the right location as you can";
+                    lblInstructionsPoints.Text = "You will gain points based on how close you are to the correct location";
+                    lblInstructionsTimer.Text = "Tip: Click the picture to make it bigger! Click again to go back to normal";
+                    break;
+                case "Go Clubbin":
+                    lblInstructionsQuestion.Text = "A ball, a selection of clubs and a golf hole will appear";
+                    lblInstructionsAnswer.Text = "Select the club you think is most appropriate and click go. Tip: lower clubs go further";
+                    lblInstructionsPoints.Text = "A power meter will appear, press the same button to stop the meter and the ball will fly";
+                    lblInstructionsTimer.Text = "Watch the wind, it can affect the flight. Score points based on how close you get to the hole";
+                    break;
+            }
+
+            lblInstructionsQuestion.Visible = true;
+            Thread.Sleep(1000);
+            pctBoxArrow1.Visible = true;
+            Thread.Sleep(1000);
+            lblInstructionsAnswer.Visible = true;
+            Thread.Sleep(1000);
+            pctBoxArrow2.Visible = true;
+            Thread.Sleep(1000);
+            lblInstructionsPoints.Visible = true;
+            Thread.Sleep(1000);
+            pctBoxArrow3.Visible = true;
+            Thread.Sleep(1000);
+            lblInstructionsTimer.Visible = true;
+            Thread.Sleep(1000);
+            pctBoxArrow4.Visible = true;
+            Thread.Sleep(1000);
+            btnStartRound.Visible = true;
+            
+        }
+        private void resetInstructions()
+        {
+            lblInstructionsQuestion.Visible = false;
+            lblInstructionsAnswer.Visible = false;
+            lblInstructionsPoints.Visible = false;
+            lblInstructionsTimer.Visible = false;
+            pctBoxArrow1.Visible = false;
+            pctBoxArrow2.Visible = false;
+            pctBoxArrow3.Visible = false;
+            pctBoxArrow4.Visible = false;
+            btnStartRound.Visible = false;
+        }
+
+       
+        private void btnStartRound_Click(object sender, EventArgs e)
+        {
+            setup();
+        }        
+
+        #endregion Instructions
 
         #region SetupForRound
         // Start a new round
         private void setup()
         {
-            // Hide the select round type panel
-            pnlTypeOfRound.Dock = DockStyle.None;
-            pnlTypeOfRound.Visible = false;
+            pnlInstructions.Dock = DockStyle.None;
+            pnlInstructions.Visible = false;
 
             // Show the question and answer panels and dock them to top/bottom
             pnlQuestion.Visible = true;
@@ -394,13 +481,13 @@ namespace The_ULTIMATE_golf_quiz
                         }
                         break;
 
-                    case "Picture":
+                    case "Where in the World":
                         if (pictureQuestionList.Count > 0)
                         {
                             
                             // sets a variable equal to a number between 0 and the total amount of questions in the list of multi choice questions
                             int randomisedQuestionNumber = random.Next(0, QuestionFileHandler.PictureQuestions.Count);
-                            PictureQuestion currentPictureQuestion = QuestionFileHandler.PictureQuestions[randomisedQuestionNumber];
+                            WhereInTheWorld currentPictureQuestion = QuestionFileHandler.PictureQuestions[randomisedQuestionNumber];
                             // sets the current question equal to the base question with the randomised index
                             currentPictureQuestion1 = currentPictureQuestion;
                             // if the current questions' id equals a question in the lists' id, then the question will be displayed
@@ -433,8 +520,8 @@ namespace The_ULTIMATE_golf_quiz
                             // Show MultipleChoce and Picture panels
                             //pnlMultipleChoiceOptions.Visible = true;
                             pctBoxPicture.Visible = true;
-                            pnlPicture.Visible = true;
-                            pnlPicture.Dock = DockStyle.Fill;
+                            pnlWhereinTheWorld.Visible = true;
+                            pnlWhereinTheWorld.Dock = DockStyle.Fill;
                             lblAnswer.Text = "Click a point on the map to select the location of the answer";
                             lblAnswer.Visible = true;
                             pictureQuestionAnswered = false;
@@ -446,16 +533,16 @@ namespace The_ULTIMATE_golf_quiz
                         else
                         {
                             frmQuizQuestionsInitialisation();
-                            MessageBox.Show("You have completed all available questions for the picture round, Congratulations!");
+                            MessageBox.Show("You have completed all available questions for the Where in the World round, Congratulations!");
                         }
                         break;
 
-                    case "Choose Club":
+                    case "Go Clubbin":
 
                         // Display the panels
-                        pnlChooseTheRightClub.Visible = true;
+                        pnlGoClubbin.Visible = true;
                         pnlGrass.Visible = true;
-                        pnlChooseTheRightClub.Dock = DockStyle.Fill;
+                        pnlGoClubbin.Dock = DockStyle.Fill;
 
                         // Set the starting point for the ball
                         sx = 0;
@@ -466,16 +553,16 @@ namespace The_ULTIMATE_golf_quiz
 
                         // Default scale to convert yards to pixels is 2 for window of width 740 (default)
                         // Increase the scale if the window is larger
-                        ydsToPixelsScale = Math.Max (2, 2 * pnlChooseTheRightClub.Width / 740);
+                        ydsToPixelsScale = Math.Max (2, 2 * pnlGoClubbin.Width / 740);
 
                         // Move the grass panel so it always appears at the bottom of the window and is the full width
                         // when the window size is changed
-                        pnlGrass.Width = pnlChooseTheRightClub.Width;
-                        pnlGrass.Location = new Point(pnlGrass.Location.X, pnlChooseTheRightClub.Height - pnlGrass.Height);
+                        pnlGrass.Width = pnlGoClubbin.Width;
+                        pnlGrass.Location = new Point(pnlGrass.Location.X, pnlGoClubbin.Height - pnlGrass.Height);
 
-                        // Reset the Y position of the flag and ball to the bottom of the 'choose the right club' panel
-                        flagStartY = pnlChooseTheRightClub.Height - pnlGrass.Height - pctBoxFlag.Height + 10;
-                        ballStartY = pnlChooseTheRightClub.Height - pnlGrass.Height - pctBoxGolfBall.Height;
+                        // Reset the Y position of the flag and ball to the bottom of the 'Go Clubbin' panel
+                        flagStartY = pnlGoClubbin.Height - pnlGrass.Height - pctBoxFlag.Height + 10;
+                        ballStartY = pnlGoClubbin.Height - pnlGrass.Height - pctBoxGolfBall.Height;
                         ballX = ballStartX;
                         ballY = ballStartY;
 
@@ -508,7 +595,7 @@ namespace The_ULTIMATE_golf_quiz
                         lblWindSpeed.Text = "Wind Speed: " + Math.Abs(windSpeed);
 
                         // reset go button and hide power progress bar
-                        btnChooseAClubGo.Text = "Go!";
+                        btnGoClubbinGo.Text = "Go!";
                         goButtonClickCount = 0;
                         progressBarPower.Visible = false;
                         lblPower.Visible = false;
@@ -756,7 +843,7 @@ namespace The_ULTIMATE_golf_quiz
         }
 
         //-------------------------------------------------------------------------------------------------------------------
-        // Choose the Right Club - Go/Stop button clicked
+        // Go Clubbin - Go/Stop button clicked
         private int ballX = 0;
         private int ballY = 0;
         private double sx = 0;
@@ -805,7 +892,7 @@ namespace The_ULTIMATE_golf_quiz
                 tmrPower.Enabled = true;
                 tmrPower.Start();
                 goButtonClickCount = 1;
-                btnChooseAClubGo.Text = "Stop!";
+                btnGoClubbinGo.Text = "Stop!";
                 return;
             }
             
@@ -1016,7 +1103,7 @@ namespace The_ULTIMATE_golf_quiz
                 questionTypes.Remove("Picture");
                 RoundFinishedScreen();
             }
-            // No need to check for Choose the Right Club as it generates the questions randomly
+            // No need to check for Go Clubbin as it generates the questions randomly
             else if (QuestionFileHandler.RoundType == "Choose Club")
                 GetQuestion();
         }
@@ -1038,8 +1125,8 @@ namespace The_ULTIMATE_golf_quiz
             pnlTypeIt.Visible = false;
             pnlTrueOrFalseOptions.Visible = false;
             pnlMultipleChoiceOptions.Visible = false;
-            pnlChooseTheRightClub.Visible = false;
-            pnlPicture.Visible = false;
+            pnlGoClubbin.Visible = false;
+            pnlWhereinTheWorld.Visible = false;
             pnlFinish.Visible = true;
             pnlFinish.Dock = DockStyle.Fill;
             
@@ -1133,7 +1220,7 @@ namespace The_ULTIMATE_golf_quiz
         }
 
         //-----------------------------------------------------------------
-        // Choose the Right Club - timer event for power selector
+        // Go Clubbin - timer event for power selector
         private int ticks = 0;
         private void timerPower_Tick(object sender, EventArgs e)
         {
@@ -1170,18 +1257,18 @@ namespace The_ULTIMATE_golf_quiz
             {
                 // Image zoomed in - move and resize
                 // Scale image to 80% of the panel width/height (whichever is smaller), but no smaller than 140x140
-                int newImageWidth = Math.Max(140, (int)(Math.Min(pnlPicture.Width, pnlPicture.Height) * 0.8));
+                int newImageWidth = Math.Max(140, (int)(Math.Min(pnlWhereinTheWorld.Width, pnlWhereinTheWorld.Height) * 0.8));
                 int newImageHeight = newImageWidth;
 
                 pctBoxPicture.Size = new Size(newImageWidth, newImageHeight);
-                pctBoxPicture.Location = new Point((pnlPicture.Width / 2) - (pctBoxPicture.Width / 2), (pnlPicture.Height / 2) - (pctBoxPicture.Height / 2));
+                pctBoxPicture.Location = new Point((pnlWhereinTheWorld.Width / 2) - (pctBoxPicture.Width / 2), (pnlWhereinTheWorld.Height / 2) - (pctBoxPicture.Height / 2));
                 imageZoomed = true;
             }
             else
             {
                 // Image not zoomed in - just change position to keep it in the top right
                 pctBoxPicture.Size = new Size((originalImageWidth), (originalImageHeight));
-                pctBoxPicture.Location = new Point(pnlPicture.Width - originalImageWidth - 20, 20);
+                pctBoxPicture.Location = new Point(pnlWhereinTheWorld.Width - originalImageWidth - 20, 20);
                 imageZoomed = false;
             }
         }
@@ -1190,7 +1277,7 @@ namespace The_ULTIMATE_golf_quiz
         // Window resized event
         //-----------------------------------------------------------------
         // - Picture Round - resize/reposition picture to fit window
-        // - Choose the Right Club - redraw grass, ball and flag to fit window
+        // - Go Clubbin - redraw grass, ball and flag to fit window
         private void frmQuizQuestions_Resize(object sender, EventArgs e)
         {
             if (QuestionFileHandler.RoundType == "Picture")
@@ -1206,25 +1293,25 @@ namespace The_ULTIMATE_golf_quiz
         }
 
         //-----------------------------------------------------------------
-        // Choose the Right Club - redraw grass, ball and flag when the
+        // Go Clubbin - redraw grass, ball and flag when the
         // window is resized to fill the available space
         private void calculateBallAndFlagPositionRelativeToWindow ()
         {
             // Default scale to convert yards to pixels is 2 for window of with 740 (default)
             // Increase the scale if the window is larger
-            ydsToPixelsScale = Math.Max(2, 2 * pnlChooseTheRightClub.Width / 740); // ((pnlChooseTheRightClub.Width / (flagStartX - ballStartX)));
+            ydsToPixelsScale = Math.Max(2, 2 * pnlGoClubbin.Width / 740); // ((pnlChooseTheRightClub.Width / (flagStartX - ballStartX)));
 
             // Move the grass panel so it always appears at the bottom of the window and is the full width when the window size is changed
-            pnlGrass.Width = pnlChooseTheRightClub.Width;
-            pnlGrass.Location = new Point(pnlGrass.Location.X, pnlChooseTheRightClub.Height - pnlGrass.Height);
+            pnlGrass.Width = pnlGoClubbin.Width;
+            pnlGrass.Location = new Point(pnlGrass.Location.X, pnlGoClubbin.Height - pnlGrass.Height);
 
 
-            // Reset the Y positiion of the flag and ball to the bottom of the 'choose the right club' panel
-            flagStartY = pnlChooseTheRightClub.Height - pnlGrass.Height - pctBoxFlag.Height + 10;
+            // Reset the Y positiion of the flag and ball to the bottom of the 'Go Clubbin' panel
+            flagStartY = pnlGoClubbin.Height - pnlGrass.Height - pctBoxFlag.Height + 10;
             flagPositionX = ballStartX + distanceToHoleYds * ydsToPixelsScale;
 
             // Recalculate position of ball using new scale
-            ballStartY = pnlChooseTheRightClub.Height - pnlGrass.Height - pctBoxGolfBall.Height;
+            ballStartY = pnlGoClubbin.Height - pnlGrass.Height - pctBoxGolfBall.Height;
             ballX = ballStartX + (int)sx * ydsToPixelsScale;
             ballY = ballStartY - (int)sy * ydsToPixelsScale;
 
@@ -1234,5 +1321,7 @@ namespace The_ULTIMATE_golf_quiz
             // Move the ball
             pctBoxGolfBall.Location = new Point(ballX - (pctBoxFlag.Width / 2), ballY);
         }
+
+        
     }
 }

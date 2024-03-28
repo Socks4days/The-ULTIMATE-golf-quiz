@@ -63,6 +63,56 @@ namespace The_ULTIMATE_golf_quiz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _0___90 {
+            get {
+                object obj = ResourceManager.GetObject("0 - 90", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _0___901 {
+            get {
+                object obj = ResourceManager.GetObject("0 - 901", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _180___270 {
+            get {
+                object obj = ResourceManager.GetObject("180 - 270", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _270___360 {
+            get {
+                object obj = ResourceManager.GetObject("270 - 360", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _270___3601 {
+            get {
+                object obj = ResourceManager.GetObject("270 - 3601", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Alex_Noren {
             get {
                 object obj = ResourceManager.GetObject("Alex Noren", resourceCulture);
@@ -76,6 +126,16 @@ namespace The_ULTIMATE_golf_quiz.Properties {
         internal static System.Drawing.Bitmap amalie_steiness {
             get {
                 object obj = ResourceManager.GetObject("amalie_steiness", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Arrow {
+            get {
+                object obj = ResourceManager.GetObject("Arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

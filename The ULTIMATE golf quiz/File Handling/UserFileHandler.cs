@@ -155,7 +155,7 @@ namespace The_ULTIMATE_golf_quiz
                         {
                             QuestionFileHandler.MultiChoiceQuestions.Remove(multiChoiceQuestion);
                         }
-                        PictureQuestion pictureQuestion = QuestionFileHandler.PictureQuestions.Find(x => x.Id == questionID);
+                        WhereInTheWorld pictureQuestion = QuestionFileHandler.PictureQuestions.Find(x => x.Id == questionID);
                         if (pictureQuestion != null)
                         {
                             QuestionFileHandler.PictureQuestions.Remove(pictureQuestion);

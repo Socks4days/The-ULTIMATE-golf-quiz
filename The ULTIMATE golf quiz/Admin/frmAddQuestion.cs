@@ -35,10 +35,10 @@ namespace The_ULTIMATE_golf_quiz
             pnlAnswerTypeIt.Visible = false;
             pnlAnswerTrueOrFalse.Visible = false;
             pnlAnswerMulti.Visible = false;
-            pnlPicture.Visible = false;
+            pnlWhereInTheWorld.Visible = false;
             pnlDiffPointsAdd.Visible = false;
             pctBoxLocation.Visible = false;
-            pnlAddPicture.Visible = false;
+            pnlAddWhereInTheWorld.Visible = false;
         }
 
         // If back arrow clicked, warn user if they are adding a question and return to main menu
@@ -305,7 +305,7 @@ namespace The_ULTIMATE_golf_quiz
                     }
 
                     // Set the question details and the save it to the CSV file
-                    PictureQuestion pictureQuestionToAdd = new PictureQuestion();
+                    WhereInTheWorld pictureQuestionToAdd = new WhereInTheWorld();
                     pictureQuestionToAdd.Id = questionIdPc;
                     pictureQuestionToAdd.Question = txtBoxQuestion.Text;
                     pictureQuestionToAdd.CorrectAnswer = txtBoxTypeItAnswer.Text;
@@ -386,9 +386,9 @@ namespace The_ULTIMATE_golf_quiz
                     pnlDiffPointsAdd.BringToFront();
                     break;
                 case "Picture":
-                    pnlPicture.Visible = true;
+                    pnlWhereInTheWorld.Visible = true;
                     pnlAnswerTypeIt.Visible = true; 
-                    pnlAddPicture.Visible = true;
+                    pnlAddWhereInTheWorld.Visible = true;
                     pnlDiffPointsAdd.BringToFront();
                     break;
                 default: break;

@@ -14,7 +14,7 @@ namespace The_ULTIMATE_golf_quiz
         public static List<TypeItQuestion> TypeItQuestions = new List<TypeItQuestion>();
         public static List<TrueOrFalseQuestion> TrueOrFalseQuestions = new List<TrueOrFalseQuestion>();
         public static List<MultiChoiceQuestion> MultiChoiceQuestions = new List<MultiChoiceQuestion>();
-        public static List<PictureQuestion> PictureQuestions = new List<PictureQuestion>();
+        public static List<WhereInTheWorld> PictureQuestions = new List<WhereInTheWorld>();
         public static string RoundType { get; set; }
 
         // Read in the Type It questions
@@ -187,7 +187,7 @@ namespace The_ULTIMATE_golf_quiz
             string[] pictureQuestionData = new string[8];
             string line;
             // clear any old questions
-            PictureQuestions = new List<PictureQuestion>();
+            PictureQuestions = new List<WhereInTheWorld>();
             try
             {
                 string filePath = "PictureQuestions.csv";
@@ -197,7 +197,7 @@ namespace The_ULTIMATE_golf_quiz
                     {
                         line = sr.ReadLine();
                         pictureQuestionData = line.Split(',').ToArray();
-                        PictureQuestion pictureQuestion = new PictureQuestion();
+                        WhereInTheWorld pictureQuestion = new WhereInTheWorld();
                         pictureQuestion.Id = pictureQuestionData[0];
                         pictureQuestion.Question = pictureQuestionData[1];
                         pictureQuestion.CorrectAnswer = pictureQuestionData[2];
@@ -228,7 +228,7 @@ namespace The_ULTIMATE_golf_quiz
             using (StreamWriter sw = new StreamWriter(filePath))
             {
                 // Write details of each user into the file
-                foreach (PictureQuestion pictureQuestion in PictureQuestions)
+                foreach (WhereInTheWorld pictureQuestion in PictureQuestions)
                 {
                     sw.WriteLine("{0},{1},{2},{3},{4},{5},{6},{7}",
                     pictureQuestion.Id, pictureQuestion.Question, pictureQuestion.CorrectAnswer, pictureQuestion.Points,

@@ -62,16 +62,16 @@
             this.groupBoxTrueFalse = new System.Windows.Forms.GroupBox();
             this.rBtnTrue = new System.Windows.Forms.RadioButton();
             this.rBtnFalse = new System.Windows.Forms.RadioButton();
-            this.pnlPicture = new System.Windows.Forms.Panel();
+            this.pnlWhereInTheWorld = new System.Windows.Forms.Panel();
             this.pctBoxLocation = new System.Windows.Forms.PictureBox();
             this.pctBoxMap = new System.Windows.Forms.PictureBox();
             this.pnlChooseQuestionType = new System.Windows.Forms.Panel();
             this.lblChooseQuestionType = new System.Windows.Forms.Label();
             this.btnTrueOrFalse = new System.Windows.Forms.Button();
             this.btnMultipleChoice = new System.Windows.Forms.Button();
-            this.btnPicture = new System.Windows.Forms.Button();
+            this.btnWhereInTheWorld = new System.Windows.Forms.Button();
             this.btnTypeIt = new System.Windows.Forms.Button();
-            this.pnlAddPicture = new System.Windows.Forms.Panel();
+            this.pnlAddWhereInTheWorld = new System.Windows.Forms.Panel();
             this.btnSelectPhoto = new System.Windows.Forms.Button();
             this.pctBoxImageUploaded = new System.Windows.Forms.PictureBox();
             this.groupBoxDifficulty.SuspendLayout();
@@ -84,11 +84,11 @@
             this.groupBoxMultipleChoice.SuspendLayout();
             this.pnlAnswerTrueOrFalse.SuspendLayout();
             this.groupBoxTrueFalse.SuspendLayout();
-            this.pnlPicture.SuspendLayout();
+            this.pnlWhereInTheWorld.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxMap)).BeginInit();
             this.pnlChooseQuestionType.SuspendLayout();
-            this.pnlAddPicture.SuspendLayout();
+            this.pnlAddWhereInTheWorld.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxImageUploaded)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,7 +116,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(233, 15);
+            this.lblTitle.Location = new System.Drawing.Point(232, 15);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(243, 37);
             this.lblTitle.TabIndex = 6;
@@ -128,7 +128,7 @@
             this.txtBoxQuestion.Location = new System.Drawing.Point(17, 35);
             this.txtBoxQuestion.MaxLength = 200;
             this.txtBoxQuestion.Name = "txtBoxQuestion";
-            this.txtBoxQuestion.Size = new System.Drawing.Size(701, 26);
+            this.txtBoxQuestion.Size = new System.Drawing.Size(678, 32);
             this.txtBoxQuestion.TabIndex = 1;
             // 
             // lblQuestion
@@ -136,9 +136,9 @@
             this.lblQuestion.AutoSize = true;
             this.lblQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuestion.ForeColor = System.Drawing.Color.White;
-            this.lblQuestion.Location = new System.Drawing.Point(13, 12);
+            this.lblQuestion.Location = new System.Drawing.Point(13, 7);
             this.lblQuestion.Name = "lblQuestion";
-            this.lblQuestion.Size = new System.Drawing.Size(178, 20);
+            this.lblQuestion.Size = new System.Drawing.Size(244, 26);
             this.lblQuestion.TabIndex = 1;
             this.lblQuestion.Text = "Type your question here";
             // 
@@ -178,7 +178,7 @@
             this.rBtnEasy.ForeColor = System.Drawing.Color.White;
             this.rBtnEasy.Location = new System.Drawing.Point(16, 31);
             this.rBtnEasy.Name = "rBtnEasy";
-            this.rBtnEasy.Size = new System.Drawing.Size(62, 24);
+            this.rBtnEasy.Size = new System.Drawing.Size(79, 30);
             this.rBtnEasy.TabIndex = 0;
             this.rBtnEasy.TabStop = true;
             this.rBtnEasy.Text = "Easy";
@@ -190,7 +190,7 @@
             this.rBtnMedium.ForeColor = System.Drawing.Color.White;
             this.rBtnMedium.Location = new System.Drawing.Point(16, 60);
             this.rBtnMedium.Name = "rBtnMedium";
-            this.rBtnMedium.Size = new System.Drawing.Size(83, 24);
+            this.rBtnMedium.Size = new System.Drawing.Size(108, 30);
             this.rBtnMedium.TabIndex = 1;
             this.rBtnMedium.TabStop = true;
             this.rBtnMedium.Text = "Medium";
@@ -202,7 +202,7 @@
             this.rBtnHard.ForeColor = System.Drawing.Color.White;
             this.rBtnHard.Location = new System.Drawing.Point(16, 89);
             this.rBtnHard.Name = "rBtnHard";
-            this.rBtnHard.Size = new System.Drawing.Size(62, 24);
+            this.rBtnHard.Size = new System.Drawing.Size(77, 30);
             this.rBtnHard.TabIndex = 2;
             this.rBtnHard.TabStop = true;
             this.rBtnHard.Text = "Hard";
@@ -214,7 +214,7 @@
             this.rBtnAImpossible.ForeColor = System.Drawing.Color.White;
             this.rBtnAImpossible.Location = new System.Drawing.Point(16, 118);
             this.rBtnAImpossible.Name = "rBtnAImpossible";
-            this.rBtnAImpossible.Size = new System.Drawing.Size(156, 24);
+            this.rBtnAImpossible.Size = new System.Drawing.Size(209, 30);
             this.rBtnAImpossible.TabIndex = 3;
             this.rBtnAImpossible.TabStop = true;
             this.rBtnAImpossible.Text = "Almost Impossible";
@@ -226,10 +226,10 @@
             this.rBtnTImpossible.ForeColor = System.Drawing.Color.White;
             this.rBtnTImpossible.Location = new System.Drawing.Point(16, 147);
             this.rBtnTImpossible.Name = "rBtnTImpossible";
-            this.rBtnTImpossible.Size = new System.Drawing.Size(199, 24);
+            this.rBtnTImpossible.Size = new System.Drawing.Size(204, 30);
             this.rBtnTImpossible.TabIndex = 4;
             this.rBtnTImpossible.TabStop = true;
-            this.rBtnTImpossible.Text = "TOTALLY IMPOSSIBLE";
+            this.rBtnTImpossible.Text = "Totally Impossible";
             this.rBtnTImpossible.UseVisualStyleBackColor = true;
             // 
             // groupBoxDifficulty
@@ -278,7 +278,7 @@
             this.pnlQuestion.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlQuestion.Location = new System.Drawing.Point(0, 328);
             this.pnlQuestion.Name = "pnlQuestion";
-            this.pnlQuestion.Size = new System.Drawing.Size(779, 80);
+            this.pnlQuestion.Size = new System.Drawing.Size(707, 80);
             this.pnlQuestion.TabIndex = 1;
             // 
             // pnlTitleMenu
@@ -288,7 +288,7 @@
             this.pnlTitleMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitleMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlTitleMenu.Name = "pnlTitleMenu";
-            this.pnlTitleMenu.Size = new System.Drawing.Size(779, 76);
+            this.pnlTitleMenu.Size = new System.Drawing.Size(707, 76);
             this.pnlTitleMenu.TabIndex = 0;
             // 
             // pnlDiffPointsAdd
@@ -298,9 +298,9 @@
             this.pnlDiffPointsAdd.Controls.Add(this.groupBoxDifficulty);
             this.pnlDiffPointsAdd.Controls.Add(this.lblPoints);
             this.pnlDiffPointsAdd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlDiffPointsAdd.Location = new System.Drawing.Point(0, 1481);
+            this.pnlDiffPointsAdd.Location = new System.Drawing.Point(0, 1475);
             this.pnlDiffPointsAdd.Name = "pnlDiffPointsAdd";
-            this.pnlDiffPointsAdd.Size = new System.Drawing.Size(779, 211);
+            this.pnlDiffPointsAdd.Size = new System.Drawing.Size(707, 211);
             this.pnlDiffPointsAdd.TabIndex = 7;
             // 
             // pnlAnswerTypeIt
@@ -310,15 +310,15 @@
             this.pnlAnswerTypeIt.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlAnswerTypeIt.Location = new System.Drawing.Point(0, 408);
             this.pnlAnswerTypeIt.Name = "pnlAnswerTypeIt";
-            this.pnlAnswerTypeIt.Size = new System.Drawing.Size(779, 70);
+            this.pnlAnswerTypeIt.Size = new System.Drawing.Size(707, 70);
             this.pnlAnswerTypeIt.TabIndex = 2;
             // 
             // lblAnswerTypeIt
             // 
             this.lblAnswerTypeIt.AutoSize = true;
-            this.lblAnswerTypeIt.Location = new System.Drawing.Point(13, 3);
+            this.lblAnswerTypeIt.Location = new System.Drawing.Point(13, 1);
             this.lblAnswerTypeIt.Name = "lblAnswerTypeIt";
-            this.lblAnswerTypeIt.Size = new System.Drawing.Size(161, 20);
+            this.lblAnswerTypeIt.Size = new System.Drawing.Size(220, 26);
             this.lblAnswerTypeIt.TabIndex = 1;
             this.lblAnswerTypeIt.Text = "Type the answer here";
             // 
@@ -327,7 +327,7 @@
             this.txtBoxTypeItAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxTypeItAnswer.Location = new System.Drawing.Point(17, 29);
             this.txtBoxTypeItAnswer.Name = "txtBoxTypeItAnswer";
-            this.txtBoxTypeItAnswer.Size = new System.Drawing.Size(701, 26);
+            this.txtBoxTypeItAnswer.Size = new System.Drawing.Size(678, 32);
             this.txtBoxTypeItAnswer.TabIndex = 1;
             // 
             // pnlAnswerMulti
@@ -340,7 +340,7 @@
             this.pnlAnswerMulti.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlAnswerMulti.Location = new System.Drawing.Point(0, 478);
             this.pnlAnswerMulti.Name = "pnlAnswerMulti";
-            this.pnlAnswerMulti.Size = new System.Drawing.Size(779, 224);
+            this.pnlAnswerMulti.Size = new System.Drawing.Size(707, 224);
             this.pnlAnswerMulti.TabIndex = 3;
             // 
             // groupBoxMultipleChoice
@@ -350,9 +350,9 @@
             this.groupBoxMultipleChoice.Controls.Add(this.rBtnOption2);
             this.groupBoxMultipleChoice.Controls.Add(this.rBtnOption1);
             this.groupBoxMultipleChoice.ForeColor = System.Drawing.Color.White;
-            this.groupBoxMultipleChoice.Location = new System.Drawing.Point(144, 8);
+            this.groupBoxMultipleChoice.Location = new System.Drawing.Point(85, 7);
             this.groupBoxMultipleChoice.Name = "groupBoxMultipleChoice";
-            this.groupBoxMultipleChoice.Size = new System.Drawing.Size(144, 210);
+            this.groupBoxMultipleChoice.Size = new System.Drawing.Size(203, 210);
             this.groupBoxMultipleChoice.TabIndex = 8;
             this.groupBoxMultipleChoice.TabStop = false;
             this.groupBoxMultipleChoice.Text = "Correct Answer";
@@ -362,7 +362,7 @@
             this.rBtnOption4.AutoSize = true;
             this.rBtnOption4.Location = new System.Drawing.Point(27, 175);
             this.rBtnOption4.Name = "rBtnOption4";
-            this.rBtnOption4.Size = new System.Drawing.Size(87, 24);
+            this.rBtnOption4.Size = new System.Drawing.Size(112, 30);
             this.rBtnOption4.TabIndex = 3;
             this.rBtnOption4.TabStop = true;
             this.rBtnOption4.Text = "Option 4";
@@ -373,7 +373,7 @@
             this.rBtnOption3.AutoSize = true;
             this.rBtnOption3.Location = new System.Drawing.Point(27, 127);
             this.rBtnOption3.Name = "rBtnOption3";
-            this.rBtnOption3.Size = new System.Drawing.Size(87, 24);
+            this.rBtnOption3.Size = new System.Drawing.Size(112, 30);
             this.rBtnOption3.TabIndex = 2;
             this.rBtnOption3.TabStop = true;
             this.rBtnOption3.Text = "Option 3";
@@ -384,7 +384,7 @@
             this.rBtnOption2.AutoSize = true;
             this.rBtnOption2.Location = new System.Drawing.Point(27, 79);
             this.rBtnOption2.Name = "rBtnOption2";
-            this.rBtnOption2.Size = new System.Drawing.Size(87, 24);
+            this.rBtnOption2.Size = new System.Drawing.Size(112, 30);
             this.rBtnOption2.TabIndex = 1;
             this.rBtnOption2.TabStop = true;
             this.rBtnOption2.Text = "Option 2";
@@ -395,7 +395,7 @@
             this.rBtnOption1.AutoSize = true;
             this.rBtnOption1.Location = new System.Drawing.Point(27, 31);
             this.rBtnOption1.Name = "rBtnOption1";
-            this.rBtnOption1.Size = new System.Drawing.Size(87, 24);
+            this.rBtnOption1.Size = new System.Drawing.Size(112, 30);
             this.rBtnOption1.TabIndex = 0;
             this.rBtnOption1.TabStop = true;
             this.rBtnOption1.Text = "Option 1";
@@ -404,33 +404,33 @@
             // txtBoxMultiOption3
             // 
             this.txtBoxMultiOption3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxMultiOption3.Location = new System.Drawing.Point(308, 135);
+            this.txtBoxMultiOption3.Location = new System.Drawing.Point(308, 120);
             this.txtBoxMultiOption3.Name = "txtBoxMultiOption3";
-            this.txtBoxMultiOption3.Size = new System.Drawing.Size(294, 26);
+            this.txtBoxMultiOption3.Size = new System.Drawing.Size(294, 32);
             this.txtBoxMultiOption3.TabIndex = 5;
             // 
             // txtBoxMultiOption4
             // 
             this.txtBoxMultiOption4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxMultiOption4.Location = new System.Drawing.Point(308, 183);
+            this.txtBoxMultiOption4.Location = new System.Drawing.Point(308, 168);
             this.txtBoxMultiOption4.Name = "txtBoxMultiOption4";
-            this.txtBoxMultiOption4.Size = new System.Drawing.Size(294, 26);
+            this.txtBoxMultiOption4.Size = new System.Drawing.Size(294, 32);
             this.txtBoxMultiOption4.TabIndex = 7;
             // 
             // txtBoxMultiOption2
             // 
             this.txtBoxMultiOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxMultiOption2.Location = new System.Drawing.Point(308, 87);
+            this.txtBoxMultiOption2.Location = new System.Drawing.Point(308, 72);
             this.txtBoxMultiOption2.Name = "txtBoxMultiOption2";
-            this.txtBoxMultiOption2.Size = new System.Drawing.Size(294, 26);
+            this.txtBoxMultiOption2.Size = new System.Drawing.Size(294, 32);
             this.txtBoxMultiOption2.TabIndex = 3;
             // 
             // txtBoxMultiOption1
             // 
             this.txtBoxMultiOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxMultiOption1.Location = new System.Drawing.Point(308, 39);
+            this.txtBoxMultiOption1.Location = new System.Drawing.Point(308, 24);
             this.txtBoxMultiOption1.Name = "txtBoxMultiOption1";
-            this.txtBoxMultiOption1.Size = new System.Drawing.Size(294, 26);
+            this.txtBoxMultiOption1.Size = new System.Drawing.Size(294, 32);
             this.txtBoxMultiOption1.TabIndex = 1;
             // 
             // pnlAnswerTrueOrFalse
@@ -439,7 +439,7 @@
             this.pnlAnswerTrueOrFalse.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlAnswerTrueOrFalse.Location = new System.Drawing.Point(0, 702);
             this.pnlAnswerTrueOrFalse.Name = "pnlAnswerTrueOrFalse";
-            this.pnlAnswerTrueOrFalse.Size = new System.Drawing.Size(779, 102);
+            this.pnlAnswerTrueOrFalse.Size = new System.Drawing.Size(707, 96);
             this.pnlAnswerTrueOrFalse.TabIndex = 4;
             // 
             // groupBoxTrueFalse
@@ -447,7 +447,7 @@
             this.groupBoxTrueFalse.Controls.Add(this.rBtnTrue);
             this.groupBoxTrueFalse.Controls.Add(this.rBtnFalse);
             this.groupBoxTrueFalse.ForeColor = System.Drawing.Color.White;
-            this.groupBoxTrueFalse.Location = new System.Drawing.Point(258, 22);
+            this.groupBoxTrueFalse.Location = new System.Drawing.Point(264, 6);
             this.groupBoxTrueFalse.Name = "groupBoxTrueFalse";
             this.groupBoxTrueFalse.Size = new System.Drawing.Size(200, 70);
             this.groupBoxTrueFalse.TabIndex = 2;
@@ -459,7 +459,7 @@
             this.rBtnTrue.AutoSize = true;
             this.rBtnTrue.Location = new System.Drawing.Point(16, 25);
             this.rBtnTrue.Name = "rBtnTrue";
-            this.rBtnTrue.Size = new System.Drawing.Size(59, 24);
+            this.rBtnTrue.Size = new System.Drawing.Size(73, 30);
             this.rBtnTrue.TabIndex = 0;
             this.rBtnTrue.TabStop = true;
             this.rBtnTrue.Text = "True";
@@ -470,21 +470,21 @@
             this.rBtnFalse.AutoSize = true;
             this.rBtnFalse.Location = new System.Drawing.Point(114, 25);
             this.rBtnFalse.Name = "rBtnFalse";
-            this.rBtnFalse.Size = new System.Drawing.Size(66, 24);
+            this.rBtnFalse.Size = new System.Drawing.Size(83, 30);
             this.rBtnFalse.TabIndex = 1;
             this.rBtnFalse.TabStop = true;
             this.rBtnFalse.Text = "False";
             this.rBtnFalse.UseVisualStyleBackColor = true;
             // 
-            // pnlPicture
+            // pnlWhereInTheWorld
             // 
-            this.pnlPicture.Controls.Add(this.pctBoxLocation);
-            this.pnlPicture.Controls.Add(this.pctBoxMap);
-            this.pnlPicture.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlPicture.Location = new System.Drawing.Point(0, 804);
-            this.pnlPicture.Name = "pnlPicture";
-            this.pnlPicture.Size = new System.Drawing.Size(779, 494);
-            this.pnlPicture.TabIndex = 5;
+            this.pnlWhereInTheWorld.Controls.Add(this.pctBoxLocation);
+            this.pnlWhereInTheWorld.Controls.Add(this.pctBoxMap);
+            this.pnlWhereInTheWorld.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlWhereInTheWorld.Location = new System.Drawing.Point(0, 798);
+            this.pnlWhereInTheWorld.Name = "pnlWhereInTheWorld";
+            this.pnlWhereInTheWorld.Size = new System.Drawing.Size(707, 494);
+            this.pnlWhereInTheWorld.TabIndex = 5;
             // 
             // pctBoxLocation
             // 
@@ -505,7 +505,7 @@
             this.pctBoxMap.Image = global::The_ULTIMATE_golf_quiz.Properties.Resources.Screenshot_2024_01_26_085609;
             this.pctBoxMap.Location = new System.Drawing.Point(0, 0);
             this.pctBoxMap.Name = "pctBoxMap";
-            this.pctBoxMap.Size = new System.Drawing.Size(779, 500);
+            this.pctBoxMap.Size = new System.Drawing.Size(707, 500);
             this.pctBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBoxMap.TabIndex = 0;
             this.pctBoxMap.TabStop = false;
@@ -516,20 +516,20 @@
             this.pnlChooseQuestionType.Controls.Add(this.lblChooseQuestionType);
             this.pnlChooseQuestionType.Controls.Add(this.btnTrueOrFalse);
             this.pnlChooseQuestionType.Controls.Add(this.btnMultipleChoice);
-            this.pnlChooseQuestionType.Controls.Add(this.btnPicture);
+            this.pnlChooseQuestionType.Controls.Add(this.btnWhereInTheWorld);
             this.pnlChooseQuestionType.Controls.Add(this.btnTypeIt);
             this.pnlChooseQuestionType.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlChooseQuestionType.Location = new System.Drawing.Point(0, 76);
             this.pnlChooseQuestionType.Name = "pnlChooseQuestionType";
-            this.pnlChooseQuestionType.Size = new System.Drawing.Size(779, 252);
+            this.pnlChooseQuestionType.Size = new System.Drawing.Size(707, 252);
             this.pnlChooseQuestionType.TabIndex = 6;
             // 
             // lblChooseQuestionType
             // 
             this.lblChooseQuestionType.AutoSize = true;
-            this.lblChooseQuestionType.Location = new System.Drawing.Point(217, 24);
+            this.lblChooseQuestionType.Location = new System.Drawing.Point(141, 20);
             this.lblChooseQuestionType.Name = "lblChooseQuestionType";
-            this.lblChooseQuestionType.Size = new System.Drawing.Size(323, 20);
+            this.lblChooseQuestionType.Size = new System.Drawing.Size(443, 26);
             this.lblChooseQuestionType.TabIndex = 0;
             this.lblChooseQuestionType.Text = "What type of question would you like to add?";
             // 
@@ -540,7 +540,7 @@
             this.btnTrueOrFalse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnTrueOrFalse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnTrueOrFalse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrueOrFalse.Location = new System.Drawing.Point(399, 70);
+            this.btnTrueOrFalse.Location = new System.Drawing.Point(394, 70);
             this.btnTrueOrFalse.Name = "btnTrueOrFalse";
             this.btnTrueOrFalse.Size = new System.Drawing.Size(250, 50);
             this.btnTrueOrFalse.TabIndex = 2;
@@ -555,7 +555,7 @@
             this.btnMultipleChoice.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnMultipleChoice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnMultipleChoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMultipleChoice.Location = new System.Drawing.Point(85, 168);
+            this.btnMultipleChoice.Location = new System.Drawing.Point(80, 168);
             this.btnMultipleChoice.Name = "btnMultipleChoice";
             this.btnMultipleChoice.Size = new System.Drawing.Size(250, 50);
             this.btnMultipleChoice.TabIndex = 3;
@@ -563,20 +563,20 @@
             this.btnMultipleChoice.UseVisualStyleBackColor = false;
             this.btnMultipleChoice.Click += new System.EventHandler(this.btnMultipleChoice_Click);
             // 
-            // btnPicture
+            // btnWhereInTheWorld
             // 
-            this.btnPicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
-            this.btnPicture.FlatAppearance.BorderSize = 0;
-            this.btnPicture.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
-            this.btnPicture.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
-            this.btnPicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPicture.Location = new System.Drawing.Point(399, 168);
-            this.btnPicture.Name = "btnPicture";
-            this.btnPicture.Size = new System.Drawing.Size(250, 50);
-            this.btnPicture.TabIndex = 4;
-            this.btnPicture.Text = "Picture Round";
-            this.btnPicture.UseVisualStyleBackColor = false;
-            this.btnPicture.Click += new System.EventHandler(this.btnPicture_Click);
+            this.btnWhereInTheWorld.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
+            this.btnWhereInTheWorld.FlatAppearance.BorderSize = 0;
+            this.btnWhereInTheWorld.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
+            this.btnWhereInTheWorld.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
+            this.btnWhereInTheWorld.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWhereInTheWorld.Location = new System.Drawing.Point(394, 168);
+            this.btnWhereInTheWorld.Name = "btnWhereInTheWorld";
+            this.btnWhereInTheWorld.Size = new System.Drawing.Size(250, 50);
+            this.btnWhereInTheWorld.TabIndex = 4;
+            this.btnWhereInTheWorld.Text = "Where in the World";
+            this.btnWhereInTheWorld.UseVisualStyleBackColor = false;
+            this.btnWhereInTheWorld.Click += new System.EventHandler(this.btnPicture_Click);
             // 
             // btnTypeIt
             // 
@@ -585,7 +585,7 @@
             this.btnTypeIt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.btnTypeIt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.btnTypeIt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTypeIt.Location = new System.Drawing.Point(85, 70);
+            this.btnTypeIt.Location = new System.Drawing.Point(80, 70);
             this.btnTypeIt.Name = "btnTypeIt";
             this.btnTypeIt.Size = new System.Drawing.Size(250, 50);
             this.btnTypeIt.TabIndex = 1;
@@ -593,15 +593,15 @@
             this.btnTypeIt.UseVisualStyleBackColor = false;
             this.btnTypeIt.Click += new System.EventHandler(this.btnTypeIt_Click);
             // 
-            // pnlAddPicture
+            // pnlAddWhereInTheWorld
             // 
-            this.pnlAddPicture.Controls.Add(this.btnSelectPhoto);
-            this.pnlAddPicture.Controls.Add(this.pctBoxImageUploaded);
-            this.pnlAddPicture.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlAddPicture.Location = new System.Drawing.Point(0, 1298);
-            this.pnlAddPicture.Name = "pnlAddPicture";
-            this.pnlAddPicture.Size = new System.Drawing.Size(779, 183);
-            this.pnlAddPicture.TabIndex = 8;
+            this.pnlAddWhereInTheWorld.Controls.Add(this.btnSelectPhoto);
+            this.pnlAddWhereInTheWorld.Controls.Add(this.pctBoxImageUploaded);
+            this.pnlAddWhereInTheWorld.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlAddWhereInTheWorld.Location = new System.Drawing.Point(0, 1292);
+            this.pnlAddWhereInTheWorld.Name = "pnlAddWhereInTheWorld";
+            this.pnlAddWhereInTheWorld.Size = new System.Drawing.Size(707, 183);
+            this.pnlAddWhereInTheWorld.TabIndex = 8;
             // 
             // btnSelectPhoto
             // 
@@ -632,10 +632,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.ClientSize = new System.Drawing.Size(796, 473);
+            this.ClientSize = new System.Drawing.Size(724, 473);
             this.Controls.Add(this.pnlDiffPointsAdd);
-            this.Controls.Add(this.pnlAddPicture);
-            this.Controls.Add(this.pnlPicture);
+            this.Controls.Add(this.pnlAddWhereInTheWorld);
+            this.Controls.Add(this.pnlWhereInTheWorld);
             this.Controls.Add(this.pnlAnswerTrueOrFalse);
             this.Controls.Add(this.pnlAnswerMulti);
             this.Controls.Add(this.pnlAnswerTypeIt);
@@ -665,12 +665,12 @@
             this.pnlAnswerTrueOrFalse.ResumeLayout(false);
             this.groupBoxTrueFalse.ResumeLayout(false);
             this.groupBoxTrueFalse.PerformLayout();
-            this.pnlPicture.ResumeLayout(false);
+            this.pnlWhereInTheWorld.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxLocation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxMap)).EndInit();
             this.pnlChooseQuestionType.ResumeLayout(false);
             this.pnlChooseQuestionType.PerformLayout();
-            this.pnlAddPicture.ResumeLayout(false);
+            this.pnlAddWhereInTheWorld.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxImageUploaded)).EndInit();
             this.ResumeLayout(false);
 
@@ -705,7 +705,7 @@
         private System.Windows.Forms.Panel pnlAnswerTrueOrFalse;
         private System.Windows.Forms.RadioButton rBtnFalse;
         private System.Windows.Forms.RadioButton rBtnTrue;
-        private System.Windows.Forms.Panel pnlPicture;
+        private System.Windows.Forms.Panel pnlWhereInTheWorld;
         private System.Windows.Forms.PictureBox pctBoxLocation;
         private System.Windows.Forms.PictureBox pctBoxMap;
         private System.Windows.Forms.Panel pnlChooseQuestionType;
@@ -713,14 +713,14 @@
         private System.Windows.Forms.Label lblChooseQuestionType;
         private System.Windows.Forms.Button btnTrueOrFalse;
         private System.Windows.Forms.Button btnMultipleChoice;
-        private System.Windows.Forms.Button btnPicture;
+        private System.Windows.Forms.Button btnWhereInTheWorld;
         private System.Windows.Forms.GroupBox groupBoxTrueFalse;
         private System.Windows.Forms.GroupBox groupBoxMultipleChoice;
         private System.Windows.Forms.RadioButton rBtnOption4;
         private System.Windows.Forms.RadioButton rBtnOption3;
         private System.Windows.Forms.RadioButton rBtnOption2;
         private System.Windows.Forms.RadioButton rBtnOption1;
-        private System.Windows.Forms.Panel pnlAddPicture;
+        private System.Windows.Forms.Panel pnlAddWhereInTheWorld;
         private System.Windows.Forms.PictureBox pctBoxImageUploaded;
         private System.Windows.Forms.Button btnSelectPhoto;
     }

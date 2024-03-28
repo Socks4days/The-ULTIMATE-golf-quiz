@@ -42,7 +42,7 @@ namespace The_ULTIMATE_golf_quiz
             {
                 ShowError("All fields, including passwords, cannot contain any commas\nPlease remove any commas and try again...");
                 return;
-             }
+            }
             else if (!int.TryParse(txtBoxAge.Text, out age) || (Convert.ToInt32(txtBoxAge.Text)<0))
             {
                 ShowError("Please enter a valid age in years");
