@@ -109,6 +109,7 @@ namespace The_ULTIMATE_golf_quiz
                                 UserFileHandler.ClearPlayerQuestionAnswered(player);
                                 UserFileHandler.SaveAllPlayers();
                                 QuestionFileHandler.ReadInAllQuestions();
+                                frmSplashScreen.mainMenu.setTitleLabels();
                                 MessageBox.Show("Account reset");
                                 break;
                             }
@@ -168,11 +169,14 @@ namespace The_ULTIMATE_golf_quiz
                 frmSplashScreen.player.nationality = txtBoxNationality.Text;
                 UserFileHandler.SaveAllPlayers();
 
+                // Update the user info and main menu title and go back to user info
                 unsavedChange = false;
                 ClearError();
                 MessageBox.Show("All changes saved!");
                 PopulateUserInfo();
                 frmSplashScreen.mainMenu.setTitleLabels();
+                pnlEdit.Visible = false;
+                pnlInfo.Visible = true;
             }            
         }        
 

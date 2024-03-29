@@ -80,7 +80,7 @@
             this.lblUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.White;
-            this.lblUser.Location = new System.Drawing.Point(152, 84);
+            this.lblUser.Location = new System.Drawing.Point(152, 66);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(119, 26);
             this.lblUser.TabIndex = 0;
@@ -92,7 +92,7 @@
             this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(152, 170);
+            this.lblName.Location = new System.Drawing.Point(152, 152);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(77, 26);
             this.lblName.TabIndex = 1;
@@ -104,7 +104,7 @@
             this.lblAge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAge.ForeColor = System.Drawing.Color.White;
-            this.lblAge.Location = new System.Drawing.Point(153, 218);
+            this.lblAge.Location = new System.Drawing.Point(153, 200);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(57, 26);
             this.lblAge.TabIndex = 2;
@@ -116,7 +116,7 @@
             this.lblGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.ForeColor = System.Drawing.Color.White;
-            this.lblGender.Location = new System.Drawing.Point(152, 265);
+            this.lblGender.Location = new System.Drawing.Point(152, 247);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(90, 26);
             this.lblGender.TabIndex = 3;
@@ -128,7 +128,7 @@
             this.lblNation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblNation.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNation.ForeColor = System.Drawing.Color.White;
-            this.lblNation.Location = new System.Drawing.Point(152, 318);
+            this.lblNation.Location = new System.Drawing.Point(152, 300);
             this.lblNation.Name = "lblNation";
             this.lblNation.Size = new System.Drawing.Size(120, 26);
             this.lblNation.TabIndex = 4;
@@ -141,7 +141,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(218, 26);
+            this.lblTitle.Location = new System.Drawing.Point(218, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(148, 37);
             this.lblTitle.TabIndex = 5;
@@ -153,7 +153,7 @@
             this.lblUserText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblUserText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserText.ForeColor = System.Drawing.Color.White;
-            this.lblUserText.Location = new System.Drawing.Point(308, 84);
+            this.lblUserText.Location = new System.Drawing.Point(308, 66);
             this.lblUserText.Name = "lblUserText";
             this.lblUserText.Size = new System.Drawing.Size(113, 26);
             this.lblUserText.TabIndex = 8;
@@ -165,7 +165,7 @@
             this.lblNameText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblNameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameText.ForeColor = System.Drawing.Color.White;
-            this.lblNameText.Location = new System.Drawing.Point(308, 170);
+            this.lblNameText.Location = new System.Drawing.Point(308, 152);
             this.lblNameText.Name = "lblNameText";
             this.lblNameText.Size = new System.Drawing.Size(71, 26);
             this.lblNameText.TabIndex = 9;
@@ -177,7 +177,7 @@
             this.lblAgeText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblAgeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAgeText.ForeColor = System.Drawing.Color.White;
-            this.lblAgeText.Location = new System.Drawing.Point(309, 218);
+            this.lblAgeText.Location = new System.Drawing.Point(309, 200);
             this.lblAgeText.Name = "lblAgeText";
             this.lblAgeText.Size = new System.Drawing.Size(51, 26);
             this.lblAgeText.TabIndex = 10;
@@ -189,7 +189,7 @@
             this.lblGenderText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblGenderText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenderText.ForeColor = System.Drawing.Color.White;
-            this.lblGenderText.Location = new System.Drawing.Point(309, 265);
+            this.lblGenderText.Location = new System.Drawing.Point(309, 247);
             this.lblGenderText.Name = "lblGenderText";
             this.lblGenderText.Size = new System.Drawing.Size(84, 26);
             this.lblGenderText.TabIndex = 11;
@@ -201,7 +201,7 @@
             this.lblNationText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblNationText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNationText.ForeColor = System.Drawing.Color.White;
-            this.lblNationText.Location = new System.Drawing.Point(309, 318);
+            this.lblNationText.Location = new System.Drawing.Point(309, 300);
             this.lblNationText.Name = "lblNationText";
             this.lblNationText.Size = new System.Drawing.Size(114, 26);
             this.lblNationText.TabIndex = 12;
@@ -213,7 +213,7 @@
             this.lblPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.White;
-            this.lblPassword.Location = new System.Drawing.Point(152, 129);
+            this.lblPassword.Location = new System.Drawing.Point(152, 111);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(114, 26);
             this.lblPassword.TabIndex = 13;
@@ -225,7 +225,7 @@
             this.lblPasswordText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblPasswordText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPasswordText.ForeColor = System.Drawing.Color.White;
-            this.lblPasswordText.Location = new System.Drawing.Point(308, 129);
+            this.lblPasswordText.Location = new System.Drawing.Point(308, 111);
             this.lblPasswordText.Name = "lblPasswordText";
             this.lblPasswordText.Size = new System.Drawing.Size(108, 26);
             this.lblPasswordText.TabIndex = 14;
@@ -269,7 +269,7 @@
             this.pnlContainer.Controls.Add(this.lblAgeText);
             this.pnlContainer.Controls.Add(this.lblPassword);
             this.pnlContainer.Controls.Add(this.lblGender);
-            this.pnlContainer.Location = new System.Drawing.Point(112, 26);
+            this.pnlContainer.Location = new System.Drawing.Point(120, 26);
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(575, 426);
             this.pnlContainer.TabIndex = 16;
@@ -299,7 +299,7 @@
             this.pnlInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlInfo.Location = new System.Drawing.Point(0, 0);
             this.pnlInfo.Name = "pnlInfo";
-            this.pnlInfo.Size = new System.Drawing.Size(746, 478);
+            this.pnlInfo.Size = new System.Drawing.Size(763, 478);
             this.pnlInfo.TabIndex = 17;
             // 
             // pnlEdit
@@ -309,7 +309,7 @@
             this.pnlEdit.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEdit.Location = new System.Drawing.Point(0, 478);
             this.pnlEdit.Name = "pnlEdit";
-            this.pnlEdit.Size = new System.Drawing.Size(746, 478);
+            this.pnlEdit.Size = new System.Drawing.Size(763, 478);
             this.pnlEdit.TabIndex = 18;
             this.pnlEdit.Visible = false;
             // 
@@ -357,7 +357,7 @@
             this.pnlContainerEdit.Controls.Add(this.lblErrorA);
             this.pnlContainerEdit.Controls.Add(this.lblErrorG);
             this.pnlContainerEdit.Controls.Add(this.lblErrorNat);
-            this.pnlContainerEdit.Location = new System.Drawing.Point(112, 14);
+            this.pnlContainerEdit.Location = new System.Drawing.Point(120, 14);
             this.pnlContainerEdit.Name = "pnlContainerEdit";
             this.pnlContainerEdit.Size = new System.Drawing.Size(575, 452);
             this.pnlContainerEdit.TabIndex = 18;
@@ -384,13 +384,14 @@
             this.txtBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.txtBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxPassword.Enabled = false;
-            this.txtBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPassword.ForeColor = System.Drawing.Color.White;
-            this.txtBoxPassword.Location = new System.Drawing.Point(212, 94);
+            this.txtBoxPassword.Location = new System.Drawing.Point(215, 99);
             this.txtBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxPassword.MaxLength = 15;
             this.txtBoxPassword.Name = "txtBoxPassword";
             this.txtBoxPassword.PasswordChar = '*';
-            this.txtBoxPassword.Size = new System.Drawing.Size(272, 37);
+            this.txtBoxPassword.Size = new System.Drawing.Size(272, 24);
             this.txtBoxPassword.TabIndex = 25;
             // 
             // txtBoxNationality
@@ -398,12 +399,13 @@
             this.txtBoxNationality.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxNationality.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.txtBoxNationality.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxNationality.ForeColor = System.Drawing.Color.White;
-            this.txtBoxNationality.Location = new System.Drawing.Point(212, 278);
+            this.txtBoxNationality.Location = new System.Drawing.Point(215, 283);
             this.txtBoxNationality.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxNationality.MaxLength = 20;
             this.txtBoxNationality.Name = "txtBoxNationality";
-            this.txtBoxNationality.Size = new System.Drawing.Size(272, 37);
+            this.txtBoxNationality.Size = new System.Drawing.Size(272, 24);
             this.txtBoxNationality.TabIndex = 22;
             this.txtBoxNationality.TextChanged += new System.EventHandler(this.txtBoxNationality_TextChanged);
             // 
@@ -412,12 +414,13 @@
             this.txtBoxGender.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.txtBoxGender.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxGender.ForeColor = System.Drawing.Color.White;
-            this.txtBoxGender.Location = new System.Drawing.Point(212, 232);
+            this.txtBoxGender.Location = new System.Drawing.Point(215, 237);
             this.txtBoxGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxGender.MaxLength = 20;
             this.txtBoxGender.Name = "txtBoxGender";
-            this.txtBoxGender.Size = new System.Drawing.Size(272, 37);
+            this.txtBoxGender.Size = new System.Drawing.Size(272, 24);
             this.txtBoxGender.TabIndex = 21;
             this.txtBoxGender.TextChanged += new System.EventHandler(this.txtBoxGender_TextChanged);
             // 
@@ -426,12 +429,13 @@
             this.txtBoxAge.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxAge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.txtBoxAge.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxAge.ForeColor = System.Drawing.Color.White;
-            this.txtBoxAge.Location = new System.Drawing.Point(212, 186);
+            this.txtBoxAge.Location = new System.Drawing.Point(215, 191);
             this.txtBoxAge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxAge.MaxLength = 3;
             this.txtBoxAge.Name = "txtBoxAge";
-            this.txtBoxAge.Size = new System.Drawing.Size(272, 37);
+            this.txtBoxAge.Size = new System.Drawing.Size(272, 24);
             this.txtBoxAge.TabIndex = 20;
             this.txtBoxAge.TextChanged += new System.EventHandler(this.txtBoxAge_TextChanged);
             // 
@@ -440,12 +444,13 @@
             this.txtBoxName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.txtBoxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxName.ForeColor = System.Drawing.Color.White;
-            this.txtBoxName.Location = new System.Drawing.Point(212, 140);
+            this.txtBoxName.Location = new System.Drawing.Point(215, 145);
             this.txtBoxName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxName.MaxLength = 20;
             this.txtBoxName.Name = "txtBoxName";
-            this.txtBoxName.Size = new System.Drawing.Size(272, 37);
+            this.txtBoxName.Size = new System.Drawing.Size(272, 24);
             this.txtBoxName.TabIndex = 19;
             this.txtBoxName.TextChanged += new System.EventHandler(this.txtBoxName_TextChanged);
             // 
@@ -454,12 +459,13 @@
             this.txtBoxUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.txtBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxUsername.ForeColor = System.Drawing.Color.White;
-            this.txtBoxUsername.Location = new System.Drawing.Point(212, 48);
+            this.txtBoxUsername.Location = new System.Drawing.Point(215, 53);
             this.txtBoxUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxUsername.MaxLength = 20;
             this.txtBoxUsername.Name = "txtBoxUsername";
-            this.txtBoxUsername.Size = new System.Drawing.Size(272, 37);
+            this.txtBoxUsername.Size = new System.Drawing.Size(272, 24);
             this.txtBoxUsername.TabIndex = 18;
             this.txtBoxUsername.TextChanged += new System.EventHandler(this.txtBoxUsername_TextChanged);
             // 
@@ -637,7 +643,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.ClientSize = new System.Drawing.Size(763, 475);
+            this.ClientSize = new System.Drawing.Size(780, 475);
             this.Controls.Add(this.pnlEdit);
             this.Controls.Add(this.pnlInfo);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

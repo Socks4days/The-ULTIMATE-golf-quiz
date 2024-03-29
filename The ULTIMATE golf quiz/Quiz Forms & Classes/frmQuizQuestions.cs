@@ -123,9 +123,12 @@ namespace The_ULTIMATE_golf_quiz
         #region Music
         System.Media.SoundPlayer backgroundMusicPlayer = new System.Media.SoundPlayer();
         System.Media.SoundPlayer countdownPlayer = new System.Media.SoundPlayer();
+        System.Media.SoundPlayer questionCorrectPlayer = new System.Media.SoundPlayer();
+        System.Media.SoundPlayer questionWrongPlayer = new System.Media.SoundPlayer();
+
 
         // Play background music
-        private void startMusicPlayer()
+        private void startBackgroundMusicPlayer()
         {
             backgroundMusicPlayer.PlayLooping();
         }
@@ -144,6 +147,22 @@ namespace The_ULTIMATE_golf_quiz
         {
             countdownPlayer.Stop();
         }
+        private void startQuestionCorrect()
+        {
+            questionCorrectPlayer.Play();
+        }
+        private void stopQuestionCorrect()
+        {
+            questionCorrectPlayer.Stop();
+        }
+        private void startQuestionWrong()
+        {
+            questionWrongPlayer.Play();
+        }
+        private void stopQuestionWrong()
+        {
+            questionWrongPlayer.Stop();
+        }
         #endregion Music
 
         // Set up when the quiz form is first created
@@ -154,8 +173,12 @@ namespace The_ULTIMATE_golf_quiz
             backgroundMusicPlayer.Load();
             countdownPlayer.SoundLocation = "Countdown.wav";
             countdownPlayer.Load();
+            questionCorrectPlayer.SoundLocation = "Correct Answer.wav";
+            questionCorrectPlayer.Load();
+            questionWrongPlayer.SoundLocation = "Wrong Answer.wav";
+            questionWrongPlayer.Load();
             InitializeComponent();
-            startMusicPlayer();
+            // startBackgroundMusicPlayer();
             txtBoxAnswer.KeyDown += KeyPressedDown;
             KeyDown += KeyPressedDown;
             NumberOfQuestionsAskedThisRound = 0;
@@ -204,51 +227,127 @@ namespace The_ULTIMATE_golf_quiz
             // Show the panel to select the type of round
             pnlTypeOfRound.Dock = DockStyle.Fill;
             pnlTypeOfRound.Visible = true;
+            UpdateRoundImage();
+
         }
         #endregion Initialisation
 
         #region RoundTypeButtonClicks
-        // Start a type it round
-        private void btnTypeItRound_Click(object sender, EventArgs e)
+
+        int currentRoundIndex = 0;
+
+        string[] questionTypesArray = { "TypeIt", "TruthOrLie", "MultipleGuess", "WhereInTheWorld", "GoClubbin","SurpriseMe" };
+          
+
+        private void btnRight_Click(object sender, EventArgs e)
         {
-            QuestionFileHandler.RoundType = "Type It";
-            InstructionSetup();
+            currentRoundIndex = (currentRoundIndex + 1) % questionTypesArray.Length;            
+            UpdateRoundImage();
+            
         }
 
-        // Start a true or false round
-        private void btnTrueOrFalseRound_Click(object sender, EventArgs e)
+        private void btnLeft_Click(object sender, EventArgs e)
         {
-            QuestionFileHandler.RoundType = "Truth or Lie";
-            InstructionSetup();
+            if (currentRoundIndex < 1)
+            {
+                currentRoundIndex = questionTypesArray.Length - 1;
+            }
+            else
+            {
+                currentRoundIndex = (currentRoundIndex - 1) % questionTypesArray.Length;
+            }
+            UpdateRoundImage();
         }
 
-        private void btnPictureRound_Click(object sender, EventArgs e)
+        private void btnPlayRound_Click(object sender, EventArgs e)
         {
-            QuestionFileHandler.RoundType = "Where in the World";
-            InstructionSetup();
+            switch(questionTypesArray[currentRoundIndex]) 
+            {
+                case "TypeIt":
+                    // if the amount of type it questions in the list is more than 0, ie its not empty, then it will ask another question
+                    if (typeItQuestionList.Count > 0)
+                    {
+                        QuestionFileHandler.RoundType = "Type It";
+                        InstructionSetup();
+                    }
+                    else
+                    {
+                        frmQuizQuestionsInitialisation();
+                        MessageBox.Show("You have completed all available questions for type it, Congratulations!");
+                    }
+                    break;
+                case "TruthOrLie":
+                    if (trueOrFalseQuestionList.Count > 0)
+                    {
+                        QuestionFileHandler.RoundType = "Truth or Lie";
+                        InstructionSetup();
+                    }
+                    else
+                    {
+                        frmQuizQuestionsInitialisation();
+                        MessageBox.Show("You have completed all available questions for true or false, Congratulations!");
+                    }
+                    break;
+                case "MultipleGuess":
+                    if (multipleChoiceQuestionList.Count > 0)
+                    {
+                        QuestionFileHandler.RoundType = "Multiple Guess";
+                        InstructionSetup();
+                    }
+                    else
+                    {
+                        frmQuizQuestionsInitialisation();
+                        MessageBox.Show("You have completed all available questions for multiple choice, Congratulations!");
+                    }
+                    break;
+                case "WhereInTheWorld":
+                    if (pictureQuestionList.Count > 0)
+                    {
+                        QuestionFileHandler.RoundType = "Where in the World";
+                        InstructionSetup();
+                    }
+                    else
+                    {
+                        frmQuizQuestionsInitialisation();
+                        MessageBox.Show("You have completed all available questions for the Where in the World round, Congratulations!");
+                    }
+                    break;
+                case "GoClubbin":
+                    QuestionFileHandler.RoundType = "Go Clubbin";
+                    InstructionSetup();
+                    break;
+                case "SurpriseMe":
+                    Random random = new Random(Guid.NewGuid().GetHashCode());
+                    QuestionFileHandler.RoundType = questionTypes[random.Next(0, questionTypes.Count)];
+                    InstructionSetup();
+                    break;
+            }
+        }
+        private void UpdateRoundImage()
+        {
+            if (currentRoundIndex >= 0 && currentRoundIndex < questionTypesArray.Length)
+            {
+                pctBoxRoundType.Image = (Image)Properties.Resources.ResourceManager.GetObject(questionTypesArray[currentRoundIndex]);
+            }
+            string roundTypeToShow = roundReferences[questionTypesArray[currentRoundIndex]];
+            lblRoundType.Text = roundTypeToShow;
+            if (roundTypeToShow == "Go Clubbin'") lblRoundType.Font = new Font("Ravie", 18);
+
+            else if (roundTypeToShow == "Where in the World") lblRoundType.Font = new Font("Bradley Hand ITC", 24, style: FontStyle.Bold);
+
+            else lblRoundType.Font = new Font("Microsoft Sans Serif", 18, style: FontStyle.Bold);
         }
 
-        // Start a multiple choice round
-        private void btnMultipleChoiceRound_Click(object sender, EventArgs e)
+        private readonly Dictionary<string, string> roundReferences = new Dictionary<string, string>
         {
-            QuestionFileHandler.RoundType = "Multiple Guess";
-            InstructionSetup();
-        }
+            { "TypeIt", "Type It" },
+            { "TruthOrLie","Truth or Lie" },
+            { "MultipleGuess", "Multiple Guess" },
+            { "WhereInTheWorld", "Where in the World" },
+            { "GoClubbin", "Go Clubbin'" },
+            { "SurpriseMe", "Surprise Me" }            
+        };
 
-        // Start Go Clubbin round (originally named drag and drop)
-        private void btnChooseTheRightClub_Click(object sender, EventArgs e)
-        {
-            QuestionFileHandler.RoundType = "Go Clubbin";
-            InstructionSetup();
-        }
-
-        // Pick a round randomly for the user
-        private void btnSurpriseMeRound_Click(object sender, EventArgs e)
-        {
-            Random random = new Random(Guid.NewGuid().GetHashCode());
-            QuestionFileHandler.RoundType = questionTypes[random.Next(0, questionTypes.Count)];
-            InstructionSetup();
-        }
         #endregion RoundTypeButtonClicks
 
         #region Instructions        
@@ -267,6 +366,7 @@ namespace The_ULTIMATE_golf_quiz
 
             resetInstructions();
             string round = QuestionFileHandler.RoundType;
+            lblInstructionsTitle.Text = round + " Instructions";
             switch (round)
             {
                 case "Type It":
@@ -292,7 +392,7 @@ namespace The_ULTIMATE_golf_quiz
                     break;
                 case "Where in the World":
                     lblInstructionsQuestion.Text = "Read the question and look at the picture";
-                    lblInstructionsAnswer.Text = "Click on the world map to choose where you think this answer is";
+                    lblInstructionsAnswer.Text = "Click on the world map to choose where you think the answer is";
                     lblInstructionsPoints.Text = "Be careful, you need to be close to score and you only get once chance";
                     lblInstructionsTimer.Text = "Tip: Click the picture to make it bigger! Click it again to go back to normal";
                     pctBoxInstructionsGameImage.Image = (Image)Properties.Resources.ResourceManager.GetObject(round);
@@ -305,13 +405,9 @@ namespace The_ULTIMATE_golf_quiz
                     pctBoxInstructionsGameImage.Image = (Image)Properties.Resources.ResourceManager.GetObject(round);
                     break;
             }
-
-            tmrInstructions.Interval = 1500;
+            tmrInstructions.Interval = 1000;
             tmrInstructions.Enabled = true;
-            tmrInstructions.Tick += new EventHandler(tmrInstructions_Tick);
-
-            tmrInstructions2.Interval = 1000;
-            tmrInstructions2.Start();
+            tmrInstructions.Start();
         }
         private void resetInstructions()
         {
@@ -325,14 +421,10 @@ namespace The_ULTIMATE_golf_quiz
             pctBoxArrow4.Visible = false;
             btnStartRound.Visible = false;
         }
-        private void tmrInstructions_Tick(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
-            tmrInstructions.Stop();
-        }
+       
         int stopTime = 0;
 
-        private void tmrInstructions2_Tick(object sender, EventArgs e)
+        private void tmrInstructions_Tick(object sender, EventArgs e)
         {
             stopTime++;
             if(stopTime == 1) lblInstructionsQuestion.Visible = true;
@@ -347,12 +439,28 @@ namespace The_ULTIMATE_golf_quiz
             {
                 btnStartRound.Visible = true;
                 stopTime = 0;
-                tmrInstructions2.Stop();
+                tmrInstructions.Stop();
             }
         }
+
+        // If picture box is clicked, zoom instruction image
         private void pctBoxInstructionsGameImage_Click(object sender, EventArgs e)
         {
             zoomPictureBox(!imageZoomed, "Instructions");
+            if (imageZoomed)
+            {
+                lblClickToEnlarge.SendToBack();
+            }
+            else
+            {
+                lblClickToEnlarge.BringToFront();
+            }
+        }
+
+        // If label over picture box is clicked, zoom instruction image
+        private void lblClickToEnlarge_Click(object sender, EventArgs e)
+        {
+            pctBoxInstructionsGameImage_Click(sender, e);
         }
 
         private void btnStartRound_Click(object sender, EventArgs e)
@@ -362,6 +470,8 @@ namespace The_ULTIMATE_golf_quiz
 
         private void btnSkip_Click(object sender, EventArgs e)
         {
+            tmrInstructions.Stop();
+            stopTime = 0;
             setup();
         }
 
@@ -380,6 +490,10 @@ namespace The_ULTIMATE_golf_quiz
             pnlQuestion.Dock = DockStyle.Top;
             pnlAnswer.Dock = DockStyle.Bottom;
             btnNext.Visible = false;
+
+            // Reset number of questions asked and answered correctly to 0 at the start of the round
+            NumberOfQuestionsAnsweredCorrectly = 0;
+            NumberOfQuestionsAskedThisRound = 0;
             
             // Now get the first question
             GetQuestion();
@@ -416,159 +530,123 @@ namespace The_ULTIMATE_golf_quiz
                 progressBarCountdown.Maximum = countdown;
                 tmrCountdown.Start();
                 startCountdown();
-                
+                int randomisedQuestionNumber;
                 // Show the panels relevant to the selected round type
                 switch (QuestionFileHandler.RoundType)
                 {
                     case "Type It":
-                        // if the amount of type it questions in the list is more than 0, ie its not empty, then it will ask another question
-                        if (typeItQuestionList.Count > 0)
-                        {
-                            // sets a variable equal to a number between 0 and the total amount of questions in the list of type it questions
-                            int randomisedQuestionNumber = random.Next(0, QuestionFileHandler.TypeItQuestions.Count);
-                            // the current question is equal to the question in the list with the index of the random number generated
-                            TypeItQuestion currentTypeItQuestion = QuestionFileHandler.TypeItQuestions[randomisedQuestionNumber];
-                            // sets the current question equal to the base question with the randomised index
-                            currentTypeItQuestion1 = currentTypeItQuestion;
+                        // sets a variable equal to a number between 0 and the total amount of questions in the list of type it questions
+                        randomisedQuestionNumber = random.Next(0, QuestionFileHandler.TypeItQuestions.Count);
+                        // the current question is equal to the question in the list with the index of the random number generated
+                        TypeItQuestion currentTypeItQuestion = QuestionFileHandler.TypeItQuestions[randomisedQuestionNumber];
+                        // sets the current question equal to the base question with the randomised index
+                        currentTypeItQuestion1 = currentTypeItQuestion;
 
-                            // Preparation for the question to be displayed
-                            lblQuestion.Text = currentTypeItQuestion.Question;
-                            txtBoxAnswer.Enabled = true;
-                            this.ActiveControl = txtBoxAnswer;
-                            lblDifficulty.Text = "Difficulty: " + BaseQuestion.DifficultyLevels[currentTypeItQuestion.Difficulty];
-                            TotalPointsAvailable += currentTypeItQuestion.Points;
-                            NumberOfQuestionsAskedThisRound++;
+                        // Preparation for the question to be displayed
+                        lblQuestion.Text = currentTypeItQuestion.Question;
+                        txtBoxAnswer.Enabled = true;
+                        this.ActiveControl = txtBoxAnswer;
+                        lblDifficulty.Text = "Difficulty: " + BaseQuestion.DifficultyLevels[currentTypeItQuestion.Difficulty];
+                        TotalPointsAvailable += currentTypeItQuestion.Points;
+                        NumberOfQuestionsAskedThisRound++;
 
-                            // Show TypeIt panel
-                            pnlTypeIt.Visible = true;
-                            pnlTypeIt.Dock = DockStyle.Fill;
-                        }
-                        else
-                        {
-                            frmQuizQuestionsInitialisation();
-                            MessageBox.Show("You have completed all available questions for type it, Congratulations!");
-                        }
+                        // Show TypeIt panel
+                        pnlTypeIt.Visible = true;
+                        pnlTypeIt.Dock = DockStyle.Fill;
                         break;
 
-                    case "Truth or Lie":
-                        // Same things for true or false questions
-                        if (trueOrFalseQuestionList.Count > 0)
-                        {
-                            // sets a variable equal to a number between 0 and the total amount of questions in the list of t or f questions
-                            int randomisedQuestionNumber = random.Next(0, QuestionFileHandler.TrueOrFalseQuestions.Count);
+                    case "Truth or Lie":                        
+                        // sets a variable equal to a number between 0 and the total amount of questions in the list of t or f questions
+                        randomisedQuestionNumber = random.Next(0, QuestionFileHandler.TrueOrFalseQuestions.Count);
 
-                            TrueOrFalseQuestion currentTrueOrFalseQuestion = QuestionFileHandler.TrueOrFalseQuestions[randomisedQuestionNumber];
-                            currentTrueOrFalseQuestion1 = currentTrueOrFalseQuestion;
+                        TrueOrFalseQuestion currentTrueOrFalseQuestion = QuestionFileHandler.TrueOrFalseQuestions[randomisedQuestionNumber];
+                        currentTrueOrFalseQuestion1 = currentTrueOrFalseQuestion;
 
-                            // Question preparation
-                            lblQuestion.Text = currentTrueOrFalseQuestion.Question;
-                            this.ActiveControl = btnTrue;
-                            lblDifficulty.Text = "Difficulty: " + BaseQuestion.DifficultyLevels[currentTrueOrFalseQuestion.Difficulty];
-                            TotalPointsAvailable += currentTrueOrFalseQuestion.Points;
-                            NumberOfQuestionsAskedThisRound++;
+                        // Question preparation
+                        lblQuestion.Text = currentTrueOrFalseQuestion.Question;
+                        this.ActiveControl = btnTrue;
+                        lblDifficulty.Text = "Difficulty: " + BaseQuestion.DifficultyLevels[currentTrueOrFalseQuestion.Difficulty];
+                        TotalPointsAvailable += currentTrueOrFalseQuestion.Points;
+                        NumberOfQuestionsAskedThisRound++;
 
-                            // Show TrueOrFalse panel
-                            pnlTrueOrFalseOptions.Visible = true;
-                            pnlTrueOrFalseOptions.Dock = DockStyle.Fill;
-                        }
-                        else
-                        {
-                            frmQuizQuestionsInitialisation();
-                            MessageBox.Show("You have completed all available questions for true or false, Congratulations!");
-                        }
+                        // Show TrueOrFalse panel
+                        pnlTrueOrFalseOptions.Visible = true;
+                        pnlTrueOrFalseOptions.Dock = DockStyle.Fill;                    
                         break;
 
-                    case "Multiple Guess":
-                        if (multipleChoiceQuestionList.Count > 0)
-                        {
-                            // sets a variable equal to a number between 0 and the total amount of questions in the list of multi choice questions
-                            int randomisedQuestionNumber = random.Next(0, QuestionFileHandler.MultiChoiceQuestions.Count);
-                            MultiChoiceQuestion currentMultipleChoiceQuestion = QuestionFileHandler.MultiChoiceQuestions[randomisedQuestionNumber];
-                            // sets the current question equal to the base question with the randomised index
-                            currentMultipleChoiceQuestion1 = currentMultipleChoiceQuestion;
-                            // if the current questions' id equals a question in the lists' id, then the question will be displayed
+                    case "Multiple Guess":                        
+                        // sets a variable equal to a number between 0 and the total amount of questions in the list of multi choice questions
+                        randomisedQuestionNumber = random.Next(0, QuestionFileHandler.MultiChoiceQuestions.Count);
+                        MultiChoiceQuestion currentMultipleChoiceQuestion = QuestionFileHandler.MultiChoiceQuestions[randomisedQuestionNumber];
+                        // sets the current question equal to the base question with the randomised index
+                        currentMultipleChoiceQuestion1 = currentMultipleChoiceQuestion;
+                        // if the current questions' id equals a question in the lists' id, then the question will be displayed
                             
-                            // Question preparation
-                            lblQuestion.Text = currentMultipleChoiceQuestion.Question;
-                            btnOption1.Text = currentMultipleChoiceQuestion.Option1;
-                            btnOption2.Text = currentMultipleChoiceQuestion.Option2;
-                            btnOption3.Text = currentMultipleChoiceQuestion.Option3;
-                            btnOption4.Text = currentMultipleChoiceQuestion.Option4;
-                            this.ActiveControl = btnOption1;
-                            lblDifficulty.Text = "Difficulty: " + BaseQuestion.DifficultyLevels[currentMultipleChoiceQuestion.Difficulty];
-                            TotalPointsAvailable += currentMultipleChoiceQuestion.Points;
-                            NumberOfQuestionsAskedThisRound++;
+                        // Question preparation
+                        lblQuestion.Text = currentMultipleChoiceQuestion.Question;
+                        btnOption1.Text = currentMultipleChoiceQuestion.Option1;
+                        btnOption2.Text = currentMultipleChoiceQuestion.Option2;
+                        btnOption3.Text = currentMultipleChoiceQuestion.Option3;
+                        btnOption4.Text = currentMultipleChoiceQuestion.Option4;
+                        this.ActiveControl = btnOption1;
+                        lblDifficulty.Text = "Difficulty: " + BaseQuestion.DifficultyLevels[currentMultipleChoiceQuestion.Difficulty];
+                        TotalPointsAvailable += currentMultipleChoiceQuestion.Points;
+                        NumberOfQuestionsAskedThisRound++;
 
-                            // Show MultipleChoice panel
-                            pnlMultipleChoiceOptions.Visible = true;
-                            pnlMultipleChoiceOptions.Dock = DockStyle.Fill;
-
-                        }
-                        else
-                        {
-                            frmQuizQuestionsInitialisation();
-                            MessageBox.Show("You have completed all available questions for multiple choice, Congratulations!");
-                        }
+                        // Show MultipleChoice panel
+                        pnlMultipleChoiceOptions.Visible = true;
+                        pnlMultipleChoiceOptions.Dock = DockStyle.Fill;                      
                         break;
 
                     case "Where in the World":
-                        if (pictureQuestionList.Count > 0)
+                        // sets a variable equal to a number between 0 and the total amount of questions in the list of multi choice questions
+                        randomisedQuestionNumber = random.Next(0, QuestionFileHandler.PictureQuestions.Count);
+                        WhereInTheWorld currentPictureQuestion = QuestionFileHandler.PictureQuestions[randomisedQuestionNumber];
+                        // sets the current question equal to the base question with the randomised index
+                        currentPictureQuestion1 = currentPictureQuestion;
+                        // if the current questions' id equals a question in the lists' id, then the question will be displayed
+
+                        // Question preparation
+                        lblQuestion.Text = currentPictureQuestion.Question;
+
+                        if (currentPictureQuestion.PictureId.Contains("FILEPATH"))
                         {
-                            
-                            // sets a variable equal to a number between 0 and the total amount of questions in the list of multi choice questions
-                            int randomisedQuestionNumber = random.Next(0, QuestionFileHandler.PictureQuestions.Count);
-                            WhereInTheWorld currentPictureQuestion = QuestionFileHandler.PictureQuestions[randomisedQuestionNumber];
-                            // sets the current question equal to the base question with the randomised index
-                            currentPictureQuestion1 = currentPictureQuestion;
-                            // if the current questions' id equals a question in the lists' id, then the question will be displayed
-
-                            // Question preparation
-                            lblQuestion.Text = currentPictureQuestion.Question;
-
-                            if (currentPictureQuestion.PictureId.Contains("FILEPATH"))
+                            try
                             {
-                                try
-                                {
-                                    // Load the selected image into the picturebox 
-                                    pctBoxPicture.Image = Image.FromFile(currentPictureQuestion.PictureId.Replace("FILEPATH",""));
-                                }
-                                catch (FileNotFoundException fnf)
-                                {
-                                    MessageBox.Show("ShowError: Could not find your file from " + currentPictureQuestion.PictureId.Replace("FILEPATH", "") + "\nError: " + fnf.Message);
-                                }
+                                // Load the selected image into the picturebox 
+                                pctBoxPicture.Image = Image.FromFile(currentPictureQuestion.PictureId.Replace("FILEPATH",""));
                             }
-                            else
+                            catch (FileNotFoundException fnf)
                             {
-                                pctBoxPicture.Image = (Image)Properties.Resources.ResourceManager.GetObject(currentPictureQuestion.PictureId);
+                                MessageBox.Show("ShowError: Could not find your file from " + currentPictureQuestion.PictureId.Replace("FILEPATH", "") + "\nError: " + fnf.Message);
                             }
-
-                            this.ActiveControl = btnOption1;
-                            lblDifficulty.Text = "Difficulty: " + BaseQuestion.DifficultyLevels[currentPictureQuestion.Difficulty];
-                           // TotalPointsAvailable += currentPictureQuestion.Points;
-                            NumberOfQuestionsAskedThisRound++;
-
-                            // Show MultipleChoce and Picture panels
-                            //pnlMultipleChoiceOptions.Visible = true;
-                            pctBoxPicture.Visible = true;
-                            pnlWhereinTheWorld.Visible = true;
-                            pnlWhereinTheWorld.Dock = DockStyle.Fill;
-                            lblAnswer.Text = "Click a point on the map to select the location of the answer";
-                            lblAnswer.Visible = true;
-                            pictureQuestionAnswered = false;
-                            pctBoxLocation.Visible = false;
-
-                            // reset the imageZoomed flag and resize the picture to the new panel size
-                            zoomPictureBox(false, "Where in the World");
                         }
                         else
                         {
-                            frmQuizQuestionsInitialisation();
-                            MessageBox.Show("You have completed all available questions for the Where in the World round, Congratulations!");
+                            pctBoxPicture.Image = (Image)Properties.Resources.ResourceManager.GetObject(currentPictureQuestion.PictureId);
                         }
+
+                        this.ActiveControl = btnOption1;
+                        lblDifficulty.Text = "Difficulty: " + BaseQuestion.DifficultyLevels[currentPictureQuestion.Difficulty];
+                        // TotalPointsAvailable += currentPictureQuestion.Points;
+                        NumberOfQuestionsAskedThisRound++;
+
+                        // Show MultipleChoce and Picture panels
+                        //pnlMultipleChoiceOptions.Visible = true;
+                        pctBoxPicture.Visible = true;
+                        pnlWhereinTheWorld.Visible = true;
+                        pnlWhereinTheWorld.Dock = DockStyle.Fill;
+                        lblAnswer.Text = "Click a point on the map to select the location of the answer";
+                        lblAnswer.Visible = true;
+                        pictureQuestionAnswered = false;
+                        pctBoxLocation.Visible = false;
+                        pctBoxCorrectLocation.Visible = false;
+
+                        // reset the imageZoomed flag and resize the picture to the new panel size
+                        zoomPictureBox(false, "Where in the World");
                         break;
 
                     case "Go Clubbin":
-
                         // Display the panels
                         pnlGoClubbin.Visible = true;
                         pnlGrass.Visible = true;
@@ -643,15 +721,13 @@ namespace The_ULTIMATE_golf_quiz
                         pctBoxFlag.BackColor = Color.Transparent;
                         lblWindSpeed.Text = "Wind Speed: " + Math.Abs(windSpeed);
 
-                        // reset go button and hide power progress bar
+                        // Reset go button and hide power progress bar
                         btnGoClubbinGo.Text = "Go!";
                         goButtonClickCount = 0;
                         progressBarPower.Visible = false;
+                        lblPowerPercentage.Visible = false;
                         lblPower.Visible = false;
                         pctBoxMap.Enabled = true;
-                        break;
-
-                    default:
                         break;
                 }
 
@@ -659,8 +735,7 @@ namespace The_ULTIMATE_golf_quiz
                 lblQuestionNumber.Text = QuestionFileHandler.RoundType + " " + NumberOfQuestionsAskedThisRound.ToString() + "/5";
             }
             else
-            {
-                
+            {                
                 // if the user has been asked their 5 questions, then they will be shown the finish panel
                 RoundFinishedScreen();
             }                                          
@@ -694,6 +769,7 @@ namespace The_ULTIMATE_golf_quiz
                 TotalScoreForCurrentRound += currentTypeItQuestion1.Points;
                 NumberOfQuestionsAnsweredCorrectly++;
                 UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentTypeItQuestion1, true);
+                startQuestionCorrect();
             }
             else
             {
@@ -701,6 +777,7 @@ namespace The_ULTIMATE_golf_quiz
                 // Save the id of the question so it doesn't get asked again and mark it as incorrect
                 lblAnswer.Text = "Incorrect, the answer is " + currentTypeItQuestion1.CorrectAnswer;
                 UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentTypeItQuestion1, false);
+                startQuestionWrong();
             }
         }
 
@@ -729,6 +806,7 @@ namespace The_ULTIMATE_golf_quiz
                 TotalScoreForCurrentRound += currentTrueOrFalseQuestion1.Points;
                 NumberOfQuestionsAnsweredCorrectly++;
                 UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentTrueOrFalseQuestion1, true);
+                startQuestionCorrect();
             }
             else
             {
@@ -736,6 +814,7 @@ namespace The_ULTIMATE_golf_quiz
                 // Save the id of the question so it doesn't get asked again and mark it as incorrect
                 lblAnswer.Text = "Incorrect, it's false";
                 UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentTrueOrFalseQuestion1, false);
+                startQuestionWrong();
             }
         }
 
@@ -763,6 +842,7 @@ namespace The_ULTIMATE_golf_quiz
                 TotalScoreForCurrentRound += currentTrueOrFalseQuestion1.Points;
                 NumberOfQuestionsAnsweredCorrectly++;
                 UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentTrueOrFalseQuestion1, true);
+                startQuestionCorrect();
 
             }
             else
@@ -771,6 +851,7 @@ namespace The_ULTIMATE_golf_quiz
                 // Save the id of the question so it doesn't get asked again and mark it as incorrect
                 lblAnswer.Text = "Incorrect, it's true";
                 UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentTrueOrFalseQuestion1, false);
+                startQuestionWrong();
             }
         }
 
@@ -823,6 +904,7 @@ namespace The_ULTIMATE_golf_quiz
                 TotalScoreForCurrentRound += currentMultipleChoiceQuestion1.Points;
                 NumberOfQuestionsAnsweredCorrectly++;
                 UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentMultipleChoiceQuestion1, true);
+                startQuestionCorrect();
             }
             else
             {
@@ -830,14 +912,14 @@ namespace The_ULTIMATE_golf_quiz
                 // Save the id of the question so it doesn't get asked again and mark it as incorrect
                 lblAnswer.Text = "Incorrect, the answer is " + currentMultipleChoiceQuestion1.CorrectAnswer;
                 UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentMultipleChoiceQuestion1, false);
+                startQuestionWrong();
             }
         }
         
         //-------------------------------------------------------------------------------------------------------------------
         // Where in the World - map clicked
         private void pctBoxMap_Click(object sender, EventArgs e)
-        {
-            
+        {            
             // Check if the user has already clicked on the map
             if (!pictureQuestionAnswered)
             {
@@ -846,7 +928,6 @@ namespace The_ULTIMATE_golf_quiz
                 stopCountdown();
                 
                 QuestionFileHandler.PictureQuestions.Remove(currentPictureQuestion1);
-
                 
                 int mapX = pctBoxMap.Location.X;
                 int mapY = pctBoxMap.Location.Y;
@@ -859,6 +940,13 @@ namespace The_ULTIMATE_golf_quiz
                 int x = (1000 * mouseEvent.X) / pctBoxMap.Width;
                 int y = (1000 * mouseEvent.Y) / pctBoxMap.Height;
 
+                // Convert the correct location to a point on the map based on the map size
+                int correctXOnMap = (currentPictureQuestion1.CorrectLocationX * pctBoxMap.Width) / 1000;
+                int correctYOnMap = (currentPictureQuestion1.CorrectLocationY * pctBoxMap.Height) / 1000;
+
+                // Set the correct location marker to the answer position on the map
+                pctBoxCorrectLocation.Location = new Point(mapX + correctXOnMap - (pctBoxLocation.Width / 2), mapY + correctYOnMap - pctBoxLocation.Height);
+
                 // Check if the player is close to the right answer (+/- 50)
                 if (Math.Abs(currentPictureQuestion1.CorrectLocationX - x) <= 50
                     && Math.Abs(currentPictureQuestion1.CorrectLocationY - y) <= 50)
@@ -869,7 +957,7 @@ namespace The_ULTIMATE_golf_quiz
                     NumberOfQuestionsAnsweredCorrectly++;
                     TotalScoreForCurrentRound += currentPictureQuestion1.Points;
                     UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentPictureQuestion1, true);
-
+                    startQuestionCorrect();
                 }
                 else
                 {
@@ -877,14 +965,15 @@ namespace The_ULTIMATE_golf_quiz
                     lblAnswer.Text = String.Format("No, {0} ({1}, {2} )\nYou selected ({3}, {4})",
                         currentPictureQuestion1.CorrectAnswer, currentPictureQuestion1.CorrectLocationX, currentPictureQuestion1.CorrectLocationY, x, y);
                     UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentPictureQuestion1, false);
-
+                    startQuestionWrong();
                 }
                 
                 // Remember that user has already clicked on the map so they can't answer more than once
-                // Show the answer
+                // show location markers for where the player clicked and the correct answer
                 pictureQuestionAnswered = true;
                 AnswerButtonsDisable();
                 pctBoxLocation.Visible = true;
+                pctBoxCorrectLocation.Visible = true;
                 pnlAnswer.Visible = true;
                 lblAnswer.Visible = true;
                 btnNext.Visible = true;
@@ -894,11 +983,7 @@ namespace The_ULTIMATE_golf_quiz
 
         //-------------------------------------------------------------------------------------------------------------------
         // Go Clubbin - Go/Stop button clicked
-        private int ballX = 0;
-        private int ballY = 0;
-        private double sx = 0;
-        private double sy = 0;
-        
+
         // Lookup with loft and max distance of each club
         private readonly Dictionary<string, (int,int)> clubLoftAndMaxDistanceYds = new Dictionary<string, (int,int)>
         { 
@@ -918,28 +1003,36 @@ namespace The_ULTIMATE_golf_quiz
             { "Driver", (10, 326) }
         };
 
-        private void tmrGoClubbinError_Tick(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
-            tmrGoClubbinError.Stop();
-        }
-        int stopTimeGoClubbinError = 0;
-        private void tmrGoClubbinError2_Tick(object sender, EventArgs e)
-        {
-            stopTimeGoClubbinError++;
-            if(stopTimeGoClubbinError == 1)
-            {
-                lblQuestion.Text = "Choose the club you think will get you closest to the hole. Click Go to start the power meter then Stop to take your shot!";
-                lblQuestion.ForeColor = Color.White;
-                stopTimeGoClubbinError = 0;
-                tmrGoClubbinError2.Stop();
-            }
-        }
+        // Value of gravity in yards per second (all distances in yards)
+        const double metresToYards = 1.094;
+        const double gravity = 9.81 * metresToYards;
 
-        private void btnChooseAClubGo_Click(object sender, EventArgs e)
+        // Position of the flag on panel, position of ball on panel and displacement of ball from starting position
+        int flagX = 0;
+        int flagY = 0;
+        private int ballX = 0;
+        private int ballY = 0;
+        private double sx = 0;
+        private double sy = 0;
+
+        // Selected club name, loft, max distance, actual distance, swing speed and starting horizontal/vertical speed
+        string selectedClub = ""; double loftInDegrees = 0;
+        double loftInRadians = 0;
+        double maxDistanceYds = 0;
+        double actualDistanceYds = 0;
+        double swingSpeed = 0;
+        double ux = 0;
+        double uy = 0;
+
+        // How long the shot will take, starting time and interval for ball flight
+        double timeBallInMotion = 0;
+        double timeInSecs = 0;
+        const double intervalInSecs = 0.1;
+
+        private void btnGoClubbinGo_Click(object sender, EventArgs e)
         {
-            // Check the player has selected a club
-            string selectedClub = comboBoxChooseAClub.Text;
+            // Check the player has selected a club, and if not show an error message for 2 seconds
+            selectedClub = comboBoxChooseAClub.Text;
             if (selectedClub == "")
             {
                 lblQuestion.Text = "You need to select a club first!";
@@ -948,12 +1041,12 @@ namespace The_ULTIMATE_golf_quiz
                 tmrGoClubbinError.Enabled = true;
                 tmrGoClubbinError.Tick += new EventHandler(tmrGoClubbinError_Tick);
 
-                tmrGoClubbinError2.Interval = 2000;
-                tmrGoClubbinError2.Start();                
+                tmrGoClubbinError.Interval = 2000;
+                tmrGoClubbinError.Start();                
                 return;
             }
 
-            // Stop the countdown timer
+            // Player has selected a club, so stop the countdown timer
             tmrCountdown.Stop();
             stopCountdown();
             
@@ -963,17 +1056,23 @@ namespace The_ULTIMATE_golf_quiz
                 // Reset/show the power progress bar and start the power meter
                 progressBarPower.Value = progressBarPower.Minimum;
                 progressBarPower.Visible = true;
+                lblPowerPercentage.Visible = true;
                 lblPower.Visible = true;
                 tmrPower.Enabled = true;
                 tmrPower.Start();
+                powerTicks = 0;
+                powerTickDirection = 1;
                 goButtonClickCount = 1;
                 btnGoClubbinGo.Text = "Stop!";
                 return;
             }
-            
+
             // Otherwise (second time go button clicked)
-            // Stop the power meter, stop the countdown music, play the sound to hit the ball
+            // Get the power value selected by the player
             goButtonClickCount = 2;
+            double powerSelected = progressBarPower.Value;
+
+            // Stop the power meter, stop the countdown music, play the sound to hit the ball
             tmrPower.Stop();
             tmrPower.Enabled = false;
             stopMusicPlayer();
@@ -981,65 +1080,48 @@ namespace The_ULTIMATE_golf_quiz
             player.SoundLocation = "Golf Ball.wav";
             player.Load();
             player.Play();
-                     
-            // Get the power value selected by the player
-            double powerSelected = progressBarPower.Value;
-
-            // Animate ball moving to hole
-
-            // s = (u * t) + 0.5 * (a * t * t)
-            // assume no air fiction and no wind
-            // sx = (u * cos(loft) * t) + 0.5 * (0 * t * t)
-            // sy = (u * sin(loft) * t) + 0.5 * (g * t * t)
-
-            // set value of gravity in yards per second (all distances in yards)
-            const double metresToYards = 1.094;
-            const double gravity = 9.81 * metresToYards;
 
             // get the position of the flag on panel
-            int flagX = pctBoxFlag.Location.X;
-            int flagY = pctBoxFlag.Location.Y;
+            flagX = pctBoxFlag.Location.X;
+            flagY = pctBoxFlag.Location.Y;
 
-            // start at (0,0)
+            // Set initial displacement from starting ball position to (0,0)
             sx = 0;
             sy = 0;
 
             // Get loft and swing speed for selected club
             // Then calculate the distance that the ball will go
             // Look up loft based on club selected and convert to radians
-            double loftInDegrees = clubLoftAndMaxDistanceYds[selectedClub].Item1;
-            double loftInRadians = loftInDegrees * Math.PI / 180;
+            loftInDegrees = clubLoftAndMaxDistanceYds[selectedClub].Item1;
+            loftInRadians = loftInDegrees * Math.PI / 180;
             // Look up the max distance for the selected club for a perfect shot with no wind
-            double maxDistanceYds = clubLoftAndMaxDistanceYds[selectedClub].Item2;
+            maxDistanceYds = clubLoftAndMaxDistanceYds[selectedClub].Item2;
             
             // Now calculate the actual distance and starting speed based on the power and wind
-            double actualDistanceYds = 0;
-            double swingSpeed = 0;
-            double ux = 0;
-            double uy = 0;
-            
             // For putter, ignore wind speed and gravity
             if (selectedClub == "Putter")
             {
                 // Actual distance is max distance times percentage power
                 actualDistanceYds = maxDistanceYds * (powerSelected / 100);
-                // base the speed of the putt on the distance (10 seconds for a 50 yard putt)
+                // Base the horizontal speed of the putt on the distance (10 seconds for a 50 yard putt)
                 ux = maxDistanceYds / 10;
+                uy = 0;
             }
             // Otherwise adjust distance based on wind speed and direction - 1% for every 1 mph
             else
             {
-                // negative wind blowing to left (hitting into wind)
-                // positive wind speed blowing to the right (hitting with the wind)
-                // reduce or increase distance by 1% for every 1 mph
+                // Negative wind blowing to left (hitting into wind)
+                // Positive wind speed blowing to the right (hitting with the wind)
+                // Reduce or increase distance by 1% for every 1 mph
                 actualDistanceYds = maxDistanceYds * (100 + windSpeed) / 100;
                 
-                // Apply power selected to distance
+                // Reduce distance by multiplying by the percentage power selected by the user
                 actualDistanceYds = actualDistanceYds * (powerSelected / 100);
 
                 // Formula for horizontal distance the ball will go using loft and initial speed
-                // horizontal distance = ( initial horizontal speed^2 * sin(2 * loft) ) / g
-                // initial horizontal speed = square root of ( (horizontal distance * g) / sin (2 * loft) )
+                // sx = ( u * u * sin (2 * loft) ) / g
+                // Rearrange to get initial speed based on distance
+                // u = square root of ( (sx * g) / sin (2 * loft) )
                 swingSpeed = Math.Sqrt((actualDistanceYds * gravity) / Math.Sin(2 * loftInRadians));
 
                 // Calculate starting horizontal (ux) and vertical (uy) speed based on loft (converted from degrees to radians)
@@ -1047,82 +1129,20 @@ namespace The_ULTIMATE_golf_quiz
                 uy = swingSpeed * Math.Sin(loftInRadians);
             }
 
-            // Work out how long the shot will take based on distance divided by horizontal speed
-            double timeBallInMotion = actualDistanceYds / ux;
-
-            // Initialise starting time and interval for loop
-            double timeInSecs = 0;
-            double intervalInSecs = 0.1;
+            // Calculate how long the shot will take based on distance divided by horizontal speed
+            timeBallInMotion = actualDistanceYds / ux;
 
             // Set start position for ball
             ballX = ballStartX;
             ballY = ballStartY;
 
-            // Animate the ball in intervals of 0.1 seconds
-            while (timeInSecs < timeBallInMotion)
-            {
-                // Increment time
-                timeInSecs += intervalInSecs;
-
-                // Calculate horizontal (sx) and vertical (sy) position in metres
-                // s = (u * t) + 0.5 * (a * t * t)
-                sx = (ux * timeInSecs);
-
-                // For putter, ignore height
-                if (selectedClub == "Putter")
-                {
-                    sy = 0;
-                }
-                // For other clubs, use the formula
-                else
-                {
-                    sy = (uy * timeInSecs) - (0.5 * gravity * timeInSecs * timeInSecs);
-                }
-
-                // Move the ball to the right position on the canvas
-                // Scale the distance based on the size of the window
-                // and add to the starting position of the ball
-                ballX = ballStartX + (int)sx * ydsToPixelsScale;
-                ballY = ballStartY - (int)sy * ydsToPixelsScale;
-
-                pctBoxGolfBall.Location = new Point(ballX - (pctBoxGolfBall.Width / 2), ballY);
-
-                // Wait interval seconds
-                Thread.Sleep((int)(intervalInSecs * 100));
-            }
-           
-            // When the ball lands get the final distance in yards
-            // and calculate the distance to the hole
-            int distanceTravelledinYards = (ballX - ballStartX) / ydsToPixelsScale;
-            int distanceFromHoleYds = Math.Abs(distanceToHoleYds - distanceTravelledinYards);
-            
-            // Calculate the number of points based on how close the ball is to the hole
-            int points = 0;
-            if (distanceFromHoleYds <= 10)
-            {
-                NumberOfQuestionsAnsweredCorrectly++;
-                points = 5;
-            }
-            else if (distanceFromHoleYds <= 20)
-            {
-                NumberOfQuestionsAnsweredCorrectly++;
-                points = 3;
-            }
-            else if (distanceFromHoleYds <= 30)
-            {
-                NumberOfQuestionsAnsweredCorrectly++;
-                points = 1;
-            }
-
-            // Stop the user from trying again and show the results
-            AnswerButtonsDisable();
-            pnlAnswer.Visible = true;
-            lblAnswer.Visible = true;
-            btnNext.Visible = true;
-            lblAnswer.Text = "Your ball went " + distanceTravelledinYards + " yards so you were " + distanceFromHoleYds + " yards from the hole. You score " + points + " points!";
-            TotalScoreForCurrentRound += points;
-            TotalPointsAvailable += 5;
-            pctBoxMap.Enabled = false;
+            // Initialise flight time, set timer interval and start timer to move ball
+            // Adjust interval for putter vs other clubs
+            timeInSecs = 0;
+            if (selectedClub == "Putter") tmrBallFlight.Interval = (int)(intervalInSecs * 100);
+            else tmrBallFlight.Interval = (int)(intervalInSecs * 125);
+            tmrBallFlight.Enabled = true;
+            tmrBallFlight.Start();
         }
 
         //-------------------------------------------------------------------------------------------------------------------
@@ -1140,6 +1160,8 @@ namespace The_ULTIMATE_golf_quiz
 
             // Allow the user to answer again
             AnswerButtonsEnabled();
+            stopQuestionCorrect();
+            stopQuestionWrong();
 
             // Check if there are any questions left for the selected round type
             // If so get the next question or else go to the finish screen
@@ -1212,7 +1234,7 @@ namespace The_ULTIMATE_golf_quiz
             
             // Show the player how many questions they got right and their points
             lblQuestionsAnsweredCorrectly.Text = "You got " + NumberOfQuestionsAnsweredCorrectly + "/" + NumberOfQuestionsAskedThisRound + " questions correct!";
-            lblTotalScore.Text = "You got " + TotalScoreForCurrentRound + "/" + TotalPointsAvailable + " points!";
+            lblTotalScore.Text = "You now have " + TotalScoreForCurrentRound + "/" + TotalPointsAvailable + " points so far!";
             
             // Add the score for the round to the player's total score for this session
             frmSplashScreen.player.totalScoreForCurrentSession += TotalScoreForCurrentRound;
@@ -1286,38 +1308,156 @@ namespace The_ULTIMATE_golf_quiz
                 progressBarCountdown.Value = countdown;
             }
             else
-            {
-                
+            {                
                 lblQuestion.Text = "TIME'S UP!!";
-                lblQuestion.ForeColor = Color.Red;
+                lblQuestion.ForeColor = Color.FromArgb(255,128,0);
                 AnswerButtonsDisable();
                 btnNext.Visible = true;
                 lblAnswer.Visible = true;
-                // If the question hasn't been answered treat it as incorrect
-                // Show out of time message and stop player from answering
-                // TO DO
+                string answer = "";
+                if (QuestionFileHandler.RoundType == "Type It") answer = currentTypeItQuestion1.CorrectAnswer;
+                if (QuestionFileHandler.RoundType == "Truth or Lie")
+                {
+                    answer = currentTrueOrFalseQuestion1.CorrectAnswer;
+                    if (answer == "1") answer = "True";                      
+                    else answer = "False";                    
+                }
+                if (QuestionFileHandler.RoundType == "Multiple Guess") answer = currentMultipleChoiceQuestion1.CorrectAnswer;
+                if (QuestionFileHandler.RoundType == "Where in the World") answer = currentPictureQuestion1.CorrectAnswer;
+                
+                lblAnswer.Text = "The correct answer is " + answer;              
             }
         }
 
         //-----------------------------------------------------------------
+        // Go Clubbin - timer event for error message
+        int stopTimeGoClubbinError = 0;
+        // After the error message has been displayed for 2 seconds, go back to displaying the question
+        private void tmrGoClubbinError_Tick(object sender, EventArgs e)
+        {
+            stopTimeGoClubbinError++;
+            if (stopTimeGoClubbinError == 1)
+            {
+                lblQuestion.Text = "Choose the club you think will get you closest to the hole. Click Go to start the power meter then Stop to take your shot!";
+                lblQuestion.ForeColor = Color.White;
+                stopTimeGoClubbinError = 0;
+                tmrGoClubbinError.Stop();
+            }
+        }
+        
+        //-----------------------------------------------------------------
         // Go Clubbin - timer event for power selector
-        private int ticks = 0;
+        private int powerTicks = 0;
+        private int powerTickDirection = 1;
         private void timerPower_Tick(object sender, EventArgs e)
         {
             // Stop when reach 100 or go button has been clicked a second time
-            if (ticks < 100 && goButtonClickCount != 2)
+            if (powerTickDirection == 1 && powerTicks < 100 && goButtonClickCount != 2)
             {
-                ticks++;
-                progressBarPower.Value = ticks;
+                powerTicks++;
+                progressBarPower.Value = powerTicks;
+                lblPowerPercentage.Text = powerTicks + "%";
+            }
+            else if (powerTickDirection == 1 && powerTicks == 100 && goButtonClickCount != 2)
+            {
+                powerTickDirection = -1;
+            }
+            else if (powerTickDirection == -1 && powerTicks > 0 && goButtonClickCount != 2)
+            {
+                powerTicks--;
+                progressBarPower.Value = powerTicks;
+                lblPowerPercentage.Text = powerTicks + "%";
             }
             else
             {
                 tmrPower.Stop();
-                tmrPower.Enabled = false;                
-                ticks = 0;
+                tmrPower.Enabled = false;
+                powerTicks = 0;
+                powerTickDirection = 1;
+                btnGoClubbinGo_Click(sender, e);
             }
         }
 
+        //-----------------------------------------------------------------
+        // Go Clubbin - timer event for ball flight
+        private void tmrBallFlight_Tick(object sender, EventArgs e)
+        {
+            // While the ball is still in flight, move it in intervals of 0.1 seconds
+            if (timeInSecs < timeBallInMotion)
+            {
+                // Increment time
+                timeInSecs += intervalInSecs;
+
+                // Calculate horizontal (sx) and vertical (sy) position in metres
+                // s = (u * t) + 0.5 * (a * t * t)
+                sx = (ux * timeInSecs);
+
+                // For putter, ignore height
+                if (selectedClub == "Putter")
+                {
+                    sy = 0;
+                }
+                // For other clubs, use the formula
+                else
+                {
+                    sy = (uy * timeInSecs) - (0.5 * gravity * timeInSecs * timeInSecs);
+                }
+
+                // Move the ball to the right position on the canvas
+                // Scale the distance based on the size of the window
+                // and add to the starting position of the ball
+                ballX = ballStartX + (int)sx * ydsToPixelsScale;
+                ballY = ballStartY - (int)sy * ydsToPixelsScale;
+
+                pctBoxGolfBall.Location = new Point(ballX - (pctBoxGolfBall.Width / 2), ballY);
+
+                // Wait interval seconds
+                Thread.Sleep((int)(intervalInSecs * 100));
+            }
+            else
+            {
+                // When the ball lands stop the timer and get the final distance in yards
+                tmrBallFlight.Enabled = false;
+                tmrBallFlight.Stop();
+
+                // and calculate the distance to the hole
+                int distanceTravelledinYards = (ballX - ballStartX) / ydsToPixelsScale;
+                int distanceFromHoleYds = Math.Abs(distanceToHoleYds - distanceTravelledinYards);
+
+                // Calculate the number of points based on how close the ball is to the hole
+                int points = 0;
+                if (distanceFromHoleYds <= 10)
+                {
+                    startQuestionCorrect();
+                    NumberOfQuestionsAnsweredCorrectly++;
+                    points = 5;
+                }
+                else if (distanceFromHoleYds <= 20)
+                {
+                    startQuestionCorrect();
+                    NumberOfQuestionsAnsweredCorrectly++;
+                    points = 3;
+                }
+                else if (distanceFromHoleYds <= 30)
+                {
+                    startQuestionCorrect();
+                    NumberOfQuestionsAnsweredCorrectly++;
+                    points = 1;
+                }
+                else startQuestionWrong();
+
+                // Stop the user from trying again and show the results
+                AnswerButtonsDisable();
+                pnlAnswer.Visible = true;
+                lblAnswer.Visible = true;
+                btnNext.Visible = true;
+                lblAnswer.Text = "Your ball went " + distanceTravelledinYards + " yards so you were " + distanceFromHoleYds + " yards from the hole. You score " + points + " points!";
+                TotalScoreForCurrentRound += points;
+                TotalPointsAvailable += 5;
+                //pctBoxMap.Enabled = false;
+            }
+        }
+        
         //-----------------------------------------------------------------
         // Where in the World - enlarge/shrink picture when it is clicked
         private void pctBoxPicture_Click(object sender, EventArgs e)
@@ -1385,8 +1525,7 @@ namespace The_ULTIMATE_golf_quiz
                     pctBoxInstructionsGameImage.Location = new Point(pnlInstructions.Width / 2 - pctBoxInstructionsGameImage.Width /2, pnlInstructions.Height / 2 - pctBoxInstructionsGameImage.Height / 2 - 10);
                     imageZoomed = false;
                 }
-            }
-            
+            }            
         }
 
         //-----------------------------------------------------------------
@@ -1441,7 +1580,5 @@ namespace The_ULTIMATE_golf_quiz
             // Move the ball
             pctBoxGolfBall.Location = new Point(ballX - (pctBoxFlag.Width / 2), ballY);
         }
-
-        
     }
 }

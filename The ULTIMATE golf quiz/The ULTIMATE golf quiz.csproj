@@ -255,6 +255,11 @@
     <Content Include="obj\Debug\The ULTIMATE golf quiz.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\The ULTIMATE golf quiz.exe" />
     <Content Include="obj\Debug\The ULTIMATE golf quiz.pdb" />
+    <None Include="Resources\Where in the World.png" />
+    <None Include="Resources\Type It.png" />
+    <None Include="Resources\Truth or Lie.png" />
+    <None Include="Resources\Surprise Me.png" />
+    <None Include="Resources\Multiple Choice.png" />
     <None Include="Resources\Quiz True or False question.png" />
     <None Include="Resources\Quiz Picture Round question.png" />
     <None Include="Resources\Quiz Multiple Choice question.png" />
@@ -266,6 +271,7 @@
     <None Include="Resources\270 - 360.png" />
     <None Include="Resources\270 - 3601.png" />
     <None Include="Resources\180 - 270.png" />
+    <None Include="Resources\Correct Location.png" />
     <Content Include="Resources\Default1.png" />
     <Content Include="Resources\Default1.png.bmp" />
     <Content Include="Resources\Default2.png" />
@@ -277,6 +283,7 @@
     <None Include="Resources\Golf flag gentle left.png" />
     <None Include="Resources\Golf flag gentle right.png" />
     <None Include="Resources\Golf flag no wind.png" />
+    <None Include="Resources\Go Clubbin.png" />
     <Content Include="Resources\Golf logo3.png" />
     <None Include="Resources\Screenshot 2024-01-26 085609.png" />
     <None Include="Resources\Screenshot 2024-01-25 151958.png" />

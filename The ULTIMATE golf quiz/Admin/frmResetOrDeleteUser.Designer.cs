@@ -83,6 +83,7 @@
             // 
             // lblAdvice
             // 
+            this.lblAdvice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblAdvice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdvice.ForeColor = System.Drawing.Color.White;
             this.lblAdvice.Location = new System.Drawing.Point(22, 83);

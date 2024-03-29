@@ -310,4 +310,25 @@
   <data name="Where in the World" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Quiz Picture Round question.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GoClubbin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Go Clubbin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MultipleGuess" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Multiple Choice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SurpriseMe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Surprise Me.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TruthOrLie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Truth or Lie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TypeIt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Type It.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WhereInTheWorld" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Where in the World.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CorrectLocation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Correct Location.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
