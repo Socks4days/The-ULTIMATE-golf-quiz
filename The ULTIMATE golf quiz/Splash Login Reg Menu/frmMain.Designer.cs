@@ -522,6 +522,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "The ULTIMATE Golf Quiz";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.pnlSideMenu.ResumeLayout(false);
             this.pnlAdminSubMenu.ResumeLayout(false);
             this.pnlSettingsSubMenu.ResumeLayout(false);

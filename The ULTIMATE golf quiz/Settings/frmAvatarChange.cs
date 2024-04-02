@@ -112,7 +112,7 @@ namespace The_ULTIMATE_golf_quiz
                     // Save the player's new avatar
                     player.avatar = currentAvatarIndex;
                     UserFileHandler.SaveAllPlayers();
-                    frmSplashScreen.mainMenu.setAvatar();
+                    frmSplashScreen.mainMenu.SetAvatar();
                     MessageBox.Show("Preferences saved!");                    
                 }
             }

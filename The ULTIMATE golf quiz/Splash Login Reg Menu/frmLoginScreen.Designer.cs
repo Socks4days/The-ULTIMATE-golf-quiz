@@ -59,7 +59,7 @@
             this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
-            this.btnSubmit.Click += new System.EventHandler(this.Submitbtn_Click);
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // lblUsername
             // 
@@ -130,7 +130,7 @@
             this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "Register\r\n";
             this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.registerbtn_Click);
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // cboxPassword
             // 
@@ -225,7 +225,7 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login ";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.loginfrm_FormClosed);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmLogin_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

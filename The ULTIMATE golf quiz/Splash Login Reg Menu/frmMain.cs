@@ -17,16 +17,16 @@ namespace The_ULTIMATE_golf_quiz
         public frmMain()
         {
             InitializeComponent();           
-            setUpAfterLogin();
+            SetUpAfterLogin();
             SoundFileHandler.PlaySoundLooping(SoundFileHandler.backgroundMusic);
         }
 
         // Initialise the menu and show the user's avatar
-        private void setUpAfterLogin()
+        private void SetUpAfterLogin()
         {
             hideSubMenus();
-            setTitleLabels();
-            setAvatar();
+            SetTitleLabels();
+            SetAvatar();
             showMenus();
             if (frmSplashScreen.player.isAdmin == 0)
             {
@@ -73,7 +73,7 @@ namespace The_ULTIMATE_golf_quiz
 
         #region topMenuSetup
         // Set the logged in user's details in the title panel
-        public void setTitleLabels()
+        public void SetTitleLabels()
         {
             lblCurrentUser.Text = "User: " + frmSplashScreen.player.username + "   ";
             lblHighscore.Text = "Highscore: " + frmSplashScreen.player.highscore.ToString() + "   ";
@@ -81,7 +81,7 @@ namespace The_ULTIMATE_golf_quiz
         }
 
         // Show the user's avatar
-        public void setAvatar()
+        public void SetAvatar()
         {
             string[] avatarPaths = { "Default1", "Default2", "Tiger Woods", "Rory McIllroy", "Female1", "Female2" };
             int avatarIndex = frmSplashScreen.player.avatar;
@@ -91,7 +91,7 @@ namespace The_ULTIMATE_golf_quiz
 
         // Method to open a child form in the main menu container
         private Form activeForm = null;
-        private void openChildForm(Form childForm)
+        private void OpenChildForm(Form childForm)
         {
             // If an existing child form is already open, close it
             if (activeForm!= null)
@@ -108,7 +108,7 @@ namespace The_ULTIMATE_golf_quiz
         }
 
         // Close the child form if one is open
-        private void closeChildForm()
+        private void CloseChildForm()
         {
             if (activeForm != null)
             {
@@ -129,8 +129,8 @@ namespace The_ULTIMATE_golf_quiz
             UserFileHandler.ReadPlayerQuestionAnswered(frmSplashScreen.player);
 
             // Open the quiz form
-            openChildForm(new frmQuizQuestions());
-            resetButtonColours();
+            OpenChildForm(new frmQuizQuestions());
+            ResetButtonColours();
             btnGoToQuiz.BackColor = Color.FromArgb(0,75,0);
         }
 
@@ -138,99 +138,99 @@ namespace The_ULTIMATE_golf_quiz
         private void btnLeaderboard_Click(object sender, EventArgs e)
         {
             hideSubMenus();
-            openChildForm(new frmLeaderboard());
-            resetButtonColours();
+            OpenChildForm(new frmLeaderboard());
+            ResetButtonColours();
             btnLeaderboard.BackColor = Color.FromArgb(0,75,0);
         }
 
         // Open the settings menu
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            closeChildForm();
+            CloseChildForm();
             toggleSubMenu(pnlSettingsSubMenu);
-            resetButtonColours();
+            ResetButtonColours();
         }
 
         // Open the user info form
         private void btnUserInfo_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmUserInfo("Edit"));
-            resetButtonColours();
+            OpenChildForm(new frmUserInfo("Edit"));
+            ResetButtonColours();
             btnUserInfo.BackColor = Color.FromArgb(0,75,0);
         }
 
         // Open the change avatar form
         private void btnChangeAvatar_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmAvatarChange());
-            resetButtonColours();
+            OpenChildForm(new frmAvatarChange());
+            ResetButtonColours();
             btnChangeAvatar.BackColor = Color.FromArgb(0,75,0);
         }
 
         // Open the change password form
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmChangePass());
-            resetButtonColours();
+            OpenChildForm(new frmChangePass());
+            ResetButtonColours();
             btnChangePassword.BackColor = Color.FromArgb(0,75,0);
         }
 
         // Open the user info form and show the delete account message
         private void btnDeleteAccount_Click(object sender, EventArgs e)
         {
-            closeChildForm();
-            resetButtonColours();
+            CloseChildForm();
+            ResetButtonColours();
             btnDeleteAccount.BackColor = Color.FromArgb(0,75,0);
-            openChildForm(new frmUserInfo("Delete"));            
+            OpenChildForm(new frmUserInfo("Delete"));            
         }
         
         // Open the user info form and display the reset account message
         private void btnReset_Click(object sender, EventArgs e)
         {
-            closeChildForm();
-            resetButtonColours();
+            CloseChildForm();
+            ResetButtonColours();
             btnReset.BackColor = Color.FromArgb(0,75,0);
-            openChildForm(new frmUserInfo("Reset"));
+            OpenChildForm(new frmUserInfo("Reset"));
             
         }
 
         // Open the admin menu
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            closeChildForm();
+            CloseChildForm();
             toggleSubMenu(pnlAdminSubMenu);           
-            resetButtonColours();
+            ResetButtonColours();
         }
 
         // Open the view users form
         private void btnViewUsers_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmViewUsers());
-            resetButtonColours();
+            OpenChildForm(new frmViewUsers());
+            ResetButtonColours();
             btnViewUsers.BackColor = Color.FromArgb(0,75,0);
         }
 
         // Open the reset version of the reset or delete form
         private void btnResetPassword_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmResetOrDeleteUser("Reset"));
-            resetButtonColours();
+            OpenChildForm(new frmResetOrDeleteUser("Reset"));
+            ResetButtonColours();
             btnResetPassword.BackColor = Color.FromArgb(0,75,0);
         }
 
         // Open the delete version of the reset or delete form
         private void btnDeleteUserAccount_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmResetOrDeleteUser("Delete"));
-            resetButtonColours();
+            OpenChildForm(new frmResetOrDeleteUser("Delete"));
+            ResetButtonColours();
             btnDeleteUserAccount.BackColor = Color.FromArgb(0,75,0);
         }
 
         // Open the add questions form
         private void btnAddQuestions_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmAddQuestions());
-            resetButtonColours();
+            OpenChildForm(new frmAddQuestions());
+            ResetButtonColours();
             btnAddQuestions.BackColor = Color.FromArgb(0,75,0);
         }
 
@@ -256,7 +256,7 @@ namespace The_ULTIMATE_golf_quiz
 
         #region ButtonColouring
         // Set all the menu buttons back to the unselected colour
-        public void resetButtonColours()
+        public void ResetButtonColours()
         {
             btnGoToQuiz.BackColor = Color.FromArgb(33,33,33);
             btnLeaderboard.BackColor = Color.FromArgb(33, 33, 33);
@@ -272,5 +272,11 @@ namespace The_ULTIMATE_golf_quiz
             btnLogout.BackColor = Color.FromArgb(33, 33, 33);
         }
         #endregion ButtonColouring
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            SoundFileHandler.StopSound();
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

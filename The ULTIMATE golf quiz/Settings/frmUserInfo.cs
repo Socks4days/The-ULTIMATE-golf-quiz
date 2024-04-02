@@ -107,7 +107,7 @@ namespace The_ULTIMATE_golf_quiz
                                 UserFileHandler.ClearPlayerQuestionAnswered(player);
                                 UserFileHandler.SaveAllPlayers();
                                 QuestionFileHandler.ReadInAllQuestions();
-                                frmSplashScreen.mainMenu.setTitleLabels();
+                                frmSplashScreen.mainMenu.SetTitleLabels();
                                 MessageBox.Show("Account reset");
                                 break;
                             }
@@ -172,7 +172,7 @@ namespace The_ULTIMATE_golf_quiz
                 ClearError();
                 MessageBox.Show("All changes saved!");
                 PopulateUserInfo();
-                frmSplashScreen.mainMenu.setTitleLabels();
+                frmSplashScreen.mainMenu.SetTitleLabels();
                 pnlEdit.Visible = false;
                 pnlInfo.Visible = true;
             }            

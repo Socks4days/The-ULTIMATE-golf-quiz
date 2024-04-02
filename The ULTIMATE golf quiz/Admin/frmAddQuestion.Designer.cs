@@ -38,8 +38,8 @@
             this.rBtnEasy = new System.Windows.Forms.RadioButton();
             this.rBtnMedium = new System.Windows.Forms.RadioButton();
             this.rBtnHard = new System.Windows.Forms.RadioButton();
-            this.rBtnAImpossible = new System.Windows.Forms.RadioButton();
-            this.rBtnTImpossible = new System.Windows.Forms.RadioButton();
+            this.rBtnSuperHard = new System.Windows.Forms.RadioButton();
+            this.rBtnImpossible = new System.Windows.Forms.RadioButton();
             this.groupBoxDifficulty = new System.Windows.Forms.GroupBox();
             this.nUDPoints = new System.Windows.Forms.NumericUpDown();
             this.pnlQuestion = new System.Windows.Forms.Panel();
@@ -208,35 +208,35 @@
             this.rBtnHard.Text = "Hard";
             this.rBtnHard.UseVisualStyleBackColor = true;
             // 
-            // rBtnAImpossible
+            // rBtnSuperHard
             // 
-            this.rBtnAImpossible.AutoSize = true;
-            this.rBtnAImpossible.ForeColor = System.Drawing.Color.White;
-            this.rBtnAImpossible.Location = new System.Drawing.Point(16, 118);
-            this.rBtnAImpossible.Name = "rBtnAImpossible";
-            this.rBtnAImpossible.Size = new System.Drawing.Size(141, 30);
-            this.rBtnAImpossible.TabIndex = 3;
-            this.rBtnAImpossible.TabStop = true;
-            this.rBtnAImpossible.Text = "Super Hard";
-            this.rBtnAImpossible.UseVisualStyleBackColor = true;
+            this.rBtnSuperHard.AutoSize = true;
+            this.rBtnSuperHard.ForeColor = System.Drawing.Color.White;
+            this.rBtnSuperHard.Location = new System.Drawing.Point(16, 118);
+            this.rBtnSuperHard.Name = "rBtnSuperHard";
+            this.rBtnSuperHard.Size = new System.Drawing.Size(141, 30);
+            this.rBtnSuperHard.TabIndex = 3;
+            this.rBtnSuperHard.TabStop = true;
+            this.rBtnSuperHard.Text = "Super Hard";
+            this.rBtnSuperHard.UseVisualStyleBackColor = true;
             // 
-            // rBtnTImpossible
+            // rBtnImpossible
             // 
-            this.rBtnTImpossible.AutoSize = true;
-            this.rBtnTImpossible.ForeColor = System.Drawing.Color.White;
-            this.rBtnTImpossible.Location = new System.Drawing.Point(16, 147);
-            this.rBtnTImpossible.Name = "rBtnTImpossible";
-            this.rBtnTImpossible.Size = new System.Drawing.Size(147, 30);
-            this.rBtnTImpossible.TabIndex = 4;
-            this.rBtnTImpossible.TabStop = true;
-            this.rBtnTImpossible.Text = "Impossible?";
-            this.rBtnTImpossible.UseVisualStyleBackColor = true;
+            this.rBtnImpossible.AutoSize = true;
+            this.rBtnImpossible.ForeColor = System.Drawing.Color.White;
+            this.rBtnImpossible.Location = new System.Drawing.Point(16, 147);
+            this.rBtnImpossible.Name = "rBtnImpossible";
+            this.rBtnImpossible.Size = new System.Drawing.Size(147, 30);
+            this.rBtnImpossible.TabIndex = 4;
+            this.rBtnImpossible.TabStop = true;
+            this.rBtnImpossible.Text = "Impossible?";
+            this.rBtnImpossible.UseVisualStyleBackColor = true;
             // 
             // groupBoxDifficulty
             // 
-            this.groupBoxDifficulty.Controls.Add(this.rBtnTImpossible);
+            this.groupBoxDifficulty.Controls.Add(this.rBtnImpossible);
             this.groupBoxDifficulty.Controls.Add(this.rBtnEasy);
-            this.groupBoxDifficulty.Controls.Add(this.rBtnAImpossible);
+            this.groupBoxDifficulty.Controls.Add(this.rBtnSuperHard);
             this.groupBoxDifficulty.Controls.Add(this.rBtnMedium);
             this.groupBoxDifficulty.Controls.Add(this.rBtnHard);
             this.groupBoxDifficulty.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -687,8 +687,8 @@
         private System.Windows.Forms.RadioButton rBtnEasy;
         private System.Windows.Forms.RadioButton rBtnMedium;
         private System.Windows.Forms.RadioButton rBtnHard;
-        private System.Windows.Forms.RadioButton rBtnAImpossible;
-        private System.Windows.Forms.RadioButton rBtnTImpossible;
+        private System.Windows.Forms.RadioButton rBtnSuperHard;
+        private System.Windows.Forms.RadioButton rBtnImpossible;
         private System.Windows.Forms.GroupBox groupBoxDifficulty;
         private System.Windows.Forms.NumericUpDown nUDPoints;
         private System.Windows.Forms.Panel pnlQuestion;

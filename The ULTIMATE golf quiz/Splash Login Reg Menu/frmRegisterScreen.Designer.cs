@@ -92,7 +92,7 @@
             this.btnReg.TabIndex = 6;
             this.btnReg.Text = "Register";
             this.btnReg.UseVisualStyleBackColor = false;
-            this.btnReg.Click += new System.EventHandler(this.Registerbtn_Click);
+            this.btnReg.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // txtBoxUser
             // 

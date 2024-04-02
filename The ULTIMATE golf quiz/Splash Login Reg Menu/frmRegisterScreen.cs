@@ -23,7 +23,7 @@ namespace The_ULTIMATE_golf_quiz
         }
 
         List<Player> players = UserFileHandler.players;
-        private void Registerbtn_Click(object sender, EventArgs e)
+        private void btnRegister_Click(object sender, EventArgs e)
         {
             int age;
 
@@ -51,7 +51,7 @@ namespace The_ULTIMATE_golf_quiz
             }
             else
             {
-                // if all are filled in, then begin the verification process
+                // if all are filled in, then begin the Verification process
                 PasswordValidation();
             }
         }       

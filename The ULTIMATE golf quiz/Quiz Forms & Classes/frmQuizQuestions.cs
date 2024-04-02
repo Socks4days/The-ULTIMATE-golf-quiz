@@ -127,8 +127,6 @@ namespace The_ULTIMATE_golf_quiz
         // Set up when the quiz form is first created
         public frmQuizQuestions()
         {
-
-
             InitializeComponent();
             txtBoxAnswer.KeyDown += KeyPressedDown;
             KeyDown += KeyPressedDown;
@@ -140,7 +138,6 @@ namespace The_ULTIMATE_golf_quiz
             flagStartX = pctBoxFlag.Location.X;
             flagStartY = pctBoxFlag.Location.Y;
         }
-
        
         #region Initialisation
         private void frmQuizQuestions_Load(object sender, EventArgs e)
@@ -1206,7 +1203,7 @@ namespace The_ULTIMATE_golf_quiz
 
             // Save player details and update title bar
             UserFileHandler.SaveAllPlayers();
-            frmSplashScreen.mainMenu.setTitleLabels();
+            frmSplashScreen.mainMenu.SetTitleLabels();
         }
         #endregion EndOfRound
 

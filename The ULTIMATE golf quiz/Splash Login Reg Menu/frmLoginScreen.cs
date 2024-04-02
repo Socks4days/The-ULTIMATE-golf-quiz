@@ -24,8 +24,7 @@ namespace The_ULTIMATE_golf_quiz
             InitializeComponent();
             // Code to be able to hit enter to do same thing as submit when in the password textbox
             txtBoxPassword.KeyDown += KeyPressedDown;
-            KeyDown += KeyPressedDown;
-            
+            KeyDown += KeyPressedDown;            
         }
 
         private void KeyPressedDown(object sender, KeyEventArgs e)
@@ -33,15 +32,15 @@ namespace The_ULTIMATE_golf_quiz
             switch(e.KeyCode)
             {
                 case Keys.Enter:
-                    // when the enter key is hit it will attemp to run the verification method to find out if a valid user is trying to log in
-                    verification();
+                    // when the enter key is hit it will attemp to run the Verification method to find out if a valid user is trying to log in
+                    Verification();
                     break;
                 default:
                     break;
             }
         }       
 
-        public void verification()
+        public void Verification()
         {
             // Hide any previously shown error messages
             ClearError();
@@ -90,20 +89,20 @@ namespace The_ULTIMATE_golf_quiz
             }            
         }       
 
-        private void Submitbtn_Click(object sender, EventArgs e)
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
             // when submit button is pressed, program will find out if the credentials are valid or not
-            verification();
+            Verification();
         }
 
-        private void registerbtn_Click(object sender, EventArgs e)
+        private void btnRegister_Click(object sender, EventArgs e)
         {
             // Opens the register screen when pressed
             this.Hide();
             new frmRegisterUser().Show();
         }
                 
-        private void loginfrm_FormClosed(object sender, FormClosedEventArgs e)
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             // exits the program if window is closed
             System.Windows.Forms.Application.Exit();

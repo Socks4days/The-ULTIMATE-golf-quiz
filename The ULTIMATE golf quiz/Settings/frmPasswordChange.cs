@@ -75,7 +75,7 @@ namespace The_ULTIMATE_golf_quiz
                 {
                     if (password.Contains(sym))
                     {                    
-                        // if it does, then send the program to the next stage of verification and stop
+                        // if it does, then send the program to the next stage of Verification and stop
                         validPassword = true;
                         ChangePassword();
                         return;
@@ -153,7 +153,7 @@ namespace The_ULTIMATE_golf_quiz
             switch (e.KeyCode)
             {
                 case Keys.Enter:
-                    // When the enter key is hit it will attempt to run the verification method
+                    // When the enter key is hit it will attempt to run the Verification method
                     // to find out if a valid user is trying to log in
                     btnChangePass_Click(sender,e);
                     break;
@@ -192,7 +192,5 @@ namespace The_ULTIMATE_golf_quiz
         {
             lblErrorConfirm.Visible = false;
         }
-
-       
     }
 }

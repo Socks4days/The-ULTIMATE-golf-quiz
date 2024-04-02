@@ -239,7 +239,7 @@
             this.pnlContainer.Controls.Add(this.lblNation);
             this.pnlContainer.Controls.Add(this.lblAgeText);
             this.pnlContainer.Controls.Add(this.lblGender);
-            this.pnlContainer.Location = new System.Drawing.Point(120, 26);
+            this.pnlContainer.Location = new System.Drawing.Point(129, 26);
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(575, 426);
             this.pnlContainer.TabIndex = 16;
@@ -269,7 +269,7 @@
             this.pnlInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlInfo.Location = new System.Drawing.Point(0, 0);
             this.pnlInfo.Name = "pnlInfo";
-            this.pnlInfo.Size = new System.Drawing.Size(763, 478);
+            this.pnlInfo.Size = new System.Drawing.Size(780, 478);
             this.pnlInfo.TabIndex = 17;
             // 
             // pnlEdit
@@ -279,7 +279,7 @@
             this.pnlEdit.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEdit.Location = new System.Drawing.Point(0, 478);
             this.pnlEdit.Name = "pnlEdit";
-            this.pnlEdit.Size = new System.Drawing.Size(763, 478);
+            this.pnlEdit.Size = new System.Drawing.Size(780, 478);
             this.pnlEdit.TabIndex = 18;
             this.pnlEdit.Visible = false;
             // 
@@ -325,7 +325,7 @@
             this.pnlContainerEdit.Controls.Add(this.lblErrorA);
             this.pnlContainerEdit.Controls.Add(this.lblErrorG);
             this.pnlContainerEdit.Controls.Add(this.lblErrorNat);
-            this.pnlContainerEdit.Location = new System.Drawing.Point(120, 14);
+            this.pnlContainerEdit.Location = new System.Drawing.Point(129, 14);
             this.pnlContainerEdit.Name = "pnlContainerEdit";
             this.pnlContainerEdit.Size = new System.Drawing.Size(575, 452);
             this.pnlContainerEdit.TabIndex = 18;
@@ -582,7 +582,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.ClientSize = new System.Drawing.Size(780, 475);
+            this.ClientSize = new System.Drawing.Size(797, 475);
             this.Controls.Add(this.pnlEdit);
             this.Controls.Add(this.pnlInfo);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

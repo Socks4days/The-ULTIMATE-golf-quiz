@@ -21,14 +21,14 @@ namespace The_ULTIMATE_golf_quiz
             InitializeComponent();
 
             // Display panel to select the type of question to add
-            selectQuestionType();
+            SelectQuestionType();
 
             // Read in all the questions again without deleting those answered by the player
             QuestionFileHandler.ReadInAllQuestions();
         }
         
         // Show the select question type panel and hide other panels
-        private void selectQuestionType()
+        private void SelectQuestionType()
         {
             pnlChooseQuestionType.Visible = true;
             pnlQuestion.Visible = false;
@@ -55,7 +55,7 @@ namespace The_ULTIMATE_golf_quiz
                 DialogResult result = MessageBox.Show("Your question will not be saved!\nDo you wish to leave?", "Confirmation", MessageBoxButtons.YesNo);
 
                 if (result == DialogResult.Yes)
-                selectQuestionType(); 
+                SelectQuestionType(); 
             }
         }    
         
@@ -75,25 +75,25 @@ namespace The_ULTIMATE_golf_quiz
             {
                 difficulty = 3;
             }
-            else if (rBtnAImpossible.Checked)
+            else if (rBtnSuperHard.Checked)
             {
                 difficulty = 4;
             }
-            else if (rBtnTImpossible.Checked)
+            else if (rBtnImpossible.Checked)
             {
                 difficulty = 5;
             }
         }
         
         // Clear question details
-        private void resetQuestion()
+        private void ResetQuestion()
         {
             // Reset input form
             rBtnEasy.Checked = false;
             rBtnMedium.Checked = false;
             rBtnHard.Checked = false;
-            rBtnAImpossible.Checked = false;
-            rBtnTImpossible.Checked = false;
+            rBtnSuperHard.Checked = false;
+            rBtnImpossible.Checked = false;
             txtBoxQuestion.Text = "";
             txtBoxTypeItAnswer.Text = "";
             nUDPoints.Value = 1;
@@ -154,16 +154,24 @@ namespace The_ULTIMATE_golf_quiz
                     typeItQuestionToAdd.Points = Convert.ToInt32(nUDPoints.Value);
                     Difficulty();
                     typeItQuestionToAdd.Difficulty = difficulty;
-                    if (typeItQuestionToAdd.Question != "" && typeItQuestionToAdd.CorrectAnswer != "" && typeItQuestionToAdd.Difficulty != 0)
+
+                    // Check all answers populated
+                    if (typeItQuestionToAdd.Question == "" || typeItQuestionToAdd.CorrectAnswer == "" 
+                        || typeItQuestionToAdd.Difficulty == 0)
                     {
-                        QuestionFileHandler.TypeItQuestions.Add(typeItQuestionToAdd);
-                        QuestionFileHandler.SaveAllTypeItQuestions();
-                        resetQuestion();
-                        questionSuccessfullyAdded();
+                        QuestionUnsuccessfullyAdded();
+                    }
+                    // Check no commas in answers
+                    else if (typeItQuestionToAdd.Question.Contains(",") || typeItQuestionToAdd.CorrectAnswer.Contains(","))
+                    {
+                        QuestionCannotContainCommas();
                     }
                     else
                     {
-                        questionUnsuccessfullyAdded();
+                        QuestionFileHandler.TypeItQuestions.Add(typeItQuestionToAdd);
+                        QuestionFileHandler.SaveAllTypeItQuestions();
+                        ResetQuestion();
+                        QuestionSuccessfullyAdded();
                     }
                     break;
 
@@ -205,16 +213,24 @@ namespace The_ULTIMATE_golf_quiz
                     trueOrFalseQuestionToAdd.Points = Convert.ToInt32(nUDPoints.Value);
                     Difficulty();
                     trueOrFalseQuestionToAdd.Difficulty = difficulty;
-                    if (trueOrFalseQuestionToAdd.Question != "" && trueOrFalseQuestionToAdd.CorrectAnswer != "" && trueOrFalseQuestionToAdd.Difficulty != 0)
+
+                    // Check all answers populated
+                    if (trueOrFalseQuestionToAdd.Question == "" || trueOrFalseQuestionToAdd.CorrectAnswer == ""
+                       || trueOrFalseQuestionToAdd.Difficulty == 0)
                     {
-                        QuestionFileHandler.TrueOrFalseQuestions.Add(trueOrFalseQuestionToAdd);
-                        QuestionFileHandler.SaveAllTrueOrFalseQuestions();
-                        resetQuestion();
-                        questionSuccessfullyAdded();
+                        QuestionUnsuccessfullyAdded();
+                    }
+                    // Check no commas in answers
+                    else if (trueOrFalseQuestionToAdd.Question.Contains(","))
+                    {
+                        QuestionCannotContainCommas();
                     }
                     else
                     {
-                        questionUnsuccessfullyAdded();
+                        QuestionFileHandler.TrueOrFalseQuestions.Add(trueOrFalseQuestionToAdd);
+                        QuestionFileHandler.SaveAllTrueOrFalseQuestions();
+                        ResetQuestion();
+                        QuestionSuccessfullyAdded();
                     }
                     break;
 
@@ -264,19 +280,32 @@ namespace The_ULTIMATE_golf_quiz
                     multiChoiceQuestionToAdd.Option2 = txtBoxMultiOption2.Text;
                     multiChoiceQuestionToAdd.Option3 = txtBoxMultiOption3.Text;
                     multiChoiceQuestionToAdd.Option4 = txtBoxMultiOption4.Text;
-                    if (multiChoiceQuestionToAdd.Question != "" && multiChoiceQuestionToAdd.CorrectAnswer != "" && multiChoiceQuestionToAdd.Difficulty != 0 &&
-                        multiChoiceQuestionToAdd.Option1 != "" && multiChoiceQuestionToAdd.Option2 != "" && multiChoiceQuestionToAdd.Option3 != "" && multiChoiceQuestionToAdd.Option4 != "" )
+
+                    // Check all answers populated
+                    if (multiChoiceQuestionToAdd.Question == "" || multiChoiceQuestionToAdd.CorrectAnswer == ""
+                       || multiChoiceQuestionToAdd.Difficulty == 0
+                       || multiChoiceQuestionToAdd.Option1 == "" || multiChoiceQuestionToAdd.Option2 == ""
+                       || multiChoiceQuestionToAdd.Option3 == "" || multiChoiceQuestionToAdd.Option4 == "" )
                     {
-                        QuestionFileHandler.MultiChoiceQuestions.Add(multiChoiceQuestionToAdd);
-                        QuestionFileHandler.SaveAllMultiChoiceQuestions();
-                        resetQuestion();
-                        questionSuccessfullyAdded();
+                        QuestionUnsuccessfullyAdded();
+                    }
+                    // Check no commas in answers
+                    else if (multiChoiceQuestionToAdd.Question.Contains(",")
+                        || multiChoiceQuestionToAdd.CorrectAnswer.Contains(",")
+                        || multiChoiceQuestionToAdd.Option1.Contains(",")
+                        || multiChoiceQuestionToAdd.Option2.Contains(",")
+                        || multiChoiceQuestionToAdd.Option3.Contains(",")
+                        || multiChoiceQuestionToAdd.Option4.Contains(",") )
+                    {
+                        QuestionCannotContainCommas();
                     }
                     else
                     {
-                        questionUnsuccessfullyAdded();
+                        QuestionFileHandler.MultiChoiceQuestions.Add(multiChoiceQuestionToAdd);
+                        QuestionFileHandler.SaveAllMultiChoiceQuestions();
+                        ResetQuestion();
+                        QuestionSuccessfullyAdded();
                     }
-
                     break;
                     
                 //--------------------------------------------------------------------
@@ -315,16 +344,29 @@ namespace The_ULTIMATE_golf_quiz
                     pictureQuestionToAdd.CorrectLocationX = x;
                     pictureQuestionToAdd.CorrectLocationY = y;
                     pictureQuestionToAdd.PictureId = "FILEPATH" + selectedImageFilePath;
-                    if (pictureQuestionToAdd.Question != "" && pictureQuestionToAdd.CorrectAnswer != "" && pictureQuestionToAdd.Difficulty != 0 && pictureQuestionToAdd.CorrectLocationX !=0)
+
+                    // Check all answers populated
+                    if (pictureQuestionToAdd.Question == "" || pictureQuestionToAdd.CorrectAnswer == ""
+                        || pictureQuestionToAdd.Difficulty == 0 || pictureQuestionToAdd.CorrectLocationX == 0 )
                     {
-                        QuestionFileHandler.PictureQuestions.Add(pictureQuestionToAdd);
-                        QuestionFileHandler.SaveAllPictureQuestions();
-                        resetQuestion();
-                        questionSuccessfullyAdded();
+                        QuestionUnsuccessfullyAdded();
+                    }
+                    // Check no commas in answers
+                    else if (pictureQuestionToAdd.Question.Contains(",") || pictureQuestionToAdd.CorrectAnswer.Contains(","))
+                    {
+                        QuestionCannotContainCommas();
+                    }
+                    // Check no commas in file path
+                    else if (pictureQuestionToAdd.PictureId.Contains(","))
+                    {
+                        MessageBox.Show("The file path cannot contain any commas\nPlease rename the file and folder to ensure it does not contain any commas and then reselect it");
                     }
                     else
                     {
-                        questionUnsuccessfullyAdded();
+                        QuestionFileHandler.PictureQuestions.Add(pictureQuestionToAdd);
+                        QuestionFileHandler.SaveAllPictureQuestions();
+                        ResetQuestion();
+                        QuestionSuccessfullyAdded();
                     }
                     break;
             }           
@@ -337,32 +379,32 @@ namespace The_ULTIMATE_golf_quiz
         private void btnTypeIt_Click(object sender, EventArgs e)
         {
             questionToAddType = "Type It";
-            setup();
+            Setup();
         }
 
         // Select question type - Truth or Lie button clicked
         private void btnTrueOrFalse_Click(object sender, EventArgs e)
         {
             questionToAddType = "Truth or Lie";
-            setup();
+            Setup();
         }
 
         // Select question type - Multiple Guess button clicked
         private void btnMultipleChoice_Click(object sender, EventArgs e)
         {
             questionToAddType = "Multiple Guess";
-            setup();
+            Setup();
         }
 
         // Select question type - Picture Round button clicked
         private void btnPicture_Click(object sender, EventArgs e)
         {
             questionToAddType = "Picture";
-            setup();
+            Setup();
         }
         
         // Show the right panels for the selected question type
-        private void setup()
+        private void Setup()
         {
             // Hide the choose question type panel, show the shared panels
             pnlChooseQuestionType.Visible = false;
@@ -398,13 +440,18 @@ namespace The_ULTIMATE_golf_quiz
         }
         
         // Message boxes
-        private void questionSuccessfullyAdded()
+        private void QuestionSuccessfullyAdded()
         {
             MessageBox.Show("Question successfully added");
         }
-        private void questionUnsuccessfullyAdded()
+        private void QuestionUnsuccessfullyAdded()
         {
             MessageBox.Show("You are missing parts of the question that are required\nPlease fill them in to add your question");
+        }
+
+        private void QuestionCannotContainCommas()
+        {
+            MessageBox.Show("You cannot have any commas in the question or answer text\nPlease update and try again to add your question");
         }
 
         //-----------------------------------------------------------------------
@@ -445,7 +492,7 @@ namespace The_ULTIMATE_golf_quiz
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("ShowError: Could not read your file. ShowError: " + ex.Message);
+                    MessageBox.Show("ShowError: Could not read your file. Error: " + ex.Message);
                 }
             }
         }
