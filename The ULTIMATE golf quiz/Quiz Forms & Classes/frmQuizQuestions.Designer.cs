@@ -89,6 +89,7 @@
             this.tmrPower = new System.Windows.Forms.Timer(this.components);
             this.tmrCountdown = new System.Windows.Forms.Timer(this.components);
             this.pnlInstructions = new System.Windows.Forms.Panel();
+            this.lblClickToEnlarge = new System.Windows.Forms.Label();
             this.pctBoxInstructionsGameImage = new System.Windows.Forms.PictureBox();
             this.pctBoxArrow3 = new System.Windows.Forms.PictureBox();
             this.pctBoxArrow4 = new System.Windows.Forms.PictureBox();
@@ -104,7 +105,6 @@
             this.tmrInstructions = new System.Windows.Forms.Timer(this.components);
             this.tmrGoClubbinError = new System.Windows.Forms.Timer(this.components);
             this.tmrBallFlight = new System.Windows.Forms.Timer(this.components);
-            this.lblClickToEnlarge = new System.Windows.Forms.Label();
             this.pnlFinish.SuspendLayout();
             this.pnlAnswer.SuspendLayout();
             this.pnlTypeIt.SuspendLayout();
@@ -151,7 +151,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(495, 11);
+            this.btnNext.Location = new System.Drawing.Point(529, 11);
             this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(250, 50);
@@ -170,7 +170,7 @@
             this.btnFinishSession.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinishSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinishSession.ForeColor = System.Drawing.Color.White;
-            this.btnFinishSession.Location = new System.Drawing.Point(410, 169);
+            this.btnFinishSession.Location = new System.Drawing.Point(427, 169);
             this.btnFinishSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFinishSession.Name = "btnFinishSession";
             this.btnFinishSession.Size = new System.Drawing.Size(250, 50);
@@ -185,7 +185,7 @@
             this.lblFinish.AutoSize = true;
             this.lblFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFinish.ForeColor = System.Drawing.Color.White;
-            this.lblFinish.Location = new System.Drawing.Point(48, 23);
+            this.lblFinish.Location = new System.Drawing.Point(65, 23);
             this.lblFinish.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFinish.Name = "lblFinish";
             this.lblFinish.Size = new System.Drawing.Size(641, 26);
@@ -203,33 +203,33 @@
             this.pnlFinish.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlFinish.Location = new System.Drawing.Point(0, 674);
             this.pnlFinish.Name = "pnlFinish";
-            this.pnlFinish.Size = new System.Drawing.Size(757, 241);
+            this.pnlFinish.Size = new System.Drawing.Size(791, 241);
             this.pnlFinish.TabIndex = 17;
             this.pnlFinish.Visible = false;
             // 
             // lblTotalScore
             // 
             this.lblTotalScore.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTotalScore.AutoSize = true;
             this.lblTotalScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalScore.ForeColor = System.Drawing.Color.White;
-            this.lblTotalScore.Location = new System.Drawing.Point(289, 120);
+            this.lblTotalScore.Location = new System.Drawing.Point(130, 118);
             this.lblTotalScore.Name = "lblTotalScore";
-            this.lblTotalScore.Size = new System.Drawing.Size(122, 26);
+            this.lblTotalScore.Size = new System.Drawing.Size(547, 31);
             this.lblTotalScore.TabIndex = 16;
             this.lblTotalScore.Text = "Total Score";
+            this.lblTotalScore.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblQuestionsAnsweredCorrectly
             // 
             this.lblQuestionsAnsweredCorrectly.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblQuestionsAnsweredCorrectly.AutoSize = true;
             this.lblQuestionsAnsweredCorrectly.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuestionsAnsweredCorrectly.ForeColor = System.Drawing.Color.White;
-            this.lblQuestionsAnsweredCorrectly.Location = new System.Drawing.Point(254, 80);
+            this.lblQuestionsAnsweredCorrectly.Location = new System.Drawing.Point(130, 80);
             this.lblQuestionsAnsweredCorrectly.Name = "lblQuestionsAnsweredCorrectly";
-            this.lblQuestionsAnsweredCorrectly.Size = new System.Drawing.Size(187, 26);
+            this.lblQuestionsAnsweredCorrectly.Size = new System.Drawing.Size(547, 31);
             this.lblQuestionsAnsweredCorrectly.TabIndex = 15;
             this.lblQuestionsAnsweredCorrectly.Text = "Questions Correct";
+            this.lblQuestionsAnsweredCorrectly.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnNextRound
             // 
@@ -241,7 +241,7 @@
             this.btnNextRound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextRound.ForeColor = System.Drawing.Color.White;
-            this.btnNextRound.Location = new System.Drawing.Point(113, 169);
+            this.btnNextRound.Location = new System.Drawing.Point(130, 169);
             this.btnNextRound.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNextRound.Name = "btnNextRound";
             this.btnNextRound.Size = new System.Drawing.Size(250, 50);
@@ -260,7 +260,7 @@
             this.pnlAnswer.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlAnswer.Location = new System.Drawing.Point(0, 606);
             this.pnlAnswer.Name = "pnlAnswer";
-            this.pnlAnswer.Size = new System.Drawing.Size(757, 68);
+            this.pnlAnswer.Size = new System.Drawing.Size(791, 68);
             this.pnlAnswer.TabIndex = 11;
             this.pnlAnswer.Visible = false;
             // 
@@ -295,7 +295,7 @@
             this.pnlTypeIt.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTypeIt.Location = new System.Drawing.Point(0, 114);
             this.pnlTypeIt.Name = "pnlTypeIt";
-            this.pnlTypeIt.Size = new System.Drawing.Size(757, 221);
+            this.pnlTypeIt.Size = new System.Drawing.Size(791, 221);
             this.pnlTypeIt.TabIndex = 20;
             this.pnlTypeIt.Visible = false;
             // 
@@ -305,7 +305,7 @@
             this.lblEnterYourAnswer.AutoSize = true;
             this.lblEnterYourAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEnterYourAnswer.ForeColor = System.Drawing.Color.White;
-            this.lblEnterYourAnswer.Location = new System.Drawing.Point(111, 41);
+            this.lblEnterYourAnswer.Location = new System.Drawing.Point(128, 41);
             this.lblEnterYourAnswer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEnterYourAnswer.Name = "lblEnterYourAnswer";
             this.lblEnterYourAnswer.Size = new System.Drawing.Size(243, 26);
@@ -319,7 +319,7 @@
             this.txtBoxAnswer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxAnswer.ForeColor = System.Drawing.Color.White;
-            this.txtBoxAnswer.Location = new System.Drawing.Point(113, 79);
+            this.txtBoxAnswer.Location = new System.Drawing.Point(130, 79);
             this.txtBoxAnswer.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxAnswer.Name = "txtBoxAnswer";
             this.txtBoxAnswer.Size = new System.Drawing.Size(547, 28);
@@ -335,7 +335,7 @@
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(410, 121);
+            this.btnSubmit.Location = new System.Drawing.Point(427, 121);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(250, 50);
@@ -356,14 +356,14 @@
             this.pnlQuestion.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlQuestion.Location = new System.Drawing.Point(0, 0);
             this.pnlQuestion.Name = "pnlQuestion";
-            this.pnlQuestion.Size = new System.Drawing.Size(757, 114);
+            this.pnlQuestion.Size = new System.Drawing.Size(791, 114);
             this.pnlQuestion.TabIndex = 21;
             this.pnlQuestion.Visible = false;
             // 
             // progressBarCountdown
             // 
             this.progressBarCountdown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBarCountdown.Location = new System.Drawing.Point(613, 4);
+            this.progressBarCountdown.Location = new System.Drawing.Point(647, 4);
             this.progressBarCountdown.Name = "progressBarCountdown";
             this.progressBarCountdown.Size = new System.Drawing.Size(141, 33);
             this.progressBarCountdown.Step = 1;
@@ -376,7 +376,7 @@
             this.lblQuestionNumber.AutoSize = true;
             this.lblQuestionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuestionNumber.ForeColor = System.Drawing.Color.White;
-            this.lblQuestionNumber.Location = new System.Drawing.Point(102, 9);
+            this.lblQuestionNumber.Location = new System.Drawing.Point(119, 9);
             this.lblQuestionNumber.Name = "lblQuestionNumber";
             this.lblQuestionNumber.Size = new System.Drawing.Size(139, 26);
             this.lblQuestionNumber.TabIndex = 15;
@@ -408,7 +408,7 @@
             this.lblDifficulty.AutoSize = true;
             this.lblDifficulty.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDifficulty.ForeColor = System.Drawing.Color.White;
-            this.lblDifficulty.Location = new System.Drawing.Point(335, 9);
+            this.lblDifficulty.Location = new System.Drawing.Point(352, 9);
             this.lblDifficulty.Name = "lblDifficulty";
             this.lblDifficulty.Size = new System.Drawing.Size(95, 26);
             this.lblDifficulty.TabIndex = 14;
@@ -420,7 +420,7 @@
             this.lblQuestion.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuestion.ForeColor = System.Drawing.Color.White;
-            this.lblQuestion.Location = new System.Drawing.Point(101, 48);
+            this.lblQuestion.Location = new System.Drawing.Point(118, 48);
             this.lblQuestion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuestion.Name = "lblQuestion";
             this.lblQuestion.Size = new System.Drawing.Size(620, 66);
@@ -430,7 +430,7 @@
             // pctBoxPicture
             // 
             this.pctBoxPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pctBoxPicture.Location = new System.Drawing.Point(592, 20);
+            this.pctBoxPicture.Location = new System.Drawing.Point(626, 20);
             this.pctBoxPicture.Name = "pctBoxPicture";
             this.pctBoxPicture.Size = new System.Drawing.Size(140, 140);
             this.pctBoxPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -450,7 +450,7 @@
             this.pnlMultipleChoiceOptions.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlMultipleChoiceOptions.Location = new System.Drawing.Point(0, 335);
             this.pnlMultipleChoiceOptions.Name = "pnlMultipleChoiceOptions";
-            this.pnlMultipleChoiceOptions.Size = new System.Drawing.Size(757, 182);
+            this.pnlMultipleChoiceOptions.Size = new System.Drawing.Size(791, 182);
             this.pnlMultipleChoiceOptions.TabIndex = 22;
             this.pnlMultipleChoiceOptions.Visible = false;
             // 
@@ -464,7 +464,7 @@
             this.btnOption2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOption2.ForeColor = System.Drawing.Color.White;
-            this.btnOption2.Location = new System.Drawing.Point(410, 9);
+            this.btnOption2.Location = new System.Drawing.Point(427, 9);
             this.btnOption2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOption2.Name = "btnOption2";
             this.btnOption2.Size = new System.Drawing.Size(250, 75);
@@ -492,7 +492,7 @@
             this.btnOption4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOption4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOption4.ForeColor = System.Drawing.Color.White;
-            this.btnOption4.Location = new System.Drawing.Point(410, 96);
+            this.btnOption4.Location = new System.Drawing.Point(427, 96);
             this.btnOption4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOption4.Name = "btnOption4";
             this.btnOption4.Size = new System.Drawing.Size(250, 75);
@@ -524,7 +524,7 @@
             this.btnOption3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOption3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOption3.ForeColor = System.Drawing.Color.White;
-            this.btnOption3.Location = new System.Drawing.Point(113, 96);
+            this.btnOption3.Location = new System.Drawing.Point(130, 96);
             this.btnOption3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOption3.Name = "btnOption3";
             this.btnOption3.Size = new System.Drawing.Size(250, 75);
@@ -543,7 +543,7 @@
             this.btnOption1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOption1.ForeColor = System.Drawing.Color.White;
-            this.btnOption1.Location = new System.Drawing.Point(113, 9);
+            this.btnOption1.Location = new System.Drawing.Point(130, 9);
             this.btnOption1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOption1.Name = "btnOption1";
             this.btnOption1.Size = new System.Drawing.Size(250, 75);
@@ -560,7 +560,7 @@
             this.pnlTrueOrFalseOptions.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTrueOrFalseOptions.Location = new System.Drawing.Point(0, 517);
             this.pnlTrueOrFalseOptions.Name = "pnlTrueOrFalseOptions";
-            this.pnlTrueOrFalseOptions.Size = new System.Drawing.Size(757, 89);
+            this.pnlTrueOrFalseOptions.Size = new System.Drawing.Size(791, 89);
             this.pnlTrueOrFalseOptions.TabIndex = 23;
             this.pnlTrueOrFalseOptions.Visible = false;
             // 
@@ -574,7 +574,7 @@
             this.btnFalse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFalse.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFalse.ForeColor = System.Drawing.Color.White;
-            this.btnFalse.Location = new System.Drawing.Point(410, 22);
+            this.btnFalse.Location = new System.Drawing.Point(427, 22);
             this.btnFalse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFalse.Name = "btnFalse";
             this.btnFalse.Size = new System.Drawing.Size(250, 50);
@@ -593,7 +593,7 @@
             this.btnTrue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTrue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTrue.ForeColor = System.Drawing.Color.White;
-            this.btnTrue.Location = new System.Drawing.Point(113, 22);
+            this.btnTrue.Location = new System.Drawing.Point(130, 22);
             this.btnTrue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTrue.Name = "btnTrue";
             this.btnTrue.Size = new System.Drawing.Size(250, 50);
@@ -615,14 +615,14 @@
             this.pnlTypeOfRound.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTypeOfRound.Location = new System.Drawing.Point(0, 915);
             this.pnlTypeOfRound.Name = "pnlTypeOfRound";
-            this.pnlTypeOfRound.Size = new System.Drawing.Size(757, 473);
+            this.pnlTypeOfRound.Size = new System.Drawing.Size(791, 473);
             this.pnlTypeOfRound.TabIndex = 24;
             this.pnlTypeOfRound.Visible = false;
             // 
             // pctBoxRoundType
             // 
             this.pctBoxRoundType.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pctBoxRoundType.Location = new System.Drawing.Point(253, 95);
+            this.pctBoxRoundType.Location = new System.Drawing.Point(270, 95);
             this.pctBoxRoundType.Name = "pctBoxRoundType";
             this.pctBoxRoundType.Size = new System.Drawing.Size(300, 300);
             this.pctBoxRoundType.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -634,7 +634,7 @@
             this.lblRoundType.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblRoundType.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoundType.ForeColor = System.Drawing.Color.White;
-            this.lblRoundType.Location = new System.Drawing.Point(253, 50);
+            this.lblRoundType.Location = new System.Drawing.Point(270, 50);
             this.lblRoundType.Name = "lblRoundType";
             this.lblRoundType.Size = new System.Drawing.Size(300, 42);
             this.lblRoundType.TabIndex = 11;
@@ -651,7 +651,7 @@
             this.btnRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRight.ForeColor = System.Drawing.Color.White;
-            this.btnRight.Location = new System.Drawing.Point(502, 401);
+            this.btnRight.Location = new System.Drawing.Point(519, 401);
             this.btnRight.Name = "btnRight";
             this.btnRight.Size = new System.Drawing.Size(51, 51);
             this.btnRight.TabIndex = 10;
@@ -669,7 +669,7 @@
             this.btnLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLeft.ForeColor = System.Drawing.Color.White;
-            this.btnLeft.Location = new System.Drawing.Point(253, 400);
+            this.btnLeft.Location = new System.Drawing.Point(270, 400);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.Size = new System.Drawing.Size(51, 51);
             this.btnLeft.TabIndex = 9;
@@ -687,7 +687,7 @@
             this.btnPlayRound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlayRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlayRound.ForeColor = System.Drawing.Color.White;
-            this.btnPlayRound.Location = new System.Drawing.Point(333, 401);
+            this.btnPlayRound.Location = new System.Drawing.Point(350, 401);
             this.btnPlayRound.Name = "btnPlayRound";
             this.btnPlayRound.Size = new System.Drawing.Size(140, 50);
             this.btnPlayRound.TabIndex = 7;
@@ -720,7 +720,7 @@
             this.lblTypeOfRound.AutoSize = true;
             this.lblTypeOfRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTypeOfRound.ForeColor = System.Drawing.Color.White;
-            this.lblTypeOfRound.Location = new System.Drawing.Point(203, 3);
+            this.lblTypeOfRound.Location = new System.Drawing.Point(220, 3);
             this.lblTypeOfRound.Name = "lblTypeOfRound";
             this.lblTypeOfRound.Size = new System.Drawing.Size(420, 26);
             this.lblTypeOfRound.TabIndex = 0;
@@ -742,7 +742,7 @@
             this.pnlGoClubbin.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlGoClubbin.Location = new System.Drawing.Point(0, 1388);
             this.pnlGoClubbin.Name = "pnlGoClubbin";
-            this.pnlGoClubbin.Size = new System.Drawing.Size(757, 333);
+            this.pnlGoClubbin.Size = new System.Drawing.Size(791, 333);
             this.pnlGoClubbin.TabIndex = 25;
             // 
             // lblPowerPercentage
@@ -890,7 +890,7 @@
             this.pnlWhereinTheWorld.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlWhereinTheWorld.Location = new System.Drawing.Point(0, 1721);
             this.pnlWhereinTheWorld.Name = "pnlWhereinTheWorld";
-            this.pnlWhereinTheWorld.Size = new System.Drawing.Size(757, 500);
+            this.pnlWhereinTheWorld.Size = new System.Drawing.Size(791, 500);
             this.pnlWhereinTheWorld.TabIndex = 26;
             // 
             // pctBoxCorrectLocation
@@ -925,7 +925,7 @@
             this.pctBoxMap.Image = global::The_ULTIMATE_golf_quiz.Properties.Resources.Screenshot_2024_01_26_085609;
             this.pctBoxMap.Location = new System.Drawing.Point(0, 0);
             this.pctBoxMap.Name = "pctBoxMap";
-            this.pctBoxMap.Size = new System.Drawing.Size(757, 500);
+            this.pctBoxMap.Size = new System.Drawing.Size(791, 500);
             this.pctBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBoxMap.TabIndex = 0;
             this.pctBoxMap.TabStop = false;
@@ -958,9 +958,22 @@
             this.pnlInstructions.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlInstructions.Location = new System.Drawing.Point(0, 2221);
             this.pnlInstructions.Name = "pnlInstructions";
-            this.pnlInstructions.Size = new System.Drawing.Size(757, 512);
+            this.pnlInstructions.Size = new System.Drawing.Size(791, 512);
             this.pnlInstructions.TabIndex = 27;
             this.pnlInstructions.Visible = false;
+            // 
+            // lblClickToEnlarge
+            // 
+            this.lblClickToEnlarge.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblClickToEnlarge.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClickToEnlarge.ForeColor = System.Drawing.Color.White;
+            this.lblClickToEnlarge.Location = new System.Drawing.Point(306, 229);
+            this.lblClickToEnlarge.Name = "lblClickToEnlarge";
+            this.lblClickToEnlarge.Size = new System.Drawing.Size(164, 36);
+            this.lblClickToEnlarge.TabIndex = 18;
+            this.lblClickToEnlarge.Text = "Click to enlarge";
+            this.lblClickToEnlarge.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblClickToEnlarge.Click += new System.EventHandler(this.lblClickToEnlarge_Click);
             // 
             // pctBoxInstructionsGameImage
             // 
@@ -978,7 +991,7 @@
             this.pctBoxArrow3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pctBoxArrow3.BackgroundImage = global::The_ULTIMATE_golf_quiz.Properties.Resources._180___270;
             this.pctBoxArrow3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pctBoxArrow3.Location = new System.Drawing.Point(507, 326);
+            this.pctBoxArrow3.Location = new System.Drawing.Point(524, 326);
             this.pctBoxArrow3.Name = "pctBoxArrow3";
             this.pctBoxArrow3.Size = new System.Drawing.Size(110, 110);
             this.pctBoxArrow3.TabIndex = 15;
@@ -989,7 +1002,7 @@
             this.pctBoxArrow4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pctBoxArrow4.BackgroundImage = global::The_ULTIMATE_golf_quiz.Properties.Resources._270___360;
             this.pctBoxArrow4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pctBoxArrow4.Location = new System.Drawing.Point(507, 57);
+            this.pctBoxArrow4.Location = new System.Drawing.Point(524, 57);
             this.pctBoxArrow4.Name = "pctBoxArrow4";
             this.pctBoxArrow4.Size = new System.Drawing.Size(110, 110);
             this.pctBoxArrow4.TabIndex = 14;
@@ -1000,7 +1013,7 @@
             this.pctBoxArrow1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pctBoxArrow1.BackgroundImage = global::The_ULTIMATE_golf_quiz.Properties.Resources._0___901;
             this.pctBoxArrow1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pctBoxArrow1.Location = new System.Drawing.Point(140, 57);
+            this.pctBoxArrow1.Location = new System.Drawing.Point(157, 57);
             this.pctBoxArrow1.Name = "pctBoxArrow1";
             this.pctBoxArrow1.Size = new System.Drawing.Size(110, 110);
             this.pctBoxArrow1.TabIndex = 13;
@@ -1011,7 +1024,7 @@
             this.pctBoxArrow2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pctBoxArrow2.BackgroundImage = global::The_ULTIMATE_golf_quiz.Properties.Resources.Arrow;
             this.pctBoxArrow2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pctBoxArrow2.Location = new System.Drawing.Point(140, 326);
+            this.pctBoxArrow2.Location = new System.Drawing.Point(157, 326);
             this.pctBoxArrow2.Name = "pctBoxArrow2";
             this.pctBoxArrow2.Size = new System.Drawing.Size(110, 110);
             this.pctBoxArrow2.TabIndex = 12;
@@ -1022,7 +1035,7 @@
             this.lblInstructionsTimer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblInstructionsTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInstructionsTimer.ForeColor = System.Drawing.Color.White;
-            this.lblInstructionsTimer.Location = new System.Drawing.Point(521, 173);
+            this.lblInstructionsTimer.Location = new System.Drawing.Point(538, 173);
             this.lblInstructionsTimer.Name = "lblInstructionsTimer";
             this.lblInstructionsTimer.Size = new System.Drawing.Size(180, 153);
             this.lblInstructionsTimer.TabIndex = 11;
@@ -1034,7 +1047,7 @@
             this.lblInstructionsPoints.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblInstructionsPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInstructionsPoints.ForeColor = System.Drawing.Color.White;
-            this.lblInstructionsPoints.Location = new System.Drawing.Point(256, 326);
+            this.lblInstructionsPoints.Location = new System.Drawing.Point(273, 326);
             this.lblInstructionsPoints.Name = "lblInstructionsPoints";
             this.lblInstructionsPoints.Size = new System.Drawing.Size(245, 110);
             this.lblInstructionsPoints.TabIndex = 10;
@@ -1046,7 +1059,7 @@
             this.lblInstructionsQuestion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblInstructionsQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInstructionsQuestion.ForeColor = System.Drawing.Color.White;
-            this.lblInstructionsQuestion.Location = new System.Drawing.Point(256, 61);
+            this.lblInstructionsQuestion.Location = new System.Drawing.Point(273, 61);
             this.lblInstructionsQuestion.Name = "lblInstructionsQuestion";
             this.lblInstructionsQuestion.Size = new System.Drawing.Size(245, 106);
             this.lblInstructionsQuestion.TabIndex = 9;
@@ -1058,7 +1071,7 @@
             this.lblInstructionsAnswer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblInstructionsAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInstructionsAnswer.ForeColor = System.Drawing.Color.White;
-            this.lblInstructionsAnswer.Location = new System.Drawing.Point(54, 170);
+            this.lblInstructionsAnswer.Location = new System.Drawing.Point(71, 170);
             this.lblInstructionsAnswer.Name = "lblInstructionsAnswer";
             this.lblInstructionsAnswer.Size = new System.Drawing.Size(180, 153);
             this.lblInstructionsAnswer.TabIndex = 8;
@@ -1070,7 +1083,7 @@
             this.lblInstructionsTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblInstructionsTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInstructionsTitle.ForeColor = System.Drawing.Color.White;
-            this.lblInstructionsTitle.Location = new System.Drawing.Point(140, 2);
+            this.lblInstructionsTitle.Location = new System.Drawing.Point(157, 2);
             this.lblInstructionsTitle.Name = "lblInstructionsTitle";
             this.lblInstructionsTitle.Size = new System.Drawing.Size(477, 37);
             this.lblInstructionsTitle.TabIndex = 7;
@@ -1087,7 +1100,7 @@
             this.btnStartRound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStartRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStartRound.ForeColor = System.Drawing.Color.White;
-            this.btnStartRound.Location = new System.Drawing.Point(243, 450);
+            this.btnStartRound.Location = new System.Drawing.Point(260, 450);
             this.btnStartRound.Name = "btnStartRound";
             this.btnStartRound.Size = new System.Drawing.Size(250, 50);
             this.btnStartRound.TabIndex = 6;
@@ -1106,7 +1119,7 @@
             this.btnSkip.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSkip.ForeColor = System.Drawing.Color.White;
             this.btnSkip.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSkip.Location = new System.Drawing.Point(662, 450);
+            this.btnSkip.Location = new System.Drawing.Point(679, 450);
             this.btnSkip.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSkip.Name = "btnSkip";
             this.btnSkip.Size = new System.Drawing.Size(75, 50);
@@ -1123,25 +1136,12 @@
             // 
             this.tmrBallFlight.Tick += new System.EventHandler(this.tmrBallFlight_Tick);
             // 
-            // lblClickToEnlarge
-            // 
-            this.lblClickToEnlarge.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblClickToEnlarge.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClickToEnlarge.ForeColor = System.Drawing.Color.White;
-            this.lblClickToEnlarge.Location = new System.Drawing.Point(289, 229);
-            this.lblClickToEnlarge.Name = "lblClickToEnlarge";
-            this.lblClickToEnlarge.Size = new System.Drawing.Size(164, 36);
-            this.lblClickToEnlarge.TabIndex = 18;
-            this.lblClickToEnlarge.Text = "Click to enlarge";
-            this.lblClickToEnlarge.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblClickToEnlarge.Click += new System.EventHandler(this.lblClickToEnlarge_Click);
-            // 
             // frmQuizQuestions
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.ClientSize = new System.Drawing.Size(774, 466);
+            this.ClientSize = new System.Drawing.Size(808, 466);
             this.Controls.Add(this.pnlInstructions);
             this.Controls.Add(this.pnlWhereinTheWorld);
             this.Controls.Add(this.pnlGoClubbin);

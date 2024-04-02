@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using The_ULTIMATE_golf_quiz.File_Handling;
 
 namespace The_ULTIMATE_golf_quiz
 {
@@ -17,8 +18,9 @@ namespace The_ULTIMATE_golf_quiz
         {
             InitializeComponent();           
             setUpAfterLogin();
+            SoundFileHandler.PlaySoundLooping(SoundFileHandler.backgroundMusic);
         }
-       
+
         // Initialise the menu and show the user's avatar
         private void setUpAfterLogin()
         {
@@ -109,7 +111,12 @@ namespace The_ULTIMATE_golf_quiz
         private void closeChildForm()
         {
             if (activeForm != null)
+            {
                 activeForm.Close();
+
+                // If the background music isn't already playing it will start playing
+                SoundFileHandler.PlaySoundLooping(SoundFileHandler.backgroundMusic);
+            }
         }
 
         #region NavigationButtonClicks
@@ -230,6 +237,7 @@ namespace The_ULTIMATE_golf_quiz
         // Close the main menu and go back to the login form
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            SoundFileHandler.StopSound();
             this.Close();
             new frmLogin().Show();
         }
@@ -240,6 +248,7 @@ namespace The_ULTIMATE_golf_quiz
             DialogResult result = MessageBox.Show("Are you sure you want to quit?", "Quit", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
+                SoundFileHandler.StopSound();
                 System.Windows.Forms.Application.Exit();
             }
         }

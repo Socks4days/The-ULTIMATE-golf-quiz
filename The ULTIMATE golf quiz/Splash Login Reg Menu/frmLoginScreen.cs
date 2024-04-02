@@ -25,6 +25,7 @@ namespace The_ULTIMATE_golf_quiz
             // Code to be able to hit enter to do same thing as submit when in the password textbox
             txtBoxPassword.KeyDown += KeyPressedDown;
             KeyDown += KeyPressedDown;
+            
         }
 
         private void KeyPressedDown(object sender, KeyEventArgs e)
@@ -76,6 +77,7 @@ namespace The_ULTIMATE_golf_quiz
 
             if (foundUser)
             {
+                Thread.Sleep(1000);
                 this.Hide();
                 // Open the main menu and save a reference to it
                 frmSplashScreen.mainMenu = new frmMain();
@@ -98,7 +100,6 @@ namespace The_ULTIMATE_golf_quiz
         {
             // Opens the register screen when pressed
             this.Hide();
-            // new frmMain().formChoice = "Register";
             new frmRegisterUser().Show();
         }
                 

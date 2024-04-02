@@ -54,8 +54,8 @@ namespace The_ULTIMATE_golf_quiz
             {
                 DialogResult result = MessageBox.Show("Your question will not be saved!\nDo you wish to leave?", "Confirmation", MessageBoxButtons.YesNo);
 
-                if (result == DialogResult.Yes)                
-                    selectQuestionType(); 
+                if (result == DialogResult.Yes)
+                selectQuestionType(); 
             }
         }    
         

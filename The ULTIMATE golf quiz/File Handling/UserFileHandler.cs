@@ -63,7 +63,6 @@ namespace The_ULTIMATE_golf_quiz
         public static void SaveAllPlayers()
         {
             // again creates a list of all players and sets it equal to the list of players created in the splash screen
-            // List<Player> players = SplashScreen.players;
             // using streamwriter to write to the csv file
             using (StreamWriter sw = new StreamWriter(userListFilePath))
             {        
@@ -139,7 +138,7 @@ namespace The_ULTIMATE_golf_quiz
                         questionID = playersAnsweredQuestions[0];
                         questionAnsweredCorrectly = Convert.ToBoolean(playersAnsweredQuestions[1]);
 
-                        // adds all the players that are in the csv into the original splash screen list of players
+                        // removes all the questions that are in the players csv from the lists of each questions
                         TypeItQuestion typeItQuestion = QuestionFileHandler.TypeItQuestions.Find(x => x.Id == questionID);
                         if (typeItQuestion != null)
                         {

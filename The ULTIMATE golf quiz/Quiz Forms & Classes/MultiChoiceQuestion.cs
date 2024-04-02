@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace The_ULTIMATE_golf_quiz
 {
-    // Multiple Guess question - extends base quesetion class,
+    // Multiple Guess question - extends base question class,
     // adding 4 properties to hold the text for the options
     internal class MultiChoiceQuestion : BaseQuestion
     {

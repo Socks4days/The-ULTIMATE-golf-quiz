@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Reflection;
 using System.IO;
+using System.Media;
+using The_ULTIMATE_golf_quiz.File_Handling;
 
 namespace The_ULTIMATE_golf_quiz
 {
@@ -120,65 +122,14 @@ namespace The_ULTIMATE_golf_quiz
         }
         #endregion AnswerButtonsEnabling
 
-        #region Music
-        System.Media.SoundPlayer backgroundMusicPlayer = new System.Media.SoundPlayer();
-        System.Media.SoundPlayer countdownPlayer = new System.Media.SoundPlayer();
-        System.Media.SoundPlayer questionCorrectPlayer = new System.Media.SoundPlayer();
-        System.Media.SoundPlayer questionWrongPlayer = new System.Media.SoundPlayer();
 
-
-        // Play background music
-        private void startBackgroundMusicPlayer()
-        {
-            backgroundMusicPlayer.PlayLooping();
-        }
-        // Stop background music
-        private void stopMusicPlayer()
-        {
-            backgroundMusicPlayer.Stop();
-        }
-        // Start countdown music for question timer
-        private void startCountdown()
-        {
-            countdownPlayer.Play();
-        }
-        // Stop countdown music
-        private void stopCountdown()
-        {
-            countdownPlayer.Stop();
-        }
-        private void startQuestionCorrect()
-        {
-            questionCorrectPlayer.Play();
-        }
-        private void stopQuestionCorrect()
-        {
-            questionCorrectPlayer.Stop();
-        }
-        private void startQuestionWrong()
-        {
-            questionWrongPlayer.Play();
-        }
-        private void stopQuestionWrong()
-        {
-            questionWrongPlayer.Stop();
-        }
-        #endregion Music
 
         // Set up when the quiz form is first created
         public frmQuizQuestions()
         {
-            // start the music while selecting the round
-            backgroundMusicPlayer.SoundLocation = "Background Music.wav";
-            backgroundMusicPlayer.Load();
-            countdownPlayer.SoundLocation = "Countdown.wav";
-            countdownPlayer.Load();
-            questionCorrectPlayer.SoundLocation = "Correct Answer.wav";
-            questionCorrectPlayer.Load();
-            questionWrongPlayer.SoundLocation = "Wrong Answer.wav";
-            questionWrongPlayer.Load();
+
+
             InitializeComponent();
-            // startBackgroundMusicPlayer();
             txtBoxAnswer.KeyDown += KeyPressedDown;
             KeyDown += KeyPressedDown;
             NumberOfQuestionsAskedThisRound = 0;
@@ -228,7 +179,6 @@ namespace The_ULTIMATE_golf_quiz
             pnlTypeOfRound.Dock = DockStyle.Fill;
             pnlTypeOfRound.Visible = true;
             UpdateRoundImage();
-
         }
         #endregion Initialisation
 
@@ -242,8 +192,7 @@ namespace The_ULTIMATE_golf_quiz
         private void btnRight_Click(object sender, EventArgs e)
         {
             currentRoundIndex = (currentRoundIndex + 1) % questionTypesArray.Length;            
-            UpdateRoundImage();
-            
+            UpdateRoundImage();            
         }
 
         private void btnLeft_Click(object sender, EventArgs e)
@@ -354,6 +303,7 @@ namespace The_ULTIMATE_golf_quiz
 
         private void InstructionSetup()
         {
+
             // Hide the select round type panel
             pnlTypeOfRound.Dock = DockStyle.None;
             pnlTypeOfRound.Visible = false;
@@ -362,9 +312,9 @@ namespace The_ULTIMATE_golf_quiz
             pnlInstructions.Dock = DockStyle.Fill;
             pnlInstructions.Visible = true;
 
-            zoomPictureBox(false, "Instructions");
+            ZoomPictureBox(false, "Instructions");
 
-            resetInstructions();
+            ResetInstructions();
             string round = QuestionFileHandler.RoundType;
             lblInstructionsTitle.Text = round + " Instructions";
             switch (round)
@@ -409,7 +359,7 @@ namespace The_ULTIMATE_golf_quiz
             tmrInstructions.Enabled = true;
             tmrInstructions.Start();
         }
-        private void resetInstructions()
+        private void ResetInstructions()
         {
             lblInstructionsQuestion.Visible = false;
             lblInstructionsAnswer.Visible = false;
@@ -446,7 +396,7 @@ namespace The_ULTIMATE_golf_quiz
         // If picture box is clicked, zoom instruction image
         private void pctBoxInstructionsGameImage_Click(object sender, EventArgs e)
         {
-            zoomPictureBox(!imageZoomed, "Instructions");
+            ZoomPictureBox(!imageZoomed, "Instructions");
             if (imageZoomed)
             {
                 lblClickToEnlarge.SendToBack();
@@ -529,7 +479,7 @@ namespace The_ULTIMATE_golf_quiz
                 countdown = 30 * 10;
                 progressBarCountdown.Maximum = countdown;
                 tmrCountdown.Start();
-                startCountdown();
+                SoundFileHandler.PlaySound(SoundFileHandler.countdownTimerMusic);
                 int randomisedQuestionNumber;
                 // Show the panels relevant to the selected round type
                 switch (QuestionFileHandler.RoundType)
@@ -643,7 +593,7 @@ namespace The_ULTIMATE_golf_quiz
                         pctBoxCorrectLocation.Visible = false;
 
                         // reset the imageZoomed flag and resize the picture to the new panel size
-                        zoomPictureBox(false, "Where in the World");
+                        ZoomPictureBox(false, "Where in the World");
                         break;
 
                     case "Go Clubbin":
@@ -748,9 +698,9 @@ namespace The_ULTIMATE_golf_quiz
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             // Stop the timer
-            tmrCountdown.Stop(); 
-            stopCountdown();
-            
+            tmrCountdown.Stop();
+            SoundFileHandler.StopSound();
+
             // Disable the answer buttons, show the answer details and next button
             this.ActiveControl = btnNext;
             lblAnswer.Visible = true;
@@ -769,7 +719,7 @@ namespace The_ULTIMATE_golf_quiz
                 TotalScoreForCurrentRound += currentTypeItQuestion1.Points;
                 NumberOfQuestionsAnsweredCorrectly++;
                 UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentTypeItQuestion1, true);
-                startQuestionCorrect();
+                SoundFileHandler.PlaySound(SoundFileHandler.correctAnswerSound);
             }
             else
             {
@@ -777,7 +727,7 @@ namespace The_ULTIMATE_golf_quiz
                 // Save the id of the question so it doesn't get asked again and mark it as incorrect
                 lblAnswer.Text = "Incorrect, the answer is " + currentTypeItQuestion1.CorrectAnswer;
                 UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentTypeItQuestion1, false);
-                startQuestionWrong();
+                SoundFileHandler.PlaySound(SoundFileHandler.wrongAnswerSound);
             }
         }
 
@@ -787,7 +737,7 @@ namespace The_ULTIMATE_golf_quiz
         {
             // Stop the timer
             tmrCountdown.Stop();
-            stopCountdown();
+            SoundFileHandler.StopSound();
 
             // Disable the answer buttons, show the answer details and next button
             pnlAnswer.Visible = true;
@@ -806,7 +756,7 @@ namespace The_ULTIMATE_golf_quiz
                 TotalScoreForCurrentRound += currentTrueOrFalseQuestion1.Points;
                 NumberOfQuestionsAnsweredCorrectly++;
                 UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentTrueOrFalseQuestion1, true);
-                startQuestionCorrect();
+                SoundFileHandler.PlaySound(SoundFileHandler.correctAnswerSound);
             }
             else
             {
@@ -814,7 +764,7 @@ namespace The_ULTIMATE_golf_quiz
                 // Save the id of the question so it doesn't get asked again and mark it as incorrect
                 lblAnswer.Text = "Incorrect, it's false";
                 UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentTrueOrFalseQuestion1, false);
-                startQuestionWrong();
+                SoundFileHandler.PlaySound(SoundFileHandler.wrongAnswerSound);
             }
         }
 
@@ -823,8 +773,8 @@ namespace The_ULTIMATE_golf_quiz
         {
             // Stop the timer
             tmrCountdown.Stop();
-            stopCountdown();
-            
+            SoundFileHandler.StopSound();
+
             // Disable the answer buttons, show the answer details and next button
             pnlAnswer.Visible = true;
             lblAnswer.Visible = true;
@@ -842,7 +792,7 @@ namespace The_ULTIMATE_golf_quiz
                 TotalScoreForCurrentRound += currentTrueOrFalseQuestion1.Points;
                 NumberOfQuestionsAnsweredCorrectly++;
                 UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentTrueOrFalseQuestion1, true);
-                startQuestionCorrect();
+                SoundFileHandler.PlaySound(SoundFileHandler.correctAnswerSound);
 
             }
             else
@@ -851,7 +801,7 @@ namespace The_ULTIMATE_golf_quiz
                 // Save the id of the question so it doesn't get asked again and mark it as incorrect
                 lblAnswer.Text = "Incorrect, it's true";
                 UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentTrueOrFalseQuestion1, false);
-                startQuestionWrong();
+                SoundFileHandler.PlaySound(SoundFileHandler.wrongAnswerSound);
             }
         }
 
@@ -859,34 +809,34 @@ namespace The_ULTIMATE_golf_quiz
         // Multiple Guess - option 1 clicked
         private void btnOption1_Click(object sender, EventArgs e)
         {
-            checkMultipleChoiceAnswer(btnOption1.Text);
+            CheckMultipleChoiceAnswer(btnOption1.Text);
         }
 
         // Multiple Guess - option 2 clicked
         private void btnOption2_Click(object sender, EventArgs e)
         {
-            checkMultipleChoiceAnswer(btnOption2.Text);
+            CheckMultipleChoiceAnswer(btnOption2.Text);
         }
 
         // Multiple Guess - option 3 clicked
         private void btnOption3_Click(object sender, EventArgs e)
         {
-            checkMultipleChoiceAnswer(btnOption3.Text);
+            CheckMultipleChoiceAnswer(btnOption3.Text);
         }    
 
         // Multiple Guess - option 4 clicked
         private void btnOption4_Click(object sender, EventArgs e)
         {
-            checkMultipleChoiceAnswer(btnOption4.Text);
+            CheckMultipleChoiceAnswer(btnOption4.Text);
         }
         
         // Multiple Guess - shared method to check if answer is correct
-        private void checkMultipleChoiceAnswer(string answerSelected)
+        private void CheckMultipleChoiceAnswer(string answerSelected)
         {
             // Stop the timer
             tmrCountdown.Stop();
-            stopCountdown();
-            
+            SoundFileHandler.StopSound();
+
             // Disable the answer buttons, show the answer details and next button
             pnlAnswer.Visible = true;
             AnswerButtonsDisable();
@@ -904,7 +854,7 @@ namespace The_ULTIMATE_golf_quiz
                 TotalScoreForCurrentRound += currentMultipleChoiceQuestion1.Points;
                 NumberOfQuestionsAnsweredCorrectly++;
                 UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentMultipleChoiceQuestion1, true);
-                startQuestionCorrect();
+                SoundFileHandler.PlaySound(SoundFileHandler.correctAnswerSound);
             }
             else
             {
@@ -912,12 +862,28 @@ namespace The_ULTIMATE_golf_quiz
                 // Save the id of the question so it doesn't get asked again and mark it as incorrect
                 lblAnswer.Text = "Incorrect, the answer is " + currentMultipleChoiceQuestion1.CorrectAnswer;
                 UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentMultipleChoiceQuestion1, false);
-                startQuestionWrong();
+                SoundFileHandler.PlaySound(SoundFileHandler.wrongAnswerSound);
             }
         }
-        
+
         //-------------------------------------------------------------------------------------------------------------------
         // Where in the World - map clicked
+        int mapX = 0;
+        int mapY = 0;
+        // Shows the correct location on the map
+        private void CorrectMapLocation()
+        {
+            // Convert the correct location to a point on the map based on the map size
+            int correctXOnMap = (currentPictureQuestion1.CorrectLocationX * pctBoxMap.Width) / 1000;
+            int correctYOnMap = (currentPictureQuestion1.CorrectLocationY * pctBoxMap.Height) / 1000;
+
+            mapX = pctBoxMap.Location.X;
+            mapY = pctBoxMap.Location.Y;
+            // Set the correct location marker to the answer position on the map
+            pctBoxCorrectLocation.Location = new Point(mapX + correctXOnMap - (pctBoxLocation.Width / 2), mapY + correctYOnMap - pctBoxLocation.Height);
+        }
+        
+
         private void pctBoxMap_Click(object sender, EventArgs e)
         {            
             // Check if the user has already clicked on the map
@@ -925,12 +891,12 @@ namespace The_ULTIMATE_golf_quiz
             {
                 // Stop the timer
                 tmrCountdown.Stop();
-                stopCountdown();
-                
+                SoundFileHandler.StopSound();
+
                 QuestionFileHandler.PictureQuestions.Remove(currentPictureQuestion1);
                 
-                int mapX = pctBoxMap.Location.X;
-                int mapY = pctBoxMap.Location.Y;
+                mapX = pctBoxMap.Location.X;
+                mapY = pctBoxMap.Location.Y;
 
                 // Work out where the user clicked on the map and move the location marker to that position
                 MouseEventArgs mouseEvent = (MouseEventArgs)e;
@@ -940,12 +906,7 @@ namespace The_ULTIMATE_golf_quiz
                 int x = (1000 * mouseEvent.X) / pctBoxMap.Width;
                 int y = (1000 * mouseEvent.Y) / pctBoxMap.Height;
 
-                // Convert the correct location to a point on the map based on the map size
-                int correctXOnMap = (currentPictureQuestion1.CorrectLocationX * pctBoxMap.Width) / 1000;
-                int correctYOnMap = (currentPictureQuestion1.CorrectLocationY * pctBoxMap.Height) / 1000;
-
-                // Set the correct location marker to the answer position on the map
-                pctBoxCorrectLocation.Location = new Point(mapX + correctXOnMap - (pctBoxLocation.Width / 2), mapY + correctYOnMap - pctBoxLocation.Height);
+                CorrectMapLocation();
 
                 // Check if the player is close to the right answer (+/- 50)
                 if (Math.Abs(currentPictureQuestion1.CorrectLocationX - x) <= 50
@@ -957,7 +918,7 @@ namespace The_ULTIMATE_golf_quiz
                     NumberOfQuestionsAnsweredCorrectly++;
                     TotalScoreForCurrentRound += currentPictureQuestion1.Points;
                     UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentPictureQuestion1, true);
-                    startQuestionCorrect();
+                    SoundFileHandler.PlaySound(SoundFileHandler.correctAnswerSound);
                 }
                 else
                 {
@@ -965,7 +926,7 @@ namespace The_ULTIMATE_golf_quiz
                     lblAnswer.Text = String.Format("No, {0} ({1}, {2} )\nYou selected ({3}, {4})",
                         currentPictureQuestion1.CorrectAnswer, currentPictureQuestion1.CorrectLocationX, currentPictureQuestion1.CorrectLocationY, x, y);
                     UserFileHandler.SavePlayerQuestionAnswered(frmSplashScreen.player, currentPictureQuestion1, false);
-                    startQuestionWrong();
+                    SoundFileHandler.PlaySound(SoundFileHandler.wrongAnswerSound);
                 }
                 
                 // Remember that user has already clicked on the map so they can't answer more than once
@@ -1048,8 +1009,8 @@ namespace The_ULTIMATE_golf_quiz
 
             // Player has selected a club, so stop the countdown timer
             tmrCountdown.Stop();
-            stopCountdown();
-            
+            SoundFileHandler.StopSound();
+
             // If this is the first time the go button is clicked, start the power timer
             if (goButtonClickCount == 0)
             {
@@ -1075,7 +1036,6 @@ namespace The_ULTIMATE_golf_quiz
             // Stop the power meter, stop the countdown music, play the sound to hit the ball
             tmrPower.Stop();
             tmrPower.Enabled = false;
-            stopMusicPlayer();
             System.Media.SoundPlayer player = new System.Media.SoundPlayer();
             player.SoundLocation = "Golf Ball.wav";
             player.Load();
@@ -1160,8 +1120,6 @@ namespace The_ULTIMATE_golf_quiz
 
             // Allow the user to answer again
             AnswerButtonsEnabled();
-            stopQuestionCorrect();
-            stopQuestionWrong();
 
             // Check if there are any questions left for the selected round type
             // If so get the next question or else go to the finish screen
@@ -1220,7 +1178,7 @@ namespace The_ULTIMATE_golf_quiz
             // Stop the countdown
             // Hide the question and answer details, next button, etc
             // Show the finish panel
-            stopCountdown();
+            SoundFileHandler.StopSound();
             pnlAnswer.Visible = false;
             btnNext.Visible = false;
             pnlQuestion.Visible = false;
@@ -1282,7 +1240,8 @@ namespace The_ULTIMATE_golf_quiz
             if (result == DialogResult.Yes)
             {
                 // Stop the countdown and exit the quiz
-                stopCountdown();
+
+                SoundFileHandler.PlaySound(SoundFileHandler.backgroundMusic);                
                 this.Close(); 
             }
         }
@@ -1290,7 +1249,6 @@ namespace The_ULTIMATE_golf_quiz
         // Back arrow button on select round type screen
         private void btnBack_Click(object sender, EventArgs e)
         {
-            stopCountdown();
             this.Close();
         }
         #endregion Exiting
@@ -1308,10 +1266,11 @@ namespace The_ULTIMATE_golf_quiz
                 progressBarCountdown.Value = countdown;
             }
             else
-            {                
+            {
                 lblQuestion.Text = "TIME'S UP!!";
                 lblQuestion.ForeColor = Color.FromArgb(255,128,0);
-                AnswerButtonsDisable();
+                AnswerButtonsDisable();                
+
                 btnNext.Visible = true;
                 lblAnswer.Visible = true;
                 string answer = "";
@@ -1323,9 +1282,16 @@ namespace The_ULTIMATE_golf_quiz
                     else answer = "False";                    
                 }
                 if (QuestionFileHandler.RoundType == "Multiple Guess") answer = currentMultipleChoiceQuestion1.CorrectAnswer;
-                if (QuestionFileHandler.RoundType == "Where in the World") answer = currentPictureQuestion1.CorrectAnswer;
+                if (QuestionFileHandler.RoundType == "Where in the World") 
+                {
+                    answer = currentPictureQuestion1.CorrectAnswer;
+
+                    // Show the correct location if they did not answer in time
+                    pctBoxCorrectLocation.Visible = true;
+                    CorrectMapLocation();
+                }
                 
-                lblAnswer.Text = "The correct answer is " + answer;              
+                lblAnswer.Text = "The correct answer is " + answer;                
             }
         }
 
@@ -1426,25 +1392,31 @@ namespace The_ULTIMATE_golf_quiz
 
                 // Calculate the number of points based on how close the ball is to the hole
                 int points = 0;
+                if(distanceFromHoleYds == 0)
+                {
+                    SoundFileHandler.PlaySound(SoundFileHandler.holeInOneSound);
+                    NumberOfQuestionsAnsweredCorrectly++;
+                    points = 10;
+                }
                 if (distanceFromHoleYds <= 10)
                 {
-                    startQuestionCorrect();
+                    SoundFileHandler.PlaySound(SoundFileHandler.correctAnswerSound);
                     NumberOfQuestionsAnsweredCorrectly++;
                     points = 5;
                 }
                 else if (distanceFromHoleYds <= 20)
                 {
-                    startQuestionCorrect();
+                    SoundFileHandler.PlaySound(SoundFileHandler.correctAnswerSound);
                     NumberOfQuestionsAnsweredCorrectly++;
                     points = 3;
                 }
                 else if (distanceFromHoleYds <= 30)
                 {
-                    startQuestionCorrect();
+                    SoundFileHandler.PlaySound(SoundFileHandler.correctAnswerSound);
                     NumberOfQuestionsAnsweredCorrectly++;
                     points = 1;
                 }
-                else startQuestionWrong();
+                else SoundFileHandler.PlaySound(SoundFileHandler.wrongAnswerSound);
 
                 // Stop the user from trying again and show the results
                 AnswerButtonsDisable();
@@ -1463,7 +1435,7 @@ namespace The_ULTIMATE_golf_quiz
         private void pctBoxPicture_Click(object sender, EventArgs e)
         {
             // Toggle image zoom
-            zoomPictureBox(!imageZoomed, "Where in the World");
+            ZoomPictureBox(!imageZoomed, "Where in the World");
         }
 
         bool imageZoomed = false;
@@ -1477,7 +1449,7 @@ namespace The_ULTIMATE_golf_quiz
         int originalImageHeightInstructions = 150;
 
         // Method to resize picture box based on the size of the window
-        private void zoomPictureBox(bool zoomImage, string pictureType)
+        private void ZoomPictureBox(bool zoomImage, string pictureType)
         {
             // Picture box in Where in the World quiz
             if(pictureType == "Where in the World")
@@ -1538,23 +1510,23 @@ namespace The_ULTIMATE_golf_quiz
             if (QuestionFileHandler.RoundType == "Where in the World")
             {
                 // resize the picture to the new panel size
-                zoomPictureBox(imageZoomed, "Where in the World");
+                ZoomPictureBox(imageZoomed, "Where in the World");
             }
             else if (QuestionFileHandler.RoundType == "Go Clubbin")
             {
                 // move the ball, flag and grass to the right places based on the new window size
-                calculateBallAndFlagPositionRelativeToWindow();
+                CalculateBallAndFlagPositionRelativeToWindow();
             }
             else
             {
-                zoomPictureBox(imageZoomed, "Instructions");
+                ZoomPictureBox(imageZoomed, "Instructions");
             }
         }
 
         //-----------------------------------------------------------------
         // Go Clubbin - redraw grass, ball and flag when the
         // window is resized to fill the available space
-        private void calculateBallAndFlagPositionRelativeToWindow ()
+        private void CalculateBallAndFlagPositionRelativeToWindow()
         {
             // Default scale to convert yards to pixels is 2 for window of with 740 (default)
             // Increase the scale if the window is larger

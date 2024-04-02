@@ -44,7 +44,7 @@
             this.btnReturn.ForeColor = System.Drawing.Color.White;
             this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnReturn.Location = new System.Drawing.Point(9, 9);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 50);
             this.btnReturn.TabIndex = 8;
@@ -66,9 +66,10 @@
             this.listViewPlayers.GridLines = true;
             this.listViewPlayers.HideSelection = false;
             this.listViewPlayers.Location = new System.Drawing.Point(220, 29);
-            this.listViewPlayers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listViewPlayers.Margin = new System.Windows.Forms.Padding(2);
             this.listViewPlayers.Name = "listViewPlayers";
             this.listViewPlayers.Size = new System.Drawing.Size(271, 412);
+            this.listViewPlayers.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listViewPlayers.TabIndex = 9;
             this.listViewPlayers.UseCompatibleStateImageBehavior = false;
             this.listViewPlayers.View = System.Windows.Forms.View.Details;
@@ -86,7 +87,7 @@
             this.Controls.Add(this.listViewPlayers);
             this.Controls.Add(this.btnReturn);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmViewUsers";
             this.Text = "frmViewUsers";
             this.ResumeLayout(false);

@@ -39,8 +39,6 @@
             this.lblAgeText = new System.Windows.Forms.Label();
             this.lblGenderText = new System.Windows.Forms.Label();
             this.lblNationText = new System.Windows.Forms.Label();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.lblPasswordText = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -49,7 +47,6 @@
             this.btnEditReturn = new System.Windows.Forms.Button();
             this.pnlContainerEdit = new System.Windows.Forms.Panel();
             this.lblError = new System.Windows.Forms.Label();
-            this.txtBoxPassword = new System.Windows.Forms.TextBox();
             this.txtBoxNationality = new System.Windows.Forms.TextBox();
             this.txtBoxGender = new System.Windows.Forms.TextBox();
             this.txtBoxAge = new System.Windows.Forms.TextBox();
@@ -61,7 +58,6 @@
             this.lblEditName = new System.Windows.Forms.Label();
             this.lblEditAge = new System.Windows.Forms.Label();
             this.lblEditNationality = new System.Windows.Forms.Label();
-            this.lblEditPassword = new System.Windows.Forms.Label();
             this.lblEditGender = new System.Windows.Forms.Label();
             this.lblErrorU = new System.Windows.Forms.Label();
             this.lblErrorNam = new System.Windows.Forms.Label();
@@ -80,7 +76,7 @@
             this.lblUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.White;
-            this.lblUser.Location = new System.Drawing.Point(152, 66);
+            this.lblUser.Location = new System.Drawing.Point(152, 83);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(119, 26);
             this.lblUser.TabIndex = 0;
@@ -92,7 +88,7 @@
             this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(152, 152);
+            this.lblName.Location = new System.Drawing.Point(151, 131);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(77, 26);
             this.lblName.TabIndex = 1;
@@ -104,7 +100,7 @@
             this.lblAge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAge.ForeColor = System.Drawing.Color.White;
-            this.lblAge.Location = new System.Drawing.Point(153, 200);
+            this.lblAge.Location = new System.Drawing.Point(152, 179);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(57, 26);
             this.lblAge.TabIndex = 2;
@@ -116,7 +112,7 @@
             this.lblGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.ForeColor = System.Drawing.Color.White;
-            this.lblGender.Location = new System.Drawing.Point(152, 247);
+            this.lblGender.Location = new System.Drawing.Point(151, 226);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(90, 26);
             this.lblGender.TabIndex = 3;
@@ -128,7 +124,7 @@
             this.lblNation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblNation.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNation.ForeColor = System.Drawing.Color.White;
-            this.lblNation.Location = new System.Drawing.Point(152, 300);
+            this.lblNation.Location = new System.Drawing.Point(151, 279);
             this.lblNation.Name = "lblNation";
             this.lblNation.Size = new System.Drawing.Size(120, 26);
             this.lblNation.TabIndex = 4;
@@ -153,7 +149,7 @@
             this.lblUserText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblUserText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserText.ForeColor = System.Drawing.Color.White;
-            this.lblUserText.Location = new System.Drawing.Point(308, 66);
+            this.lblUserText.Location = new System.Drawing.Point(308, 83);
             this.lblUserText.Name = "lblUserText";
             this.lblUserText.Size = new System.Drawing.Size(113, 26);
             this.lblUserText.TabIndex = 8;
@@ -165,7 +161,7 @@
             this.lblNameText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblNameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameText.ForeColor = System.Drawing.Color.White;
-            this.lblNameText.Location = new System.Drawing.Point(308, 152);
+            this.lblNameText.Location = new System.Drawing.Point(307, 131);
             this.lblNameText.Name = "lblNameText";
             this.lblNameText.Size = new System.Drawing.Size(71, 26);
             this.lblNameText.TabIndex = 9;
@@ -177,7 +173,7 @@
             this.lblAgeText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblAgeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAgeText.ForeColor = System.Drawing.Color.White;
-            this.lblAgeText.Location = new System.Drawing.Point(309, 200);
+            this.lblAgeText.Location = new System.Drawing.Point(308, 179);
             this.lblAgeText.Name = "lblAgeText";
             this.lblAgeText.Size = new System.Drawing.Size(51, 26);
             this.lblAgeText.TabIndex = 10;
@@ -189,7 +185,7 @@
             this.lblGenderText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblGenderText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenderText.ForeColor = System.Drawing.Color.White;
-            this.lblGenderText.Location = new System.Drawing.Point(309, 247);
+            this.lblGenderText.Location = new System.Drawing.Point(308, 226);
             this.lblGenderText.Name = "lblGenderText";
             this.lblGenderText.Size = new System.Drawing.Size(84, 26);
             this.lblGenderText.TabIndex = 11;
@@ -201,35 +197,11 @@
             this.lblNationText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblNationText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNationText.ForeColor = System.Drawing.Color.White;
-            this.lblNationText.Location = new System.Drawing.Point(309, 300);
+            this.lblNationText.Location = new System.Drawing.Point(308, 279);
             this.lblNationText.Name = "lblNationText";
             this.lblNationText.Size = new System.Drawing.Size(114, 26);
             this.lblNationText.TabIndex = 12;
             this.lblNationText.Text = "Nationality";
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.ForeColor = System.Drawing.Color.White;
-            this.lblPassword.Location = new System.Drawing.Point(152, 111);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(114, 26);
-            this.lblPassword.TabIndex = 13;
-            this.lblPassword.Text = "Password:";
-            // 
-            // lblPasswordText
-            // 
-            this.lblPasswordText.AutoSize = true;
-            this.lblPasswordText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblPasswordText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPasswordText.ForeColor = System.Drawing.Color.White;
-            this.lblPasswordText.Location = new System.Drawing.Point(308, 111);
-            this.lblPasswordText.Name = "lblPasswordText";
-            this.lblPasswordText.Size = new System.Drawing.Size(108, 26);
-            this.lblPasswordText.TabIndex = 14;
-            this.lblPasswordText.Text = "Password";
             // 
             // btnReturn
             // 
@@ -260,14 +232,12 @@
             this.pnlContainer.Controls.Add(this.lblUser);
             this.pnlContainer.Controls.Add(this.lblNationText);
             this.pnlContainer.Controls.Add(this.lblName);
-            this.pnlContainer.Controls.Add(this.lblPasswordText);
             this.pnlContainer.Controls.Add(this.lblUserText);
             this.pnlContainer.Controls.Add(this.lblAge);
             this.pnlContainer.Controls.Add(this.lblGenderText);
             this.pnlContainer.Controls.Add(this.lblNameText);
             this.pnlContainer.Controls.Add(this.lblNation);
             this.pnlContainer.Controls.Add(this.lblAgeText);
-            this.pnlContainer.Controls.Add(this.lblPassword);
             this.pnlContainer.Controls.Add(this.lblGender);
             this.pnlContainer.Location = new System.Drawing.Point(120, 26);
             this.pnlContainer.Name = "pnlContainer";
@@ -338,7 +308,6 @@
             this.pnlContainerEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlContainerEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.pnlContainerEdit.Controls.Add(this.lblError);
-            this.pnlContainerEdit.Controls.Add(this.txtBoxPassword);
             this.pnlContainerEdit.Controls.Add(this.txtBoxNationality);
             this.pnlContainerEdit.Controls.Add(this.txtBoxGender);
             this.pnlContainerEdit.Controls.Add(this.txtBoxAge);
@@ -350,7 +319,6 @@
             this.pnlContainerEdit.Controls.Add(this.lblEditName);
             this.pnlContainerEdit.Controls.Add(this.lblEditAge);
             this.pnlContainerEdit.Controls.Add(this.lblEditNationality);
-            this.pnlContainerEdit.Controls.Add(this.lblEditPassword);
             this.pnlContainerEdit.Controls.Add(this.lblEditGender);
             this.pnlContainerEdit.Controls.Add(this.lblErrorU);
             this.pnlContainerEdit.Controls.Add(this.lblErrorNam);
@@ -369,30 +337,13 @@
             this.lblError.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblError.Location = new System.Drawing.Point(13, 330);
+            this.lblError.Location = new System.Drawing.Point(14, 315);
             this.lblError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(548, 50);
+            this.lblError.Size = new System.Drawing.Size(254, 25);
             this.lblError.TabIndex = 21;
-            this.lblError.Text = "Enter a password between 8-15 characters, with at least\r\n1 number, 1 capital lett" +
-    "er and 1 symbol";
+            this.lblError.Text = "Error message goes here\r\n";
             this.lblError.Visible = false;
-            // 
-            // txtBoxPassword
-            // 
-            this.txtBoxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
-            this.txtBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxPassword.Enabled = false;
-            this.txtBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPassword.ForeColor = System.Drawing.Color.White;
-            this.txtBoxPassword.Location = new System.Drawing.Point(215, 99);
-            this.txtBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBoxPassword.MaxLength = 15;
-            this.txtBoxPassword.Name = "txtBoxPassword";
-            this.txtBoxPassword.PasswordChar = '*';
-            this.txtBoxPassword.Size = new System.Drawing.Size(272, 24);
-            this.txtBoxPassword.TabIndex = 25;
             // 
             // txtBoxNationality
             // 
@@ -401,7 +352,7 @@
             this.txtBoxNationality.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxNationality.ForeColor = System.Drawing.Color.White;
-            this.txtBoxNationality.Location = new System.Drawing.Point(215, 283);
+            this.txtBoxNationality.Location = new System.Drawing.Point(214, 256);
             this.txtBoxNationality.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxNationality.MaxLength = 20;
             this.txtBoxNationality.Name = "txtBoxNationality";
@@ -416,7 +367,7 @@
             this.txtBoxGender.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxGender.ForeColor = System.Drawing.Color.White;
-            this.txtBoxGender.Location = new System.Drawing.Point(215, 237);
+            this.txtBoxGender.Location = new System.Drawing.Point(214, 210);
             this.txtBoxGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxGender.MaxLength = 20;
             this.txtBoxGender.Name = "txtBoxGender";
@@ -431,7 +382,7 @@
             this.txtBoxAge.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxAge.ForeColor = System.Drawing.Color.White;
-            this.txtBoxAge.Location = new System.Drawing.Point(215, 191);
+            this.txtBoxAge.Location = new System.Drawing.Point(214, 164);
             this.txtBoxAge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxAge.MaxLength = 3;
             this.txtBoxAge.Name = "txtBoxAge";
@@ -446,7 +397,7 @@
             this.txtBoxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxName.ForeColor = System.Drawing.Color.White;
-            this.txtBoxName.Location = new System.Drawing.Point(215, 145);
+            this.txtBoxName.Location = new System.Drawing.Point(214, 118);
             this.txtBoxName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxName.MaxLength = 20;
             this.txtBoxName.Name = "txtBoxName";
@@ -461,7 +412,7 @@
             this.txtBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxUsername.ForeColor = System.Drawing.Color.White;
-            this.txtBoxUsername.Location = new System.Drawing.Point(215, 53);
+            this.txtBoxUsername.Location = new System.Drawing.Point(214, 72);
             this.txtBoxUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxUsername.MaxLength = 20;
             this.txtBoxUsername.Name = "txtBoxUsername";
@@ -507,7 +458,7 @@
             this.lblEditUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblEditUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditUsername.ForeColor = System.Drawing.Color.White;
-            this.lblEditUsername.Location = new System.Drawing.Point(90, 51);
+            this.lblEditUsername.Location = new System.Drawing.Point(89, 70);
             this.lblEditUsername.Name = "lblEditUsername";
             this.lblEditUsername.Size = new System.Drawing.Size(119, 26);
             this.lblEditUsername.TabIndex = 0;
@@ -519,7 +470,7 @@
             this.lblEditName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblEditName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditName.ForeColor = System.Drawing.Color.White;
-            this.lblEditName.Location = new System.Drawing.Point(90, 143);
+            this.lblEditName.Location = new System.Drawing.Point(89, 116);
             this.lblEditName.Name = "lblEditName";
             this.lblEditName.Size = new System.Drawing.Size(77, 26);
             this.lblEditName.TabIndex = 1;
@@ -531,7 +482,7 @@
             this.lblEditAge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblEditAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditAge.ForeColor = System.Drawing.Color.White;
-            this.lblEditAge.Location = new System.Drawing.Point(91, 189);
+            this.lblEditAge.Location = new System.Drawing.Point(90, 162);
             this.lblEditAge.Name = "lblEditAge";
             this.lblEditAge.Size = new System.Drawing.Size(57, 26);
             this.lblEditAge.TabIndex = 2;
@@ -543,23 +494,11 @@
             this.lblEditNationality.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblEditNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditNationality.ForeColor = System.Drawing.Color.White;
-            this.lblEditNationality.Location = new System.Drawing.Point(90, 281);
+            this.lblEditNationality.Location = new System.Drawing.Point(89, 254);
             this.lblEditNationality.Name = "lblEditNationality";
             this.lblEditNationality.Size = new System.Drawing.Size(120, 26);
             this.lblEditNationality.TabIndex = 4;
             this.lblEditNationality.Text = "Nationality:\r\n";
-            // 
-            // lblEditPassword
-            // 
-            this.lblEditPassword.AutoSize = true;
-            this.lblEditPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblEditPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditPassword.ForeColor = System.Drawing.Color.White;
-            this.lblEditPassword.Location = new System.Drawing.Point(90, 97);
-            this.lblEditPassword.Name = "lblEditPassword";
-            this.lblEditPassword.Size = new System.Drawing.Size(114, 26);
-            this.lblEditPassword.TabIndex = 13;
-            this.lblEditPassword.Text = "Password:";
             // 
             // lblEditGender
             // 
@@ -567,7 +506,7 @@
             this.lblEditGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblEditGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditGender.ForeColor = System.Drawing.Color.White;
-            this.lblEditGender.Location = new System.Drawing.Point(90, 235);
+            this.lblEditGender.Location = new System.Drawing.Point(89, 208);
             this.lblEditGender.Name = "lblEditGender";
             this.lblEditGender.Size = new System.Drawing.Size(90, 26);
             this.lblEditGender.TabIndex = 3;
@@ -579,7 +518,7 @@
             this.lblErrorU.AutoSize = true;
             this.lblErrorU.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblErrorU.Location = new System.Drawing.Point(69, 46);
+            this.lblErrorU.Location = new System.Drawing.Point(68, 65);
             this.lblErrorU.Name = "lblErrorU";
             this.lblErrorU.Size = new System.Drawing.Size(31, 39);
             this.lblErrorU.TabIndex = 31;
@@ -592,7 +531,7 @@
             this.lblErrorNam.AutoSize = true;
             this.lblErrorNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorNam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblErrorNam.Location = new System.Drawing.Point(69, 144);
+            this.lblErrorNam.Location = new System.Drawing.Point(68, 117);
             this.lblErrorNam.Name = "lblErrorNam";
             this.lblErrorNam.Size = new System.Drawing.Size(31, 39);
             this.lblErrorNam.TabIndex = 29;
@@ -605,7 +544,7 @@
             this.lblErrorA.AutoSize = true;
             this.lblErrorA.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblErrorA.Location = new System.Drawing.Point(69, 190);
+            this.lblErrorA.Location = new System.Drawing.Point(68, 163);
             this.lblErrorA.Name = "lblErrorA";
             this.lblErrorA.Size = new System.Drawing.Size(31, 39);
             this.lblErrorA.TabIndex = 28;
@@ -618,7 +557,7 @@
             this.lblErrorG.AutoSize = true;
             this.lblErrorG.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblErrorG.Location = new System.Drawing.Point(69, 233);
+            this.lblErrorG.Location = new System.Drawing.Point(68, 206);
             this.lblErrorG.Name = "lblErrorG";
             this.lblErrorG.Size = new System.Drawing.Size(31, 39);
             this.lblErrorG.TabIndex = 27;
@@ -631,7 +570,7 @@
             this.lblErrorNat.AutoSize = true;
             this.lblErrorNat.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorNat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblErrorNat.Location = new System.Drawing.Point(69, 279);
+            this.lblErrorNat.Location = new System.Drawing.Point(68, 252);
             this.lblErrorNat.Name = "lblErrorNat";
             this.lblErrorNat.Size = new System.Drawing.Size(31, 39);
             this.lblErrorNat.TabIndex = 26;
@@ -674,8 +613,6 @@
         private System.Windows.Forms.Label lblAgeText;
         private System.Windows.Forms.Label lblGenderText;
         private System.Windows.Forms.Label lblNationText;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblPasswordText;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Panel pnlContainer;
         private System.Windows.Forms.Button btnSubmit;
@@ -688,14 +625,12 @@
         private System.Windows.Forms.Label lblEditName;
         private System.Windows.Forms.Label lblEditAge;
         private System.Windows.Forms.Label lblEditNationality;
-        private System.Windows.Forms.Label lblEditPassword;
         private System.Windows.Forms.Label lblEditGender;
         private System.Windows.Forms.TextBox txtBoxNationality;
         private System.Windows.Forms.TextBox txtBoxGender;
         private System.Windows.Forms.TextBox txtBoxAge;
         private System.Windows.Forms.TextBox txtBoxName;
         private System.Windows.Forms.TextBox txtBoxUsername;
-        private System.Windows.Forms.TextBox txtBoxPassword;
         private System.Windows.Forms.Button btnEditReturn;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Label lblErrorU;

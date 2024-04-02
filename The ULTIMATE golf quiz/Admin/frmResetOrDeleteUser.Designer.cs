@@ -52,6 +52,7 @@
             this.listViewPlayers.Location = new System.Drawing.Point(247, 24);
             this.listViewPlayers.Name = "listViewPlayers";
             this.listViewPlayers.Size = new System.Drawing.Size(271, 376);
+            this.listViewPlayers.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listViewPlayers.TabIndex = 10;
             this.listViewPlayers.UseCompatibleStateImageBehavior = false;
             this.listViewPlayers.View = System.Windows.Forms.View.Details;

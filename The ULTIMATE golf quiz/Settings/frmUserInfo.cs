@@ -35,7 +35,6 @@ namespace The_ULTIMATE_golf_quiz
         {
             // When the form is loaded, the textboxes are populated with all the relevant information
             lblUserText.Text = player.username;
-            lblPasswordText.Text = player.password;
             lblNameText.Text = player.name;
             lblAgeText.Text = Convert.ToString(player.age);
             lblGenderText.Text = player.gender;
@@ -58,7 +57,6 @@ namespace The_ULTIMATE_golf_quiz
                     pnlInfo.Visible = false;
                     pnlEdit.Visible = true;
                     txtBoxUsername.Text = frmSplashScreen.player.username;
-                    txtBoxPassword.Text = frmSplashScreen.player.password;
                     txtBoxName.Text = frmSplashScreen.player.name;
                     txtBoxAge.Text = Convert.ToString(frmSplashScreen.player.age);
                     txtBoxGender.Text = frmSplashScreen.player.gender;
@@ -126,12 +124,12 @@ namespace The_ULTIMATE_golf_quiz
         private void btnSave_Click(object sender, EventArgs e)
         {
             int age;
-            if ((txtBoxUsername.Text == "") || (txtBoxPassword.Text == "") || (txtBoxName.Text == "")
+            if ((txtBoxUsername.Text == "") || (txtBoxName.Text == "")
                     || (txtBoxAge.Text == "") || (txtBoxGender.Text == "") || (txtBoxNationality.Text == ""))
             {
                 ShowError("Please complete all indicated fields");
             }
-            else if ((txtBoxUsername.Text.Contains(',')) || (txtBoxPassword.Text.Contains(',')) || (txtBoxName.Text.Contains(','))
+            else if ((txtBoxUsername.Text.Contains(',')) || (txtBoxName.Text.Contains(','))
                     || (txtBoxAge.Text.Contains(',')) || (txtBoxGender.Text.Contains(',')) || (txtBoxNationality.Text.Contains(',')))
             {
                 ShowError("All fields cannot contain any commas\nPlease remove any commas and try again...");

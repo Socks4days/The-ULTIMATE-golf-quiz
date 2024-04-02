@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Golf logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -77,6 +80,7 @@
     <Compile Include="Classes for users\Player.cs" />
     <Compile Include="Classes for users\User.cs" />
     <Compile Include="File Handling\QuestionFileHandler.cs" />
+    <Compile Include="File Handling\SoundFileHandler.cs" />
     <Compile Include="File Handling\UserFileHandler.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Quiz Forms &amp; Classes\BaseQuestion.cs" />
@@ -251,20 +255,21 @@
   <ItemGroup>
     <Content Include="bin\Debug\The ULTIMATE golf quiz.exe" />
     <Content Include="bin\Debug\The ULTIMATE golf quiz.pdb" />
+    <Content Include="Golf logo.ico" />
     <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
     <Content Include="obj\Debug\The ULTIMATE golf quiz.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\The ULTIMATE golf quiz.exe" />
     <Content Include="obj\Debug\The ULTIMATE golf quiz.pdb" />
+    <None Include="Resources\Quiz Type It question.png" />
+    <None Include="Resources\Quiz True or False question.png" />
+    <None Include="Resources\Quiz Picture Round question.png" />
+    <None Include="Resources\Quiz Multiple Choice question.png" />
+    <None Include="Resources\Quiz Choose the right club - question.png" />
     <None Include="Resources\Where in the World.png" />
     <None Include="Resources\Type It.png" />
     <None Include="Resources\Truth or Lie.png" />
     <None Include="Resources\Surprise Me.png" />
     <None Include="Resources\Multiple Choice.png" />
-    <None Include="Resources\Quiz True or False question.png" />
-    <None Include="Resources\Quiz Picture Round question.png" />
-    <None Include="Resources\Quiz Multiple Choice question.png" />
-    <None Include="Resources\Quiz Choose the right club - question.png" />
-    <None Include="Resources\Quiz Type It question.png" />
     <None Include="Resources\0 - 90.jpg" />
     <None Include="Resources\Arrow.png" />
     <None Include="Resources\0 - 90.png" />
