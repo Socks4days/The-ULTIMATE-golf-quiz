@@ -109,6 +109,7 @@
             this.txtBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxUsername.ForeColor = System.Drawing.Color.White;
             this.txtBoxUsername.Location = new System.Drawing.Point(316, 138);
+            this.txtBoxUsername.MaxLength = 20;
             this.txtBoxUsername.Name = "txtBoxUsername";
             this.txtBoxUsername.Size = new System.Drawing.Size(250, 24);
             this.txtBoxUsername.TabIndex = 0;

@@ -82,9 +82,8 @@ namespace The_ULTIMATE_golf_quiz
                     }
                 }
             }
-            else
             // If any of the password checks fail, display an error to alert the user
-            ShowError("Your new password must be between 8-15 characters, with at least\n1 number, 1 capital letter and 1 symbol");
+            else ShowError("Your new password must be between 8-15 characters, with at least\n1 number, 1 capital letter and 1 symbol");
         }
 
         // Method to set the new password
@@ -121,7 +120,7 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
         
-        // If the show password checkbox is ticked for the new password,
+        // If the show password checkbox is ticked for the new/confirm password,
         // then show the user what they have input
         // otherwise show password as '*'
         private void cBoxNewPassword_CheckedChanged(object sender, EventArgs e)
@@ -135,6 +134,7 @@ namespace The_ULTIMATE_golf_quiz
                 txtBoxNewPassword.PasswordChar = '*';
             }
         }
+        
         private void cBoxConfirmPassword_CheckedChanged(object sender, EventArgs e)
         {
             if (cBoxConfirmPassword.Checked)
@@ -161,6 +161,8 @@ namespace The_ULTIMATE_golf_quiz
                     break;
             }
         }
+        
+        // Mark any blank fields and show error message
         private void ShowError(string message)
         {
             if (txtBoxOriginalPassword.Text == "") lblErrorOld.Visible = true;
@@ -170,6 +172,7 @@ namespace The_ULTIMATE_golf_quiz
             lblError.Visible = true;
         }
 
+        // Clear and hide error message
         public void ClearError()
         {
             lblErrorOld.Visible = false;
@@ -178,6 +181,7 @@ namespace The_ULTIMATE_golf_quiz
             lblError.Visible = false;
         }
 
+        // Hide blank field markers when player changes the field
         private void txtBoxOriginalPassword_TextChanged(object sender, EventArgs e)
         {
             lblErrorOld.Visible = false;

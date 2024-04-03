@@ -45,10 +45,10 @@
             this.lblNation = new System.Windows.Forms.Label();
             this.lblErrorU = new System.Windows.Forms.Label();
             this.lblErrorP = new System.Windows.Forms.Label();
-            this.lblErrorNam = new System.Windows.Forms.Label();
+            this.lblErrorNat = new System.Windows.Forms.Label();
             this.lblErrorA = new System.Windows.Forms.Label();
             this.lblErrorG = new System.Windows.Forms.Label();
-            this.lblErrorNat = new System.Windows.Forms.Label();
+            this.lblErrorNam = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblFadeUser = new System.Windows.Forms.Label();
@@ -277,18 +277,18 @@
             this.lblErrorP.Text = "*";
             this.lblErrorP.Visible = false;
             // 
-            // lblErrorNam
+            // lblErrorNat
             // 
-            this.lblErrorNam.AutoSize = true;
-            this.lblErrorNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorNam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblErrorNam.Location = new System.Drawing.Point(380, 240);
-            this.lblErrorNam.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblErrorNam.Name = "lblErrorNam";
-            this.lblErrorNam.Size = new System.Drawing.Size(20, 25);
-            this.lblErrorNam.TabIndex = 16;
-            this.lblErrorNam.Text = "*";
-            this.lblErrorNam.Visible = false;
+            this.lblErrorNat.AutoSize = true;
+            this.lblErrorNat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorNat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblErrorNat.Location = new System.Drawing.Point(380, 240);
+            this.lblErrorNat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblErrorNat.Name = "lblErrorNat";
+            this.lblErrorNat.Size = new System.Drawing.Size(20, 25);
+            this.lblErrorNat.TabIndex = 16;
+            this.lblErrorNat.Text = "*";
+            this.lblErrorNat.Visible = false;
             // 
             // lblErrorA
             // 
@@ -316,18 +316,18 @@
             this.lblErrorG.Text = "*";
             this.lblErrorG.Visible = false;
             // 
-            // lblErrorNat
+            // lblErrorNam
             // 
-            this.lblErrorNat.AutoSize = true;
-            this.lblErrorNat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorNat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblErrorNat.Location = new System.Drawing.Point(32, 238);
-            this.lblErrorNat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblErrorNat.Name = "lblErrorNat";
-            this.lblErrorNat.Size = new System.Drawing.Size(20, 25);
-            this.lblErrorNat.TabIndex = 19;
-            this.lblErrorNat.Text = "*";
-            this.lblErrorNat.Visible = false;
+            this.lblErrorNam.AutoSize = true;
+            this.lblErrorNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorNam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblErrorNam.Location = new System.Drawing.Point(32, 238);
+            this.lblErrorNam.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblErrorNam.Name = "lblErrorNam";
+            this.lblErrorNam.Size = new System.Drawing.Size(20, 25);
+            this.lblErrorNam.TabIndex = 19;
+            this.lblErrorNam.Text = "*";
+            this.lblErrorNam.Visible = false;
             // 
             // lblError
             // 
@@ -436,10 +436,10 @@
             this.Controls.Add(this.txtBoxUser);
             this.Controls.Add(this.btnReg);
             this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.lblErrorNat);
+            this.Controls.Add(this.lblErrorNam);
             this.Controls.Add(this.lblErrorA);
             this.Controls.Add(this.lblErrorG);
-            this.Controls.Add(this.lblErrorNam);
+            this.Controls.Add(this.lblErrorNat);
             this.Controls.Add(this.lblErrorU);
             this.Controls.Add(this.lblErrorP);
             this.ForeColor = System.Drawing.Color.White;
@@ -473,10 +473,10 @@
         private System.Windows.Forms.Label lblNation;
         private System.Windows.Forms.Label lblErrorU;
         private System.Windows.Forms.Label lblErrorP;
-        private System.Windows.Forms.Label lblErrorNam;
+        private System.Windows.Forms.Label lblErrorNat;
         private System.Windows.Forms.Label lblErrorA;
         private System.Windows.Forms.Label lblErrorG;
-        private System.Windows.Forms.Label lblErrorNat;
+        private System.Windows.Forms.Label lblErrorNam;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblFadeUser;

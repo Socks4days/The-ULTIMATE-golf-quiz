@@ -19,7 +19,7 @@ namespace The_ULTIMATE_golf_quiz.File_Handling
         // Sound player used throughout the application
         private static System.Media.SoundPlayer activePlayer = new System.Media.SoundPlayer();
         private static bool looping = false;
-
+        
         // Method to start playing a new sound
         public static void PlaySound(string soundFile)
         {

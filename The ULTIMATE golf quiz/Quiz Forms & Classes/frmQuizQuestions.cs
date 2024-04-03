@@ -57,7 +57,64 @@ namespace The_ULTIMATE_golf_quiz
         private WhereInTheWorld currentPictureQuestion1;
         #endregion BaseQuestionsReferredToThroughoutForm
 
+        #region Initialisation
+        //-------------------------------------------------------
+        // Set up when the quiz form is first created
+        public frmQuizQuestions()
+        {
+            InitializeComponent();
+            txtBoxAnswer.KeyDown += KeyPressedDown;
+            KeyDown += KeyPressedDown;
+            NumberOfQuestionsAskedThisRound = 0;
+
+            // remember start position of ball and flag (only the first time the form is created)
+            ballStartX = pctBoxGolfBall.Location.X;
+            ballStartY = pctBoxGolfBall.Location.Y;
+            flagStartX = pctBoxFlag.Location.X;
+            flagStartY = pctBoxFlag.Location.Y;
+        }
+       
+        private void frmQuizQuestions_Load(object sender, EventArgs e)
+        {
+            // set up for the start of each round)
+            frmQuizQuestionsInitialisation();
+        }
+        
+        // Set up at the start of every round
+        private void frmQuizQuestionsInitialisation()
+        {
+            // Hide all the question panels
+            pnlAnswer.Visible = false;
+            pnlQuestion.Visible = false;
+            pnlTypeIt.Visible = false;
+            pnlTrueOrFalseOptions.Visible = false;
+            pnlMultipleChoiceOptions.Visible = false;
+            pnlFinish.Visible = false;
+            pnlGoClubbin.Visible = false;
+            pnlWhereinTheWorld.Visible = false;
+            pnlTypeOfRound.Visible = false;
+            pnlGrass.Visible = false;
+
+            // Check the player hasn't answered all the questions for any of the rounds
+            if (QuestionFileHandler.TypeItQuestions.Count > 0)
+                questionTypes.Add("Type It");
+            if (QuestionFileHandler.TrueOrFalseQuestions.Count > 0)
+                questionTypes.Add("Truth or Lie");
+            if (QuestionFileHandler.MultiChoiceQuestions.Count > 0)
+                questionTypes.Add("Multiple Guess");
+            if (QuestionFileHandler.PictureQuestions.Count > 0)
+                questionTypes.Add("Picture");
+            questionTypes.Add("Choose Club");
+
+            // Show the panel to select the type of round
+            pnlTypeOfRound.Dock = DockStyle.Fill;
+            pnlTypeOfRound.Visible = true;
+            UpdateRoundImage();
+        }
+        #endregion Initialisation
+
         #region EnterKeyLogic
+        //-------------------------------------------------------
         // Submit the answer or go to the next question when the users hits Enter
         bool enterKeyPressed = false;
         private void KeyPressedDown(object sender, KeyEventArgs e)
@@ -122,65 +179,8 @@ namespace The_ULTIMATE_golf_quiz
         }
         #endregion AnswerButtonsEnabling
 
-
-
-        // Set up when the quiz form is first created
-        public frmQuizQuestions()
-        {
-            InitializeComponent();
-            txtBoxAnswer.KeyDown += KeyPressedDown;
-            KeyDown += KeyPressedDown;
-            NumberOfQuestionsAskedThisRound = 0;
-
-            // remember start position of ball and flag (only the first time the form is created)
-            ballStartX = pctBoxGolfBall.Location.X;
-            ballStartY = pctBoxGolfBall.Location.Y;
-            flagStartX = pctBoxFlag.Location.X;
-            flagStartY = pctBoxFlag.Location.Y;
-        }
-       
-        #region Initialisation
-        private void frmQuizQuestions_Load(object sender, EventArgs e)
-        {
-            // set up for the start of each round)
-            frmQuizQuestionsInitialisation();
-        }
-        
-        // Set up at the start of every round
-        private void frmQuizQuestionsInitialisation()
-        {
-            // Hide all the question panels
-            pnlAnswer.Visible = false;
-            pnlQuestion.Visible = false;
-            pnlTypeIt.Visible = false;
-            pnlTrueOrFalseOptions.Visible = false;
-            pnlMultipleChoiceOptions.Visible = false;
-            pnlFinish.Visible = false;
-            pnlGoClubbin.Visible = false;
-            pnlWhereinTheWorld.Visible = false;
-            pnlTypeOfRound.Visible = false;
-            pnlGrass.Visible = false;
-
-            // Check the player hasn't answered all the questions for any of the rounds
-            if (QuestionFileHandler.TypeItQuestions.Count > 0)
-                questionTypes.Add("Type It");
-            if (QuestionFileHandler.TrueOrFalseQuestions.Count > 0)
-                questionTypes.Add("Truth or Lie");
-            if (QuestionFileHandler.MultiChoiceQuestions.Count > 0)
-                questionTypes.Add("Multiple Guess");
-            if (QuestionFileHandler.PictureQuestions.Count > 0)
-                questionTypes.Add("Picture");
-            questionTypes.Add("Choose Club");
-
-            // Show the panel to select the type of round
-            pnlTypeOfRound.Dock = DockStyle.Fill;
-            pnlTypeOfRound.Visible = true;
-            UpdateRoundImage();
-        }
-        #endregion Initialisation
-
         #region RoundTypeButtonClicks
-
+        //-------------------------------------------------------
         int currentRoundIndex = 0;
 
         string[] questionTypesArray = { "TypeIt", "TruthOrLie", "MultipleGuess", "WhereInTheWorld", "GoClubbin","SurpriseMe" };
@@ -269,6 +269,8 @@ namespace The_ULTIMATE_golf_quiz
                     break;
             }
         }
+        
+        // Show logo for round type and set title font
         private void UpdateRoundImage()
         {
             if (currentRoundIndex >= 0 && currentRoundIndex < questionTypesArray.Length)
@@ -293,14 +295,13 @@ namespace The_ULTIMATE_golf_quiz
             { "GoClubbin", "Go Clubbin'" },
             { "SurpriseMe", "Surprise Me" }            
         };
-
         #endregion RoundTypeButtonClicks
 
         #region Instructions        
-
+        //-------------------------------------------------------
+        // Set up for instructions for selected round type
         private void InstructionSetup()
         {
-
             // Hide the select round type panel
             pnlTypeOfRound.Dock = DockStyle.None;
             pnlTypeOfRound.Visible = false;
@@ -356,6 +357,8 @@ namespace The_ULTIMATE_golf_quiz
             tmrInstructions.Enabled = true;
             tmrInstructions.Start();
         }
+        
+        // Hide instructions
         private void ResetInstructions()
         {
             lblInstructionsQuestion.Visible = false;
@@ -369,8 +372,8 @@ namespace The_ULTIMATE_golf_quiz
             btnStartRound.Visible = false;
         }
        
+        // Timer to show instructions gradually
         int stopTime = 0;
-
         private void tmrInstructions_Tick(object sender, EventArgs e)
         {
             stopTime++;
@@ -410,21 +413,23 @@ namespace The_ULTIMATE_golf_quiz
             pctBoxInstructionsGameImage_Click(sender, e);
         }
 
+        // Start the round when Start Round is clicked
         private void btnStartRound_Click(object sender, EventArgs e)
         {
             setup();
         }
 
+        // Stop the timer and start the round when Skip is clicked
         private void btnSkip_Click(object sender, EventArgs e)
         {
             tmrInstructions.Stop();
             stopTime = 0;
             setup();
         }
-
         #endregion Instructions
 
         #region SetupForRound
+        //-------------------------------------------------------
         // Start a new round
         private void setup()
         {
@@ -448,7 +453,7 @@ namespace The_ULTIMATE_golf_quiz
         #endregion SetupForRound
 
         #region GetQuestion 
-
+        //-------------------------------------------------------
         private bool pictureQuestionAnswered = false;
         private int flagPositionX = 0;
         private int ballPositionX = 0;
@@ -690,7 +695,7 @@ namespace The_ULTIMATE_golf_quiz
         #endregion GetQuestion
 
         #region QuizAnswerButtonClicks
-        //-------------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------
         // Type It - Submit button clicked
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -728,7 +733,7 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
-        //---------------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------
         // Truth or Lie - True button clicked
         private void btnTrue_Click(object sender, EventArgs e)
         {
@@ -802,7 +807,7 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
-        //-------------------------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------
         // Multiple Guess - option 1 clicked
         private void btnOption1_Click(object sender, EventArgs e)
         {
@@ -863,11 +868,12 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
-        //-------------------------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------
         // Where in the World - map clicked
+        
         int mapX = 0;
         int mapY = 0;
-        // Shows the correct location on the map
+        // Method to show the correct answer location on the map
         private void CorrectMapLocation()
         {
             // Convert the correct location to a point on the map based on the map size
@@ -879,8 +885,8 @@ namespace The_ULTIMATE_golf_quiz
             // Set the correct location marker to the answer position on the map
             pctBoxCorrectLocation.Location = new Point(mapX + correctXOnMap - (pctBoxLocation.Width / 2), mapY + correctYOnMap - pctBoxLocation.Height);
         }
-        
 
+        // Player has clicked on the map
         private void pctBoxMap_Click(object sender, EventArgs e)
         {            
             // Check if the user has already clicked on the map
@@ -939,7 +945,7 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
-        //-------------------------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------
         // Go Clubbin - Go/Stop button clicked
 
         // Lookup with loft and max distance of each club
@@ -1102,10 +1108,10 @@ namespace The_ULTIMATE_golf_quiz
             tmrBallFlight.Start();
         }
 
-        //-------------------------------------------------------------------------------------------------------------------
         #endregion QuizAnswerButtonClicks
 
         #region NextQuestionButtonClicked
+        //-------------------------------------------------------
         // Button clicked to select the next question
         private void btnNext_Click(object sender, EventArgs e)
         {
@@ -1167,6 +1173,7 @@ namespace The_ULTIMATE_golf_quiz
         #endregion NextQuestionButtonClicked
 
         #region EndOfRound
+        //-------------------------------------------------------
         // When all 5 questions in the round are completed
         // or there are no more questions for the selected round type
         // show a summary of the round and the points scored
@@ -1208,6 +1215,7 @@ namespace The_ULTIMATE_golf_quiz
         #endregion EndOfRound
 
         #region FinishMenuButtonClicks
+        //-------------------------------------------------------
         // Next found button clicked on finish panel
         // Start the quiz again with the select round type
         private void btnNextRound_Click(object sender, EventArgs e)
@@ -1216,7 +1224,7 @@ namespace The_ULTIMATE_golf_quiz
             frmQuizQuestionsInitialisation();
         }
 
-        //-----------------------------------------------------------------
+        //-------------------------------------------------------
         // Finish session button clicked on finish panel
         // Exit the quiz and go back to the main menu
         private void btnFinishSession_Click(object sender, EventArgs e)
@@ -1227,6 +1235,7 @@ namespace The_ULTIMATE_golf_quiz
         #endregion FinishMenuButtonClicks
 
         #region Exiting
+        //-------------------------------------------------------
         // Back arrow button clicked to stop in the middle of the question round
         // Warn the player they will lose their progress
         // and check they want to continue
@@ -1250,9 +1259,9 @@ namespace The_ULTIMATE_golf_quiz
         }
         #endregion Exiting
 
-        //-----------------------------------------------------------------
+        #region Timers
+        //-------------------------------------------------------
         // Timer events
-        //-----------------------------------------------------------------
         // All question types - timer event for question countdown
         int countdown = 0;
         private void timerCountdown_Tick(object sender, EventArgs e)
@@ -1292,7 +1301,7 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
-        //-----------------------------------------------------------------
+        //-------------------------------------------------------
         // Go Clubbin - timer event for error message
         int stopTimeGoClubbinError = 0;
         // After the error message has been displayed for 2 seconds, go back to displaying the question
@@ -1308,7 +1317,7 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
         
-        //-----------------------------------------------------------------
+        //-------------------------------------------------------
         // Go Clubbin - timer event for power selector
         private int powerTicks = 0;
         private int powerTickDirection = 1;
@@ -1341,7 +1350,7 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
-        //-----------------------------------------------------------------
+        //-------------------------------------------------------
         // Go Clubbin - timer event for ball flight
         private void tmrBallFlight_Tick(object sender, EventArgs e)
         {
@@ -1426,8 +1435,10 @@ namespace The_ULTIMATE_golf_quiz
                 //pctBoxMap.Enabled = false;
             }
         }
+        #endregion Timers
         
-        //-----------------------------------------------------------------
+        #region WindowResizeEvents
+        //-------------------------------------------------------
         // Where in the World - enlarge/shrink picture when it is clicked
         private void pctBoxPicture_Click(object sender, EventArgs e)
         {
@@ -1497,9 +1508,8 @@ namespace The_ULTIMATE_golf_quiz
             }            
         }
 
-        //-----------------------------------------------------------------
+        //-------------------------------------------------------
         // Window resized event
-        //-----------------------------------------------------------------
         // - Where in the World - resize/reposition picture to fit window
         // - Go Clubbin - redraw grass, ball and flag to fit window
         private void frmQuizQuestions_Resize(object sender, EventArgs e)
@@ -1520,7 +1530,7 @@ namespace The_ULTIMATE_golf_quiz
             }
         }
 
-        //-----------------------------------------------------------------
+        //-------------------------------------------------------
         // Go Clubbin - redraw grass, ball and flag when the
         // window is resized to fill the available space
         private void CalculateBallAndFlagPositionRelativeToWindow()
@@ -1549,5 +1559,6 @@ namespace The_ULTIMATE_golf_quiz
             // Move the ball
             pctBoxGolfBall.Location = new Point(ballX - (pctBoxFlag.Width / 2), ballY);
         }
+        #endregion WindowResizeEvents
     }
 }

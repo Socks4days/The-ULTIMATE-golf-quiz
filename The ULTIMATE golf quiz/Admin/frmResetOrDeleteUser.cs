@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -107,7 +108,8 @@ namespace The_ULTIMATE_golf_quiz
                                 if (playerToDelete.ToString() == player.username)
                                 {
                                     players.Remove(player);
-                                    MessageBox.Show(player.username + " has been deleted");
+                                    UserFileHandler.DeletePlayerQuestionFile(player);
+                                    MessageBox.Show(player.username + " has been deleted");                                   
                                 }
                             }
                         }

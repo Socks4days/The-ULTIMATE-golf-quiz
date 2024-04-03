@@ -166,7 +166,7 @@ namespace The_ULTIMATE_golf_quiz
             }
             catch (FileNotFoundException)
             {
-                // File doesn't exist the first time the player logs in
+                // File doesn't exist the first time the player logs in or if they have never taken the quiz before
             }
         }
     }

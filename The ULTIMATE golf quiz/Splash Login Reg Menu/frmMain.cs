@@ -235,8 +235,10 @@ namespace The_ULTIMATE_golf_quiz
         }
 
         // Close the main menu and go back to the login form
+        bool isLogout = false;
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            isLogout = true;
             SoundFileHandler.StopSound();
             this.Close();
             new frmLogin().Show();
@@ -273,10 +275,14 @@ namespace The_ULTIMATE_golf_quiz
         }
         #endregion ButtonColouring
 
+        // Stop music when main menu is closed and if not logging out, quit application
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             SoundFileHandler.StopSound();
-            System.Windows.Forms.Application.Exit();
+            if (isLogout == false)
+            {                
+                System.Windows.Forms.Application.Exit();
+            }            
         }
     }
 }

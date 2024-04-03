@@ -192,14 +192,14 @@
             this.txtBoxOriginalPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxOriginalPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.txtBoxOriginalPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxOriginalPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxOriginalPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxOriginalPassword.ForeColor = System.Drawing.Color.White;
             this.txtBoxOriginalPassword.Location = new System.Drawing.Point(185, 92);
             this.txtBoxOriginalPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxOriginalPassword.MaxLength = 15;
             this.txtBoxOriginalPassword.Name = "txtBoxOriginalPassword";
             this.txtBoxOriginalPassword.PasswordChar = '*';
-            this.txtBoxOriginalPassword.Size = new System.Drawing.Size(409, 37);
+            this.txtBoxOriginalPassword.Size = new System.Drawing.Size(409, 24);
             this.txtBoxOriginalPassword.TabIndex = 9;
             this.txtBoxOriginalPassword.TextChanged += new System.EventHandler(this.txtBoxOriginalPassword_TextChanged);
             // 
@@ -223,14 +223,14 @@
             this.txtBoxNewPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxNewPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.txtBoxNewPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxNewPassword.ForeColor = System.Drawing.Color.White;
             this.txtBoxNewPassword.Location = new System.Drawing.Point(186, 186);
             this.txtBoxNewPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxNewPassword.MaxLength = 15;
             this.txtBoxNewPassword.Name = "txtBoxNewPassword";
             this.txtBoxNewPassword.PasswordChar = '*';
-            this.txtBoxNewPassword.Size = new System.Drawing.Size(409, 37);
+            this.txtBoxNewPassword.Size = new System.Drawing.Size(409, 24);
             this.txtBoxNewPassword.TabIndex = 8;
             this.txtBoxNewPassword.TextChanged += new System.EventHandler(this.txtBoxNewPassword_TextChanged);
             // 
@@ -270,14 +270,14 @@
             this.txtBoxConfirmPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.txtBoxConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxConfirmPassword.ForeColor = System.Drawing.Color.White;
             this.txtBoxConfirmPassword.Location = new System.Drawing.Point(186, 271);
             this.txtBoxConfirmPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxConfirmPassword.MaxLength = 15;
             this.txtBoxConfirmPassword.Name = "txtBoxConfirmPassword";
             this.txtBoxConfirmPassword.PasswordChar = '*';
-            this.txtBoxConfirmPassword.Size = new System.Drawing.Size(409, 37);
+            this.txtBoxConfirmPassword.Size = new System.Drawing.Size(409, 24);
             this.txtBoxConfirmPassword.TabIndex = 3;
             this.txtBoxConfirmPassword.TextChanged += new System.EventHandler(this.txtBoxConfirmPassword_TextChanged);
             // 

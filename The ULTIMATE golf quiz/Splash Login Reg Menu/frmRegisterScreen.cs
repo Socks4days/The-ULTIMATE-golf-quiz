@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace The_ULTIMATE_golf_quiz
 {
@@ -36,6 +37,7 @@ namespace The_ULTIMATE_golf_quiz
                     || (txtBoxAge.Text == "") || (txtBoxGender.Text == "") || (txtBoxNation.Text == ""))
             {
                 ShowError("Please complete all indicated fields");
+                return;
             }
             if ((txtBoxUser.Text.Contains(',')) || (txtBoxPassword.Text.Contains(',')) || (txtBoxName.Text.Contains(','))
                     || (txtBoxAge.Text.Contains(',')) || (txtBoxGender.Text.Contains(',')) || (txtBoxNation.Text.Contains(',')))
@@ -52,46 +54,66 @@ namespace The_ULTIMATE_golf_quiz
             else
             {
                 // if all are filled in, then begin the Verification process
-                PasswordValidation();
+                UsernameAndPasswordValidation();
             }
         }       
 
-        bool validPassword = false;        
-        public void PasswordValidation()
+        int isAdmin = 0;
+        public void UsernameAndPasswordValidation()
         {
+            // Check if the username is already taken
+            foreach (Player player in players)
+            {
+                if (player.username == txtBoxUser.Text)
+                {
+                    // if someone already has already got the same username, then an error message is thrown saying they have to change it
+                    ShowError("Sorry, that username is already taken.\nPlease try a different one...");
+                    //sets mouse to go to the username textbox
+                    this.ActiveControl = txtBoxUser;
+                    return;
+                }
+            }
             // setting variable equal to what the user inputs for password
             string password = txtBoxPassword.Text;
 
             // checks to see if the input password passes all the checks: More than 8 chatacters, contain a capital, contain a number
-            if ((password.Length >= 8)&&(password.Length <= 15) 
-                && (password.Any(char.IsUpper)) && (password.Any(char.IsDigit)))
-            {
-                // if it passes, bool is set equal to true and program can continue
-                validPassword = true;
-            }
-            else 
+            if (!( (password.Length >= 8) && (password.Length <= 15) 
+                && (password.Any(char.IsUpper)) && (password.Any(char.IsDigit))))
             {
                 // if it fails, a list of the password requirements are shown
                 ShowError("Enter a password between 8-15 characters, with at least\n1 number, 1 capital letter and 1 symbol");
+                return;
             }
 
             // Creates a list of valid password symbols and populates it
             List<char> symbols = new List<char>() 
-                { '@', '<', '>', '*', '!', '£', '$', '%', '&', '^', '.',':', ';', '/', '?', '#'};
-            
-            // checks to see if the input password contains one of these symbols 
-            foreach( char sym in symbols)
+                { '!', '<', '>', '*', '-', '£', '$', '%', '&', '^', '.',':', ';', '/', '?', '#'};
+
+            // checks to see if the admin checkbox is ticked and if so, the admin box will contain a 1 and if not, a 0
+            if ((cboxAdmin.Checked) && (txtBoxPassword.Text == "Admin123!"))
             {
-                if((password.Contains(sym)))
-                {                    
-                    // if it does, then the program runs the register method which will register the user as a valid user
-                    Register();
-                }                
-                else
-                {
-                    ShowError("Enter a password between 8-15 characters, with at least\n1 number, 1 capital letter and 1 symbol");
-                }
+                isAdmin = 1;
             }
+            else if ((cboxAdmin.Checked) && (txtBoxPassword.Text != "Admin123!"))
+            {
+                ShowError("Invalid admin password.\n Please try again...");
+                return;
+            }
+            else { isAdmin = 0; }
+
+            bool hasSymbol = false;
+            // checks to see if the input password contains one of these symbols and if so registers the user
+            foreach (char sym in symbols)
+            {
+                if (password.Contains(sym))
+                {
+                    // if it does, then the program runs the register method which will register the user as a valid user
+                    hasSymbol = true;                   
+                }                
+            }
+            if (!hasSymbol)
+                ShowError("Enter a password between 8-15 characters, with at least\n1 number, 1 capital letter and 1 symbol");
+            else Register();
         }
         
         // method that registers the user as a valid user
@@ -105,58 +127,29 @@ namespace The_ULTIMATE_golf_quiz
             int age = Convert.ToInt32(txtBoxAge.Text);            
             string nationality = txtBoxNation.Text;
             int highscore = 0;
-            int isAdmin = 0;
-            
-            // checks to see if the admin checkbox is ticked and if so, the admin box will contain a 1 and if not, a 0
-            if ((cboxAdmin.Checked)&&(txtBoxPassword.Text=="Admin123!"))
-            {
-                isAdmin = 1;
-            }
-            else if ((cboxAdmin.Checked)&&(txtBoxPassword.Text!="Admin123!"))
-            {
-                ShowError("Invalid admin password.\n Please try again...");
-            }
-            else { isAdmin = 0; }
+            int roundsPlayed = 0;
             int avatar = 0;
             if (gender.ToLower() == "female")
             {
                avatar = 1;
             }
-                       
-            int roundsPlayed = 0;
             
-            // Check if the username is already taken
-            bool validUsername = true;
-            foreach(Player player in players)
-            {
-                if (player.username == username)
-                {
-                    // if someone already has already got the same username, then an error message is thrown saying they have to change it
-                    validUsername = false;
-                    ShowError("Sorry, that username is already taken.\nPlease try a different one...");
-                    //sets mouse to go to the username textbox
-                    this.ActiveControl=txtBoxUser;
-                }
-            }
-            // if both the username and password are valid, the program can continue to register the user
-            if (validPassword == true && validUsername == true)
-            {
-                // Set new user as the logged in user
-                frmSplashScreen.player = new Player(username, password, name, age, gender, nationality, highscore, isAdmin, avatar, roundsPlayed);
+            // Set new user as the logged in user
+            frmSplashScreen.player = new Player(username, password, name, age, gender, nationality, highscore, isAdmin, avatar, roundsPlayed);
 
-                // Add new user to the list of valid users
-                players.Add(frmSplashScreen.player);
+            // Add new user to the list of valid users
+            players.Add(frmSplashScreen.player);
 
-                // Save the list of users back to the CSV file
-                UserFileHandler.SaveAllPlayers();
-                QuestionFileHandler.ReadInAllQuestions();
+            // Save the list of users back to the CSV file
+            UserFileHandler.SaveAllPlayers();
+            QuestionFileHandler.ReadInAllQuestions();
 
-                // Go to the main menu
-                this.Hide();
-                // Open the main menu and save a reference to it
-                frmSplashScreen.mainMenu = new frmMain();
-                frmSplashScreen.mainMenu.Show();
-            }
+            // Go to the main menu
+            this.Hide();
+            // Open the main menu and save a reference to it
+            frmSplashScreen.mainMenu = new frmMain();
+            frmSplashScreen.mainMenu.Show();
+            
             // returns the new player values
             return new Player(username, password, name, age, gender, nationality, highscore, isAdmin, avatar, roundsPlayed);
         }
@@ -166,6 +159,7 @@ namespace The_ULTIMATE_golf_quiz
             // when button is clicked, run the reset method
             Reset();
         }
+		
         public void Reset()
         {
             // When pressed, all textboxes will be cleared
@@ -199,14 +193,13 @@ namespace The_ULTIMATE_golf_quiz
             // hide error message
             lblErrorU.Visible = false;
             lblErrorP.Visible = false;
-            lblErrorNam.Visible = false;
+            lblErrorNat.Visible = false;
             lblErrorA.Visible = false;
             lblErrorG.Visible = false;
-            lblErrorNat.Visible = false;
+            lblErrorNam.Visible = false;
             lblError.Text = "";
             lblError.Visible = false;
         }
-
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -220,6 +213,5 @@ namespace The_ULTIMATE_golf_quiz
             // if the window is closed, the program will also close
             System.Windows.Forms.Application.Exit();
         }
-
     }
 }

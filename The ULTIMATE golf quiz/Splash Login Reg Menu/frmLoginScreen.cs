@@ -76,7 +76,6 @@ namespace The_ULTIMATE_golf_quiz
 
             if (foundUser)
             {
-                Thread.Sleep(1000);
                 this.Hide();
                 // Open the main menu and save a reference to it
                 frmSplashScreen.mainMenu = new frmMain();
